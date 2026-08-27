@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b0c10">
+  <title>CineTrack — Collection & Watchlist</title>
+  <style>
+    :root{--bg:#090a0d;--panel:#12141a;--panel2:#191c23;--text:#f5f5f5;--muted:#9ba1ad;--line:#282c36;--accent:#d6aa55;--danger:#df5d5d;--ok:#62c48d}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:radial-gradient(circle at 20% -10%,#242018 0,transparent 30%),var(--bg);color:var(--text)}
+    button,input,select,textarea{font:inherit} button{cursor:pointer}
+    .hidden{display:none!important}.shell{max-width:1320px;margin:auto;padding:0 24px}
+    header{position:sticky;top:0;z-index:20;background:rgba(9,10,13,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .top{height:72px;display:flex;align-items:center;gap:28px}.brand{font-size:22px;font-weight:850;letter-spacing:-.5px}.brand b{color:var(--accent)}
+    nav{display:flex;gap:6px;flex:1}nav button,.ghost{border:0;background:transparent;color:var(--muted);padding:10px 13px;border-radius:10px}
+    nav button.active,nav button:hover,.ghost:hover{color:#fff;background:var(--panel2)}.account{display:flex;gap:8px;align-items:center}
+    .btn{border:1px solid transparent;background:var(--accent);color:#16130c;font-weight:800;padding:10px 15px;border-radius:10px}.btn.secondary{background:var(--panel2);color:#fff;border-color:var(--line)}
+    main{padding:42px 0 70px}.eyebrow{color:var(--accent);font-weight:800;text-transform:uppercase;font-size:12px;letter-spacing:1.5px}
+    h1{font-size:clamp(34px,5vw,62px);line-height:1;margin:8px 0 14px;letter-spacing:-2px}h2{font-size:28px;margin:0 0 20px}.lead{color:var(--muted);max-width:720px;font-size:17px;line-height:1.6}
+    .hero{padding:34px 0 40px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:28px 0}.card{background:linear-gradient(145deg,var(--panel),#0f1116);border:1px solid var(--line);border-radius:16px;padding:20px}
+    .stat strong{display:block;font-size:30px}.stat span{color:var(--muted);font-size:13px}.split{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:22px}
+    .toolbar{display:flex;flex-wrap:wrap;gap:9px}.control{background:var(--panel);border:1px solid var(--line);color:#fff;padding:10px 12px;border-radius:10px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:18px}.poster{aspect-ratio:2/3;border-radius:12px;background:linear-gradient(145deg,#242832,#111318);display:flex;align-items:center;justify-content:center;color:#6e7480;font-weight:800;text-align:center;padding:14px;overflow:hidden}
+    .poster img{width:100%;height:100%;object-fit:cover}.movie h3{font-size:15px;margin:11px 0 4px}.meta{color:var(--muted);font-size:13px}.badges{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}.badge{font-size:10px;font-weight:850;border:1px solid var(--line);padding:4px 6px;border-radius:6px;color:#cbd0d8}.badge.owned{border-color:#6e5a30;color:#e8c67e;background:#201b11}
+    .empty{border:1px dashed var(--line);padding:30px;border-radius:14px;text-align:center;color:var(--muted)}.progress{height:7px;background:#262a32;border-radius:10px;overflow:hidden;margin-top:10px}.progress i{display:block;height:100%;background:var(--accent)}
+    dialog{width:min(520px,calc(100% - 30px));background:var(--panel);color:#fff;border:1px solid var(--line);border-radius:18px;padding:0;box-shadow:0 30px 100px #000}
+    dialog::backdrop{background:#000b}.modal{padding:24px}.modal-head{display:flex;justify-content:space-between;align-items:center}.form{display:grid;gap:12px;margin-top:18px}.form label{font-size:12px;color:var(--muted)}.form input,.form select,.form textarea{width:100%;margin-top:5px;background:#0c0e12;border:1px solid var(--line);border-radius:9px;padding:11px;color:#fff}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .notice{padding:11px 14px;border:1px solid #594b2e;background:#1d1911;color:#dec58e;border-radius:10px;font-size:13px;margin-bottom:18px}
+    @media(max-width:800px){.top{height:auto;padding:13px 0;flex-wrap:wrap}.brand{flex:1}nav{order:3;width:100%;overflow:auto}.account span{display:none}.stats{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.shell{padding:0 15px}}
+  </style>
+</head>
+<body>
+<header><div class="shell top">
+  <div class="brand">Cine<b>Track</b></div>
+  <nav>
+    <button data-page="home" class="active">Accueil</button>
+    <button data-page="jackie">Jackie Chan</button>
+    <button data-page="series">Watchlist séries</button>
+  </nav>
+  <div class="account"><span id="userLabel"></span><button id="authBtn" class="btn secondary">Connexion</button></div>
+</div></header>
+
+<main class="shell">
+<section id="page-home">
+  <div class="hero"><div class="eyebrow">Votre cinémathèque personnelle</div><h1>Films collectionnés.<br>Séries à découvrir.</h1><p class="lead">Suivez votre collection physique, complétez la filmographie de Jackie Chan et gardez votre watchlist de séries au même endroit.</p></div>
+  <div class="stats">
+    <div class="card stat"><strong id="statOwned">0</strong><span>Films possédés</span></div>
+    <div class="card stat"><strong id="statTotal">0</strong><span>Films au catalogue</span></div>
+    <div class="card stat"><strong id="statSeries">0</strong><span>Séries dans la watchlist</span></div>
+    <div class="card stat"><strong id="statWatching">0</strong><span>Séries en cours</span></div>
+  </div>
+  <div class="split">
+    <div class="card"><div class="eyebrow">Jackie Chan</div><h2 style="margin-top:7px">Progression de la collection</h2><div id="homeProgressText" class="meta">Aucun film chargé.</div><div class="progress"><i id="homeProgress" style="width:0%"></i></div></div>
+    <div class="card"><div class="eyebrow">En cours</div><h2 style="margin-top:7px">À reprendre</h2><div id="watchingPreview" class="meta">Aucune série en cours.</div></div>
+  </div>
+</section>
+
+<section id="page-jackie" class="hidden">
+  <div class="section-head"><div><div class="eyebrow">Collection</div><h1 style="font-size:42px">Jackie Chan</h1><p class="lead">Filmographie de référence et éditions physiques que vous possédez.</p></div><button id="addFilmBtn" class="btn hidden">+ Ajouter un film</button></div>
+  <div class="toolbar" style="margin-bottom:22px">
+    <input id="filmSearch" class="control" placeholder="Rechercher un film…">
+    <select id="filmFilter" class="control"><option value="all">Tous</option><option value="owned">Possédés</option><option value="missing">Manquants</option></select>
+    <select id="formatFilter" class="control"><option value="">Tous les formats</option><option>DVD</option><option>Blu-ray</option><option>4K UHD</option><option>VHS</option><option>Numérique</option></select>
+  </div>
+  <div id="filmGrid" class="grid"></div>
+</section>
+
+<section id="page-series" class="hidden">
+  <div class="section-head"><div><div class="eyebrow">Télévision</div><h1 style="font-size:42px">Watchlist séries</h1><p class="lead">À voir, en cours, terminées ou abandonnées.</p></div><button id="addSeriesBtn" class="btn">+ Ajouter une série</button></div>
+  <div class="toolbar" style="margin-bottom:22px"><select id="seriesFilter" class="control"><option value="all">Toutes</option><option>À voir</option><option>En cours</option><option>Terminée</option><option>Abandonnée</option></select></div>
+  <div id="seriesGrid" class="grid"></div>
+</section>
+</main>
+
+<dialog id="authDialog"><div class="modal"><div class="modal-head"><h2>Connexion</h2><button class="ghost" data-close>✕</button></div><form id="authForm" class="form"><div><label>Adresse e-mail<input id="email" type="email" required></label></div><div><label>Mot de passe<input id="password" type="password" required minlength="6"></label></div><div id="authError" class="meta"></div><button class="btn">Se connecter</button></form></div></dialog>
+
+<dialog id="filmDialog"><div class="modal"><div class="modal-head"><h2>Ajouter un film</h2><button class="ghost" data-close>✕</button></div><form id="filmForm" class="form"><label>Titre<input name="title" required></label><div class="row"><label>Année<input name="year" type="number"></label><label>Rôle / crédit<input name="credit" placeholder="Acteur"></label></div><label>URL de l'affiche<input name="posterUrl" type="url"></label><button class="btn">Enregistrer</button></form></div></dialog>
+
+<dialog id="editionDialog"><div class="modal"><div class="modal-head"><h2>Ajouter une édition</h2><button class="ghost" data-close>✕</button></div><form id="editionForm" class="form"><input name="filmId" type="hidden"><label>Format<select name="format"><option>DVD</option><option>Blu-ray</option><option>4K UHD</option><option>VHS</option><option>Numérique</option><option>Autre</option></select></label><div class="row"><label>Pays<input name="country"></label><label>Éditeur<input name="publisher"></label></div><label>Édition / collection<input name="edition"></label><label>Commentaire<textarea name="notes"></textarea></label><button class="btn">Ajouter à ma collection</button></form></div></dialog>
+
+<dialog id="seriesDialog"><div class="modal"><div class="modal-head"><h2>Ajouter une série</h2><button class="ghost" data-close>✕</button></div><form id="seriesForm" class="form"><label>Titre<input name="title" required></label><label>URL de l'affiche<input name="posterUrl" type="url"></label><div class="row"><label>Statut<select name="status"><option>À voir</option><option>En cours</option><option>Terminée</option><option>Abandonnée</option></select></label><label>Plateforme<input name="platform"></label></div><div class="row"><label>Saison<input name="season" type="number" min="0"></label><label>Épisode<input name="episode" type="number" min="0"></label></div><label>Commentaire<textarea name="notes"></textarea></label><button class="btn">Enregistrer</button></form></div></dialog>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js";
+import { getFirestore, collection, getDocs, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCfdQGnMqH05NCUlzulMRknEfqU2u-DZ3g",
+  authDomain: "cinetrack-f1f99.firebaseapp.com",
+  projectId: "cinetrack-f1f99",
+  storageBucket: "cinetrack-f1f99.firebasestorage.app",
+  messagingSenderId: "49959541049",
+  appId: "1:49959541049:web:4718f59c05d604143c30e8"
+};
+const PRIMARY_ADMIN_UID = "gZk5yxqLN4felHFmMWEj9NPYhwj2";
+const app=initializeApp(firebaseConfig), auth=getAuth(app), db=getFirestore(app);
+let user=null, films=[], editions=[], series=[];
+
+const $=s=>document.querySelector(s), esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
+document.querySelectorAll("[data-close]").forEach(b=>b.onclick=()=>b.closest("dialog").close());
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll("main>section").forEach(x=>x.classList.add("hidden"));$("#page-"+b.dataset.page).classList.remove("hidden");document.querySelectorAll("nav button").forEach(x=>x.classList.remove("active"));b.classList.add("active")});
+
+$("#authBtn").onclick=()=> user?signOut(auth):$("#authDialog").showModal();
+$("#authForm").onsubmit=async e=>{e.preventDefault();$("#authError").textContent="";try{await signInWithEmailAndPassword(auth,$("#email").value,$("#password").value);$("#authDialog").close()}catch(err){$("#authError").textContent="Connexion impossible. Vérifiez vos identifiants."}};
+$("#addFilmBtn").onclick=()=>$("#filmDialog").showModal(); $("#addSeriesBtn").onclick=()=>user?$("#seriesDialog").showModal():$("#authDialog").showModal();
+
+onAuthStateChanged(auth,async u=>{user=u;$("#userLabel").textContent=u?u.email:"";$("#authBtn").textContent=u?"Déconnexion":"Connexion";$("#addFilmBtn").classList.toggle("hidden",u?.uid!==PRIMARY_ADMIN_UID);await loadAll()});
+
+async function loadAll(){
+  films=[];editions=[];series=[];
+  if(!user){renderAll();return}
+  try{
+    films=(await getDocs(collection(db,"films"))).docs.map(d=>({id:d.id,...d.data()}));
+    editions=(await getDocs(collection(db,"users",user.uid,"collection"))).docs.map(d=>({id:d.id,...d.data()}));
+    series=(await getDocs(collection(db,"users",user.uid,"series"))).docs.map(d=>({id:d.id,...d.data()}));
+  }catch(e){console.error(e)}
+  renderAll();
+}
+function poster(x){return x.posterUrl?`<img src="${esc(x.posterUrl)}" alt="">`:`<span>${esc(x.title)}</span>`}
+function renderFilms(){
+ const q=$("#filmSearch").value.toLowerCase(),f=$("#filmFilter").value,fmt=$("#formatFilter").value;
+ const data=films.filter(x=>{let ed=editions.filter(e=>e.filmId===x.id),owned=ed.length>0;return x.title?.toLowerCase().includes(q)&&(f==="all"||(f==="owned"&&owned)||(f==="missing"&&!owned))&&(!fmt||ed.some(e=>e.format===fmt))});
+ $("#filmGrid").innerHTML=data.length?data.map(x=>{let ed=editions.filter(e=>e.filmId===x.id);return `<article class="movie"><div class="poster">${poster(x)}</div><h3>${esc(x.title)}</h3><div class="meta">${esc(x.year||"")} ${x.credit?"· "+esc(x.credit):""}</div><div class="badges">${ed.length?ed.map(e=>`<span class="badge owned">${esc(e.format)}</span>`).join(""):`<span class="badge">Manquant</span>`}</div>${user?`<button class="ghost addEdition" data-id="${x.id}" style="margin-top:7px">+ édition</button>`:""}</article>`}).join(""):`<div class="empty">Aucun film à afficher.</div>`;
+ document.querySelectorAll(".addEdition").forEach(b=>b.onclick=()=>{$("#editionForm").filmId.value=b.dataset.id;$("#editionDialog").showModal()});
+}
+function renderSeries(){
+ const f=$("#seriesFilter").value,data=series.filter(x=>f==="all"||x.status===f);
+ $("#seriesGrid").innerHTML=data.length?data.map(x=>`<article class="movie"><div class="poster">${poster(x)}</div><h3>${esc(x.title)}</h3><div class="meta">${esc(x.status||"À voir")}${x.status==="En cours"&&x.season?` · S${esc(x.season)} E${esc(x.episode||0)}`:""}${x.platform?` · ${esc(x.platform)}`:""}</div></article>`).join(""):`<div class="empty">Aucune série dans cette catégorie.</div>`;
+}
+function renderAll(){renderFilms();renderSeries();let owned=new Set(editions.map(e=>e.filmId)).size;$("#statOwned").textContent=owned;$("#statTotal").textContent=films.length;$("#statSeries").textContent=series.length;let watching=series.filter(s=>s.status==="En cours");$("#statWatching").textContent=watching.length;let pct=films.length?Math.round(owned/films.length*100):0;$("#homeProgress").style.width=pct+"%";$("#homeProgressText").textContent=films.length?`${owned} sur ${films.length} films · ${pct}%`:"Le catalogue Jackie Chan sera chargé prochainement.";$("#watchingPreview").textContent=watching.length?watching.map(s=>s.title).join(" · "):"Aucune série en cours."}
+["filmSearch","filmFilter","formatFilter"].forEach(id=>$("#"+id).addEventListener(id==="filmSearch"?"input":"change",renderFilms));$("#seriesFilter").onchange=renderSeries;
+
+$("#filmForm").onsubmit=async e=>{e.preventDefault();if(user?.uid!==PRIMARY_ADMIN_UID)return;let v=Object.fromEntries(new FormData(e.target));v.year=v.year?Number(v.year):null;v.createdAt=serverTimestamp();await addDoc(collection(db,"films"),v);e.target.reset();$("#filmDialog").close();await loadAll()};
+$("#editionForm").onsubmit=async e=>{e.preventDefault();if(!user)return;let v=Object.fromEntries(new FormData(e.target));v.createdAt=serverTimestamp();await addDoc(collection(db,"users",user.uid,"collection"),v);e.target.reset();$("#editionDialog").close();await loadAll()};
+$("#seriesForm").onsubmit=async e=>{e.preventDefault();if(!user)return;let v=Object.fromEntries(new FormData(e.target));v.season=v.season?Number(v.season):null;v.episode=v.episode?Number(v.episode):null;v.createdAt=serverTimestamp();await addDoc(collection(db,"users",user.uid,"series"),v);e.target.reset();$("#seriesDialog").close();await loadAll()};
+</script>
+</body>
+</html>
