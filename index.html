@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#0b0c10">
+  <meta name="theme-color" content="#f7f7f5">
   <title>CineTrack — Collection & Watchlist</title>
   <style>
     :root{--bg:#090a0d;--panel:#12141a;--panel2:#191c23;--text:#f5f5f5;--muted:#9ba1ad;--line:#282c36;--accent:#d6aa55;--danger:#df5d5d;--ok:#62c48d;--warn:#dfb45d}
@@ -50,6 +50,77 @@
     .catalog-footnote{margin-top:14px;color:#747b88;font-size:11px;text-align:center;line-height:1.6}
     @media(max-width:900px){.top{height:auto;padding:13px 0;flex-wrap:wrap}.brand{flex:1}nav{order:3;width:100%;overflow:auto}.account span{display:none}.stats{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.shell{padding:0 15px}.details-grid{grid-template-columns:1fr}.detail.wide{grid-column:auto}}
     @media(max-width:560px){main{padding-top:26px}.row,.row.three{grid-template-columns:1fr}.stats{gap:9px}.card{padding:16px}.stat strong{font-size:25px}.toolbar .control{width:100%}.control.search{min-width:0}.form-actions{flex-wrap:wrap}.form-actions .danger{margin-right:0}.modal{padding:18px}}
+
+    /* Identité « Galerie 24 » */
+    :root{color-scheme:light;--bg:#f4f5f4;--panel:#fff;--panel2:#eceeef;--text:#111315;--muted:#70757a;--line:#d8dbde;--accent:#173b91;--danger:#b33a3a;--ok:#14705b;--warn:#9a6818;--silver:#b9bec3;--jackie:#08a9e6;--jackie-dark:#007eae}
+    body{background:linear-gradient(180deg,#fff 0,#f3f4f3 100%);color:var(--text)}
+    header{background:rgba(255,255,255,.96);border-color:#dfe1e3;box-shadow:0 8px 28px rgba(21,28,35,.055)}
+    .brand{display:flex;align-items:center;gap:9px;color:#111315;font-family:Inter,ui-sans-serif,system-ui,sans-serif;font-size:22px;font-weight:800;letter-spacing:-1px}
+    .brand:before{content:"C";display:grid;place-items:center;width:28px;height:28px;border:1.5px solid #111315;border-radius:50%;font-family:"Bodoni MT",Didot,Georgia,serif;font-size:17px;font-weight:500}
+    .brand b{color:#173b91}
+    nav button,.ghost{color:#656a6f;border-radius:3px}
+    nav button.active,nav button:hover{color:#fff;background:#111315}
+    .ghost:hover{color:#173b91;background:#edf1fa}
+    .account{color:#40454a}.btn{background:#173b91;color:#fff;border-radius:3px;box-shadow:none;text-transform:uppercase;letter-spacing:.055em;font-size:12px}
+    .btn:hover{background:#102b6d}.btn.secondary{background:#fff;color:#17191b;border-color:#cfd3d7;box-shadow:none}.btn.secondary:hover{background:#eceeef}
+    .btn.danger{background:#fff;color:#a42e2e;border-color:#d8a0a0;box-shadow:none}.icon-btn{background:#fff;color:#17191b;border-color:#d3d6d9;border-radius:3px}
+    main{position:relative}.eyebrow{color:#173b91;letter-spacing:2.2px}
+    h1,h2,.details-title,.movie h3{font-family:"Bodoni MT",Didot,Georgia,"Times New Roman",serif;color:#111315}
+    h1{font-weight:500;letter-spacing:-1.6px}.lead{color:#666c71}
+    .hero{position:relative}.hero:after{content:"";display:block;width:92px;height:2px;margin-top:29px;background:#173b91}
+    .card{background:#fff;border-color:#dfe1e3;border-radius:5px;box-shadow:0 14px 35px rgba(15,24,32,.055)}
+    .stat{position:relative;overflow:hidden}.stat:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:#111315}.stat:nth-child(2):before,.stat:nth-child(5):before{background:#173b91}
+    .stat strong{color:#111315;font-family:"Bodoni MT",Didot,Georgia,serif;font-weight:500}.stat span,.meta{color:#70757a}.split .card:first-child{border-top:3px solid #111315}
+    .split .card:last-child{border-top:3px solid #173b91}
+    .control{background:#fff;border-color:#cfd3d7;color:#1d2023;border-radius:3px;box-shadow:none}
+    .control:focus,.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid rgba(23,59,145,.16);border-color:#173b91}
+    .summary-line{color:#70757a}.poster{background:linear-gradient(145deg,#eceeef,#d9dde0);color:#6c7278;border-radius:3px}
+    .badge{border-color:#d0d4d7;color:#555b60;background:#fff;border-radius:2px}.badge.owned{border-color:#173b91;color:#173b91;background:#eef2fc}
+    .badge.progression{border-color:#86b4a8;color:#17644f;background:#e9f4f0}.badge.technical{border-color:#c7cbce;color:#62686d;background:#f0f1f2}
+    .badge.upcoming{border-color:#d2af71;color:#805817;background:#fff4de}
+    .notice{border-color:#d8bf84;background:#fff8e8;color:#77591e;border-radius:3px}.notice.error{border-color:#dba7a7;background:#fff0ee;color:#933838}
+    .progress{background:#e1e4e7}.progress i{background:#173b91}
+    .table-wrap{border-color:#d5d8db;background:#fff;border-radius:4px;box-shadow:0 16px 38px rgba(17,25,32,.055)}
+    thead{background:#eff1f2}th{color:#555b60;border-color:#d1d5d8}td{border-color:#e3e5e7;color:#292d30}
+    tbody tr:nth-child(even){background:#fafbfb}tbody tr:hover{background:#f0f4fc}tr.technical-row{opacity:.82}
+    .year-cell{color:#173b91;font-weight:800}.film-title{font-family:Inter,ui-sans-serif,system-ui,sans-serif;color:#111315}.film-title:hover{color:#173b91}.film-subtitle,.role-cell{color:#6c7277}
+    dialog{background:#fff;color:#111315;border-color:#d5d8db;border-radius:5px;box-shadow:0 34px 100px rgba(18,26,34,.26)}
+    dialog::backdrop{background:rgba(16,20,24,.55);backdrop-filter:blur(3px)}
+    .form label{color:#666c71}.form input,.form select,.form textarea{background:#fff;border-color:#d3d6d9;color:#16191c;border-radius:3px}
+    .check-row{color:#17191b!important}.detail{background:#f7f8f8;border-color:#d9dcdf;border-radius:3px}.detail b{color:#173b91}.detail span{color:#292d30}
+    .source-links a{border-color:#d0d4d7;color:#173b91;background:#fff;border-radius:3px}.source-links a:hover{border-color:#173b91;color:#102b6d;background:#eff3fc}
+    .edition-item{background:#f8f9f9;border-color:#d8dbde;border-radius:3px}.edition-item strong{color:#173b91}.empty{border-color:#cfd3d6;color:#6c7277;background:#fafbfb;border-radius:3px}
+    .catalog-footnote{color:#74797d}
+    ::selection{background:#cfe8fa;color:#071e2b}
+
+    /* Collection Jackie Chan — esprit éditeur collector */
+    #page-jackie{--accent:var(--jackie)}
+    .jackie-hero{position:relative;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(370px,.8fr);gap:42px;align-items:center;padding:34px 0 30px;border-top:7px solid #111315;border-bottom:1px solid #cfd3d6}
+    .jackie-kicker{display:flex;align-items:center;gap:11px;margin-bottom:14px;color:#5c6267;font-size:10px;font-weight:850;letter-spacing:2.4px;text-transform:uppercase}
+    .jackie-kicker:before{content:"01";display:grid;place-items:center;width:31px;height:31px;background:var(--jackie);color:#fff;font-size:11px;letter-spacing:0}
+    .jackie-title-line{display:flex;align-items:center;gap:25px}.jackie-title-line h1{margin:0;font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:clamp(66px,8vw,112px);font-weight:900;line-height:.86;letter-spacing:-2.8px;text-transform:uppercase}
+    .jackie-chinese{color:var(--jackie);font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;font-size:clamp(34px,4vw,58px);font-weight:900;line-height:.82}
+    .jackie-intro{max-width:700px;margin:22px 0 0;color:#646a6f;font-size:14px;line-height:1.65}
+    .jackie-dashboard{display:grid;grid-template-columns:.68fr 1.32fr;gap:26px;align-items:stretch;border-left:1px solid #d2d5d8;padding-left:38px}
+    .jackie-total{display:flex;flex-direction:column;justify-content:center;text-align:center;border-right:1px solid #d2d5d8;padding-right:26px}.jackie-total strong{color:var(--jackie);font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:64px;line-height:1}.jackie-total span{font-size:11px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase}
+    .jackie-personal{display:flex;flex-direction:column;justify-content:center;gap:8px}.jackie-personal-label{font-size:10px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase}.jackie-personal strong{font-size:25px}.jackie-personal strong span:first-child{color:var(--jackie)}
+    .jackie-progress{height:5px;background:#dfe3e6;overflow:hidden}.jackie-progress i{display:block;width:0;height:100%;background:var(--jackie);transition:width .25s}.jackie-percent{color:var(--jackie);font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:38px;line-height:1}
+    .jackie-command{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:15px 0}.jackie-command-label{display:flex;align-items:center;gap:12px;color:#111315;font-size:11px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase}.jackie-command-label:before{content:"";width:42px;height:3px;background:var(--jackie)}
+    #page-jackie .btn{background:var(--jackie);color:#06222d}#page-jackie .btn:hover{background:#0798ce}#page-jackie .btn.secondary{background:#fff;color:#15181a;border-color:#bfc4c8}#page-jackie .btn.secondary:hover{border-color:var(--jackie);color:var(--jackie-dark)}
+    #page-jackie .toolbar{display:grid;grid-template-columns:minmax(290px,1fr) auto auto auto auto;gap:0;border-top:1px solid #cfd3d6;border-bottom:1px solid #cfd3d6;background:#fff}
+    #page-jackie .toolbar .control,#page-jackie .toolbar .btn{min-height:48px;border-width:0 1px 0 0;border-color:#d7dade;border-radius:0;box-shadow:none}#page-jackie .toolbar .btn{border-right:0}
+    #page-jackie .control:focus{outline:2px solid rgba(8,169,230,.2);outline-offset:-2px;border-color:var(--jackie)}
+    #page-jackie .summary-line{margin:13px 0 11px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+    #page-jackie .table-wrap{border-radius:0;border-left:7px solid var(--jackie);box-shadow:0 18px 42px rgba(13,23,31,.06)}
+    #page-jackie table{min-width:1110px}#page-jackie thead{background:#111315}#page-jackie th{height:43px;color:#fff;border-color:#111315;letter-spacing:1.5px}
+    #page-jackie td{padding-top:15px;padding-bottom:15px}#page-jackie tbody tr:nth-child(even){background:#f7f9fa}#page-jackie tbody tr:hover{background:#eaf8fd}
+    .collector-no{width:58px;color:var(--jackie-dark);font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:16px;letter-spacing:.06em}.collector-no:before{content:"#";color:#8a9196;font-size:10px;margin-right:2px}
+    #page-jackie .year-cell{color:#111315;font-family:"Arial Narrow",Arial,sans-serif;font-size:14px;font-weight:900}.jackie-page .film-title{font-family:"Arial Narrow",Arial,sans-serif;font-size:15px;font-weight:900;letter-spacing:.015em;text-transform:uppercase}.jackie-page .film-title:hover{color:var(--jackie-dark)}
+    #page-jackie .badge{border-radius:2px;text-transform:uppercase;letter-spacing:.04em}#page-jackie .badge.owned{border-color:var(--jackie);color:#007ba9;background:#eaf9ff}#page-jackie .badge.progression{border-color:#78af9f;color:#12614b;background:#ebf6f2}#page-jackie .badge.technical{border-color:#c5c9cc;color:#60666b;background:#f1f2f3}
+    #page-jackie .row-actions .ghost{padding:6px 8px;color:#4f555a;border:1px solid transparent;border-radius:2px;font-size:10px;font-weight:800;text-transform:uppercase}#page-jackie .row-actions .ghost:hover{color:#007ba9;border-color:#8ed9f3;background:#f2fbfe}
+    #page-jackie .catalog-footnote{border-top:1px solid #d4d7da;padding-top:16px;text-transform:uppercase;letter-spacing:.08em}
+    @media(max-width:1050px){.jackie-hero{grid-template-columns:1fr}.jackie-dashboard{border-left:0;border-top:1px solid #d2d5d8;padding:24px 0 0}.jackie-total{text-align:left;align-items:flex-start}.jackie-personal{max-width:430px}#page-jackie .toolbar{grid-template-columns:1fr 1fr}.control.search{grid-column:1/-1}#page-jackie .toolbar .control,#page-jackie .toolbar .btn{border-bottom:1px solid #d7dade}}
+    @media(max-width:560px){.jackie-hero{padding-top:24px;gap:28px}.jackie-title-line{align-items:flex-start;gap:14px}.jackie-title-line h1{font-size:56px}.jackie-chinese{font-size:31px}.jackie-dashboard{grid-template-columns:90px 1fr;gap:16px}.jackie-total{padding-right:14px}.jackie-total strong{font-size:46px}.jackie-percent{font-size:30px}.jackie-command{align-items:flex-start;flex-direction:column}#page-jackie .toolbar{display:flex}.collector-no{width:46px}}
   </style>
 </head>
 <body>
@@ -80,9 +151,25 @@
   </div>
 </section>
 
-<section id="page-jackie" class="hidden">
-  <div class="section-head">
-    <div><div class="eyebrow">Collection</div><h1 style="font-size:42px">Jackie Chan</h1><p class="lead">191 œuvres et crédits classés chronologiquement, avec titres multilingues, rôles, statut et éditions personnelles.</p></div>
+<section id="page-jackie" class="hidden jackie-page">
+  <div class="jackie-hero">
+    <div>
+      <div class="jackie-kicker">CineTrack · Collection privée</div>
+      <div class="jackie-title-line"><h1>Jackie Chan</h1><span class="jackie-chinese" lang="zh-Hant">成<br>龍</span></div>
+      <p class="jackie-intro">191 œuvres et crédits classés chronologiquement. Une archive personnelle pour suivre les rôles, les restaurations et chaque édition physique de la collection.</p>
+    </div>
+    <div class="jackie-dashboard">
+      <div class="jackie-total"><strong id="jackieCatalogTotal">191</strong><span>Œuvres</span></div>
+      <div class="jackie-personal">
+        <span class="jackie-personal-label">Ma collection</span>
+        <strong><span id="jackieOwnedCount">0</span> / <span id="jackieProgressTotal">154</span></strong>
+        <div id="jackieProgressTrack" class="jackie-progress" role="progressbar" aria-label="Progression de la collection" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="jackieProgress"></i></div>
+        <span id="jackiePercent" class="jackie-percent">0%</span>
+      </div>
+    </div>
+  </div>
+  <div class="jackie-command">
+    <div class="jackie-command-label">Archives Hong Kong · Éditions DVD, Blu-ray et 4K</div>
     <div class="actions"><button id="addFilmBtn" class="btn hidden">+ Ajouter un film</button></div>
   </div>
   <div id="catalogNotice" class="notice hidden"></div>
@@ -96,7 +183,7 @@
   <div class="summary-line"><span id="filmSummary">Chargement de la filmographie…</span><span>Données arrêtées au 27 août 2026</span></div>
   <div class="table-wrap">
     <table>
-      <thead><tr><th>Année</th><th>Œuvre</th><th>Participation</th><th>Rôle / crédit</th><th>Statut</th><th>Ma collection</th></tr></thead>
+      <thead><tr><th>N°</th><th>Année</th><th>Œuvre</th><th>Participation</th><th>Rôle / crédit</th><th>Statut</th><th>Ma collection</th></tr></thead>
       <tbody id="filmRows"></tbody>
     </table>
   </div>
@@ -268,7 +355,7 @@ function renderFilms(){
     return sortAscending?result:-result;
   });
   $("#filmSummary").textContent=data.length+" résultat"+(data.length>1?"s":"")+" · "+films.length+" crédits au catalogue";
-  $("#filmRows").innerHTML=data.length?data.map(renderFilmRow).join(""):'<tr><td colspan="6"><div class="empty">Aucun film ne correspond à ces filtres.</div></td></tr>';
+  $("#filmRows").innerHTML=data.length?data.map(renderFilmRow).join(""):'<tr><td colspan="7"><div class="empty">Aucun film ne correspond à ces filtres.</div></td></tr>';
   document.querySelectorAll(".film-title,.details-film").forEach(function(button){button.onclick=function(){openFilmDetails(button.dataset.id)}});
   document.querySelectorAll(".add-edition").forEach(function(button){button.onclick=function(){openEditionDialog(button.dataset.id)}});
   document.querySelectorAll(".edit-film").forEach(function(button){button.onclick=function(){openFilmEditor(films.find(function(film){return film.id===button.dataset.id}))}});
@@ -283,6 +370,7 @@ function renderFilmRow(film){
   const adminAction=isAdmin()?'<button class="ghost small edit-film" data-id="'+esc(film.id)+'">Modifier</button>':"";
   const addAction=user?'<button class="ghost small add-edition" data-id="'+esc(film.id)+'">+ édition</button>':'<button class="ghost small" data-login>Connexion</button>';
   return '<tr class="'+(film.countsTowardProgress?"":"technical-row")+'">'+
+    '<td class="collector-no">'+esc(film.sourceOrder===9999?"—":String(film.sourceOrder).padStart(3,"0"))+'</td>'+
     '<td class="year-cell">'+esc(film.year||"—")+'</td>'+
     '<td class="title-cell"><button class="film-title" data-id="'+esc(film.id)+'">'+esc(displayedTitle(film))+'</button><span class="film-subtitle">'+esc(secondaryTitle(film))+'</span></td>'+
     '<td><span class="badge '+participationClass+'">'+esc(film.participation)+'</span></td>'+
@@ -320,6 +408,12 @@ function renderAll(){
   $("#scopeFilter").options[2].textContent="Crédits techniques · "+technicalFilms.length;
   $("#homeProgress").style.width=percent+"%";
   $("#homeProgressText").textContent=ownedProgress+" sur "+progressFilms.length+" films · "+percent+"%";
+  $("#jackieCatalogTotal").textContent=films.length;
+  $("#jackieOwnedCount").textContent=ownedProgress;
+  $("#jackieProgressTotal").textContent=progressFilms.length;
+  $("#jackieProgress").style.width=percent+"%";
+  $("#jackieProgressTrack").setAttribute("aria-valuenow",String(percent));
+  $("#jackiePercent").textContent=percent+"%";
   $("#watchingPreview").textContent=watching.length?watching.map(function(item){return item.title}).join(" · "):"Aucune série en cours.";
 }
 
