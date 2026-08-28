@@ -17,7 +17,7 @@
     nav button.active,nav button:hover,.ghost:hover{color:#fff;background:var(--panel2)}.account{display:flex;gap:8px;align-items:center}
     .btn{border:1px solid transparent;background:var(--accent);color:#16130c;font-weight:800;padding:10px 15px;border-radius:10px}
     .btn.secondary{background:var(--panel2);color:#fff;border-color:var(--line)}.btn.danger{background:transparent;color:#f19a9a;border-color:#633}
-    .btn.small{padding:7px 10px;font-size:12px}.icon-btn{border:1px solid var(--line);background:var(--panel2);color:#fff;border-radius:9px;padding:7px 10px}
+    .btn.small{padding:7px 10px;font-size:12px}.btn:disabled{cursor:wait;opacity:.65}.icon-btn{border:1px solid var(--line);background:var(--panel2);color:#fff;border-radius:9px;padding:7px 10px}
     main{padding:42px 0 70px}.eyebrow{color:var(--accent);font-weight:800;text-transform:uppercase;font-size:12px;letter-spacing:1.5px}
     h1{font-size:clamp(34px,5vw,62px);line-height:1;margin:8px 0 14px;letter-spacing:-2px}h2{font-size:28px;margin:0 0 20px}.lead{color:var(--muted);max-width:760px;font-size:17px;line-height:1.6}
     .hero{padding:34px 0 40px}.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:28px 0}
@@ -33,7 +33,7 @@
     .empty{border:1px dashed var(--line);padding:30px;border-radius:14px;text-align:center;color:var(--muted)}.progress{height:7px;background:#262a32;border-radius:10px;overflow:hidden;margin-top:10px}.progress i{display:block;height:100%;background:var(--accent);transition:width .25s}
     .notice{padding:11px 14px;border:1px solid #594b2e;background:#1d1911;color:#dec58e;border-radius:10px;font-size:13px;margin-bottom:18px}.notice.error{border-color:#653b3b;background:#211313;color:#f1a4a4}
     .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:15px;background:rgba(18,20,26,.78)}
-    table{width:100%;min-width:1030px;border-collapse:collapse}thead{background:#151820;position:sticky;top:72px;z-index:4}
+    table{width:100%;min-width:1030px;border-collapse:collapse}thead{background:#151820;position:sticky;top:0;z-index:4}
     th{padding:12px 13px;text-align:left;color:var(--muted);font-size:10px;letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid var(--line)}
     td{padding:13px;border-bottom:1px solid #20232b;vertical-align:top;font-size:13px}tbody tr:hover{background:#171920}tbody tr:last-child td{border-bottom:0}
     tr.technical-row{opacity:.76}.year-cell{font-variant-numeric:tabular-nums;color:#c8ccd4;width:70px}.title-cell{min-width:300px}
@@ -41,14 +41,14 @@
     .film-subtitle{display:block;margin-top:3px;color:var(--muted);font-size:11px;line-height:1.4}.role-cell{max-width:210px;color:#b9bec8}.collection-cell{min-width:190px}.row-actions{display:flex;gap:5px;margin-top:6px}
     dialog{width:min(700px,calc(100% - 30px));max-height:calc(100vh - 30px);overflow:auto;background:var(--panel);color:#fff;border:1px solid var(--line);border-radius:18px;padding:0;box-shadow:0 30px 100px #000}
     dialog::backdrop{background:#000c}.modal{padding:24px}.modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}.modal-head h2{margin:0}.form{display:grid;gap:12px;margin-top:18px}.form label{font-size:12px;color:var(--muted)}
-    .form input,.form select,.form textarea{width:100%;margin-top:5px;background:#0c0e12;border:1px solid var(--line);border-radius:9px;padding:11px;color:#fff}.form textarea{min-height:86px;resize:vertical}
+    .form input,.form select,.form textarea{width:100%;margin-top:5px;background:#0c0e12;border:1px solid var(--line);border-radius:9px;padding:11px;color:#fff}.form textarea{min-height:86px;resize:vertical}.form-error{min-height:20px;color:#f1a4a4}
     .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.row.three{grid-template-columns:repeat(3,1fr)}.check-row{display:flex;align-items:center;gap:8px;color:#fff!important}.check-row input{width:auto;margin:0}
     .form-actions{display:flex;gap:9px;justify-content:flex-end;align-items:center;margin-top:6px}.form-actions .danger{margin-right:auto}
     .details-title{font-size:26px;font-weight:900;line-height:1.15;margin:6px 0}.details-subtitle{color:var(--muted);line-height:1.5}.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}.detail{padding:12px;border:1px solid var(--line);border-radius:11px;background:#0e1015}.detail.wide{grid-column:1/-1}.detail b{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}.detail span{font-size:13px;line-height:1.5}
     .source-links{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0}.source-links a{font-size:12px;text-decoration:none;border:1px solid var(--line);padding:7px 10px;border-radius:9px;color:#d8dce4}.source-links a:hover{border-color:#6e5a30;color:#e8c67e}
     .edition-list{display:grid;gap:8px;margin-top:10px}.edition-item{display:flex;justify-content:space-between;gap:12px;border:1px solid var(--line);border-radius:11px;padding:11px;background:#0d0f13}.edition-item strong{font-size:13px}.edition-item .meta{font-size:11px}
     .catalog-footnote{margin-top:14px;color:#747b88;font-size:11px;text-align:center;line-height:1.6}
-    @media(max-width:900px){.top{height:auto;padding:13px 0;flex-wrap:wrap}.brand{flex:1}nav{order:3;width:100%;overflow:auto}.account span{display:none}.stats{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.shell{padding:0 15px}thead{top:121px}.details-grid{grid-template-columns:1fr}.detail.wide{grid-column:auto}}
+    @media(max-width:900px){.top{height:auto;padding:13px 0;flex-wrap:wrap}.brand{flex:1}nav{order:3;width:100%;overflow:auto}.account span{display:none}.stats{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.shell{padding:0 15px}.details-grid{grid-template-columns:1fr}.detail.wide{grid-column:auto}}
     @media(max-width:560px){main{padding-top:26px}.row,.row.three{grid-template-columns:1fr}.stats{gap:9px}.card{padding:16px}.stat strong{font-size:25px}.toolbar .control{width:100%}.control.search{min-width:0}.form-actions{flex-wrap:wrap}.form-actions .danger{margin-right:0}.modal{padding:18px}}
   </style>
 </head>
@@ -126,9 +126,9 @@
   <div class="form-actions"><button id="deleteFilmBtn" type="button" class="btn danger hidden">Supprimer</button><button type="button" class="btn secondary" data-close>Annuler</button><button class="btn">Enregistrer</button></div>
 </form></div></dialog>
 
-<dialog id="editionDialog"><div class="modal"><div class="modal-head"><h2>Ajouter une édition</h2><button class="ghost" data-close>✕</button></div><form id="editionForm" class="form"><input name="filmId" type="hidden"><label>Format<select name="format"><option>DVD</option><option>Blu-ray</option><option>4K UHD</option><option>VHS</option><option>Numérique</option><option>Autre</option></select></label><div class="row"><label>Pays<input name="country"></label><label>Éditeur<input name="publisher"></label></div><label>Édition / collection<input name="edition"></label><label>Commentaire<textarea name="notes"></textarea></label><div class="form-actions"><button type="button" class="btn secondary" data-close>Annuler</button><button class="btn">Ajouter à ma collection</button></div></form></div></dialog>
+<dialog id="editionDialog"><div class="modal"><div class="modal-head"><h2>Ajouter une édition</h2><button class="ghost" data-close>✕</button></div><form id="editionForm" class="form"><input name="filmId" type="hidden"><label>Format<select name="format"><option>DVD</option><option>Blu-ray</option><option>4K UHD</option><option>VHS</option><option>Numérique</option><option>Autre</option></select></label><div class="row"><label>Pays<input name="country"></label><label>Éditeur<input name="publisher"></label></div><label>Édition / collection<input name="edition"></label><label>Commentaire<textarea name="notes"></textarea></label><div id="editionError" class="meta form-error" role="alert"></div><div class="form-actions"><button type="button" class="btn secondary" data-close>Annuler</button><button id="editionSubmitBtn" class="btn">Ajouter à ma collection</button></div></form></div></dialog>
 
-<dialog id="seriesDialog"><div class="modal"><div class="modal-head"><h2>Ajouter une série</h2><button class="ghost" data-close>✕</button></div><form id="seriesForm" class="form"><label>Titre<input name="title" required></label><label>URL de l’affiche<input name="posterUrl" type="url"></label><div class="row"><label>Statut<select name="status"><option>À voir</option><option>En cours</option><option>Terminée</option><option>Abandonnée</option></select></label><label>Plateforme<input name="platform"></label></div><div class="row"><label>Saison<input name="season" type="number" min="0"></label><label>Épisode<input name="episode" type="number" min="0"></label></div><label>Commentaire<textarea name="notes"></textarea></label><div class="form-actions"><button type="button" class="btn secondary" data-close>Annuler</button><button class="btn">Enregistrer</button></div></form></div></dialog>
+<dialog id="seriesDialog"><div class="modal"><div class="modal-head"><h2>Ajouter une série</h2><button class="ghost" data-close>✕</button></div><form id="seriesForm" class="form"><label>Titre<input name="title" required></label><label>URL de l’affiche<input name="posterUrl" type="url"></label><div class="row"><label>Statut<select name="status"><option>À voir</option><option>En cours</option><option>Terminée</option><option>Abandonnée</option></select></label><label>Plateforme<input name="platform"></label></div><div class="row"><label>Saison<input name="season" type="number" min="0"></label><label>Épisode<input name="episode" type="number" min="0"></label></div><label>Commentaire<textarea name="notes"></textarea></label><div id="seriesError" class="meta form-error" role="alert"></div><div class="form-actions"><button type="button" class="btn secondary" data-close>Annuler</button><button id="seriesSubmitBtn" class="btn">Enregistrer</button></div></form></div></dialog>
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
@@ -161,7 +161,8 @@ function normalizeFilm(raw,id){
   film.id=id||film.id;
   film.titleFr=film.titleFr||film.title||null;
   film.titleEn=film.titleEn||film.title||film.titleFr||"Sans titre";
-  film.year=Number(film.year)||0;
+  const parsedYear=Number(film.year);
+  film.year=parsedYear>0?parsedYear:null;
   film.status=film.status||"Sorti";
   film.participation=film.participation||film.credit||"Acteur";
   film.role=film.role||null;
@@ -178,7 +179,13 @@ function mergeCatalog(remoteDocs){
     return normalizeFilm(remote?Object.assign({},base,remote):base,base.id);
   });
   remoteMap.forEach(function(remote){merged.push(normalizeFilm(remote,remote.id))});
-  return merged.filter(function(film){return !film.deleted}).sort(function(a,b){return a.year-b.year||a.sourceOrder-b.sourceOrder||a.titleEn.localeCompare(b.titleEn,"fr")});
+  return merged.filter(function(film){return !film.deleted}).sort(compareFilms);
+}
+
+function compareFilms(a,b){
+  if(a.year==null&&b.year!=null)return 1;
+  if(a.year!=null&&b.year==null)return -1;
+  return (a.year||0)-(b.year||0)||a.sourceOrder-b.sourceOrder||a.titleEn.localeCompare(b.titleEn,"fr");
 }
 
 document.querySelectorAll("[data-close]").forEach(function(button){button.onclick=function(){button.closest("dialog").close()}});
@@ -254,7 +261,12 @@ function renderFilms(){
     }
     return true;
   });
-  data.sort(function(a,b){const result=a.year-b.year||a.sourceOrder-b.sourceOrder;return sortAscending?result:-result});
+  data.sort(function(a,b){
+    if(a.year==null&&b.year!=null)return 1;
+    if(a.year!=null&&b.year==null)return -1;
+    const result=compareFilms(a,b);
+    return sortAscending?result:-result;
+  });
   $("#filmSummary").textContent=data.length+" résultat"+(data.length>1?"s":"")+" · "+films.length+" crédits au catalogue";
   $("#filmRows").innerHTML=data.length?data.map(renderFilmRow).join(""):'<tr><td colspan="6"><div class="empty">Aucun film ne correspond à ces filtres.</div></td></tr>';
   document.querySelectorAll(".film-title,.details-film").forEach(function(button){button.onclick=function(){openFilmDetails(button.dataset.id)}});
@@ -362,7 +374,12 @@ $("#detailsEditBtn").onclick=function(){
 
 function openEditionDialog(filmId){
   if(!user){$("#authDialog").showModal();return}
-  $("#editionForm").reset();$("#editionForm").elements.filmId.value=filmId;$("#editionDialog").showModal();
+  $("#editionForm").reset();
+  $("#editionForm").elements.filmId.value=filmId;
+  $("#editionError").textContent="";
+  $("#editionSubmitBtn").disabled=false;
+  $("#editionSubmitBtn").textContent="Ajouter à ma collection";
+  $("#editionDialog").showModal();
 }
 
 async function removeEdition(editionId){
@@ -414,20 +431,40 @@ $("#deleteFilmBtn").onclick=async function(){
 
 $("#editionForm").onsubmit=async function(event){
   event.preventDefault();if(!user)return;
-  const data=Object.fromEntries(new FormData(event.currentTarget));
+  const form=event.currentTarget,submit=$("#editionSubmitBtn");
+  const data=Object.fromEntries(new FormData(form));
   data.createdAt=serverTimestamp();
-  await addDoc(collection(db,"users",user.uid,"collection"),data);
-  event.currentTarget.reset();$("#editionDialog").close();await loadAll();
+  $("#editionError").textContent="";
+  submit.disabled=true;submit.textContent="Enregistrement…";
+  try{
+    await addDoc(collection(db,"users",user.uid,"collection"),data);
+    form.reset();$("#editionDialog").close();await loadAll();
+  }catch(error){
+    console.error(error);
+    $("#editionError").textContent=error&&error.code==="permission-denied"?"Enregistrement refusé par les règles Firestore. Vérifiez que les règles fournies sont bien publiées.":"Impossible d’enregistrer cette édition. Vérifiez votre connexion puis réessayez.";
+  }finally{
+    submit.disabled=false;submit.textContent="Ajouter à ma collection";
+  }
 };
 
 $("#seriesForm").onsubmit=async function(event){
   event.preventDefault();if(!user)return;
-  const data=Object.fromEntries(new FormData(event.currentTarget));
+  const form=event.currentTarget,submit=$("#seriesSubmitBtn");
+  const data=Object.fromEntries(new FormData(form));
   data.season=data.season?Number(data.season):null;
   data.episode=data.episode?Number(data.episode):null;
   data.createdAt=serverTimestamp();
-  await addDoc(collection(db,"users",user.uid,"series"),data);
-  event.currentTarget.reset();$("#seriesDialog").close();await loadAll();
+  $("#seriesError").textContent="";
+  submit.disabled=true;submit.textContent="Enregistrement…";
+  try{
+    await addDoc(collection(db,"users",user.uid,"series"),data);
+    form.reset();$("#seriesDialog").close();await loadAll();
+  }catch(error){
+    console.error(error);
+    $("#seriesError").textContent="Impossible d’enregistrer cette série. Vérifiez votre connexion puis réessayez.";
+  }finally{
+    submit.disabled=false;submit.textContent="Enregistrer";
+  }
 };
 
 ["filmSearch","scopeFilter","filmFilter","formatFilter"].forEach(function(id){$("#"+id).addEventListener(id==="filmSearch"?"input":"change",renderFilms)});
