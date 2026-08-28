@@ -356,10 +356,7 @@ function renderFilms(){
   });
   $("#filmSummary").textContent=data.length+" résultat"+(data.length>1?"s":"")+" · "+films.length+" crédits au catalogue";
   $("#filmRows").innerHTML=data.length?data.map(renderFilmRow).join(""):'<tr><td colspan="7"><div class="empty">Aucun film ne correspond à ces filtres.</div></td></tr>';
-  document.querySelectorAll(".film-title,.details-film").forEach(function(button){button.onclick=function(){openFilmDetails(button.dataset.id)}});
-  document.querySelectorAll(".add-edition").forEach(function(button){button.onclick=function(){openEditionDialog(button.dataset.id)}});
-  document.querySelectorAll(".edit-film").forEach(function(button){button.onclick=function(){openFilmEditor(films.find(function(film){return film.id===button.dataset.id}))}});
-  document.querySelectorAll("[data-login]").forEach(function(button){button.onclick=function(){$("#authDialog").showModal()}});
+  document.querySelectorAll(".film-title").forEach(function(button){button.onclick=function(){openFilmDetails(button.dataset.id)}});
 }
 
 function renderFilmRow(film){
@@ -367,8 +364,6 @@ function renderFilmRow(film){
   const editionBadges=filmEditions.length?filmEditions.map(function(edition){return '<span class="badge owned">'+esc(edition.format)+'</span>'}).join(""):'<span class="badge">Manquant</span>';
   const participationClass=film.countsTowardProgress?"progression":"technical";
   const statusClass=film.status==="Sorti"?"":" upcoming";
-  const adminAction=isAdmin()?'<button class="ghost small edit-film" data-id="'+esc(film.id)+'">Modifier</button>':"";
-  const addAction=user?'<button class="ghost small add-edition" data-id="'+esc(film.id)+'">+ édition</button>':'<button class="ghost small" data-login>Connexion</button>';
   return '<tr class="'+(film.countsTowardProgress?"":"technical-row")+'">'+
     '<td class="collector-no">'+esc(film.sourceOrder===9999?"—":String(film.sourceOrder).padStart(3,"0"))+'</td>'+
     '<td class="year-cell">'+esc(film.year||"—")+'</td>'+
@@ -376,7 +371,7 @@ function renderFilmRow(film){
     '<td><span class="badge '+participationClass+'">'+esc(film.participation)+'</span></td>'+
     '<td class="role-cell">'+esc(text(film.role))+'</td>'+
     '<td><span class="badge'+statusClass+'">'+esc(film.status)+'</span></td>'+
-    '<td class="collection-cell"><div class="badges">'+editionBadges+'</div><div class="row-actions"><button class="ghost small details-film" data-id="'+esc(film.id)+'">Détails</button>'+addAction+adminAction+'</div></td>'+
+    '<td class="collection-cell"><div class="badges">'+editionBadges+'</div></td>'+
   '</tr>';
 }
 
