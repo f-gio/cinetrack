@@ -46,7 +46,7 @@
     .form-actions{display:flex;gap:9px;justify-content:flex-end;align-items:center;margin-top:6px}.form-actions .danger{margin-right:auto}
     .details-title{font-size:26px;font-weight:900;line-height:1.15;margin:6px 0}.details-subtitle{color:var(--muted);line-height:1.5}.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}.detail{padding:12px;border:1px solid var(--line);border-radius:11px;background:#0e1015}.detail.wide{grid-column:1/-1}.detail b{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}.detail span{font-size:13px;line-height:1.5}
     .source-links{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0}.source-links a{font-size:12px;text-decoration:none;border:1px solid var(--line);padding:7px 10px;border-radius:9px;color:#d8dce4}.source-links a:hover{border-color:#6e5a30;color:#e8c67e}
-    .edition-list{display:grid;gap:8px;margin-top:10px}.edition-item{display:flex;justify-content:space-between;gap:12px;border:1px solid var(--line);border-radius:11px;padding:11px;background:#0d0f13}.edition-item strong{font-size:13px}.edition-item .meta{font-size:11px}
+    .edition-list{display:grid;gap:8px;margin-top:10px}.edition-item{display:flex;justify-content:space-between;gap:12px;border:1px solid var(--line);border-radius:11px;padding:11px;background:#0d0f13}.edition-item-main{display:flex;min-width:0;align-items:flex-start;gap:11px}.edition-product-thumb{display:grid;flex:0 0 48px;width:48px;height:66px;place-items:center;overflow:hidden;border:1px solid var(--line);background:#fff;color:#8a9196;font-size:9px;font-weight:900;text-align:center}.edition-product-thumb img{width:100%;height:100%;object-fit:contain}.edition-item strong{font-size:13px}.edition-item .meta{font-size:11px}.edition-product-title{margin:3px 0;color:#4f575d;font-size:11px;font-weight:700;line-height:1.35}
     .catalog-footnote{margin-top:14px;color:#747b88;font-size:11px;text-align:center;line-height:1.6}
     @media(max-width:900px){.top{height:auto;padding:13px 0;flex-wrap:wrap}.brand{flex:1}nav{order:3;width:100%;overflow:auto}.account span{display:none}.stats{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.shell{padding:0 15px}.details-grid{grid-template-columns:1fr}.detail.wide{grid-column:auto}}
     @media(max-width:560px){main{padding-top:26px}.row,.row.three{grid-template-columns:1fr}.stats{gap:9px}.card{padding:16px}.stat strong{font-size:25px}.toolbar .control{width:100%}.control.search{min-width:0}.form-actions{flex-wrap:wrap}.form-actions .danger{margin-right:0}.modal{padding:18px}}
@@ -131,9 +131,9 @@
     #page-jackie td{padding-top:18px;padding-bottom:18px}.film-visual-grid{gap:26px;padding-top:6px}.account-dialog-note{margin:0;padding:11px 12px;border-left:3px solid #173b91;background:#f2f5fb;color:#60676d;font-size:11px;line-height:1.5}.account-status{min-height:20px;color:#177093;font-size:12px}.account-status.error{color:#a23d3d}
     #page-jackie .catalog-footnote{border-top:1px solid #d4d7da;padding-top:16px;text-transform:uppercase;letter-spacing:.08em}
     .tmdb-credit{display:flex;align-items:center;justify-content:center;gap:14px;margin:22px auto 0;padding:16px;border-top:1px solid #d8dcdf;color:#6b7277;font-size:10px;line-height:1.45;text-align:left}.tmdb-credit img{display:block;width:88px;height:auto}.tmdb-credit a{flex:0 0 auto}.tmdb-import-intro{margin:14px 0 0;color:#60676c;font-size:13px;line-height:1.6}.tmdb-security-note{padding:12px 13px;border-left:3px solid var(--jackie);background:#eefaff;color:#4d626b;font-size:11px;line-height:1.55}.tmdb-progress-wrap{display:grid;gap:8px;padding:14px;border:1px solid #d8dcdf;background:#f8fafa}.tmdb-progress-head{display:flex;justify-content:space-between;gap:14px;color:#51585d;font-size:11px;font-weight:800}.tmdb-progress{height:7px;overflow:hidden;background:#dce2e5}.tmdb-progress i{display:block;width:0;height:100%;background:var(--jackie);transition:width .2s}.tmdb-import-status{min-height:21px;color:#177093;font-size:12px;line-height:1.5}.tmdb-import-status.error{color:#a23d3d}.tmdb-report{max-height:190px;overflow:auto;padding:11px 13px;border:1px solid #d8dcdf;background:#fbfbfa;color:#5d6469;font-size:11px;line-height:1.55}.tmdb-report strong{display:block;margin-bottom:5px;color:#171a1c}.tmdb-report ul{margin:5px 0 0;padding-left:18px}.tmdb-report li+li{margin-top:3px}
-    .ean-field{display:grid;gap:5px}.ean-input-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:end}.ean-input-row input{margin-top:0}.ean-input-row .btn{min-height:42px}.ean-help{margin:0;color:#747a7f;font-size:10px;line-height:1.45}.ean-status{min-height:18px;color:#14705b;font-size:11px}.ean-status.error{color:#a23d3d}.ean-code{font-variant-numeric:tabular-nums;letter-spacing:.06em}.scanner-intro{margin:13px 0;color:#5f666b;font-size:12px;line-height:1.55}.scanner-frame{min-height:260px;overflow:hidden;border:1px solid #cfd4d7;background:#f4f6f7}.scanner-frame video{object-fit:cover}.scanner-frame button,.scanner-frame select{font:inherit}.scanner-frame button{border:1px solid #bfc5c9!important;border-radius:2px!important;background:#fff!important;color:#15191c!important;padding:8px 11px!important}.scanner-frame a{color:#007da9!important}.scanner-status{min-height:22px;margin-top:10px;color:#177093;font-size:12px;line-height:1.5}.scanner-status.error{color:#a23d3d}.scanner-privacy{padding:10px 12px;border-left:3px solid var(--jackie);background:#eefaff;color:#53666e;font-size:10px;line-height:1.5}
+    .ean-field{display:grid;gap:5px}.ean-input-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;align-items:end}.ean-input-row input{margin-top:0}.ean-input-row .btn{min-height:42px}.ean-help{margin:0;color:#747a7f;font-size:10px;line-height:1.45}.ean-status{min-height:18px;color:#14705b;font-size:11px}.ean-status.error{color:#a23d3d}.ean-code{font-variant-numeric:tabular-nums;letter-spacing:.06em}.ean-product-preview{display:grid;grid-template-columns:86px minmax(0,1fr);gap:14px;padding:12px;border:1px solid #acdcec;background:#f2fbfe}.ean-product-image{display:grid;width:86px;height:116px;place-items:center;overflow:hidden;border:1px solid #cfd8dc;background:#fff;color:#81898e;font-size:10px;font-weight:900;text-align:center}.ean-product-image img{width:100%;height:100%;object-fit:contain}.ean-product-copy{min-width:0}.ean-product-kicker{color:#007da9;font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}.ean-product-title{display:block;margin-top:5px;color:#171a1c;font-size:13px;line-height:1.4}.ean-product-meta{margin-top:7px;color:#60686d;font-size:10px;line-height:1.5}.ean-product-note{margin:9px 0 0;color:#536269;font-size:10px;line-height:1.45}.scanner-intro{margin:13px 0;color:#5f666b;font-size:12px;line-height:1.55}.scanner-frame{min-height:260px;overflow:hidden;border:1px solid #cfd4d7;background:#f4f6f7}.scanner-frame video{object-fit:cover}.scanner-frame button,.scanner-frame select{font:inherit}.scanner-frame button{border:1px solid #bfc5c9!important;border-radius:2px!important;background:#fff!important;color:#15191c!important;padding:8px 11px!important}.scanner-frame a{color:#007da9!important}.scanner-status{min-height:22px;margin-top:10px;color:#177093;font-size:12px;line-height:1.5}.scanner-status.error{color:#a23d3d}.scanner-privacy{padding:10px 12px;border-left:3px solid var(--jackie);background:#eefaff;color:#53666e;font-size:10px;line-height:1.5}
     @media(max-width:1050px){.jackie-hero{grid-template-columns:1fr}.jackie-dashboard{border-left:0;border-top:1px solid #d2d5d8;padding:24px 0 0}.jackie-total{text-align:left;align-items:flex-start}.jackie-personal{max-width:430px}.filter-view{margin-left:0}.account-trigger{min-width:0}.account-copy{display:none}.account .account-avatar{display:grid}.account .menu-chevron{display:block}.account-dropdown{right:0}}
-    @media(max-width:560px){.jackie-hero{padding-top:24px;gap:28px}.jackie-title-line{align-items:flex-start;gap:14px}.jackie-title-line h1{font-size:56px}.jackie-chinese{font-size:31px}.jackie-dashboard{grid-template-columns:90px 1fr;gap:16px}.jackie-total{padding-right:14px}.jackie-total strong{font-size:46px}.jackie-percent{font-size:30px}.jackie-command{align-items:flex-start;flex-direction:column}.collector-no{width:46px}.film-visual-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.collector-card-body{min-height:115px;padding-left:27px}.collector-poster{margin-left:27px}.poster-editor{grid-template-columns:82px 1fr}.filter-panel{padding:15px}.filter-search-row{grid-template-columns:1fr}.filter-reset{justify-self:start}.filter-groups{display:grid;grid-template-columns:1fr;align-items:stretch}.filter-group,.filter-select{width:100%}.filter-segment{display:grid;grid-template-columns:repeat(3,1fr)}.filter-segment button{min-height:40px;padding:0 6px}.filter-select select,.filter-sort{width:100%}.filter-view{width:100%}.filter-view .view-switch{display:grid;grid-template-columns:1fr 1fr}.filter-meta{align-items:flex-start;flex-direction:column}.account-dropdown{position:fixed;top:70px;right:15px;left:15px;width:auto}.admin-dropdown{right:auto;left:0}.account-trigger{padding:6px}.account .menu-chevron{display:none}.ean-input-row{grid-template-columns:1fr}.ean-input-row .btn{width:100%}.scanner-frame{min-height:220px}}
+    @media(max-width:560px){.jackie-hero{padding-top:24px;gap:28px}.jackie-title-line{align-items:flex-start;gap:14px}.jackie-title-line h1{font-size:56px}.jackie-chinese{font-size:31px}.jackie-dashboard{grid-template-columns:90px 1fr;gap:16px}.jackie-total{padding-right:14px}.jackie-total strong{font-size:46px}.jackie-percent{font-size:30px}.jackie-command{align-items:flex-start;flex-direction:column}.collector-no{width:46px}.film-visual-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.collector-card-body{min-height:115px;padding-left:27px}.collector-poster{margin-left:27px}.poster-editor{grid-template-columns:82px 1fr}.filter-panel{padding:15px}.filter-search-row{grid-template-columns:1fr}.filter-reset{justify-self:start}.filter-groups{display:grid;grid-template-columns:1fr;align-items:stretch}.filter-group,.filter-select{width:100%}.filter-segment{display:grid;grid-template-columns:repeat(3,1fr)}.filter-segment button{min-height:40px;padding:0 6px}.filter-select select,.filter-sort{width:100%}.filter-view{width:100%}.filter-view .view-switch{display:grid;grid-template-columns:1fr 1fr}.filter-meta{align-items:flex-start;flex-direction:column}.account-dropdown{position:fixed;top:70px;right:15px;left:15px;width:auto}.admin-dropdown{right:auto;left:0}.account-trigger{padding:6px}.account .menu-chevron{display:none}.ean-input-row{grid-template-columns:1fr 1fr}.ean-input-row input{grid-column:1/-1}.ean-input-row .btn{width:100%}.ean-product-preview{grid-template-columns:70px minmax(0,1fr)}.ean-product-image{width:70px;height:96px}.scanner-frame{min-height:220px}}
   </style>
 </head>
 <body>
@@ -299,7 +299,7 @@
   <div class="form-actions"><button id="deleteFilmBtn" type="button" class="btn danger hidden">Supprimer</button><button type="button" class="btn secondary" data-close>Annuler</button><button id="filmSubmitBtn" class="btn">Enregistrer</button></div>
 </form></div></dialog>
 
-<dialog id="editionDialog"><div class="modal"><div class="modal-head"><h2>Ajouter une édition</h2><button class="ghost" data-close>✕</button></div><form id="editionForm" class="form"><input name="filmId" type="hidden"><label>Format<select name="format"><option>DVD</option><option>Blu-ray</option><option>4K UHD</option><option>VHS</option><option>Numérique</option><option>Autre</option></select></label><div class="ean-field"><label for="editionEan">EAN / code-barres</label><div class="ean-input-row"><input id="editionEan" name="ean" inputmode="numeric" autocomplete="off" maxlength="13" placeholder="8, 12 ou 13 chiffres" aria-describedby="eanHelp eanStatus"><button id="openEanScannerBtn" type="button" class="btn secondary">▣ Scanner</button></div><p id="eanHelp" class="ean-help">Facultatif. Scannez le boîtier ou saisissez le numéro imprimé sous le code-barres.</p><div id="eanStatus" class="ean-status" aria-live="polite"></div></div><div class="row"><label>Pays<input name="country"></label><label>Éditeur<input name="publisher"></label></div><label>Édition / collection<input name="edition"></label><label>Commentaire<textarea name="notes"></textarea></label><div id="editionError" class="meta form-error" role="alert"></div><div class="form-actions"><button type="button" class="btn secondary" data-close>Annuler</button><button id="editionSubmitBtn" class="btn">Ajouter à ma collection</button></div></form></div></dialog>
+<dialog id="editionDialog"><div class="modal"><div class="modal-head"><h2>Ajouter une édition</h2><button class="ghost" data-close>✕</button></div><form id="editionForm" class="form"><input name="filmId" type="hidden"><label>Format<select name="format"><option>DVD</option><option>Blu-ray</option><option>4K UHD</option><option>VHS</option><option>Numérique</option><option>Autre</option></select></label><div class="ean-field"><label for="editionEan">EAN / code-barres</label><div class="ean-input-row"><input id="editionEan" name="ean" inputmode="numeric" autocomplete="off" maxlength="13" placeholder="8, 12 ou 13 chiffres" aria-describedby="eanHelp eanStatus"><button id="openEanScannerBtn" type="button" class="btn secondary">▣ Scanner</button><button id="lookupEanBtn" type="button" class="btn secondary">Identifier</button></div><p id="eanHelp" class="ean-help">Facultatif. Scannez le boîtier ou saisissez le numéro imprimé sous le code-barres.</p><div id="eanStatus" class="ean-status" aria-live="polite"></div></div><div id="eanProductPreview" class="ean-product-preview hidden"><div id="eanProductImage" class="ean-product-image"><span>VISUEL</span></div><div class="ean-product-copy"><div class="ean-product-kicker">Produit reconnu</div><strong id="eanProductTitle" class="ean-product-title"></strong><div id="eanProductMeta" class="ean-product-meta"></div><p class="ean-product-note">Vérifiez les informations avant l’enregistrement : les bases EAN peuvent contenir des erreurs.</p></div></div><div class="row"><label>Pays<input name="country"></label><label>Éditeur<input name="publisher"></label></div><label>Édition / collection<input name="edition"></label><label>Commentaire<textarea name="notes"></textarea></label><div id="editionError" class="meta form-error" role="alert"></div><div class="form-actions"><button type="button" class="btn secondary" data-close>Annuler</button><button id="editionSubmitBtn" class="btn">Ajouter à ma collection</button></div></form></div></dialog>
 
 <dialog id="eanScannerDialog"><div class="modal"><div class="modal-head"><div><div class="eyebrow">Édition physique</div><h2 style="margin-top:6px">Scanner le code-barres</h2></div><button id="eanScannerCloseBtn" type="button" class="ghost" aria-label="Fermer">✕</button></div><p class="scanner-intro">Placez le code-barres horizontalement dans le cadre. Vous pouvez aussi sélectionner une photo déjà prise.</p><div id="eanReader" class="scanner-frame"></div><div id="eanScannerStatus" class="scanner-status" aria-live="polite"></div><p class="scanner-privacy">La caméra ne s’active qu’après votre autorisation. Les images sont analysées sur votre appareil et ne sont pas enregistrées.</p><div class="form-actions"><button id="eanScannerCancelBtn" type="button" class="btn secondary">Annuler</button></div></div></dialog>
 
@@ -322,11 +322,12 @@ const firebaseConfig={
 const PRIMARY_ADMIN_UID="gZk5yxqLN4felHFmMWEj9NPYhwj2";
 const TMDB_API_BASE="https://api.themoviedb.org/3";
 const TMDB_IMAGE_BASE="https://image.tmdb.org/t/p/w342";
+const EAN_LOOKUP_BASE="https://cinetrack-ean.giovannoni-f.workers.dev/lookup";
 const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app);
 let user=null,films=[],editions=[],series=[],sortAscending=true,selectedFilmId=null,filmView="list";
 let pendingPosterData=null,posterDataChanged=false,posterCompressionPending=false;
 let tmdbImportRunning=false,tmdbAbortRequested=false;
-let eanScanner=null,eanScanAccepted=false;
+let eanScanner=null,eanScanAccepted=false,pendingEanProduct=null,eanLookupController=null,lastEanLookup="";
 try{if(localStorage.getItem("cinetrack-jackie-view")==="visual")filmView="visual"}catch(error){}
 
 const $=function(selector){return document.querySelector(selector)};
@@ -894,7 +895,9 @@ function openFilmDetails(filmId){
   const sourcesHtml=sources.length?'<div class="source-links">'+sources.map(function(item){return '<a href="'+esc(safeUrl(item[1]))+'" target="_blank" rel="noopener noreferrer">'+esc(item[0])+' ↗</a>'}).join("")+'</div>':"";
   const editionsHtml='<h3 style="margin:20px 0 0">Mes éditions</h3><div class="edition-list">'+(filmEditions.length?filmEditions.map(function(edition){
     const extra=[edition.country,edition.publisher,edition.edition,edition.ean?"EAN "+edition.ean:"",edition.notes].filter(Boolean).join(" · ");
-    return '<div class="edition-item"><div><strong>'+esc(edition.format)+'</strong><div class="meta">'+esc(extra||"Aucun détail supplémentaire")+'</div></div>'+(user?'<button class="icon-btn delete-edition" data-id="'+esc(edition.id)+'" title="Supprimer cette édition">Supprimer</button>':"")+'</div>';
+    const productImage=safeUrl(edition.productImageUrl),productTitle=edition.productTitle||"";
+    const visual=productImage?'<span class="edition-product-thumb"><img src="'+esc(productImage)+'" alt="Visuel de l’édition" loading="lazy" referrerpolicy="no-referrer"></span>':"";
+    return '<div class="edition-item"><div class="edition-item-main">'+visual+'<div><strong>'+esc(edition.format)+'</strong>'+(productTitle?'<div class="edition-product-title">'+esc(productTitle)+'</div>':"")+'<div class="meta">'+esc(extra||"Aucun détail supplémentaire")+'</div></div></div>'+(user?'<button class="icon-btn delete-edition" data-id="'+esc(edition.id)+'" title="Supprimer cette édition">Supprimer</button>':"")+'</div>';
   }).join(""):'<div class="empty">Aucune édition enregistrée.</div>')+'</div>';
   $("#detailsContent").innerHTML=detailsHtml+sourcesHtml+editionsHtml;
   $("#detailsEditBtn").classList.toggle("hidden",!isAdmin());
@@ -914,6 +917,7 @@ $("#detailsEditBtn").onclick=function(){
 
 function openEditionDialog(filmId){
   if(!user){$("#authDialog").showModal();return}
+  resetEanProductLookup();
   $("#editionForm").reset();
   $("#editionForm").elements.filmId.value=filmId;
   $("#editionError").textContent="";
@@ -936,6 +940,77 @@ function isValidEan(value){
 
 function setEanStatus(message,isError){
   const status=$("#eanStatus");status.textContent=message||"";status.classList.toggle("error",Boolean(isError));
+}
+
+function resetEanProductLookup(){
+  if(eanLookupController){eanLookupController.abort();eanLookupController=null}
+  pendingEanProduct=null;lastEanLookup="";
+  $("#eanProductPreview").classList.add("hidden");
+  $("#eanProductTitle").textContent="";$("#eanProductMeta").textContent="";
+  $("#eanProductImage").innerHTML="<span>VISUEL</span>";
+  $("#lookupEanBtn").disabled=false;$("#lookupEanBtn").textContent="Identifier";
+}
+
+function renderEanProduct(product){
+  const preview=$("#eanProductPreview"),imageBox=$("#eanProductImage");
+  $("#eanProductTitle").textContent=product.title||"Produit sans titre";
+  $("#eanProductMeta").textContent=[product.format,product.publisher,product.model].filter(Boolean).join(" · ")||"Informations partielles";
+  imageBox.innerHTML="";
+  const imageUrl=safeUrl(product.imageUrl);
+  if(imageUrl){
+    const image=document.createElement("img");image.src=imageUrl;image.alt="Visuel du produit";image.referrerPolicy="no-referrer";
+    image.onerror=function(){imageBox.innerHTML="<span>VISUEL INDISPONIBLE</span>"};
+    imageBox.appendChild(image);
+  }else imageBox.innerHTML="<span>AUCUN VISUEL</span>";
+  preview.classList.remove("hidden");
+}
+
+async function lookupEanProduct(value){
+  const ean=normalizedEan(value),button=$("#lookupEanBtn");
+  if(!isValidEan(ean)){describeEan(ean,true);return null}
+  if(pendingEanProduct&&pendingEanProduct.ean===ean)return pendingEanProduct;
+  if(eanLookupController)eanLookupController.abort();
+  const controller=new AbortController();eanLookupController=controller;
+  button.disabled=true;button.textContent="Recherche…";setEanStatus("Recherche de cette édition…",false);
+  try{
+    const response=await fetch(EAN_LOOKUP_BASE+"?ean="+encodeURIComponent(ean),{signal:controller.signal,headers:{Accept:"application/json"}});
+    const result=await response.json().catch(function(){return {}});
+    if(!response.ok)throw new Error(result.error||"Recherche indisponible.");
+    if(normalizedEan($("#editionEan").value)!==ean)return null;
+    lastEanLookup=ean;
+    if(!result.found){
+      pendingEanProduct=null;$("#eanProductPreview").classList.add("hidden");
+      setEanStatus("EAN valide, mais aucune édition n’a été trouvée. Complétez les champs manuellement.",true);
+      return null;
+    }
+    pendingEanProduct={
+      ean:ean,
+      title:String(result.title||"").slice(0,500),
+      description:String(result.description||"").slice(0,1500),
+      publisher:String(result.publisher||"").slice(0,200),
+      model:String(result.model||"").slice(0,200),
+      category:String(result.category||"").slice(0,500),
+      format:String(result.format||"").slice(0,50),
+      imageUrl:safeUrl(result.imageUrl)||"",
+      source:String(result.source||"UPCitemdb").slice(0,80)
+    };
+    const form=$("#editionForm");
+    if(pendingEanProduct.format&&[...form.elements.format.options].some(function(option){return option.value===pendingEanProduct.format}))form.elements.format.value=pendingEanProduct.format;
+    if(pendingEanProduct.publisher&&!form.elements.publisher.value.trim())form.elements.publisher.value=pendingEanProduct.publisher;
+    if(pendingEanProduct.title&&!form.elements.edition.value.trim())form.elements.edition.value=pendingEanProduct.title;
+    renderEanProduct(pendingEanProduct);
+    setEanStatus("Édition reconnue. Vérifiez les informations préremplies.",false);
+    return pendingEanProduct;
+  }catch(error){
+    if(error.name==="AbortError")return null;
+    pendingEanProduct=null;$("#eanProductPreview").classList.add("hidden");
+    setEanStatus(error.message||"La recherche automatique est momentanément indisponible.",true);
+    return null;
+  }finally{
+    if(eanLookupController===controller){
+      eanLookupController=null;button.disabled=false;button.textContent="Identifier";
+    }
+  }
 }
 
 function describeEan(value,showIncomplete){
@@ -972,6 +1047,7 @@ async function acceptScannedEan(decodedText){
   $("#eanScannerStatus").textContent="EAN "+digits+" détecté.";
   await stopEanScanner(true);
   $("#editionEan").focus();
+  await lookupEanProduct(digits);
 }
 
 function openEanScanner(){
@@ -996,11 +1072,16 @@ function openEanScanner(){
 }
 
 $("#openEanScannerBtn").onclick=openEanScanner;
+$("#lookupEanBtn").onclick=function(){lookupEanProduct($("#editionEan").value)};
 $("#eanScannerCloseBtn").onclick=function(){stopEanScanner(true)};
 $("#eanScannerCancelBtn").onclick=function(){stopEanScanner(true)};
 $("#eanScannerDialog").addEventListener("close",function(){if(eanScanner)stopEanScanner(false)});
-$("#editionEan").addEventListener("input",function(){this.value=normalizedEan(this.value).slice(0,13);describeEan(this.value,false)});
-$("#editionEan").addEventListener("blur",function(){describeEan(this.value,true)});
+$("#editionEan").addEventListener("input",function(){
+  this.value=normalizedEan(this.value).slice(0,13);
+  if((pendingEanProduct&&pendingEanProduct.ean!==this.value)||(lastEanLookup&&lastEanLookup!==this.value))resetEanProductLookup();
+  describeEan(this.value,false);
+});
+$("#editionEan").addEventListener("blur",function(){if(describeEan(this.value,true)&&this.value&&lastEanLookup!==this.value)lookupEanProduct(this.value)});
 
 async function removeEdition(editionId){
   if(!user||!confirm("Supprimer cette édition de votre collection ?"))return;
@@ -1121,7 +1202,7 @@ $("#deleteFilmBtn").onclick=async function(){
 $("#editionForm").onsubmit=async function(event){
   event.preventDefault();if(!user)return;
   const form=event.currentTarget,submit=$("#editionSubmitBtn");
-  const data=Object.fromEntries(new FormData(form));
+  let data=Object.fromEntries(new FormData(form));
   data.ean=normalizedEan(data.ean);
   if(data.ean&&!isValidEan(data.ean)){
     describeEan(data.ean,true);
@@ -1136,13 +1217,28 @@ $("#editionForm").onsubmit=async function(event){
     form.elements.ean.focus();
     return;
   }
-  if(!data.ean)delete data.ean;
-  data.createdAt=serverTimestamp();
   $("#editionError").textContent="";
-  submit.disabled=true;submit.textContent="Enregistrement…";
+  submit.disabled=true;
   try{
+    if(data.ean&&(!pendingEanProduct||pendingEanProduct.ean!==data.ean)){
+      submit.textContent="Identification…";
+      await lookupEanProduct(data.ean);
+    }
+    data=Object.fromEntries(new FormData(form));data.ean=normalizedEan(data.ean);
+    if(data.ean&&pendingEanProduct&&pendingEanProduct.ean===data.ean){
+      data.productTitle=pendingEanProduct.title||null;
+      data.productDescription=pendingEanProduct.description||null;
+      data.productImageUrl=pendingEanProduct.imageUrl||null;
+      data.productModel=pendingEanProduct.model||null;
+      data.productCategory=pendingEanProduct.category||null;
+      data.productSource=pendingEanProduct.source||"UPCitemdb";
+      data.productMatchedAt=serverTimestamp();
+    }
+    if(!data.ean)delete data.ean;
+    data.createdAt=serverTimestamp();
+    submit.textContent="Enregistrement…";
     await addDoc(collection(db,"users",user.uid,"collection"),data);
-    form.reset();$("#editionDialog").close();await loadAll();
+    form.reset();resetEanProductLookup();$("#editionDialog").close();await loadAll();
   }catch(error){
     console.error(error);
     $("#editionError").textContent=error&&error.code==="permission-denied"?"Enregistrement refusé par les règles Firestore. Vérifiez que les règles fournies sont bien publiées.":"Impossible d’enregistrer cette édition. Vérifiez votre connexion puis réessayez.";
