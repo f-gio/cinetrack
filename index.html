@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#f7f7f5">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111315'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%2308a9e6' stroke-width='5'/%3E%3Cpath d='M41 23a13 13 0 1 0 0 18' fill='none' stroke='white' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
   <title>CineTrack — Collection & Watchlist</title>
   <style>
     :root{--bg:#090a0d;--panel:#12141a;--panel2:#191c23;--text:#f5f5f5;--muted:#9ba1ad;--line:#282c36;--accent:#d6aa55;--danger:#df5d5d;--ok:#62c48d;--warn:#dfb45d}
@@ -55,7 +56,7 @@
     :root{color-scheme:light;--bg:#f4f5f4;--panel:#fff;--panel2:#eceeef;--text:#111315;--muted:#70757a;--line:#d8dbde;--accent:#173b91;--danger:#b33a3a;--ok:#14705b;--warn:#9a6818;--silver:#b9bec3;--jackie:#08a9e6;--jackie-dark:#007eae}
     body{background:linear-gradient(180deg,#fff 0,#f3f4f3 100%);color:var(--text)}
     header{background:rgba(255,255,255,.96);border-color:#dfe1e3;box-shadow:0 8px 28px rgba(21,28,35,.055)}
-    .brand{display:flex;align-items:center;gap:9px;color:#111315;font-family:Inter,ui-sans-serif,system-ui,sans-serif;font-size:22px;font-weight:800;letter-spacing:-1px}
+    .brand{display:flex;align-items:center;gap:9px;padding:0;border:0;background:transparent;color:#111315;font-family:Inter,ui-sans-serif,system-ui,sans-serif;font-size:22px;font-weight:800;letter-spacing:-1px;cursor:pointer}
     .brand:before{content:"C";display:grid;place-items:center;width:28px;height:28px;border:1.5px solid #111315;border-radius:50%;font-family:"Bodoni MT",Didot,Georgia,serif;font-size:17px;font-weight:500}
     .brand b{color:#173b91}
     nav button,.ghost{color:#656a6f;border-radius:3px}
@@ -126,13 +127,14 @@
     .account{position:relative;margin-left:auto}.account-menu{position:relative}.account-menu summary,.admin-menu summary{list-style:none}.account-menu summary::-webkit-details-marker,.admin-menu summary::-webkit-details-marker{display:none}.account-trigger{display:flex;min-width:210px;align-items:center;gap:10px;padding:7px 10px;border:1px solid #d9dcdf;background:#fff;cursor:pointer}.account-trigger:hover{border-color:#aeb5ba;background:#fafbfb}.account-avatar{display:grid;width:34px;height:34px;flex:0 0 34px;place-items:center;background:#111315;color:#fff;font-size:13px;font-weight:900;text-transform:uppercase}.account-copy{display:flex;min-width:0;flex:1;flex-direction:column;text-align:left}.account-copy strong{overflow:hidden;color:#171a1c;font-size:12px;text-overflow:ellipsis;white-space:nowrap}.account-copy small{overflow:hidden;color:#777d82;font-size:10px;text-overflow:ellipsis;white-space:nowrap}.menu-chevron{color:#777d82;font-size:11px}.account-menu[open] .menu-chevron{transform:rotate(180deg)}
     .account-dropdown,.admin-dropdown{position:absolute;z-index:40;top:calc(100% + 8px);right:0;display:grid;width:285px;padding:8px;border:1px solid #d8dcdf;background:#fff;box-shadow:0 22px 55px rgba(16,24,30,.18)}.account-dropdown-head{padding:10px 11px 12px;border-bottom:1px solid #e4e6e8}.account-dropdown-head strong,.account-dropdown-head span{display:block}.account-dropdown-head strong{font-family:"Bodoni MT",Didot,Georgia,serif;font-size:18px}.account-dropdown-head span{margin-top:3px;color:#747b80;font-size:11px}.account-dropdown button,.admin-dropdown button{width:100%;border:0;background:#fff;color:#202427;padding:11px;text-align:left;font-size:12px;font-weight:750}.account-dropdown button:hover,.admin-dropdown button:hover{background:#eef9fd;color:#007da9}.account-dropdown .signout{margin-top:3px;border-top:1px solid #e4e6e8;color:#9a3434}
     .jackie-command{margin:4px 0 18px;padding:24px 0 10px}.admin-menu{position:relative}.admin-menu>summary{display:flex;align-items:center;gap:9px;padding:10px 13px;border:1px solid #cbd0d4;background:#fff;color:#171a1c;font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}.admin-menu>summary:after{content:"⌄";color:#71787d}.admin-menu[open]>summary{border-color:var(--jackie);color:var(--jackie-dark)}.admin-dropdown{width:270px}.admin-dropdown button:first-child{background:#e9f9ff;color:#007da9}
-    .filter-panel{margin:0 0 28px;padding:22px;border:1px solid #d8dcdf;border-top:4px solid var(--jackie);background:#fff;box-shadow:0 18px 44px rgba(16,25,32,.06)}.filter-search-row{display:grid;grid-template-columns:minmax(280px,1fr) auto;gap:14px;align-items:end;padding-bottom:20px;border-bottom:1px solid #e2e5e7}.filter-search{display:grid;gap:7px}.filter-label{color:#5f666b;font-size:10px;font-weight:900;letter-spacing:.11em;text-transform:uppercase}.search-field{position:relative}.search-field:before{content:"⌕";position:absolute;left:15px;top:50%;color:#697177;font-size:22px;transform:translateY(-53%)}.search-field input{width:100%;height:52px;padding:0 48px;border:1px solid #cfd4d7;background:#f9fafa;color:#171a1c;font-size:14px}.search-field input:focus{outline:3px solid rgba(8,169,230,.14);border-color:var(--jackie);background:#fff}.clear-search{position:absolute;right:9px;top:50%;width:32px;height:32px;border:0;background:transparent;color:#6b7277;font-size:18px;transform:translateY(-50%)}.clear-search:hover{background:#eaf8fd;color:#007da9}.filter-reset{height:40px;border:0;background:transparent;color:#687075;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.filter-reset:not(:disabled):hover{color:#007da9;text-decoration:underline}.filter-reset:disabled{cursor:default;opacity:.38}
-    .filter-groups{display:flex;align-items:flex-end;gap:18px 24px;flex-wrap:wrap;padding-top:20px}.filter-group{display:grid;gap:8px}.filter-segment{display:flex;min-height:40px;border:1px solid #cfd4d7;background:#fff}.filter-segment button{border:0;border-right:1px solid #dfe2e4;background:#fff;color:#596166;padding:0 12px;font-size:11px;font-weight:800;white-space:nowrap}.filter-segment button:last-child{border-right:0}.filter-segment button:hover{background:#f0faff;color:#007da9}.filter-segment button.active{background:#111315;color:#fff}.filter-segment .filter-count{margin-left:4px;opacity:.7}.filter-select{display:grid;gap:8px;color:#5f666b;font-size:10px;font-weight:900;letter-spacing:.11em;text-transform:uppercase}.filter-select select,.filter-sort{height:42px;min-width:145px;border:1px solid #cfd4d7;background:#fff;color:#202427;padding:0 36px 0 11px;font-size:11px;font-weight:800}.filter-sort{min-width:150px;padding:0 12px;cursor:pointer}.filter-sort:hover,.filter-select select:hover{border-color:#8ccfe7}.filter-view{margin-left:auto}.filter-meta{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:0 0 14px;color:#747b80;font-size:10px;font-weight:800;letter-spacing:.065em;text-transform:uppercase}.filter-meta-main{display:flex;align-items:center;gap:10px}.active-filter-badge{padding:4px 7px;background:#e7f8fe;color:#007da9}.view-switch{min-height:42px}.view-switch button{padding:8px 13px}.results-space{padding-top:4px}
+    .filter-panel{margin:0 0 28px;padding:22px;border:1px solid #d8dcdf;border-top:4px solid var(--jackie);background:#fff;box-shadow:0 18px 44px rgba(16,25,32,.06)}.filter-panel-head{display:flex;align-items:end;justify-content:space-between;gap:20px;padding-bottom:18px}.filter-panel-head h2{margin:4px 0 0;font-family:"Arial Narrow",Arial,sans-serif;font-size:25px;font-weight:950;text-transform:uppercase}.filter-panel-head>span{color:#747b80;font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}.filter-search-row{display:grid;grid-template-columns:minmax(280px,1fr) auto;gap:14px;align-items:end;padding:18px 0 20px;border-top:1px solid #e2e5e7;border-bottom:1px solid #e2e5e7}.filter-search{display:grid;gap:7px}.filter-label{color:#5f666b;font-size:10px;font-weight:900;letter-spacing:.11em;text-transform:uppercase}.search-field{position:relative}.search-field:before{content:"⌕";position:absolute;left:15px;top:50%;color:#697177;font-size:22px;transform:translateY(-53%)}.search-field input{width:100%;height:52px;padding:0 48px;border:1px solid #cfd4d7;background:#f9fafa;color:#171a1c;font-size:14px}.search-field input:focus{outline:3px solid rgba(8,169,230,.14);border-color:var(--jackie);background:#fff}.clear-search{position:absolute;right:9px;top:50%;width:32px;height:32px;border:0;background:transparent;color:#6b7277;font-size:18px;transform:translateY(-50%)}.clear-search:hover{background:#eaf8fd;color:#007da9}.filter-reset{height:40px;border:0;background:transparent;color:#687075;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.filter-reset:not(:disabled):hover{color:#007da9;text-decoration:underline}.filter-reset:disabled{cursor:default;opacity:.38}
+    .filter-groups{display:flex;align-items:flex-end;gap:18px 24px;flex-wrap:wrap;padding-top:20px}.filter-group{display:grid;gap:8px}.filter-segment{display:flex;min-height:40px;border:1px solid #cfd4d7;background:#fff}.filter-segment button{border:0;border-right:1px solid #dfe2e4;background:#fff;color:#596166;padding:0 12px;font-size:11px;font-weight:800;white-space:nowrap}.filter-segment button:last-child{border-right:0}.filter-segment button:hover{background:#f0faff;color:#007da9}.filter-segment button.active{background:#111315;color:#fff}.filter-segment .filter-count{margin-left:4px;opacity:.7}.filter-select{display:grid;gap:8px;color:#5f666b;font-size:10px;font-weight:900;letter-spacing:.11em;text-transform:uppercase}.filter-select select,.filter-sort{height:42px;min-width:145px;border:1px solid #cfd4d7;background:#fff;color:#202427;padding:0 36px 0 11px;font-size:11px;font-weight:800}.filter-sort{min-width:150px;padding:0 12px;cursor:pointer}.filter-sort:hover,.filter-select select:hover{border-color:#8ccfe7}.filter-multiselect{position:relative;min-width:170px}.filter-multiselect summary{display:flex;min-height:42px;align-items:center;justify-content:space-between;gap:14px;padding:0 11px;border:1px solid #cfd4d7;background:#fff;color:#202427;font-size:11px;font-weight:800;list-style:none;cursor:pointer}.filter-multiselect summary::-webkit-details-marker{display:none}.filter-multiselect[open] summary{border-color:var(--jackie);color:#007da9}.filter-multiselect[open] summary>span:last-child{transform:rotate(180deg)}.filter-options{position:absolute;z-index:35;top:calc(100% + 5px);left:0;display:grid;width:max-content;min-width:100%;padding:7px;border:1px solid #cfd4d7;background:#fff;box-shadow:0 16px 38px rgba(16,25,32,.15)}.filter-options label{display:flex;min-height:38px;align-items:center;gap:9px;padding:7px 9px;color:#343a3e;font-size:11px;font-weight:750;white-space:nowrap;cursor:pointer}.filter-options label:hover{background:#eefaff;color:#007da9}.filter-options input{width:16px;height:16px;margin:0;accent-color:var(--jackie)}.filter-chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px;padding-top:15px;border-top:1px solid #e2e5e7}.filter-chip{display:inline-flex;min-height:32px;align-items:center;gap:7px;padding:5px 8px;border:1px solid #9cdcf2;background:#effaff;color:#006f97;font-size:10px;font-weight:850}.filter-chip button{display:grid;width:20px;height:20px;place-items:center;padding:0;border:0;background:transparent;color:#006f97;font-size:15px}.filter-chip button:hover{background:#d3f3fe}.filter-view{margin-left:auto}.filter-meta{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:0 0 14px;color:#747b80;font-size:10px;font-weight:800;letter-spacing:.065em;text-transform:uppercase}.filter-meta-main{display:flex;align-items:center;gap:10px}.active-filter-badge{padding:4px 7px;background:#e7f8fe;color:#007da9}.view-switch{min-height:42px}.view-switch button{padding:8px 13px}.results-space{padding-top:4px}.column-sort{display:flex;width:100%;align-items:center;gap:6px;padding:0;border:0;background:transparent;color:inherit;font:inherit;letter-spacing:inherit;text-align:left;text-transform:inherit}.column-sort span{color:var(--jackie);font-size:14px}.column-sort:hover,.column-sort.active{color:var(--jackie)}
     #page-jackie td{padding-top:18px;padding-bottom:18px}.film-visual-grid{gap:26px;padding-top:6px}.account-dialog-note{margin:0;padding:11px 12px;border-left:3px solid #173b91;background:#f2f5fb;color:#60676d;font-size:11px;line-height:1.5}.account-status{min-height:20px;color:#177093;font-size:12px}.account-status.error{color:#a23d3d}
     #page-jackie .catalog-footnote{border-top:1px solid #d4d7da;padding-top:16px;text-transform:uppercase;letter-spacing:.08em}
     .tmdb-credit{display:flex;align-items:center;justify-content:center;gap:14px;margin:22px auto 0;padding:16px;border-top:1px solid #d8dcdf;color:#6b7277;font-size:10px;line-height:1.45;text-align:left}.tmdb-credit img{display:block;width:88px;height:auto}.tmdb-credit a{flex:0 0 auto}.tmdb-import-intro{margin:14px 0 0;color:#60676c;font-size:13px;line-height:1.6}.tmdb-security-note{padding:12px 13px;border-left:3px solid var(--jackie);background:#eefaff;color:#4d626b;font-size:11px;line-height:1.55}.tmdb-progress-wrap{display:grid;gap:8px;padding:14px;border:1px solid #d8dcdf;background:#f8fafa}.tmdb-progress-head{display:flex;justify-content:space-between;gap:14px;color:#51585d;font-size:11px;font-weight:800}.tmdb-progress{height:7px;overflow:hidden;background:#dce2e5}.tmdb-progress i{display:block;width:0;height:100%;background:var(--jackie);transition:width .2s}.tmdb-import-status{min-height:21px;color:#177093;font-size:12px;line-height:1.5}.tmdb-import-status.error{color:#a23d3d}.tmdb-report{max-height:190px;overflow:auto;padding:11px 13px;border:1px solid #d8dcdf;background:#fbfbfa;color:#5d6469;font-size:11px;line-height:1.55}.tmdb-report strong{display:block;margin-bottom:5px;color:#171a1c}.tmdb-report ul{margin:5px 0 0;padding-left:18px}.tmdb-report li+li{margin-top:3px}
     .ean-field{display:grid;gap:5px}.ean-input-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;align-items:end}.ean-input-row input{margin-top:0}.ean-input-row .btn{min-height:42px}.ean-help{margin:0;color:#747a7f;font-size:10px;line-height:1.45}.ean-status{min-height:18px;color:#14705b;font-size:11px}.ean-status.error{color:#a23d3d}.ean-code{font-variant-numeric:tabular-nums;letter-spacing:.06em}.ean-product-preview{display:grid;grid-template-columns:86px minmax(0,1fr);gap:14px;padding:12px;border:1px solid #acdcec;background:#f2fbfe}.ean-product-image{display:grid;width:86px;height:116px;place-items:center;overflow:hidden;border:1px solid #cfd8dc;background:#fff;color:#81898e;font-size:10px;font-weight:900;text-align:center}.ean-product-image img{width:100%;height:100%;object-fit:contain}.ean-product-copy{min-width:0}.ean-product-kicker{color:#007da9;font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}.ean-product-title{display:block;margin-top:5px;color:#171a1c;font-size:13px;line-height:1.4}.ean-product-meta{margin-top:7px;color:#60686d;font-size:10px;line-height:1.5}.ean-product-note{margin:9px 0 0;color:#536269;font-size:10px;line-height:1.45}.scanner-intro{margin:13px 0;color:#5f666b;font-size:12px;line-height:1.55}.scanner-frame{min-height:260px;overflow:hidden;border:1px solid #cfd4d7;background:#f4f6f7}.scanner-frame video{object-fit:cover}.scanner-frame button,.scanner-frame select{font:inherit}.scanner-frame button{border:1px solid #bfc5c9!important;border-radius:2px!important;background:#fff!important;color:#15191c!important;padding:8px 11px!important}.scanner-frame a{color:#007da9!important}.scanner-status{min-height:22px;margin-top:10px;color:#177093;font-size:12px;line-height:1.5}.scanner-status.error{color:#a23d3d}.scanner-privacy{padding:10px 12px;border-left:3px solid var(--jackie);background:#eefaff;color:#53666e;font-size:10px;line-height:1.5}
-    .account-dialog{width:min(820px,calc(100% - 30px))}.account-settings-tabs{display:flex;gap:0;margin:20px 0 0;border-bottom:1px solid #d8dcdf}.account-settings-tabs button{min-height:44px;padding:0 18px;border:0;border-bottom:3px solid transparent;background:#fff;color:#656c71;font-size:11px;font-weight:900;letter-spacing:.09em;text-transform:uppercase}.account-settings-tabs button:hover{color:#173b91;background:#f5f7fb}.account-settings-tabs button.active{border-bottom-color:#173b91;color:#173b91}.account-settings-panel{display:none;padding-top:22px}.account-settings-panel.active{display:block}.profile-photo-row{display:grid;grid-template-columns:92px minmax(0,1fr);gap:18px;align-items:center;padding:16px;border:1px solid #d8dcdf;background:#f8f9f9}.profile-photo-preview{display:grid;width:86px;height:86px;place-items:center;overflow:hidden;background:#111315;color:#fff;font-size:24px;font-weight:900;text-transform:uppercase}.profile-photo-preview img,.account-avatar img{width:100%;height:100%;object-fit:cover}.profile-photo-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.profile-photo-actions .btn{display:inline-flex;align-items:center;min-height:40px}.profile-help{margin:8px 0 0;color:#70777c;font-size:11px;line-height:1.5}.security-setting{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:18px;border:1px solid #d8dcdf;background:#f8f9f9}.security-setting strong{display:block;color:#171a1c;font-size:14px}.security-setting .profile-help{margin-top:5px}.security-setting .btn{flex:0 0 auto}.password-field{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px;align-items:end}.password-field input{margin-top:5px}.password-eye{min-height:43px;margin-top:5px;padding:0 12px;border:1px solid #cfd3d7;background:#fff;color:#4f565b;font-size:11px;font-weight:800}.password-eye:hover{border-color:#173b91;color:#173b91}.password-success{min-height:20px;margin:0;color:#14705b;font-size:12px}.account-status{min-height:20px;margin:0;color:#177093;font-size:12px}.account-status.error,.password-error{color:#a23d3d}.account-avatar{overflow:hidden}
+    .account-dialog{width:min(820px,calc(100% - 30px));height:min(650px,calc(100dvh - 30px))}.account-dialog .modal{display:flex;min-height:100%;flex-direction:column}.account-settings-tabs{display:flex;flex:0 0 auto;gap:0;margin:20px 0 0;border-bottom:1px solid #d8dcdf}.account-settings-tabs button{min-height:44px;padding:0 18px;border:0;border-bottom:3px solid transparent;background:#fff;color:#656c71;font-size:11px;font-weight:900;letter-spacing:.09em;text-transform:uppercase}.account-settings-tabs button:hover{color:#173b91;background:#f5f7fb}.account-settings-tabs button.active{border-bottom-color:#173b91;color:#173b91}.account-settings-panel{display:none;min-height:390px;padding-top:22px}.account-settings-panel.active{display:block}.profile-photo-row{display:grid;grid-template-columns:92px minmax(0,1fr);gap:18px;align-items:center;padding:16px;border:1px solid #d8dcdf;background:#f8f9f9}.profile-photo-preview{display:grid;width:86px;height:86px;place-items:center;overflow:hidden;background:#111315;color:#fff;font-size:24px;font-weight:900;text-transform:uppercase}.profile-photo-preview img,.account-avatar img{width:100%;height:100%;object-fit:cover}.profile-photo-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.profile-photo-actions .btn{display:inline-flex;align-items:center;min-height:40px}.profile-help{margin:8px 0 0;color:#70777c;font-size:11px;line-height:1.5}.security-setting{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:18px;border:1px solid #d8dcdf;background:#f8f9f9}.security-setting strong{display:block;color:#171a1c;font-size:14px}.security-setting .profile-help{margin-top:5px}.security-setting .btn{flex:0 0 auto}.password-field{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px;align-items:end}.password-field input{margin-top:5px}.password-eye{min-height:43px;margin-top:5px;padding:0 12px;border:1px solid #cfd3d7;background:#fff;color:#4f565b;font-size:11px;font-weight:800}.password-eye:hover{border-color:#173b91;color:#173b91}.password-success{min-height:20px;margin:0;color:#14705b;font-size:12px}.account-status{min-height:20px;margin:0;color:#177093;font-size:12px}.account-status.error,.password-error{color:#a23d3d}.account-avatar{overflow:hidden}
+    .auth-pending header,.auth-pending main,.auth-required header,.auth-required main{visibility:hidden;pointer-events:none}.auth-gate{position:fixed;z-index:1000;inset:0;display:grid;place-items:center;padding:20px;background:linear-gradient(145deg,#f8f9f8,#e9edf0)}.auth-ready .auth-gate{display:none}.auth-card{width:min(430px,100%);padding:30px;border:1px solid #d6dade;border-top:6px solid #111315;background:#fff;box-shadow:0 28px 80px rgba(16,24,30,.16)}.auth-mark{display:flex;align-items:center;gap:10px;color:#111315;font-size:22px;font-weight:850;letter-spacing:-1px}.auth-mark:before{content:"C";display:grid;width:34px;height:34px;place-items:center;border:2px solid var(--jackie);border-radius:50%;font-family:"Bodoni MT",Didot,Georgia,serif}.auth-card h1{margin:28px 0 8px;font-size:38px}.auth-card .form{margin-top:22px}.auth-card .btn{width:100%;min-height:46px}.auth-gate-loading{color:#5f666b;font-size:13px}.auth-gate-login{display:none}.auth-required .auth-gate-loading{display:none}.auth-required .auth-gate-login{display:block}
     @media(max-width:1050px){.jackie-hero{grid-template-columns:1fr}.jackie-dashboard{border-left:0;border-top:1px solid #d2d5d8;padding:24px 0 0}.jackie-total{text-align:left;align-items:flex-start}.jackie-personal{max-width:430px}.filter-view{margin-left:0}.account-trigger{min-width:0}.account-copy{display:none}.account .account-avatar{display:grid}.account .menu-chevron{display:block}.account-dropdown{right:0}}
     @media(max-width:560px){.jackie-hero{padding-top:24px;gap:28px}.jackie-title-line{align-items:flex-start;gap:14px}.jackie-title-line h1{font-size:56px}.jackie-chinese{font-size:31px}.jackie-dashboard{grid-template-columns:90px 1fr;gap:16px}.jackie-total{padding-right:14px}.jackie-total strong{font-size:46px}.jackie-percent{font-size:30px}.jackie-command{align-items:flex-start;flex-direction:column}.collector-no{width:46px}.film-visual-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.collector-card-body{min-height:115px;padding-left:27px}.collector-poster{margin-left:27px}.poster-editor{grid-template-columns:82px 1fr}.filter-panel{padding:15px}.filter-search-row{grid-template-columns:1fr}.filter-reset{justify-self:start}.filter-groups{display:grid;grid-template-columns:1fr;align-items:stretch}.filter-group,.filter-select{width:100%}.filter-segment{display:grid;grid-template-columns:repeat(3,1fr)}.filter-segment button{min-height:40px;padding:0 6px}.filter-select select,.filter-sort{width:100%}.filter-view{width:100%}.filter-view .view-switch{display:grid;grid-template-columns:1fr 1fr}.filter-meta{align-items:flex-start;flex-direction:column}.account-dropdown{position:fixed;top:70px;right:15px;left:15px;width:auto}.admin-dropdown{right:auto;left:0}.account-trigger{padding:6px}.account .menu-chevron{display:none}.ean-input-row{grid-template-columns:1fr 1fr}.ean-input-row input{grid-column:1/-1}.ean-input-row .btn{width:100%}.ean-product-preview{grid-template-columns:70px minmax(0,1fr)}.ean-product-image{width:70px;height:96px}.scanner-frame{min-height:220px}}
 
@@ -151,7 +153,7 @@
       .top nav button{display:flex;width:100%;min-height:46px;align-items:center;padding:11px 13px;text-align:left}
       .top nav button.active:after{content:"•";margin-left:auto;color:var(--jackie);font-size:20px}
       .account{position:static;margin:0}
-      .account-trigger,.account #authBtn{min-height:44px}
+      .account-trigger{min-height:44px}
       .account-trigger{padding:5px}
       .account .account-avatar{width:32px;height:32px;flex-basis:32px}
       .account-dropdown{position:fixed;z-index:60;top:70px;right:10px;left:10px;width:auto;max-height:calc(100dvh - 82px);overflow:auto;border-radius:4px}
@@ -189,6 +191,8 @@
       .admin-dropdown button{min-height:44px}
 
       .filter-panel{margin-bottom:20px;padding:14px;border-top-width:4px;box-shadow:0 10px 28px rgba(16,25,32,.055)}
+      .filter-panel-head{align-items:flex-start;flex-direction:column;gap:6px;padding-bottom:13px}
+      .filter-panel-head h2{font-size:22px}
       .filter-search-row{grid-template-columns:1fr;gap:5px;padding-bottom:12px}
       .search-field input{height:48px;padding-left:43px;font-size:16px}
       .filter-reset{justify-self:start;height:36px}
@@ -202,6 +206,10 @@
       .filter-segment{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%}
       .filter-segment button{min-height:48px;padding:6px;font-size:10px;line-height:1.25;white-space:normal}
       .filter-select select,.filter-sort{width:100%;height:46px;font-size:16px}
+      .filter-multiselect{width:100%;min-width:0}
+      .filter-multiselect summary{min-height:46px;font-size:14px}
+      .filter-options{position:static;width:100%;max-height:230px;margin-top:5px;overflow:auto;box-shadow:none}
+      .filter-options label{min-height:44px;font-size:13px}
       .filter-view .view-switch{display:grid;grid-template-columns:1fr 1fr;width:100%;min-height:46px}
       .filter-view .view-switch button{min-height:46px}
       .filter-meta{gap:7px;margin-bottom:11px}
@@ -263,7 +271,7 @@
       .scanner-frame{min-height:190px;max-height:48dvh}
       .scanner-intro{font-size:11px}
       .tmdb-progress-head{align-items:flex-start;flex-direction:column;gap:4px}
-      .account-dialog{width:100%}
+      .account-dialog{width:100%;height:calc(100dvh - 10px)}
       .account-settings-tabs{margin-top:14px}
       .account-settings-tabs button{flex:1;padding:0 8px}
       .account-settings-panel{padding-top:15px}
@@ -275,6 +283,9 @@
       .security-setting .btn{width:100%;min-height:46px}
       .password-field{grid-template-columns:1fr}
       .password-eye{width:100%;min-height:42px;margin-top:0}
+      .auth-gate{padding:12px}
+      .auth-card{padding:23px 18px}
+      .auth-card h1{font-size:33px}
     }
     @media(max-width:370px){
       .shell{padding-right:10px;padding-left:10px}
@@ -288,9 +299,20 @@
     }
   </style>
 </head>
-<body>
+<body class="auth-pending">
+<div id="authGate" class="auth-gate" aria-live="polite">
+  <div class="auth-card">
+    <div class="auth-mark">CineTrack</div>
+    <div class="auth-gate-loading">Vérification de votre session…</div>
+    <div class="auth-gate-login">
+      <h1>Votre collection privée.</h1>
+      <p class="lead">Connectez-vous pour accéder à CineTrack.</p>
+      <form id="authForm" class="form"><label>Adresse e-mail<input id="email" type="email" required autocomplete="email"></label><label>Mot de passe<input id="password" type="password" required minlength="6" autocomplete="current-password"></label><div id="authError" class="meta" role="alert"></div><button class="btn">Se connecter</button></form>
+    </div>
+  </div>
+</div>
 <header><div class="shell top">
-  <div class="brand">Cine<b>Track</b></div>
+  <button id="brandHomeBtn" class="brand" type="button" aria-label="Revenir à l’accueil">Cine<b>Track</b></button>
   <button id="mobileNavBtn" class="mobile-nav-toggle" type="button" aria-controls="mainNav" aria-expanded="false" aria-label="Ouvrir le menu">☰</button>
   <nav id="mainNav" aria-label="Navigation principale">
     <button data-page="home" class="active">Accueil</button>
@@ -298,15 +320,14 @@
     <button data-page="series">Watchlist séries</button>
   </nav>
   <div class="account">
-    <button id="authBtn" class="btn secondary">Connexion</button>
     <details id="accountMenu" class="account-menu hidden">
       <summary class="account-trigger" aria-label="Ouvrir le menu du compte">
         <span id="accountAvatar" class="account-avatar">C</span>
-        <span class="account-copy"><strong id="accountName">Mon compte</strong><small id="userLabel"></small></span>
+        <span class="account-copy"><strong id="accountName">Mon compte</strong></span>
         <span class="menu-chevron">⌄</span>
       </summary>
       <div class="account-dropdown">
-        <div class="account-dropdown-head"><strong id="accountMenuName">Mon compte</strong><span id="accountMenuEmail"></span></div>
+        <div class="account-dropdown-head"><strong id="accountMenuName">Mon compte</strong></div>
         <button id="openAccountSettingsBtn" type="button">Paramètres du compte</button>
         <button id="accountSignOutBtn" type="button" class="signout">Déconnexion</button>
       </div>
@@ -362,6 +383,7 @@
   </div>
   <div id="catalogNotice" class="notice hidden"></div>
   <div class="filter-panel">
+    <div class="filter-panel-head"><div><span class="filter-label">Explorer les archives</span><h2>Rechercher et affiner</h2></div><span>Sélection multiple disponible</span></div>
     <div class="filter-search-row">
       <label class="filter-search"><span class="filter-label">Rechercher dans la filmographie</span><span class="search-field"><input id="filmSearch" type="search" placeholder="Titre, alias, personnage, rôle…" autocomplete="off"><button id="clearSearchBtn" type="button" class="clear-search hidden" aria-label="Effacer la recherche">×</button></span></label>
       <button id="resetFiltersBtn" type="button" class="filter-reset" disabled>Réinitialiser les filtres</button>
@@ -378,11 +400,16 @@
       <div class="filter-group"><span class="filter-label">Ma collection</span><div class="filter-segment">
         <button type="button" data-owned-value="all">Tous</button><button type="button" data-owned-value="owned">Possédés</button><button type="button" data-owned-value="missing">Manquants</button>
       </div></div>
-      <label class="filter-select">Format<select id="formatFilter"><option value="">Tous les formats</option><option>DVD</option><option>Blu-ray</option><option>4K UHD</option><option>VHS</option><option>Numérique</option><option>Autre</option></select></label>
-      <label class="filter-select">Statut<select id="statusFilter"><option value="">Tous les statuts</option><option>Sorti</option><option>À venir</option><option>En production</option><option>Annoncé</option></select></label>
-      <div class="filter-group"><span class="filter-label">Tri</span><button id="sortBtn" type="button" class="filter-sort">Plus ancien → récent</button></div>
+      <div class="filter-group"><span class="filter-label">Format</span><details id="formatFilterMenu" class="filter-multiselect"><summary><span id="formatFilterLabel">Tous les formats</span><span>⌄</span></summary><div class="filter-options">
+        <label><input type="checkbox" name="formatFilter" value="DVD"> DVD</label><label><input type="checkbox" name="formatFilter" value="Blu-ray"> Blu-ray</label><label><input type="checkbox" name="formatFilter" value="4K UHD"> 4K UHD</label><label><input type="checkbox" name="formatFilter" value="VHS"> VHS</label><label><input type="checkbox" name="formatFilter" value="Numérique"> Numérique</label><label><input type="checkbox" name="formatFilter" value="Autre"> Autre</label>
+      </div></details></div>
+      <div class="filter-group"><span class="filter-label">Statut</span><details id="statusFilterMenu" class="filter-multiselect"><summary><span id="statusFilterLabel">Tous les statuts</span><span>⌄</span></summary><div class="filter-options">
+        <label><input type="checkbox" name="statusFilter" value="Sorti"> Sorti</label><label><input type="checkbox" name="statusFilter" value="À venir"> À venir</label><label><input type="checkbox" name="statusFilter" value="En production"> En production</label><label><input type="checkbox" name="statusFilter" value="Annoncé"> Annoncé</label>
+      </div></details></div>
+      <label class="filter-select">Tri<select id="sortSelect"><option value="year:asc">Année · ancien → récent</option><option value="year:desc">Année · récent → ancien</option><option value="order:asc">Numéro · croissant</option><option value="order:desc">Numéro · décroissant</option><option value="title:asc">Titre · A → Z</option><option value="title:desc">Titre · Z → A</option><option value="participation:asc">Participation · A → Z</option><option value="participation:desc">Participation · Z → A</option><option value="role:asc">Rôle · A → Z</option><option value="role:desc">Rôle · Z → A</option><option value="status:asc">Statut · A → Z</option><option value="status:desc">Statut · Z → A</option><option value="collection:desc">Éditions · plus → moins</option><option value="collection:asc">Éditions · moins → plus</option><option value="poster:desc">Avec affiche d’abord</option><option value="poster:asc">Sans affiche d’abord</option></select></label>
       <div class="filter-group filter-view"><span class="filter-label">Affichage</span><div class="view-switch" aria-label="Mode d’affichage"><button id="listViewBtn" type="button">Liste</button><button id="visualViewBtn" type="button">Visuels</button></div></div>
     </div>
+    <div id="filterChips" class="filter-chips hidden" aria-label="Filtres actifs"></div>
   </div>
   <div class="filter-meta">
     <div class="filter-meta-main"><strong id="filmSummary">Chargement de la filmographie…</strong><span id="activeFilterSummary" class="active-filter-badge hidden"></span></div>
@@ -390,7 +417,7 @@
   </div>
   <div id="filmTableWrap" class="table-wrap results-space">
     <table>
-      <thead><tr><th>N°</th><th>Affiche</th><th>Année</th><th>Œuvre</th><th>Participation</th><th>Rôle / crédit</th><th>Statut</th><th>Ma collection</th></tr></thead>
+      <thead><tr><th data-sort-header="order" aria-sort="none"><button type="button" class="column-sort" data-sort-key="order">N° <span></span></button></th><th data-sort-header="poster" aria-sort="none"><button type="button" class="column-sort" data-sort-key="poster">Affiche <span></span></button></th><th data-sort-header="year" aria-sort="ascending"><button type="button" class="column-sort active" data-sort-key="year">Année <span>↑</span></button></th><th data-sort-header="title" aria-sort="none"><button type="button" class="column-sort" data-sort-key="title">Œuvre <span></span></button></th><th data-sort-header="participation" aria-sort="none"><button type="button" class="column-sort" data-sort-key="participation">Participation <span></span></button></th><th data-sort-header="role" aria-sort="none"><button type="button" class="column-sort" data-sort-key="role">Rôle / crédit <span></span></button></th><th data-sort-header="status" aria-sort="none"><button type="button" class="column-sort" data-sort-key="status">Statut <span></span></button></th><th data-sort-header="collection" aria-sort="none"><button type="button" class="column-sort" data-sort-key="collection">Ma collection <span></span></button></th></tr></thead>
       <tbody id="filmRows"></tbody>
     </table>
   </div>
@@ -405,8 +432,6 @@
   <div id="seriesGrid" class="grid"></div>
 </section>
 </main>
-
-<dialog id="authDialog"><div class="modal"><div class="modal-head"><h2>Connexion</h2><button class="ghost" data-close>✕</button></div><form id="authForm" class="form"><label>Adresse e-mail<input id="email" type="email" required autocomplete="email"></label><label>Mot de passe<input id="password" type="password" required minlength="6" autocomplete="current-password"></label><div id="authError" class="meta"></div><button class="btn">Se connecter</button></form></div></dialog>
 
 <dialog id="accountDialog" class="account-dialog"><div class="modal"><div class="modal-head"><div><div class="eyebrow">Compte CineTrack</div><h2 style="margin-top:6px">Paramètres du compte</h2></div><button class="ghost" data-close aria-label="Fermer">✕</button></div>
   <div class="account-settings-tabs" role="tablist" aria-label="Catégories des paramètres">
@@ -501,7 +526,7 @@ const TMDB_API_BASE="https://api.themoviedb.org/3";
 const TMDB_IMAGE_BASE="https://image.tmdb.org/t/p/w342";
 const EAN_LOOKUP_BASE="https://cinetrack-ean.giovannoni-f.workers.dev/lookup";
 const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app);
-let user=null,films=[],editions=[],series=[],sortAscending=true,selectedFilmId=null,filmView="list";
+let user=null,films=[],editions=[],series=[],sortKey="year",sortDirection="asc",selectedFilmId=null,filmView="list";
 let pendingPosterData=null,posterDataChanged=false,posterCompressionPending=false;
 let tmdbImportRunning=false,tmdbAbortRequested=false;
 let eanScanner=null,eanScanAccepted=false,pendingEanProduct=null,eanLookupController=null,lastEanLookup="";
@@ -554,21 +579,61 @@ function setFilmView(view){
   renderFilms();
 }
 
+function checkedFilterValues(name){return Array.from(document.querySelectorAll('input[name="'+name+'"]:checked')).map(function(input){return input.value})}
+
+function filterSelectionLabel(values,emptyLabel,singularLabel){
+  if(!values.length)return emptyLabel;
+  if(values.length===1)return values[0];
+  return values.length+" "+singularLabel+"s";
+}
+
+function renderFilterChips(scope,owned,query,formats,statuses){
+  const container=$("#filterChips"),items=[];
+  if(scope!=="progress")items.push({kind:"scope",value:scope,label:scope==="all"?"Tous les crédits":"Crédits techniques"});
+  if(owned!=="all")items.push({kind:"owned",value:owned,label:owned==="owned"?"Possédés":"Manquants"});
+  if(query)items.push({kind:"query",value:"",label:'Recherche : “'+query+'”'});
+  formats.forEach(function(value){items.push({kind:"format",value:value,label:value})});
+  statuses.forEach(function(value){items.push({kind:"status",value:value,label:value})});
+  container.replaceChildren();container.classList.toggle("hidden",!items.length);
+  items.forEach(function(item){
+    const chip=document.createElement("span");chip.className="filter-chip";chip.appendChild(document.createTextNode(item.label));
+    const remove=document.createElement("button");remove.type="button";remove.textContent="×";remove.setAttribute("aria-label","Retirer le filtre "+item.label);remove.onclick=function(){
+      if(item.kind==="scope")$("#scopeFilter").value="progress";
+      else if(item.kind==="owned")$("#filmFilter").value="all";
+      else if(item.kind==="query")$("#filmSearch").value="";
+      else{const input=Array.from(document.querySelectorAll('input[name="'+item.kind+'Filter"]')).find(function(option){return option.value===item.value});if(input)input.checked=false}
+      renderFilms();
+    };chip.appendChild(remove);container.appendChild(chip);
+  });
+}
+
+function updateSortUi(){
+  $("#sortSelect").value=sortKey+":"+sortDirection;
+  document.querySelectorAll("[data-sort-header]").forEach(function(header){
+    const active=header.dataset.sortHeader===sortKey,button=header.querySelector(".column-sort"),indicator=button.querySelector("span");
+    header.setAttribute("aria-sort",active?(sortDirection==="asc"?"ascending":"descending"):"none");button.classList.toggle("active",active);indicator.textContent=active?(sortDirection==="asc"?"↑":"↓"):"";
+  });
+}
+
 function updateFilterUi(){
-  const scope=$("#scopeFilter").value,owned=$("#filmFilter").value,query=$("#filmSearch").value.trim(),format=$("#formatFilter").value,status=$("#statusFilter").value;
+  const scope=$("#scopeFilter").value,owned=$("#filmFilter").value,query=$("#filmSearch").value.trim(),formats=checkedFilterValues("formatFilter"),statuses=checkedFilterValues("statusFilter");
   document.querySelectorAll("[data-scope-value]").forEach(function(button){button.classList.toggle("active",button.dataset.scopeValue===scope)});
   document.querySelectorAll("[data-owned-value]").forEach(function(button){button.classList.toggle("active",button.dataset.ownedValue===owned)});
   $("#clearSearchBtn").classList.toggle("hidden",!query);
-  const activeCount=(scope!=="progress"?1:0)+(owned!=="all"?1:0)+(query?1:0)+(format?1:0)+(status?1:0);
-  const advancedCount=(scope!=="progress"?1:0)+(owned!=="all"?1:0)+(format?1:0)+(status?1:0);
+  $("#formatFilterLabel").textContent=filterSelectionLabel(formats,"Tous les formats","format");
+  $("#statusFilterLabel").textContent=filterSelectionLabel(statuses,"Tous les statuts","statut");
+  const activeCount=(scope!=="progress"?1:0)+(owned!=="all"?1:0)+(query?1:0)+(formats.length?1:0)+(statuses.length?1:0);
+  const advancedCount=(scope!=="progress"?1:0)+(owned!=="all"?1:0)+(formats.length?1:0)+(statuses.length?1:0);
   $("#resetFiltersBtn").disabled=activeCount===0;
   $("#activeFilterSummary").classList.toggle("hidden",activeCount===0);
   $("#activeFilterSummary").textContent=activeCount+" filtre"+(activeCount>1?"s":"")+" actif"+(activeCount>1?"s":"");
   $("#mobileFilterCount").textContent=advancedCount?advancedCount+" actif"+(advancedCount>1?"s":""):"";
+  renderFilterChips(scope,owned,query,formats,statuses);
+  updateSortUi();
 }
 
 function resetFilmFilters(){
-  $("#filmSearch").value="";$("#scopeFilter").value="progress";$("#filmFilter").value="all";$("#formatFilter").value="";$("#statusFilter").value="";
+  $("#filmSearch").value="";$("#scopeFilter").value="progress";$("#filmFilter").value="all";document.querySelectorAll('input[name="formatFilter"],input[name="statusFilter"]').forEach(function(input){input.checked=false});
   renderFilms();
 }
 
@@ -591,7 +656,7 @@ function renderProfileAvatar(target,photo,name,email){
 function refreshAccountUi(){
   if(!user)return;
   const displayName=(accountProfile.displayName||user.displayName||"").trim()||"Mon compte",email=user.email||"";
-  $("#accountName").textContent=displayName;$("#accountMenuName").textContent=displayName;$("#userLabel").textContent=email;$("#accountMenuEmail").textContent=email;
+  $("#accountName").textContent=displayName;$("#accountMenuName").textContent=displayName;
   renderProfileAvatar($("#accountAvatar"),accountProfile.photo,displayName,email);
 }
 
@@ -653,18 +718,25 @@ syncResponsiveControls();
 if(mobileLayout.addEventListener)mobileLayout.addEventListener("change",syncResponsiveControls);
 else if(mobileLayout.addListener)mobileLayout.addListener(syncResponsiveControls);
 
-document.querySelectorAll("nav button").forEach(function(button){
-  button.onclick=function(){
-    document.querySelectorAll("main>section").forEach(function(section){section.classList.add("hidden")});
-    $("#page-"+button.dataset.page).classList.remove("hidden");
-    document.querySelectorAll("nav button").forEach(function(item){item.classList.remove("active")});
-    button.classList.add("active");
-    document.querySelectorAll("nav button").forEach(function(item){item.removeAttribute("aria-current")});
-    button.setAttribute("aria-current","page");
-    setMobileNav(false);
-  };
-});
-document.querySelector("nav button.active").setAttribute("aria-current","page");
+const validPages=["home","jackie","series"];
+function savedPage(){
+  const fromHash=location.hash.replace(/^#/,"");if(validPages.includes(fromHash))return fromHash;
+  try{const stored=localStorage.getItem("cinetrack-current-page");if(validPages.includes(stored))return stored}catch(error){}
+  return "home";
+}
+
+function showPage(page,updateLocation){
+  const selected=validPages.includes(page)?page:"home";
+  document.querySelectorAll("main>section").forEach(function(section){section.classList.toggle("hidden",section.id!=="page-"+selected)});
+  document.querySelectorAll("#mainNav button").forEach(function(button){const active=button.dataset.page===selected;button.classList.toggle("active",active);if(active)button.setAttribute("aria-current","page");else button.removeAttribute("aria-current")});
+  try{localStorage.setItem("cinetrack-current-page",selected)}catch(error){}
+  if(updateLocation&&location.hash!=="#"+selected)location.hash=selected;
+  setMobileNav(false);window.scrollTo({top:0,behavior:"auto"});
+}
+
+document.querySelectorAll("#mainNav button").forEach(function(button){button.onclick=function(){showPage(button.dataset.page,true)}});
+$("#brandHomeBtn").onclick=function(){showPage("home",true)};
+window.addEventListener("hashchange",function(){if(user)showPage(savedPage(),false)});
 
 document.addEventListener("click",function(event){
   document.querySelectorAll("details[open]").forEach(function(menu){if(!menu.contains(event.target))menu.removeAttribute("open")});
@@ -672,7 +744,6 @@ document.addEventListener("click",function(event){
 });
 document.addEventListener("keydown",function(event){if(event.key==="Escape")setMobileNav(false)});
 
-$("#authBtn").onclick=function(){$("#authDialog").showModal()};
 $("#accountSignOutBtn").onclick=function(){$("#accountMenu").removeAttribute("open");signOut(auth)};
 
 function setAccountSettingsPanel(panel){
@@ -755,16 +826,18 @@ $("#passwordForm").onsubmit=async function(event){
   }finally{submit.disabled=false;submit.textContent="Modifier le mot de passe"}
 };
 $("#authForm").onsubmit=async function(event){
-  event.preventDefault();$("#authError").textContent="";
-  try{await signInWithEmailAndPassword(auth,$("#email").value,$("#password").value);$("#authDialog").close()}
+  event.preventDefault();const submit=event.currentTarget.querySelector('button[type="submit"],button:not([type])');$("#authError").textContent="";submit.disabled=true;submit.textContent="Connexion…";
+  try{await signInWithEmailAndPassword(auth,$("#email").value,$("#password").value);event.currentTarget.reset()}
   catch(error){$("#authError").textContent="Connexion impossible. Vérifiez vos identifiants."}
+  finally{submit.disabled=false;submit.textContent="Se connecter"}
 };
 $("#addFilmBtn").onclick=function(){$("#catalogAdminMenu").removeAttribute("open");openFilmEditor(null)};
 $("#tmdbImportBtn").onclick=function(){$("#catalogAdminMenu").removeAttribute("open");openTmdbImporter()};
 $("#importCatalogBtn").onclick=function(){$("#catalogAdminMenu").removeAttribute("open");importCatalogFromBackup()};
 $("#exportCatalogBtn").onclick=function(){$("#catalogAdminMenu").removeAttribute("open");exportCatalogBackup()};
-$("#addSeriesBtn").onclick=function(){user?$("#seriesDialog").showModal():$("#authDialog").showModal()};
-$("#sortBtn").onclick=function(){sortAscending=!sortAscending;$("#sortBtn").textContent=sortAscending?"Plus ancien → récent":"Plus récent → ancien";renderFilms()};
+$("#addSeriesBtn").onclick=function(){if(user)$("#seriesDialog").showModal()};
+$("#sortSelect").onchange=function(){const parts=this.value.split(":");setFilmSort(parts[0],parts[1])};
+document.querySelectorAll("[data-sort-key]").forEach(function(button){button.onclick=function(){setFilmSort(button.dataset.sortKey)}});
 $("#listViewBtn").onclick=function(){setFilmView("list")};
 $("#visualViewBtn").onclick=function(){setFilmView("visual")};
 $("#clearSearchBtn").onclick=function(){$("#filmSearch").value="";renderFilms();$("#filmSearch").focus()};
@@ -774,13 +847,13 @@ document.querySelectorAll("[data-owned-value]").forEach(function(button){button.
 
 onAuthStateChanged(auth,async function(currentUser){
   user=currentUser;
-  $("#authBtn").classList.toggle("hidden",!!user);
   $("#accountMenu").classList.toggle("hidden",!user);
   $("#catalogAdminMenu").classList.toggle("hidden",!isAdmin());
-  if(user)await loadAccountProfile();
-  else{accountProfile={displayName:"",photo:""};pendingProfilePhoto="";$("#accountMenu").removeAttribute("open");$("#catalogAdminMenu").removeAttribute("open");if($("#accountDialog").open)$("#accountDialog").close();if($("#passwordDialog").open)$("#passwordDialog").close()}
-  $("#loginNotice").classList.toggle("hidden",!!user);
-  await loadAll();
+  if(user){
+    await loadAccountProfile();await loadAll();showPage(savedPage(),false);$("#loginNotice").classList.add("hidden");document.body.classList.remove("auth-pending","auth-required");document.body.classList.add("auth-ready");
+  }else{
+    accountProfile={displayName:"",photo:""};pendingProfilePhoto="";$("#accountMenu").removeAttribute("open");$("#catalogAdminMenu").removeAttribute("open");document.querySelectorAll("dialog[open]").forEach(function(dialog){dialog.close()});await loadAll();document.body.classList.remove("auth-pending","auth-ready");document.body.classList.add("auth-required");setTimeout(function(){$("#email").focus()},50);
+  }
 });
 
 async function loadAll(){
@@ -1078,28 +1151,53 @@ function displayedTitle(film){return film.titleFr||film.titleEn}
 function secondaryTitle(film){return film.titleFr&&film.titleFr!==film.titleEn?film.titleEn:(film.originalTitle||"")}
 function filmImage(film){return safeImageUrl(film.posterData)||safeImageUrl(film.posterUrl)}
 
+function filmSortValue(film,key){
+  if(key==="order")return film.sourceOrder===9999?null:Number(film.sourceOrder);
+  if(key==="year")return Number(film.year)>0?Number(film.year):null;
+  if(key==="title")return displayedTitle(film);
+  if(key==="participation")return film.participation||"";
+  if(key==="role")return film.role||"";
+  if(key==="status")return film.status||"";
+  if(key==="collection")return editionsFor(film.id).length;
+  if(key==="poster")return filmImage(film)?1:0;
+  return displayedTitle(film);
+}
+
+function compareFilmsForView(a,b){
+  const left=filmSortValue(a,sortKey),right=filmSortValue(b,sortKey),leftMissing=left==null||left==="",rightMissing=right==null||right==="";
+  if(leftMissing&&!rightMissing)return 1;
+  if(!leftMissing&&rightMissing)return -1;
+  let result=0;
+  if(typeof left==="number"&&typeof right==="number")result=left-right;
+  else result=String(left).localeCompare(String(right),"fr",{sensitivity:"base",numeric:true});
+  if(sortDirection==="desc")result=-result;
+  return result||compareFilms(a,b);
+}
+
+function setFilmSort(key,direction){
+  if(direction){sortKey=key;sortDirection=direction}
+  else if(sortKey===key)sortDirection=sortDirection==="asc"?"desc":"asc";
+  else{sortKey=key;sortDirection=(key==="collection"||key==="poster")?"desc":"asc"}
+  renderFilms();
+}
+
 function renderFilms(){
-  const query=normalized($("#filmSearch").value),scope=$("#scopeFilter").value,ownedFilter=$("#filmFilter").value,format=$("#formatFilter").value,status=$("#statusFilter").value;
+  const query=normalized($("#filmSearch").value),scope=$("#scopeFilter").value,ownedFilter=$("#filmFilter").value,formats=checkedFilterValues("formatFilter"),statuses=checkedFilterValues("statusFilter");
   let data=films.filter(function(film){
     const filmEditions=editionsFor(film.id),owned=filmEditions.length>0;
     if(scope==="progress"&&!film.countsTowardProgress)return false;
     if(scope==="technical"&&film.countsTowardProgress)return false;
     if(ownedFilter==="owned"&&!owned)return false;
     if(ownedFilter==="missing"&&owned)return false;
-    if(format&&!filmEditions.some(function(edition){return edition.format===format}))return false;
-    if(status&&film.status!==status)return false;
+    if(formats.length&&!filmEditions.some(function(edition){return formats.includes(edition.format)}))return false;
+    if(statuses.length&&!statuses.includes(film.status))return false;
     if(query){
       const haystack=normalized([film.titleFr,film.titleEn,film.originalTitle,film.romanization,film.aliases,film.role,film.participation,film.year].filter(Boolean).join(" "));
       if(!haystack.includes(query))return false;
     }
     return true;
   });
-  data.sort(function(a,b){
-    if(a.year==null&&b.year!=null)return 1;
-    if(a.year!=null&&b.year==null)return -1;
-    const result=compareFilms(a,b);
-    return sortAscending?result:-result;
-  });
+  data.sort(compareFilmsForView);
   $("#filmSummary").textContent=data.length+" résultat"+(data.length>1?"s":"")+" · "+films.length+" crédits au catalogue";
   $("#filmRows").innerHTML=data.length?data.map(renderFilmRow).join(""):'<tr><td colspan="8"><div class="empty">Aucun film ne correspond à ces filtres.</div></td></tr>';
   $("#filmVisualGrid").innerHTML=data.length?data.map(renderFilmCard).join(""):'<div class="empty" style="grid-column:1/-1">Aucun film ne correspond à ces filtres.</div>';
@@ -1231,7 +1329,7 @@ function openFilmDetails(filmId){
 }
 
 $("#detailsAddEditionBtn").onclick=function(){
-  if(!user){$("#filmDetailsDialog").close();$("#authDialog").showModal();return}
+  if(!user)return;
   $("#filmDetailsDialog").close();openEditionDialog(selectedFilmId);
 };
 $("#detailsEditBtn").onclick=function(){
@@ -1240,7 +1338,7 @@ $("#detailsEditBtn").onclick=function(){
 };
 
 function openEditionDialog(filmId){
-  if(!user){$("#authDialog").showModal();return}
+  if(!user)return;
   resetEanProductLookup();
   $("#editionForm").reset();
   $("#editionForm").elements.filmId.value=filmId;
@@ -1591,7 +1689,8 @@ $("#seriesForm").onsubmit=async function(event){
   }
 };
 
-["filmSearch","scopeFilter","filmFilter","formatFilter","statusFilter"].forEach(function(id){$("#"+id).addEventListener(id==="filmSearch"?"input":"change",renderFilms)});
+["filmSearch","scopeFilter","filmFilter"].forEach(function(id){$("#"+id).addEventListener(id==="filmSearch"?"input":"change",renderFilms)});
+document.querySelectorAll('input[name="formatFilter"],input[name="statusFilter"]').forEach(function(input){input.addEventListener("change",renderFilms)});
 $("#seriesFilter").onchange=renderSeries;
 </script>
 </body>
