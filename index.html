@@ -134,12 +134,152 @@
     .ean-field{display:grid;gap:5px}.ean-input-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;align-items:end}.ean-input-row input{margin-top:0}.ean-input-row .btn{min-height:42px}.ean-help{margin:0;color:#747a7f;font-size:10px;line-height:1.45}.ean-status{min-height:18px;color:#14705b;font-size:11px}.ean-status.error{color:#a23d3d}.ean-code{font-variant-numeric:tabular-nums;letter-spacing:.06em}.ean-product-preview{display:grid;grid-template-columns:86px minmax(0,1fr);gap:14px;padding:12px;border:1px solid #acdcec;background:#f2fbfe}.ean-product-image{display:grid;width:86px;height:116px;place-items:center;overflow:hidden;border:1px solid #cfd8dc;background:#fff;color:#81898e;font-size:10px;font-weight:900;text-align:center}.ean-product-image img{width:100%;height:100%;object-fit:contain}.ean-product-copy{min-width:0}.ean-product-kicker{color:#007da9;font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}.ean-product-title{display:block;margin-top:5px;color:#171a1c;font-size:13px;line-height:1.4}.ean-product-meta{margin-top:7px;color:#60686d;font-size:10px;line-height:1.5}.ean-product-note{margin:9px 0 0;color:#536269;font-size:10px;line-height:1.45}.scanner-intro{margin:13px 0;color:#5f666b;font-size:12px;line-height:1.55}.scanner-frame{min-height:260px;overflow:hidden;border:1px solid #cfd4d7;background:#f4f6f7}.scanner-frame video{object-fit:cover}.scanner-frame button,.scanner-frame select{font:inherit}.scanner-frame button{border:1px solid #bfc5c9!important;border-radius:2px!important;background:#fff!important;color:#15191c!important;padding:8px 11px!important}.scanner-frame a{color:#007da9!important}.scanner-status{min-height:22px;margin-top:10px;color:#177093;font-size:12px;line-height:1.5}.scanner-status.error{color:#a23d3d}.scanner-privacy{padding:10px 12px;border-left:3px solid var(--jackie);background:#eefaff;color:#53666e;font-size:10px;line-height:1.5}
     @media(max-width:1050px){.jackie-hero{grid-template-columns:1fr}.jackie-dashboard{border-left:0;border-top:1px solid #d2d5d8;padding:24px 0 0}.jackie-total{text-align:left;align-items:flex-start}.jackie-personal{max-width:430px}.filter-view{margin-left:0}.account-trigger{min-width:0}.account-copy{display:none}.account .account-avatar{display:grid}.account .menu-chevron{display:block}.account-dropdown{right:0}}
     @media(max-width:560px){.jackie-hero{padding-top:24px;gap:28px}.jackie-title-line{align-items:flex-start;gap:14px}.jackie-title-line h1{font-size:56px}.jackie-chinese{font-size:31px}.jackie-dashboard{grid-template-columns:90px 1fr;gap:16px}.jackie-total{padding-right:14px}.jackie-total strong{font-size:46px}.jackie-percent{font-size:30px}.jackie-command{align-items:flex-start;flex-direction:column}.collector-no{width:46px}.film-visual-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.collector-card-body{min-height:115px;padding-left:27px}.collector-poster{margin-left:27px}.poster-editor{grid-template-columns:82px 1fr}.filter-panel{padding:15px}.filter-search-row{grid-template-columns:1fr}.filter-reset{justify-self:start}.filter-groups{display:grid;grid-template-columns:1fr;align-items:stretch}.filter-group,.filter-select{width:100%}.filter-segment{display:grid;grid-template-columns:repeat(3,1fr)}.filter-segment button{min-height:40px;padding:0 6px}.filter-select select,.filter-sort{width:100%}.filter-view{width:100%}.filter-view .view-switch{display:grid;grid-template-columns:1fr 1fr}.filter-meta{align-items:flex-start;flex-direction:column}.account-dropdown{position:fixed;top:70px;right:15px;left:15px;width:auto}.admin-dropdown{right:auto;left:0}.account-trigger{padding:6px}.account .menu-chevron{display:none}.ean-input-row{grid-template-columns:1fr 1fr}.ean-input-row input{grid-column:1/-1}.ean-input-row .btn{width:100%}.ean-product-preview{grid-template-columns:70px minmax(0,1fr)}.ean-product-image{width:70px;height:96px}.scanner-frame{min-height:220px}}
+
+    /* Ergonomie responsive */
+    .mobile-nav-toggle,.mobile-filter-toggle{display:none}
+    @media(max-width:760px){
+      body{overflow-x:hidden}
+      .shell{width:100%;padding-right:14px;padding-left:14px}
+      header{backdrop-filter:none}
+      .top{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;min-height:64px;padding:9px 0}
+      .brand{min-width:0;font-size:20px}
+      .mobile-nav-toggle{display:grid;width:44px;height:44px;place-items:center;border:1px solid #d6dade;background:#fff;color:#15191c;font-size:20px;line-height:1}
+      .mobile-nav-toggle[aria-expanded="true"]{border-color:#111315;background:#111315;color:#fff}
+      .top nav{display:none;grid-column:1/-1;width:100%;margin:2px 0 -1px;padding:8px 0 2px;border-top:1px solid #e0e3e5;overflow:visible}
+      .top nav.is-open{display:grid;gap:4px}
+      .top nav button{display:flex;width:100%;min-height:46px;align-items:center;padding:11px 13px;text-align:left}
+      .top nav button.active:after{content:"•";margin-left:auto;color:var(--jackie);font-size:20px}
+      .account{position:static;margin:0}
+      .account-trigger,.account #authBtn{min-height:44px}
+      .account-trigger{padding:5px}
+      .account .account-avatar{width:32px;height:32px;flex-basis:32px}
+      .account-dropdown{position:fixed;z-index:60;top:70px;right:10px;left:10px;width:auto;max-height:calc(100dvh - 82px);overflow:auto;border-radius:4px}
+      main{padding-top:22px;padding-bottom:48px}
+      .hero{padding:20px 0 28px}
+      .hero h1{font-size:clamp(36px,11vw,50px);line-height:1.03}
+      .lead{font-size:15px;line-height:1.55}
+      .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:20px 0}
+      .stats .stat:last-child:nth-child(odd){grid-column:1/-1}
+      .stat{min-height:112px;padding:16px}
+      .stat strong{font-size:27px}
+      .split{gap:11px}
+      .section-head{gap:12px;margin-bottom:18px}
+      .section-head h1{margin-bottom:8px!important}
+      .section-head>.btn{width:100%;min-height:46px}
+      #page-series .toolbar,#page-series .control{width:100%}
+      #page-series .grid{grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:13px}
+
+      .jackie-hero{gap:24px;padding:22px 0 24px;border-top-width:5px}
+      .jackie-title-line{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}
+      .jackie-title-line h1{min-width:0;font-size:clamp(42px,13.5vw,58px);letter-spacing:-1.5px}
+      .jackie-chinese{font-size:30px}
+      .jackie-intro{margin-top:16px;font-size:13px}
+      .jackie-dashboard{grid-template-columns:82px minmax(0,1fr);gap:15px;padding-top:19px}
+      .jackie-total{padding-right:12px}
+      .jackie-total strong{font-size:43px}
+      .jackie-personal strong{font-size:21px}
+      .jackie-percent{font-size:29px}
+      .jackie-command{align-items:stretch;gap:15px;margin:0 0 14px;padding:18px 0 4px}
+      .jackie-command-label{align-items:flex-start;font-size:10px;line-height:1.5}
+      .jackie-command-label:before{flex:0 0 28px;width:28px;margin-top:6px}
+      .admin-menu{width:100%}
+      .admin-menu>summary{justify-content:center;min-height:46px}
+      .admin-dropdown{position:static;width:100%;margin-top:6px;box-shadow:0 12px 28px rgba(16,24,30,.12)}
+      .admin-dropdown button{min-height:44px}
+
+      .filter-panel{margin-bottom:20px;padding:14px;border-top-width:4px;box-shadow:0 10px 28px rgba(16,25,32,.055)}
+      .filter-search-row{grid-template-columns:1fr;gap:5px;padding-bottom:12px}
+      .search-field input{height:48px;padding-left:43px;font-size:16px}
+      .filter-reset{justify-self:start;height:36px}
+      .mobile-filter-toggle{display:flex;width:100%;min-height:46px;align-items:center;justify-content:space-between;margin-top:12px;padding:0 12px;border:1px solid #cfd4d7;background:#fff;color:#202427;font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+      .mobile-filter-toggle:after{content:"⌄";font-size:15px;transition:transform .18s ease}
+      .mobile-filter-toggle[aria-expanded="true"]:after{transform:rotate(180deg)}
+      .mobile-filter-count:not(:empty){margin-left:7px;padding:3px 6px;background:#e7f8fe;color:#007da9}
+      .filter-groups{display:grid;grid-template-columns:1fr;gap:15px;padding-top:15px}
+      .filter-groups.mobile-collapsed{display:none}
+      .filter-group,.filter-select,.filter-view{width:100%;margin-left:0}
+      .filter-segment{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%}
+      .filter-segment button{min-height:48px;padding:6px;font-size:10px;line-height:1.25;white-space:normal}
+      .filter-select select,.filter-sort{width:100%;height:46px;font-size:16px}
+      .filter-view .view-switch{display:grid;grid-template-columns:1fr 1fr;width:100%;min-height:46px}
+      .filter-view .view-switch button{min-height:46px}
+      .filter-meta{gap:7px;margin-bottom:11px}
+      .filter-meta-main{align-items:flex-start;flex-direction:column;gap:6px}
+      .filter-meta>span:last-child{font-size:9px}
+
+      #page-jackie .table-wrap{overflow:visible;border:0;border-left:0;background:transparent;box-shadow:none}
+      #page-jackie table,#page-jackie tbody{display:block;width:100%;min-width:0}
+      #page-jackie thead{display:none}
+      #page-jackie tbody{display:grid;gap:12px}
+      #page-jackie tbody tr{display:grid;grid-template-columns:54px 45px minmax(0,1fr);grid-template-areas:"poster number title" "poster year title" "poster participation participation" "poster role role" "poster status collection";gap:5px 9px;padding:13px 12px;border:1px solid #d8dcdf;border-left:5px solid var(--jackie);background:#fff!important;box-shadow:0 8px 22px rgba(16,25,32,.055)}
+      #page-jackie tbody tr.technical-row{border-left-color:#aeb4b8}
+      #page-jackie tbody td{display:block;min-width:0;padding:0!important;border:0!important}
+      #page-jackie tbody td:nth-child(1){grid-area:number;width:auto;align-self:end;font-size:14px}
+      #page-jackie tbody td:nth-child(2){grid-area:poster;width:auto}
+      #page-jackie tbody td:nth-child(3){grid-area:year;align-self:start;font-size:12px}
+      #page-jackie tbody td:nth-child(4){grid-area:title;align-self:start}
+      #page-jackie tbody td:nth-child(5){grid-area:participation;margin-top:4px}
+      #page-jackie tbody td:nth-child(6){grid-area:role;max-width:none;color:#646b70;font-size:12px;line-height:1.4}
+      #page-jackie tbody td:nth-child(7){grid-area:status;align-self:center}
+      #page-jackie tbody td:nth-child(8){grid-area:collection;min-width:0;align-self:center}
+      #page-jackie tbody .list-poster{width:54px;height:81px}
+      #page-jackie tbody .film-title{font-size:15px;line-height:1.25}
+      #page-jackie tbody .film-subtitle{font-size:10px}
+      #page-jackie tbody .badges{justify-content:flex-end;margin-top:0}
+      #page-jackie tbody .badge{font-size:9px;padding:4px 5px}
+      #page-jackie tbody tr:has(.empty){display:block;padding:0;border-left:0}
+      .film-visual-grid{grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:12px}
+      .collector-card-body{min-height:112px}
+      .collector-card-title{font-size:14px}
+      .collector-card-subtitle{font-size:9px}
+      .catalog-footnote{padding-right:5px;padding-left:5px}
+      .tmdb-credit{align-items:center;flex-direction:column;gap:8px;text-align:center}
+
+      dialog{inset:auto 0 0;width:100%;max-width:none;max-height:calc(100dvh - 10px);margin:auto 0 0;border-width:1px 0 0;border-radius:14px 14px 0 0;overscroll-behavior:contain}
+      dialog::backdrop{background:rgba(10,15,19,.62)}
+      .modal{padding:16px 14px max(18px,env(safe-area-inset-bottom))}
+      .modal-head{position:sticky;z-index:6;top:0;align-items:center;margin:-16px -14px 0;padding:14px;border-bottom:1px solid #e0e3e5;background:rgba(255,255,255,.98)}
+      .modal-head>div{min-width:0}
+      .modal-head h2,.details-title{overflow-wrap:anywhere}
+      .modal-head .ghost{display:grid;width:44px;height:44px;flex:0 0 44px;place-items:center;padding:0;border:1px solid #d9dcdf}
+      .form{gap:14px;margin-top:15px}
+      .form input,.form select,.form textarea{min-height:46px;font-size:16px}
+      .row,.row.three{grid-template-columns:1fr}
+      .form-actions{display:grid;grid-template-columns:1fr;gap:8px;margin-top:14px}
+      .form-actions .btn,.form-actions .danger{width:100%;min-height:46px;margin-right:0}
+      .details-grid{grid-template-columns:1fr;gap:9px;margin:14px 0}
+      .detail.wide{grid-column:auto}
+      .edition-item{align-items:stretch;flex-direction:column}
+      .edition-item>.icon-btn{width:100%;min-height:42px}
+      .source-links a{min-height:42px}
+      .poster-editor{grid-template-columns:78px minmax(0,1fr);gap:12px;padding:11px}
+      .ean-input-row{grid-template-columns:1fr 1fr}
+      .ean-input-row input{grid-column:1/-1}
+      .ean-input-row .btn{width:100%;min-height:46px;padding:8px 6px;font-size:10px}
+      .ean-product-preview{grid-template-columns:66px minmax(0,1fr);gap:10px;padding:10px}
+      .ean-product-image{width:66px;height:91px}
+      .ean-product-title,.ean-product-meta{overflow-wrap:anywhere}
+      .scanner-frame{min-height:190px;max-height:48dvh}
+      .scanner-intro{font-size:11px}
+      .tmdb-progress-head{align-items:flex-start;flex-direction:column;gap:4px}
+    }
+    @media(max-width:370px){
+      .shell{padding-right:10px;padding-left:10px}
+      .brand{font-size:18px}
+      .brand:before{width:25px;height:25px}
+      .jackie-title-line h1{font-size:40px}
+      .jackie-chinese{font-size:27px}
+      .film-visual-grid{grid-template-columns:1fr}
+      #page-jackie tbody tr{grid-template-columns:48px 42px minmax(0,1fr);padding:11px 9px}
+      #page-jackie tbody .list-poster{width:48px;height:72px}
+    }
   </style>
 </head>
 <body>
 <header><div class="shell top">
   <div class="brand">Cine<b>Track</b></div>
-  <nav>
+  <button id="mobileNavBtn" class="mobile-nav-toggle" type="button" aria-controls="mainNav" aria-expanded="false" aria-label="Ouvrir le menu">☰</button>
+  <nav id="mainNav" aria-label="Navigation principale">
     <button data-page="home" class="active">Accueil</button>
     <button data-page="jackie">Jackie Chan</button>
     <button data-page="series">Watchlist séries</button>
@@ -215,7 +355,8 @@
     </div>
     <select id="scopeFilter" class="hidden" aria-hidden="true"><option value="progress">Progression · 154</option><option value="all">Tous les crédits · 191</option><option value="technical">Crédits techniques · 37</option></select>
     <select id="filmFilter" class="hidden" aria-hidden="true"><option value="all">Tous</option><option value="owned">Possédés</option><option value="missing">Manquants</option></select>
-    <div class="filter-groups">
+    <button id="mobileFiltersToggle" class="mobile-filter-toggle" type="button" aria-controls="filmFilterGroups" aria-expanded="false"><span>Filtres avancés <span id="mobileFilterCount" class="mobile-filter-count"></span></span></button>
+    <div id="filmFilterGroups" class="filter-groups">
       <div class="filter-group"><span class="filter-label">Type de crédit</span><div class="filter-segment">
         <button type="button" data-scope-value="progress">Filmographie <span id="scopeProgressCount" class="filter-count">154</span></button>
         <button type="button" data-scope-value="all">Tous <span id="scopeAllCount" class="filter-count">191</span></button>
@@ -382,9 +523,11 @@ function updateFilterUi(){
   document.querySelectorAll("[data-owned-value]").forEach(function(button){button.classList.toggle("active",button.dataset.ownedValue===owned)});
   $("#clearSearchBtn").classList.toggle("hidden",!query);
   const activeCount=(scope!=="progress"?1:0)+(owned!=="all"?1:0)+(query?1:0)+(format?1:0)+(status?1:0);
+  const advancedCount=(scope!=="progress"?1:0)+(owned!=="all"?1:0)+(format?1:0)+(status?1:0);
   $("#resetFiltersBtn").disabled=activeCount===0;
   $("#activeFilterSummary").classList.toggle("hidden",activeCount===0);
   $("#activeFilterSummary").textContent=activeCount+" filtre"+(activeCount>1?"s":"")+" actif"+(activeCount>1?"s":"");
+  $("#mobileFilterCount").textContent=advancedCount?advancedCount+" actif"+(advancedCount>1?"s":""):"";
 }
 
 function resetFilmFilters(){
@@ -400,18 +543,50 @@ function refreshAccountUi(){
 }
 
 document.querySelectorAll("[data-close]").forEach(function(button){button.onclick=function(){button.closest("dialog").close()}});
+const mobileNavBtn=$("#mobileNavBtn"),mainNav=$("#mainNav"),mobileFiltersToggle=$("#mobileFiltersToggle"),filmFilterGroups=$("#filmFilterGroups");
+
+function setMobileNav(open){
+  mainNav.classList.toggle("is-open",open);
+  mobileNavBtn.setAttribute("aria-expanded",String(open));
+  mobileNavBtn.setAttribute("aria-label",open?"Fermer le menu":"Ouvrir le menu");
+  mobileNavBtn.textContent=open?"✕":"☰";
+}
+
+function setMobileFilters(open){
+  filmFilterGroups.classList.toggle("mobile-collapsed",!open);
+  mobileFiltersToggle.setAttribute("aria-expanded",String(open));
+}
+
+mobileNavBtn.onclick=function(){setMobileNav(mobileNavBtn.getAttribute("aria-expanded")!=="true")};
+mobileFiltersToggle.onclick=function(){setMobileFilters(mobileFiltersToggle.getAttribute("aria-expanded")!=="true")};
+
+const mobileLayout=window.matchMedia("(max-width: 760px)");
+function syncResponsiveControls(){
+  setMobileNav(false);
+  setMobileFilters(!mobileLayout.matches);
+}
+syncResponsiveControls();
+if(mobileLayout.addEventListener)mobileLayout.addEventListener("change",syncResponsiveControls);
+else if(mobileLayout.addListener)mobileLayout.addListener(syncResponsiveControls);
+
 document.querySelectorAll("nav button").forEach(function(button){
   button.onclick=function(){
     document.querySelectorAll("main>section").forEach(function(section){section.classList.add("hidden")});
     $("#page-"+button.dataset.page).classList.remove("hidden");
     document.querySelectorAll("nav button").forEach(function(item){item.classList.remove("active")});
     button.classList.add("active");
+    document.querySelectorAll("nav button").forEach(function(item){item.removeAttribute("aria-current")});
+    button.setAttribute("aria-current","page");
+    setMobileNav(false);
   };
 });
+document.querySelector("nav button.active").setAttribute("aria-current","page");
 
 document.addEventListener("click",function(event){
   document.querySelectorAll("details[open]").forEach(function(menu){if(!menu.contains(event.target))menu.removeAttribute("open")});
+  if(!event.target.closest("header"))setMobileNav(false);
 });
+document.addEventListener("keydown",function(event){if(event.key==="Escape")setMobileNav(false)});
 
 $("#authBtn").onclick=function(){$("#authDialog").showModal()};
 $("#accountSignOutBtn").onclick=function(){$("#accountMenu").removeAttribute("open");signOut(auth)};
