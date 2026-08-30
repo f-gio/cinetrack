@@ -1376,7 +1376,7 @@ function resetEanProductLookup(){
 function renderEanProduct(product){
   const preview=$("#eanProductPreview"),imageBox=$("#eanProductImage");
   $("#eanProductTitle").textContent=product.title||"Produit sans titre";
-  $("#eanProductMeta").textContent=[product.format,product.publisher,product.model].filter(Boolean).join(" · ")||"Informations partielles";
+  $("#eanProductMeta").textContent=[product.format,product.publisher,product.country,product.model].filter(Boolean).join(" · ")||"Informations partielles";
   imageBox.innerHTML="";
   const imageUrl=safeUrl(product.imageUrl);
   if(imageUrl){
@@ -1410,15 +1410,17 @@ async function lookupEanProduct(value){
       title:String(result.title||"").slice(0,500),
       description:String(result.description||"").slice(0,1500),
       publisher:String(result.publisher||"").slice(0,200),
+      country:String(result.country||"").slice(0,100),
       model:String(result.model||"").slice(0,200),
       category:String(result.category||"").slice(0,500),
       format:String(result.format||"").slice(0,50),
       imageUrl:safeUrl(result.imageUrl)||"",
-      source:String(result.source||"UPCitemdb").slice(0,80)
+      source:String(result.source||"Recherche web").slice(0,80)
     };
     const form=$("#editionForm");
     if(pendingEanProduct.format&&[...form.elements.format.options].some(function(option){return option.value===pendingEanProduct.format}))form.elements.format.value=pendingEanProduct.format;
     if(pendingEanProduct.publisher&&!form.elements.publisher.value.trim())form.elements.publisher.value=pendingEanProduct.publisher;
+    if(pendingEanProduct.country&&!form.elements.country.value.trim())form.elements.country.value=pendingEanProduct.country;
     if(pendingEanProduct.title&&!form.elements.edition.value.trim())form.elements.edition.value=pendingEanProduct.title;
     renderEanProduct(pendingEanProduct);
     setEanStatus("Édition reconnue. Vérifiez les informations préremplies.",false);
@@ -1653,7 +1655,7 @@ $("#editionForm").onsubmit=async function(event){
       data.productImageUrl=pendingEanProduct.imageUrl||null;
       data.productModel=pendingEanProduct.model||null;
       data.productCategory=pendingEanProduct.category||null;
-      data.productSource=pendingEanProduct.source||"UPCitemdb";
+      data.productSource=pendingEanProduct.source||"Recherche web";
       data.productMatchedAt=serverTimestamp();
     }
     if(!data.ean)delete data.ean;
