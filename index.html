@@ -306,6 +306,14 @@
     @media(max-width:1050px){.collection-insights{grid-template-columns:repeat(3,minmax(0,1fr))}}
     @media(max-width:760px){.top{grid-template-columns:minmax(0,1fr) 44px 44px}.brand{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.account-trigger{width:44px;min-width:44px}.filter-panel{position:relative;top:auto;padding:14px}.filter-primary,.filter-advanced-content{align-items:stretch;flex-direction:column}.filter-primary>* ,.filter-advanced-content>*{width:100%}.filter-multiselect{width:100%}.filter-options{position:static;width:100%;box-shadow:none}.filter-primary .filter-segment{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));overflow:visible}.filter-primary .filter-segment button{min-width:0;white-space:normal}.filter-advanced .filter-segment{display:grid;grid-template-columns:1fr;overflow:visible}.filter-segment button{min-height:46px}.filter-primary .filter-view{margin-left:0}.view-switch button{flex:1;min-height:44px}.catalog-action-hint{align-items:flex-start;flex-direction:column}.ean-input-row{grid-template-columns:1fr 1fr}.ean-input-row input{grid-column:1/-1}.edition-step{padding:13px}.edition-film-choices{grid-template-columns:1fr}.modal-head{top:0}.form-actions{bottom:0}.hero-actions .btn{width:100%}.stats{grid-template-columns:1fr 1fr}.stat-action{min-height:105px}.collection-insights{grid-template-columns:repeat(2,minmax(0,1fr))}.film-visual-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.collector-card-foot{align-items:flex-start;flex-direction:column;gap:4px}.collector-card-actions{align-items:stretch;flex-direction:column}.collector-card-actions .quick-add-edition{width:100%;justify-content:center}#page-jackie tbody tr.film-row{grid-template-columns:62px minmax(0,1fr);grid-template-areas:"poster number" "poster year" "poster title" "participation participation" "role role" "status status" "collection collection";gap:6px 11px}#page-jackie tbody td:nth-child(1){grid-area:number}#page-jackie tbody td:nth-child(2){grid-area:poster}#page-jackie tbody td:nth-child(3){grid-area:year}#page-jackie tbody td:nth-child(4){grid-area:title}#page-jackie tbody td:nth-child(5){grid-area:participation}#page-jackie tbody td:nth-child(6){grid-area:role}#page-jackie tbody td:nth-child(7){grid-area:status}#page-jackie tbody td:nth-child(8){grid-area:collection;padding-top:9px!important;border-top:1px solid #e2e5e7!important}#page-jackie tbody .badges{justify-content:flex-start}#page-jackie tbody .collection-cell .quick-add-edition{width:100%;min-height:42px;justify-content:center}.edition-card-top{align-items:flex-start}.edition-card-flags{padding-top:4px}.edition-actions{gap:7px}.edition-action-btn{width:38px!important;height:38px!important}.form-actions{grid-template-columns:1fr}.modal-head h2{font-size:23px;line-height:1.15}}
     @media(max-width:430px){.stats{grid-template-columns:1fr}.stat-action{min-height:92px}.collection-insights{grid-template-columns:1fr 1fr}.insight-card{padding:11px 10px}.jackie-title-line h1{font-size:43px}.jackie-title-line{gap:14px}.jackie-chinese{font-size:29px}.ean-input-row{grid-template-columns:1fr}.ean-input-row input{grid-column:auto}.ean-input-row .btn{width:100%}.account-dropdown{right:8px;left:8px}.format-choices{grid-template-columns:1fr}.profile-photo-row{grid-template-columns:1fr}.profile-photo-preview{justify-self:center}.account-settings-tabs{overflow-x:auto}.account-settings-tabs button{min-width:100px;flex:1 0 auto}.collector-card-actions{margin-right:8px;margin-left:26px}}
+    /* Regroupement visuel des formats par édition physique */
+    .collection-cell{min-width:330px}.collection-cell-layout{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px}.collection-cell-layout .quick-add-edition{align-self:center;margin-left:auto;white-space:nowrap}.edition-stack{display:grid;min-width:0;gap:5px}.edition-stack-head{color:#737a7f;font-size:8px;font-weight:950;letter-spacing:.09em;text-transform:uppercase}.edition-bundle{display:flex;width:max-content;max-width:100%;min-height:29px;align-items:stretch;overflow:hidden;border:1px solid #bfc6ca;background:#fff;color:#273036}.edition-bundle-index,.edition-bundle-country,.edition-bundle-link{display:flex;flex:0 0 auto;align-items:center;padding:0 7px;font-size:8px;font-weight:950;letter-spacing:.06em;text-transform:uppercase}.edition-bundle-index{border-right:1px solid #d5dade;background:#eef0f1;color:#596166}.edition-bundle-formats{display:flex;min-width:0;align-items:center;gap:5px;padding:5px 7px}.edition-bundle-format{color:#007da9;font-size:9px;font-weight:950;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap}.edition-bundle-plus{display:grid;width:15px;height:15px;flex:0 0 15px;place-items:center;border-radius:50%;background:#111315;color:#fff;font-size:10px;font-weight:900;line-height:1}.edition-bundle-country{border-left:1px solid #b9deeb;background:#eefaff;color:#007da9}.edition-bundle-link{border-left:1px solid #b9deeb;background:var(--jackie);color:#062733}.edition-bundle.combined{border-color:#6cc7e6;box-shadow:inset 3px 0 0 var(--jackie)}.edition-stack.compact{margin-top:10px}.edition-stack.compact .edition-bundle{width:100%}.edition-stack.compact .edition-bundle-link{display:none}.edition-stack.compact .edition-bundle-index{padding:0 5px}.edition-stack.compact .edition-bundle-formats{gap:4px;padding:5px}.edition-stack.compact .edition-bundle-format{font-size:8px}
+    @media(max-width:760px){.collection-cell{min-width:0}.collection-cell-layout{grid-template-columns:minmax(0,1fr) auto;align-items:end}.collection-cell-layout .quick-add-edition{width:auto!important;min-width:88px;margin-left:auto}.edition-bundle{flex-wrap:wrap}.edition-bundle-link{min-height:27px}.edition-stack.compact .edition-bundle{width:max-content}}
+    @media(max-width:430px){.collection-cell-layout{grid-template-columns:1fr}.collection-cell-layout .quick-add-edition{width:auto!important;justify-self:end}.edition-bundle-link{display:none}.edition-bundle-formats{flex-wrap:wrap}.edition-bundle-format{white-space:normal}}
+    /* Ajout global par EAN */
+    .jackie-command-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:18px 0 4px}.global-ean-cta{display:grid;grid-template-columns:42px minmax(0,1fr) 28px;align-items:center;gap:12px;min-width:min(100%,430px);padding:11px 13px;border:1px solid #67c8e8;border-left:5px solid var(--jackie);background:#f1fbfe;color:#111315;text-align:left;cursor:pointer;transition:background .15s ease,border-color .15s ease,transform .15s ease}.global-ean-cta:hover,.global-ean-cta:focus-visible{border-color:#0088b8;background:#e2f8ff;transform:translateY(-1px);outline:3px solid rgba(8,169,230,.16)}.global-ean-icon{display:grid;width:42px;height:42px;place-items:center;background:#111315;color:#fff;font-size:20px}.global-ean-copy{display:grid;min-width:0;gap:3px}.global-ean-copy strong{font-size:12px;font-weight:950;letter-spacing:.035em;text-transform:uppercase}.global-ean-copy small{color:#657077;font-size:10px;line-height:1.4}.global-ean-arrow{color:#007da9;font-size:22px;font-weight:900;text-align:center}.jackie-command-bar .catalog-admin-menu{margin:0}.global-ean-dialog{width:min(780px,calc(100% - 30px))}.global-ean-form{gap:14px}.global-ean-stage{display:grid;gap:12px;padding:15px;border:1px solid #d8dcdf;background:#fafbfb}.global-ean-stage-head{display:flex;align-items:flex-start;gap:11px}.global-ean-stage-head>span{display:grid;width:27px;height:27px;flex:0 0 27px;place-items:center;background:#111315;color:#fff;font-size:11px;font-weight:950}.global-ean-stage-head strong{display:block;color:#171a1c;font-size:14px}.global-ean-stage-head small{display:block;margin-top:3px;color:#687075;font-size:11px;line-height:1.45}.global-ean-input-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px}.global-ean-input-row input{margin:0!important}.global-product-card{display:grid;grid-template-columns:86px minmax(0,1fr);gap:14px;padding:12px;border:1px solid #a9ddee;background:#f2fbfe}.global-film-search{margin:0}.global-film-suggestions{display:grid;grid-template-columns:1fr 1fr;gap:7px;max-height:310px;overflow:auto;padding:7px;border:1px solid #d5dadd;background:#fff}.global-film-suggestion{display:grid!important;grid-template-columns:36px minmax(0,1fr) auto;align-items:center;gap:9px;min-height:61px;padding:7px!important;border:1px solid transparent;color:#333a3e!important;cursor:pointer}.global-film-suggestion:hover{border-color:#a7dff1;background:#f3fbfe}.global-film-suggestion:has(input:checked){border-color:#5dc2e5;background:#eaf9fe}.global-film-suggestion input{position:absolute;opacity:0;pointer-events:none}.global-film-suggestion-poster{display:grid;width:36px;height:50px;place-items:center;overflow:hidden;background:#e7eaec;color:#8a9195;font-size:8px;font-weight:900}.global-film-suggestion-poster img{width:100%;height:100%;object-fit:cover}.global-film-suggestion-copy{display:grid;min-width:0;gap:3px}.global-film-suggestion-copy strong{overflow:hidden;color:#161a1d;font-size:11px;text-overflow:ellipsis;white-space:nowrap}.global-film-suggestion-copy small{color:#70777c;font-size:9px;line-height:1.35}.global-film-score{display:grid;min-width:37px;height:24px;place-items:center;border:1px solid #c7cdd0;background:#fff;color:#60686d;font-size:9px;font-weight:950}.global-film-suggestion:has(input:checked) .global-film-score{border-color:#0089b9;background:var(--jackie);color:#062733}.global-existing-title{display:block;margin-bottom:3px;font-weight:900}.global-no-suggestion{grid-column:1/-1;padding:20px;color:#70777c;font-size:11px;line-height:1.5;text-align:center}
+    @media(max-width:760px){.jackie-command-bar{align-items:stretch;flex-direction:column}.global-ean-cta{width:100%;min-width:0}.jackie-command-bar .catalog-admin-menu{width:100%}.global-ean-input-row{grid-template-columns:1fr 1fr}.global-ean-input-row input{grid-column:1/-1}.global-film-suggestions{grid-template-columns:1fr}.global-ean-dialog{width:100%}}
+    @media(max-width:430px){.global-ean-cta{grid-template-columns:38px minmax(0,1fr);padding:10px}.global-ean-icon{width:38px;height:38px}.global-ean-arrow{display:none}.global-ean-input-row{grid-template-columns:1fr}.global-ean-input-row input{grid-column:auto}.global-ean-input-row .btn{width:100%}.global-product-card{grid-template-columns:66px minmax(0,1fr)}}
   </style>
 </head>
 <body class="auth-pending">
@@ -378,14 +386,8 @@
       </div>
     </div>
   </div>
-  <div class="collection-insights" aria-label="Statistiques détaillées de la collection">
-    <div class="insight-card"><strong id="statEditionTotal">0</strong><span>Éditions enregistrées</span></div>
-    <div class="insight-card"><strong id="statBoxSets">0</strong><span>Coffrets multi-films</span></div>
-    <div class="insight-card"><strong id="stat4KEditions">0</strong><span>Éditions 4K UHD</span></div>
-    <div class="insight-card"><strong id="statBluRayEditions">0</strong><span>Éditions Blu-ray</span></div>
-    <div class="insight-card"><strong id="statCountries">0</strong><span>Pays représentés</span></div>
-    <div class="insight-card"><strong id="statMultiEditionFilms">0</strong><span>Films multi-éditions</span></div>
-  </div>
+  <div class="jackie-command-bar">
+    <button id="globalEanBtn" type="button" class="global-ean-cta"><span class="global-ean-icon" aria-hidden="true">▣</span><span class="global-ean-copy"><strong>Scanner ou saisir un EAN</strong><small>Identifier l’édition, puis choisir le ou les films</small></span><span class="global-ean-arrow" aria-hidden="true">→</span></button>
     <details id="catalogAdminMenu" class="admin-menu catalog-admin-menu hidden">
       <summary>Gérer le catalogue</summary>
       <div class="admin-dropdown">
@@ -393,8 +395,8 @@
         <button id="tmdbImportBtn" type="button">Compléter les affiches avec TMDB</button>
       </div>
     </details>
+  </div>
   <div id="catalogNotice" class="notice hidden"></div>
-  <div id="catalogActionHint" class="notice catalog-action-hint hidden"><span>Choisissez un film dans la liste, puis sélectionnez « Ajouter une édition à ma collection ».</span><button id="closeCatalogActionHint" type="button" class="ghost">Compris</button></div>
   <div class="filter-panel">
     <div class="filter-search-row">
       <label class="filter-search"><span class="filter-label">Rechercher dans la filmographie</span><span class="search-field"><input id="filmSearch" type="search" placeholder="Titre, alias, personnage, rôle…" autocomplete="off"><button id="clearSearchBtn" type="button" class="clear-search hidden" aria-label="Effacer la recherche">×</button></span></label>
@@ -526,6 +528,16 @@
   <div class="form-actions"><button id="deleteFilmBtn" type="button" class="btn danger hidden">Supprimer</button><button type="button" class="btn secondary" data-close>Annuler</button><button id="filmSubmitBtn" class="btn">Enregistrer</button></div>
 </form></div></dialog>
 
+<dialog id="globalEanDialog" class="global-ean-dialog"><div class="modal">
+  <div class="modal-head"><div><div class="eyebrow">Ajout rapide</div><h2>Ajouter à partir d’un EAN</h2></div><button class="ghost" data-close aria-label="Fermer">✕</button></div>
+  <form id="globalEanForm" class="form global-ean-form">
+    <section class="global-ean-stage"><div class="global-ean-stage-head"><span>1</span><div><strong>Identifier l’édition</strong><small>Scannez le code-barres ou saisissez ses 8, 12 ou 13 chiffres.</small></div></div><div class="global-ean-input-row"><input id="globalEanInput" inputmode="numeric" autocomplete="off" maxlength="13" placeholder="EAN / UPC"><button id="globalEanScanBtn" type="button" class="btn secondary">▣ Scanner</button><button id="globalEanSearchBtn" type="submit" class="btn">Identifier</button></div><div id="globalEanStatus" class="ean-status" role="status" aria-live="polite"></div></section>
+    <section id="globalEanResult" class="global-ean-stage hidden"><div class="global-ean-stage-head"><span>2</span><div><strong>Vérifier le produit</strong><small>Les informations proviennent de Serper et doivent être confirmées.</small></div></div><div class="global-product-card"><div id="globalProductImage" class="ean-product-image"><span>AUCUN VISUEL</span></div><div><strong id="globalProductTitle" class="ean-product-title"></strong><div id="globalProductMeta" class="ean-product-meta"></div><span id="globalProductConfidence" class="ean-confidence hidden"></span><p id="globalProductEvidence" class="ean-evidence"></p></div></div></section>
+    <section id="globalFilmMatchStage" class="global-ean-stage hidden"><div class="global-ean-stage-head"><span>3</span><div><strong>Associer les films</strong><small>Sélectionnez tous les films réellement présents dans cette édition ou ce coffret.</small></div></div><div id="globalExistingEan" class="duplicate-ean-note hidden"></div><label class="global-film-search">Rechercher ou ajouter un autre film<input id="globalFilmSearch" type="search" placeholder="Titre, alias ou année…"></label><div id="globalFilmSuggestions" class="global-film-suggestions" role="group" aria-label="Films suggérés"></div><div id="globalFilmMatchStatus" class="form-error" role="alert"></div></section>
+    <div class="form-actions"><button type="button" class="btn secondary" data-close>Annuler</button><button id="globalEanContinueBtn" type="button" class="btn hidden">Continuer avec la sélection</button></div>
+  </form>
+</div></dialog>
+
 <dialog id="editionDialog"><div class="modal">
   <div class="modal-head"><div><div class="eyebrow">Ma collection personnelle</div><h2 id="editionDialogTitle">Ajouter une édition</h2></div><button class="ghost" data-close aria-label="Fermer">✕</button></div>
   <form id="editionForm" class="form edition-form"><input name="filmId" type="hidden"><input name="editionId" type="hidden">
@@ -579,7 +591,8 @@ let user=null,films=[],editions=[],series=[],sortKey="year",sortDirection="asc",
 let pendingPosterData=null,posterDataChanged=false,posterCompressionPending=false;
 let pendingEditionImageData=null,editionImageCompressionPending=false;
 let tmdbImportRunning=false,tmdbAbortRequested=false;
-let eanScanner=null,eanScanAccepted=false,pendingEanProduct=null,eanLookupController=null,lastEanLookup="";
+let eanScanner=null,eanScanAccepted=false,eanScanMode="edition",pendingEanProduct=null,eanLookupController=null,lastEanLookup="";
+let globalEanProduct=null,globalFilmMatches=[],globalSelectedFilmIds=new Set(),globalEanController=null;
 let accountProfile={displayName:"",photo:""},pendingProfilePhoto="",profileCompressionPending=false;
 try{if(localStorage.getItem("cinetrack-jackie-view")==="visual")filmView="visual"}catch(error){}
 
@@ -941,10 +954,9 @@ function openJackieCollection(owned){
 
 $("#homeOpenJackieBtn").onclick=function(){openJackieCollection("all")};
 $("#homeProgressBtn").onclick=function(){openJackieCollection("all")};
-$("#homeAddEditionBtn").onclick=function(){openJackieCollection("all");$("#catalogActionHint").classList.remove("hidden");setTimeout(function(){$("#filmSearch").focus()},60)};
+$("#homeAddEditionBtn").onclick=function(){showPage("jackie",true);setTimeout(openGlobalEanDialog,60)};
 $("#homeOpenSeriesBtn").onclick=function(){showPage("series",true)};
 $("#homeWatchingBtn").onclick=function(){$("#seriesFilter").value="En cours";showPage("series",true);renderSeries()};
-$("#closeCatalogActionHint").onclick=function(){$("#catalogActionHint").classList.add("hidden")};
 document.querySelectorAll("[data-home-filter]").forEach(function(button){button.onclick=function(){openJackieCollection(button.dataset.homeFilter==="progress"?"all":button.dataset.homeFilter)}});
 document.querySelectorAll("[data-home-page]").forEach(function(button){button.onclick=function(){showPage(button.dataset.homePage,true)}});
 document.querySelectorAll("[data-home-series]").forEach(function(button){button.onclick=function(){$("#seriesFilter").value=button.dataset.homeSeries;showPage("series",true);renderSeries()}});
@@ -1450,6 +1462,18 @@ function editionFormatCountryBadges(items){
   });
   return badges.join("");
 }
+function editionSummaryGroups(items,compact){
+  const sorted=(items||[]).slice().sort(compareEditions);
+  if(!sorted.length)return '<span class="edition-stack missing"><span class="badge">Manquant</span></span>';
+  const countLabel=sorted.length+" édition"+(sorted.length>1?"s physiques":" physique");
+  const groups=sorted.map(function(edition,index){
+    const formats=editionFormats(edition),country=countryIdentity(edition.country),countryCode=shortCountryCode(edition.country);
+    const formatHtml=(formats.length?formats:["Format non précisé"]).map(function(format){return '<span class="edition-bundle-format">'+esc(format)+'</span>'}).join('<span class="edition-bundle-plus" aria-hidden="true">+</span>');
+    const combined=formats.length>1,description=formats.join(" + ")+(country?" — "+country.label:"")+(combined?" — formats appartenant à la même édition":"");
+    return '<span class="edition-bundle'+(combined?" combined":"")+'" title="'+esc(description)+'"><span class="edition-bundle-index">Éd. '+(index+1)+'</span><span class="edition-bundle-formats">'+formatHtml+'</span>'+(countryCode?'<span class="edition-bundle-country">'+esc(countryCode)+'</span>':"")+(combined?'<span class="edition-bundle-link">Même édition</span>':"")+'</span>';
+  }).join("");
+  return '<span class="edition-stack'+(compact?" compact":"")+'"><span class="edition-stack-head">'+esc(countLabel)+'</span>'+groups+'</span>';
+}
 function baseFilmImage(film){return safeImageUrl(film.posterData)||safeImageUrl(film.posterUrl)}
 function filmImage(film){
   const preferred=editionsFor(film.id).find(function(edition){return edition.useAsFilmVisual===true&&editionVisual(edition)});
@@ -1530,8 +1554,7 @@ function renderFilmRow(film){
   const filmEditions=editionsFor(film.id);
   const image=filmImage(film);
   const posterHtml=image?'<span class="list-poster"><img src="'+esc(image)+'" alt="Affiche de '+esc(displayedTitle(film))+'" loading="lazy"></span>':'<span class="list-poster"><span class="list-poster-empty">—</span></span>';
-  const editionTotal=filmEditions.length>1?'<span class="badge edition-total">'+filmEditions.length+' éditions</span>':"";
-  const editionBadges=filmEditions.length?editionTotal+editionFormatCountryBadges(filmEditions):'<span class="badge">Manquant</span>';
+  const editionSummary=editionSummaryGroups(filmEditions,false);
   const participationClass=film.countsTowardProgress?"progression":"technical";
   const statusClass=film.status==="Sorti"?"":" upcoming";
   return '<tr class="film-row '+(film.countsTowardProgress?"":"technical-row")+'" data-id="'+esc(film.id)+'" tabindex="0" aria-label="Ouvrir la fiche de '+esc(displayedTitle(film))+'">'+
@@ -1542,7 +1565,7 @@ function renderFilmRow(film){
     '<td><span class="badge '+participationClass+'">'+esc(film.participation)+'</span></td>'+
     '<td class="role-cell">'+esc(text(film.role))+'</td>'+
     '<td><span class="badge'+statusClass+'">'+esc(film.status)+'</span></td>'+
-    '<td class="collection-cell"><div class="badges">'+editionBadges+'</div><button type="button" class="quick-add-edition" data-id="'+esc(film.id)+'" aria-label="Ajouter une édition de '+esc(displayedTitle(film))+'">+ Édition</button></td>'+
+    '<td class="collection-cell"><div class="collection-cell-layout">'+editionSummary+'<button type="button" class="quick-add-edition" data-id="'+esc(film.id)+'" aria-label="Ajouter une édition de '+esc(displayedTitle(film))+'">+ Édition</button></div></td>'+
   '</tr>';
 }
 
@@ -1551,12 +1574,12 @@ function renderFilmCard(film){
   const image=filmImage(film),number=film.sourceOrder===9999?"—":String(film.sourceOrder).padStart(3,"0");
   const imageHtml=image?'<img src="'+esc(image)+'" alt="Affiche de '+esc(displayedTitle(film))+'" loading="lazy">':'<span class="collector-poster-placeholder">'+esc(displayedTitle(film))+'</span>';
   const formatLabel=formats.includes("4K UHD")?"4K":(formats[0]||"");
-  const editionBadges=editionFormatCountryBadges(filmEditions);
+  const editionSummary=filmEditions.length?editionSummaryGroups(filmEditions,true):"";
   return '<article class="collector-card '+(film.countsTowardProgress?"":"technical-card")+'"><button type="button" class="collector-card-open" data-id="'+esc(film.id)+'" aria-label="Voir les détails de '+esc(displayedTitle(film))+'">'+
     '<span class="collector-spine">CineTrack · '+esc(number)+'</span>'+
     '<span class="collector-poster">'+imageHtml+'<span class="collector-year">'+esc(film.year||"—")+'</span>'+(formatLabel?'<span class="collector-format">'+esc(formatLabel)+'</span>':"")+'</span>'+
     '<span class="collector-card-body"><span class="collector-card-title">'+esc(displayedTitle(film))+'</span><span class="collector-card-subtitle">'+esc(secondaryTitle(film)||film.participation)+'</span>'+
-    (editionBadges?'<span class="badges">'+editionBadges+'</span>':"")+
+    editionSummary+
     '<span class="collector-card-foot"><span>'+esc(film.status)+'</span><span class="'+(filmEditions.length?"owned-state":"missing-state")+'">'+(filmEditions.length?(filmEditions.length+" édition"+(filmEditions.length>1?"s":"")):"Manquant")+'</span></span></span></button><div class="collector-card-actions"><span class="collector-card-state '+(filmEditions.length?"owned":"")+'">'+(filmEditions.length?"Dans ma collection":"À collectionner")+'</span><button type="button" class="quick-add-edition" data-id="'+esc(film.id)+'" aria-label="Ajouter une édition de '+esc(displayedTitle(film))+'">+ Édition</button></div></article>';
 }
 
@@ -1580,22 +1603,11 @@ function renderAll(){
   const missingProgress=Math.max(0,progressFilms.length-ownedProgress);
   const percent=progressFilms.length?Math.round(ownedProgress/progressFilms.length*100):0;
   const watching=series.filter(function(item){return item.status==="En cours"});
-  const boxSets=editions.filter(function(edition){return editionFilmIds(edition).length>1}).length;
-  const fourKEditionCount=editions.filter(function(edition){return editionFormats(edition).includes("4K UHD")}).length;
-  const bluRayEditionCount=editions.filter(function(edition){return editionFormats(edition).includes("Blu-ray")}).length;
-  const representedCountries=new Set(editions.map(function(edition){const identity=countryIdentity(edition.country);return identity&&(identity.code||normalizedCountryKey(identity.label))}).filter(Boolean)).size;
-  const multiEditionFilms=films.filter(function(film){return editionsFor(film.id).length>1}).length;
   $("#statOwned").textContent=ownedProgress;
   $("#statMissing").textContent=missingProgress;
   $("#statProgressTotal").textContent=progressFilms.length;
   $("#statSeries").textContent=series.length;
   $("#statWatching").textContent=watching.length;
-  $("#statEditionTotal").textContent=editions.length;
-  $("#statBoxSets").textContent=boxSets;
-  $("#stat4KEditions").textContent=fourKEditionCount;
-  $("#statBluRayEditions").textContent=bluRayEditionCount;
-  $("#statCountries").textContent=representedCountries;
-  $("#statMultiEditionFilms").textContent=multiEditionFilms;
   $("#scopeFilter").options[0].textContent="Progression · "+progressFilms.length;
   $("#scopeFilter").options[1].textContent="Tous les crédits · "+films.length;
   $("#scopeFilter").options[2].textContent="Crédits techniques · "+technicalFilms.length;
@@ -1776,6 +1788,88 @@ function renderEanProduct(product){
   preview.classList.remove("hidden");
 }
 
+function productFromLookupResult(result,ean){
+  return {
+    ean:ean,
+    title:String(result.title||"").slice(0,500),
+    description:String(result.description||"").slice(0,1500),
+    publisher:String(result.publisher||"").slice(0,200),
+    country:String(result.country||"").slice(0,100),
+    formats:Array.isArray(result.formats)?result.formats.map(function(value){return String(value||"").slice(0,50)}).filter(Boolean).slice(0,6):[],
+    format:String(result.format||"").slice(0,50),
+    imageUrl:safeUrl(result.imageUrl)||"",
+    source:String(result.source||"Recherche web").slice(0,80),
+    confidence:Math.max(0,Math.min(100,Number(result.confidence)||0)),
+    evidence:Array.isArray(result.evidence)?result.evidence.map(function(value){return String(value||"").slice(0,160)}).filter(Boolean).slice(0,8):[]
+  };
+}
+
+function filmMatchWords(value){
+  const ignored=new Set(["the","and","les","des","une","film","movie","edition","collection","coffret","blu","ray","dvd","uhd","4k","jackie","chan"]);
+  return normalized(value).replace(/[^a-z0-9]+/g," ").trim().split(/\s+/).filter(function(word){return word.length>=2&&!ignored.has(word)});
+}
+function scoreFilmForProduct(film,product){
+  const productTitle=normalized(product.title).replace(/[^a-z0-9]+/g," ").trim(),productText=normalized([product.title,product.description].filter(Boolean).join(" ")).replace(/[^a-z0-9]+/g," "),isCollectionProduct=/\b(box ?set|coffret|collection|anthology|trilogy|complete|integrale)\b/.test(normalized([product.title,product.description].join(" "))),titles=[film.titleFr,film.titleEn,film.originalTitle,film.romanization].concat(String(film.aliases||"").split(/[,;|/]/)).filter(Boolean);
+  let score=0,matchedTitle="";
+  titles.forEach(function(title){
+    const normalizedTitle=normalized(title).replace(/[^a-z0-9]+/g," ").trim();if(!normalizedTitle)return;
+    const words=filmMatchWords(title),matches=words.filter(function(word){return productText.includes(word)}).length,coverage=words.length?matches/words.length:0;
+    let titleScore=0;if(normalizedTitle.length>=4&&productText.includes(normalizedTitle)){titleScore=82;const position=productTitle.indexOf(normalizedTitle),remainder=position>=0?productTitle.slice(position+normalizedTitle.length).trim():"";if(!isCollectionProduct&&!/\b(?:\d+|ii|iii|iv|v|part|chapter)\b/.test(normalizedTitle)&&/^(?:\d+|ii|iii|iv|v|part|chapter)\b/.test(remainder))titleScore=42}else if(coverage===1&&words.length>=2)titleScore=70;else if(coverage>=.66)titleScore=52;else if(matches>=1)titleScore=Math.min(38,matches*16);
+    if(titleScore>score){score=titleScore;matchedTitle=title}
+  });
+  if(film.year&&productText.includes(String(film.year)))score+=6;
+  return {film:film,score:Math.min(99,score),matchedTitle:matchedTitle};
+}
+function globalMatchLabel(score){return score>=80?"Très probable":score>=55?"Probable":score>=30?"Possible":"Manuel"}
+function updateGlobalContinueButton(){
+  const count=globalSelectedFilmIds.size,button=$("#globalEanContinueBtn");button.classList.toggle("hidden",!globalEanProduct);button.disabled=!count;button.textContent=count?"Continuer avec "+count+" film"+(count>1?"s":""):"Sélectionnez au moins un film";
+}
+function renderGlobalFilmSuggestions(){
+  const query=normalized($("#globalFilmSearch").value).trim(),selected=globalSelectedFilmIds;
+  let matches;
+  if(query){matches=films.map(function(film){return scoreFilmForProduct(film,{title:query,description:""})}).filter(function(match){return normalized([displayedTitle(match.film),match.film.titleEn,match.film.originalTitle,match.film.aliases,match.film.year].filter(Boolean).join(" ")).includes(query)}).sort(function(a,b){return b.score-a.score||compareFilms(a.film,b.film)}).slice(0,40)}
+  else{matches=globalFilmMatches.filter(function(match){return match.score>=20||selected.has(match.film.id)}).slice(0,16)}
+  $("#globalFilmSuggestions").innerHTML=matches.length?matches.map(function(match){
+    const film=match.film,image=filmImage(film),checked=selected.has(film.id),poster=image?'<img src="'+esc(image)+'" alt="" loading="lazy">':'—';
+    return '<label class="global-film-suggestion"><input type="checkbox" value="'+esc(film.id)+'" '+(checked?"checked":" ")+'><span class="global-film-suggestion-poster">'+poster+'</span><span class="global-film-suggestion-copy"><strong>'+esc(displayedTitle(film))+'</strong><small>'+esc([film.year,secondaryTitle(film)].filter(Boolean).join(" · "))+'</small></span><span class="global-film-score" title="Confiance de l’association">'+esc(match.score?match.score+" %":"+")+'</span></label>';
+  }).join(""):'<div class="global-no-suggestion">Aucun film correspondant. Utilisez le champ de recherche pour retrouver manuellement le film dans le catalogue.</div>';
+  document.querySelectorAll('#globalFilmSuggestions input[type="checkbox"]').forEach(function(input){input.onchange=function(){if(input.checked)globalSelectedFilmIds.add(input.value);else globalSelectedFilmIds.delete(input.value);updateGlobalContinueButton()}});
+  updateGlobalContinueButton();
+}
+function renderGlobalProduct(product){
+  const imageBox=$("#globalProductImage"),formats=product.formats.length?product.formats:[product.format].filter(Boolean),confidence=product.confidence;
+  $("#globalProductTitle").textContent=product.title||"Produit non identifié";$("#globalProductMeta").textContent=[formats.join(" + "),product.publisher,product.country].filter(Boolean).join(" · ")||"Informations à compléter";
+  $("#globalProductConfidence").textContent=confidence?(confidence>=80?"Correspondance forte":confidence>=60?"Correspondance probable":"À vérifier")+" · "+Math.round(confidence)+" %":"";$("#globalProductConfidence").classList.toggle("hidden",!confidence);$("#globalProductEvidence").textContent=product.evidence.slice(0,4).join(" · ");
+  imageBox.innerHTML="";const imageUrl=safeUrl(product.imageUrl);if(imageUrl){const image=document.createElement("img");image.src=imageUrl;image.alt="Visuel du produit";image.referrerPolicy="no-referrer";image.onerror=function(){imageBox.innerHTML="<span>VISUEL INDISPONIBLE</span>"};imageBox.appendChild(image)}else imageBox.innerHTML="<span>AUCUN VISUEL</span>";
+}
+function openGlobalEanDialog(){
+  if(!user)return;globalEanProduct=null;globalFilmMatches=[];globalSelectedFilmIds=new Set();if(globalEanController){globalEanController.abort();globalEanController=null}
+  $("#globalEanForm").reset();$("#globalEanStatus").textContent="";$("#globalEanStatus").classList.remove("error");$("#globalEanResult").classList.add("hidden");$("#globalFilmMatchStage").classList.add("hidden");$("#globalExistingEan").classList.add("hidden");$("#globalFilmSuggestions").innerHTML="";$("#globalFilmMatchStatus").textContent="";updateGlobalContinueButton();
+  $("#globalEanDialog").showModal();setTimeout(function(){$("#globalEanInput").focus()},40);
+}
+async function lookupGlobalEan(value){
+  const ean=normalizedEan(value),status=$("#globalEanStatus"),button=$("#globalEanSearchBtn");
+  if(!isValidEan(ean)){status.textContent="Saisissez un EAN ou UPC valide de 8, 12 ou 13 chiffres.";status.classList.add("error");$("#globalEanInput").focus();return}
+  if(globalEanController)globalEanController.abort();const controller=new AbortController();globalEanController=controller;button.disabled=true;button.textContent="Recherche…";status.classList.remove("error");status.textContent="Recherche du produit et comparaison avec la filmographie…";
+  try{
+    const response=await fetch(EAN_LOOKUP_BASE+"?ean="+encodeURIComponent(ean),{signal:controller.signal,headers:{Accept:"application/json"}}),result=await response.json().catch(function(){return {}});if(!response.ok)throw new Error(result.error||"Recherche indisponible.");
+    globalEanProduct=result.found?productFromLookupResult(result,ean):{ean:ean,title:"Édition non identifiée",description:"",publisher:"",country:"",formats:[],format:"",imageUrl:"",source:"Recherche web",confidence:0,evidence:[]};
+    globalFilmMatches=films.map(function(film){return scoreFilmForProduct(film,globalEanProduct)}).sort(function(a,b){return b.score-a.score||compareFilms(a.film,b.film)});
+    const existing=editionsWithEan(ean),existingIds=[...new Set(existing.flatMap(editionFilmIds))],strongMatches=globalFilmMatches.filter(function(match){return match.score>=70}).map(function(match){return match.film.id});
+    globalSelectedFilmIds=new Set(existingIds.length?existingIds:strongMatches);if(!globalSelectedFilmIds.size&&globalFilmMatches[0]&&globalFilmMatches[0].score>=35)globalSelectedFilmIds.add(globalFilmMatches[0].film.id);
+    $("#globalEanResult").classList.remove("hidden");$("#globalFilmMatchStage").classList.remove("hidden");renderGlobalProduct(globalEanProduct);$("#globalFilmSearch").value="";
+    const existingBox=$("#globalExistingEan");existingBox.classList.toggle("hidden",!existing.length);if(existing.length){const names=existingIds.map(function(id){const film=films.find(function(item){return item.id===id});return film?displayedTitle(film):""}).filter(Boolean);existingBox.innerHTML='<span class="global-existing-title">EAN déjà présent dans votre collection</span><span>Il est actuellement associé à '+esc(names.join(" · ")||"une édition")+'. La sélection modifiera ou complétera cette édition.</span><label class="check-row"><input id="globalSeparateCopy" type="checkbox"> Enregistrer plutôt un second exemplaire physique distinct</label>'}
+    renderGlobalFilmSuggestions();status.textContent=result.found?"Produit identifié. Vérifiez maintenant les films proposés.":"Aucun produit fiable trouvé. Recherchez et sélectionnez le film manuellement.";
+  }catch(error){if(error.name!=="AbortError"){status.textContent=error.message||"La recherche est momentanément indisponible.";status.classList.add("error")}}
+  finally{if(globalEanController===controller)globalEanController=null;button.disabled=false;button.textContent="Identifier"}
+}
+function continueGlobalEan(){
+  const filmIds=[...globalSelectedFilmIds];if(!globalEanProduct||!filmIds.length){$("#globalFilmMatchStatus").textContent="Sélectionnez au moins un film avant de continuer.";return}
+  const separateCopy=$("#globalSeparateCopy")&&$("#globalSeparateCopy").checked,existing=separateCopy?null:editionsWithEan(globalEanProduct.ean)[0]||null,primaryFilmId=filmIds[0];$("#globalEanDialog").close();openEditionDialog(primaryFilmId,existing);
+  const form=$("#editionForm"),formats=globalEanProduct.formats.length?globalEanProduct.formats:[globalEanProduct.format].filter(Boolean);form.elements.ean.value=globalEanProduct.ean;setEditionFormats([...new Set(editionFormats(existing||{}).concat(formats))]);if(globalEanProduct.country&&!form.elements.country.value)form.elements.country.value=globalEanProduct.country;if(globalEanProduct.publisher&&!form.elements.publisher.value)form.elements.publisher.value=globalEanProduct.publisher;if(globalEanProduct.title&&!form.elements.edition.value)form.elements.edition.value=globalEanProduct.title;
+  $("#editionIsBoxSet").checked=filmIds.length>1;$("#editionFilmSearch").value="";updateEditionBoxSetUi(filmIds);pendingEanProduct=globalEanProduct;lastEanLookup=globalEanProduct.ean;renderEanProduct(pendingEanProduct);if(!pendingEditionImageData&&globalEanProduct.imageUrl)updateEditionVisualPreview(globalEanProduct.imageUrl);updateDuplicateEanUi();if(separateCopy)$("#allowDuplicateEan").checked=true;$("#eanStatus").textContent="EAN identifié depuis l’ajout rapide. Vérifiez les informations avant l’enregistrement.";
+}
+
 async function lookupEanProduct(value,forceRefresh){
   const ean=normalizedEan(value);
   if(!isValidEan(ean)){describeEan(ean,true);return null}
@@ -1797,18 +1891,7 @@ async function lookupEanProduct(value,forceRefresh){
       setEanStatus("EAN valide, mais aucune édition n’a été trouvée. Vous pouvez compléter les champs manuellement.",false);
       return null;
     }
-    pendingEanProduct={
-      ean:ean,
-      title:String(result.title||"").slice(0,500),
-      publisher:String(result.publisher||"").slice(0,200),
-      country:String(result.country||"").slice(0,100),
-      formats:Array.isArray(result.formats)?result.formats.map(function(value){return String(value||"").slice(0,50)}).filter(Boolean).slice(0,6):[],
-      format:String(result.format||"").slice(0,50),
-      imageUrl:safeUrl(result.imageUrl)||"",
-      source:String(result.source||"Recherche web").slice(0,80),
-      confidence:Math.max(0,Math.min(100,Number(result.confidence)||0)),
-      evidence:Array.isArray(result.evidence)?result.evidence.map(function(value){return String(value||"").slice(0,160)}).filter(Boolean).slice(0,8):[]
-    };
+    pendingEanProduct=productFromLookupResult(result,ean);
     const detectedFormats=pendingEanProduct.formats.length?pendingEanProduct.formats:[pendingEanProduct.format].filter(Boolean);
     if(detectedFormats.length){
       setEditionFormats([...new Set(selectedEditionFormats().concat(detectedFormats))]);
@@ -1860,19 +1943,17 @@ async function acceptScannedEan(decodedText){
     return;
   }
   eanScanAccepted=true;
-  $("#editionEan").value=digits;
-  updateDuplicateEanUi();
-  setEanStatus("Code-barres scanné et vérifié.",false);
+  if(eanScanMode==="global"){$("#globalEanInput").value=digits;$("#globalEanStatus").textContent="Code-barres scanné et vérifié.";$("#globalEanStatus").classList.remove("error")}
+  else{$("#editionEan").value=digits;updateDuplicateEanUi();setEanStatus("Code-barres scanné et vérifié.",false)}
   $("#eanScannerStatus").classList.remove("error");
   $("#eanScannerStatus").textContent="EAN "+digits+" détecté.";
   await stopEanScanner(true);
-  $("#editionEan").focus();
-  await lookupEanProduct(digits);
+  if(eanScanMode==="global"){$("#globalEanInput").focus();await lookupGlobalEan(digits)}else{$("#editionEan").focus();await lookupEanProduct(digits)}
 }
 
-function openEanScanner(){
+function openEanScanner(mode){
   const dialog=$("#eanScannerDialog"),status=$("#eanScannerStatus");
-  eanScanAccepted=false;status.classList.remove("error");status.textContent="Autorisez l’accès à la caméra, ou choisissez une image.";
+  eanScanMode=mode==="global"?"global":"edition";eanScanAccepted=false;status.classList.remove("error");status.textContent="Autorisez l’accès à la caméra, ou choisissez une image.";
   if(!dialog.open)dialog.showModal();
   if(!window.Html5QrcodeScanner||!window.Html5QrcodeSupportedFormats){
     status.classList.add("error");
@@ -1891,7 +1972,14 @@ function openEanScanner(){
   eanScanner.render(acceptScannedEan,function(){});
 }
 
-$("#openEanScannerBtn").onclick=openEanScanner;
+$("#openEanScannerBtn").onclick=function(){openEanScanner("edition")};
+$("#globalEanScanBtn").onclick=function(){openEanScanner("global")};
+$("#globalEanBtn").onclick=openGlobalEanDialog;
+$("#globalEanForm").onsubmit=function(event){event.preventDefault();lookupGlobalEan($("#globalEanInput").value)};
+$("#globalEanInput").addEventListener("input",function(){this.value=normalizedEan(this.value).slice(0,13);$("#globalEanStatus").textContent="";$("#globalEanStatus").classList.remove("error")});
+$("#globalFilmSearch").addEventListener("input",renderGlobalFilmSuggestions);
+$("#globalEanContinueBtn").onclick=continueGlobalEan;
+$("#globalEanDialog").addEventListener("close",function(){if(globalEanController){globalEanController.abort();globalEanController=null}});
 $("#identifyEanBtn").onclick=async function(){
   const button=this,ean=$("#editionEan").value;
   if(!ean){setEanStatus("Saisissez ou scannez d’abord un code-barres.",true);$("#editionEan").focus();return}
