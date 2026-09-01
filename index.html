@@ -7,7 +7,6 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111315'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%2308a9e6' stroke-width='5'/%3E%3Cpath d='M41 23a13 13 0 1 0 0 18' fill='none' stroke='white' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
   <title>CineTrack — Collection & Watchlist</title>
   <style>
-    :root{--bg:#090a0d;--panel:#12141a;--panel2:#191c23;--text:#f5f5f5;--muted:#9ba1ad;--line:#282c36;--accent:#d6aa55;--danger:#df5d5d;--ok:#62c48d;--warn:#dfb45d}
     *{box-sizing:border-box}
     body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:radial-gradient(circle at 20% -10%,#242018 0,transparent 30%),var(--bg);color:var(--text)}
     button,input,select,textarea{font:inherit}button{cursor:pointer}
@@ -53,7 +52,18 @@
     @media(max-width:560px){main{padding-top:26px}.row,.row.three{grid-template-columns:1fr}.stats{gap:9px}.card{padding:16px}.stat strong{font-size:25px}.toolbar .control{width:100%}.control.search{min-width:0}.form-actions{flex-wrap:wrap}.form-actions .danger{margin-right:0}.modal{padding:18px}}
 
     /* Identité « Galerie 24 » */
-    :root{color-scheme:light;--bg:#f4f5f4;--panel:#fff;--panel2:#eceeef;--text:#111315;--muted:#70757a;--line:#d8dbde;--accent:#173b91;--danger:#b33a3a;--ok:#14705b;--warn:#9a6818;--silver:#b9bec3;--jackie:#08a9e6;--jackie-dark:#007eae}
+    :root{
+      color-scheme:light;
+      --bg:#f4f5f4;--panel:#fff;--panel2:#eceeef;--text:#111315;--muted:#70757a;--line:#d8dbde;
+      --accent:#173b91;--danger:#b33a3a;--ok:#14705b;--warn:#9a6818;--silver:#b9bec3;--jackie:#08a9e6;--jackie-dark:#007eae;
+      --color-surface:#fff;--color-surface-subtle:#f4f5f4;--color-text:#111315;--color-muted:#70757a;--color-border:#d8dbde;
+      --color-primary:#173b91;--color-primary-hover:#102b6d;--color-collection:#08a9e6;--color-collection-text:#007eae;
+      --color-success:#14705b;--color-warning:#9a6818;--color-danger:#b33a3a;
+      --space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;
+      --radius-control:3px;--radius-card:4px;--radius-modal:5px;--radius-round:999px;
+      --shadow-low:0 8px 22px rgba(16,25,32,.055);--shadow-medium:0 16px 38px rgba(16,25,32,.12);--shadow-overlay:0 28px 80px rgba(16,24,30,.20);
+      --control-height:44px;--focus-ring:0 0 0 3px rgba(23,59,145,.2);--focus-ring-jackie:0 0 0 3px rgba(8,169,230,.22);
+    }
     body{background:linear-gradient(180deg,#fff 0,#f3f4f3 100%);color:var(--text)}
     header{background:rgba(255,255,255,.96);border-color:#dfe1e3;box-shadow:0 8px 28px rgba(21,28,35,.055)}
     .brand{display:flex;align-items:center;gap:9px;padding:0;border:0;background:transparent;color:#111315;font-family:Inter,ui-sans-serif,system-ui,sans-serif;font-size:22px;font-weight:800;letter-spacing:-1px;cursor:pointer}
@@ -318,6 +328,53 @@
     .collection-cell{min-width:285px}.edition-stack{gap:4px}.edition-stack-head{color:#7a8185;font-size:8px;letter-spacing:.07em}.edition-bundle,.edition-bundle.combined{position:relative;width:max-content;max-width:100%;min-height:22px;align-items:center;overflow:visible;padding-left:9px;border:0;background:transparent;box-shadow:none}.edition-bundle:before{content:"";position:absolute;top:4px;bottom:4px;left:0;width:2px;background:#9ca5aa}.edition-bundle.combined:before{background:var(--jackie)}.edition-bundle-formats{gap:4px;padding:2px 0}.edition-bundle-format{color:#1c252a;font-size:9px;font-weight:850;letter-spacing:.01em}.edition-bundle-plus{display:inline;overflow:visible;width:auto;height:auto;flex:0 0 auto;border-radius:0;background:transparent;color:#0088b8;font-size:12px;line-height:1}.edition-bundle-country{gap:5px;margin-left:6px;padding:0;border:0;background:transparent;color:#697177;font-size:8px}.edition-bundle-country:before{content:"·";color:#a0a7ab}.edition-stack.compact{gap:3px;margin-top:8px}.edition-stack.compact .edition-bundle{width:max-content}.edition-stack.compact .edition-bundle-formats{padding:1px 0}.edition-stack.compact .edition-bundle-format{font-size:8px}
     .global-film-toolbar{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:12px}.global-film-list-meta{padding-bottom:11px;color:#6f777c;font-size:9px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}.global-film-suggestions{max-height:390px}.global-film-suggestion{width:100%;margin:0;appearance:none;background:#fff;font:inherit;text-align:left}.global-film-suggestion.is-selected{border-color:#5dc2e5;background:#eaf9fe}.global-film-suggestion:focus-visible{outline:2px solid var(--jackie);outline-offset:-2px}.global-film-score{width:30px;min-width:30px;height:30px;border-color:var(--jackie);border-radius:0;background:#fff;color:#007da9;font-size:16px;line-height:1;cursor:inherit;pointer-events:none;transition:background .15s ease,border-color .15s ease,color .15s ease}.global-film-suggestion:hover .global-film-score{background:#e5f8fe}.global-film-suggestion.is-selected .global-film-score{border-color:#111315;background:var(--jackie);color:#071e2b}
     @media(max-width:760px){.collection-cell{min-width:0}.global-film-toolbar{grid-template-columns:1fr}.global-film-list-meta{padding:0}.global-film-suggestions{max-height:48dvh}}
+
+    /* Design System P0 — composants et comportements communs */
+    .btn,.ghost,.icon-btn,.quick-add-edition,.edition-action-btn,.password-eye,.mobile-nav-toggle,.mobile-filter-toggle{border-radius:var(--radius-control)}
+    .btn{display:inline-flex;min-height:var(--control-height);align-items:center;justify-content:center;gap:var(--space-2);padding:9px 15px;border:1px solid transparent;background:var(--color-primary);color:#fff;font-size:12px;font-weight:850;letter-spacing:.055em;line-height:1.2;text-transform:uppercase;transition:background .15s ease,border-color .15s ease,color .15s ease,box-shadow .15s ease,opacity .15s ease}
+    .btn:hover:not(:disabled){background:var(--color-primary-hover)}
+    .btn.secondary{border-color:#cfd3d7;background:var(--color-surface);color:var(--color-text)}
+    .btn.secondary:hover:not(:disabled){border-color:#aeb5ba;background:#eceeef;color:var(--color-text)}
+    .btn.danger{border-color:#d8a0a0;background:var(--color-surface);color:#a42e2e}
+    .btn.danger:hover:not(:disabled){border-color:#b33a3a;background:#fff1f1;color:#8f2323}
+    .btn.small{min-height:36px;padding:7px 10px;font-size:11px}
+    .btn:disabled,.ghost:disabled,.icon-btn:disabled{cursor:not-allowed;opacity:.55}
+    .btn[aria-busy="true"]{cursor:wait}
+    :where(button,input,select,textarea,summary,a):focus-visible{outline:2px solid var(--color-primary);outline-offset:2px}
+    #page-jackie :where(button,input,select,textarea,summary,a):focus-visible{outline-color:var(--color-collection-text)}
+    .ghost{min-height:36px;border-radius:var(--radius-control)}
+    .modal-head>.ghost{display:grid;width:40px;height:40px;flex:0 0 40px;place-items:center;padding:0;border:1px solid var(--color-border);font-size:17px}
+    .quick-add-edition{min-height:36px;padding:8px 11px}
+    .edition-action-btn{width:36px;height:36px}
+    .clear-search{width:36px;height:36px}
+    .info-tip{width:32px;height:32px;flex-basis:32px}
+
+    dialog{width:min(700px,calc(100% - 30px));border-radius:var(--radius-modal);box-shadow:var(--shadow-overlay)}
+    dialog.dialog-sm{width:min(520px,calc(100% - 30px))}
+    dialog.dialog-md{width:min(700px,calc(100% - 30px))}
+    dialog.dialog-lg{width:min(820px,calc(100% - 30px))}
+    .modal{padding:var(--space-5)}
+    .modal-head{gap:var(--space-4)}
+    .modal-head .eyebrow+h2{margin-top:6px}
+    .modal-message{margin:var(--space-4) 0 0;color:#555d62;font-size:14px;line-height:1.55}
+    .confirm-dialog .form-actions{margin-top:var(--space-5)}
+
+    .feedback{min-height:20px;color:var(--color-muted);font-size:12px;line-height:1.5}
+    .feedback.is-info{color:#176985}.feedback.is-success{color:var(--color-success)}.feedback.is-warning{color:var(--color-warning)}.feedback.is-error,.feedback.error{color:#a23d3d}
+    .toast-region{position:fixed;z-index:1200;right:20px;bottom:20px;display:grid;width:min(390px,calc(100% - 28px));gap:var(--space-2);pointer-events:none}
+    .toast{display:grid;grid-template-columns:4px minmax(0,1fr) auto;align-items:center;gap:var(--space-3);min-height:52px;padding:10px 12px 10px 0;border:1px solid var(--color-border);border-radius:var(--radius-card);background:#fff;color:#24292d;box-shadow:var(--shadow-medium);font-size:13px;line-height:1.4;pointer-events:auto}
+    .toast:before{content:"";align-self:stretch;background:var(--color-success)}.toast.error:before{background:var(--color-danger)}.toast.warning:before{background:var(--color-warning)}
+    .toast-dismiss{display:grid;width:36px;height:36px;place-items:center;padding:0;border:0;background:transparent;color:#60676c;font-size:18px}
+    .series-page-title{font-size:42px}.series-toolbar{margin-bottom:22px}.format-fieldset{margin:0;padding:0;border:0}.format-legend{color:#666c71;font-size:12px}.film-grid-empty{grid-column:1/-1}#homeProgress{width:0}
+
+    @media(max-width:760px){
+      .btn,.quick-add-edition,.edition-action-btn,.icon-btn,.info-tip,.clear-search{min-height:44px}
+      .edition-action-btn,.info-tip,.clear-search{width:44px;height:44px}
+      dialog.dialog-sm,dialog.dialog-md,dialog.dialog-lg{width:100%;max-width:none}
+      .toast-region{right:14px;bottom:max(14px,env(safe-area-inset-bottom));left:14px;width:auto}
+      .series-page-title{font-size:clamp(34px,10vw,42px)}
+    }
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
   </style>
 </head>
 <body class="auth-pending">
@@ -328,7 +385,7 @@
     <div class="auth-gate-login">
       <h1>Votre collection vous attend.</h1>
       <p class="lead">Connectez-vous pour retrouver vos films, vos éditions physiques et votre watchlist sur tous vos appareils.</p>
-      <form id="authForm" class="form"><label>Adresse e-mail<input id="email" type="email" required autocomplete="email"></label><label>Mot de passe<input id="password" type="password" required minlength="6" autocomplete="current-password"></label><div id="authError" class="meta" role="alert"></div><button class="btn">Se connecter</button></form>
+      <form id="authForm" class="form"><label>Adresse e-mail<input id="email" type="email" required autocomplete="email"></label><label>Mot de passe<input id="password" type="password" required minlength="6" autocomplete="current-password"></label><div id="authError" class="feedback is-error" role="alert"></div><button type="submit" class="btn">Se connecter</button></form>
     </div>
   </div>
 </div>
@@ -336,9 +393,9 @@
   <button id="brandHomeBtn" class="brand" type="button" aria-label="Revenir à l’accueil">Cine<b>Track</b></button>
   <button id="mobileNavBtn" class="mobile-nav-toggle" type="button" aria-controls="mainNav" aria-expanded="false" aria-label="Ouvrir le menu">☰</button>
   <nav id="mainNav" aria-label="Navigation principale">
-    <button data-page="home" class="active">Accueil</button>
-    <button data-page="jackie">Collection Jackie Chan</button>
-    <button data-page="series">Séries</button>
+    <button type="button" data-page="home" class="active">Accueil</button>
+    <button type="button" data-page="jackie">Collection Jackie Chan</button>
+    <button type="button" data-page="series">Séries</button>
   </nav>
   <div class="account">
     <details id="accountMenu" class="account-menu hidden">
@@ -368,7 +425,7 @@
     <button type="button" class="card stat stat-action" data-home-series="En cours"><strong id="statWatching">0</strong><span>Séries en cours</span></button>
   </div>
   <div class="split">
-    <div class="card"><button id="homeProgressBtn" class="home-panel-action" type="button"><span class="eyebrow">Jackie Chan</span><span class="home-panel-title">Votre progression</span><span id="homeProgressText" class="meta">Chargement…</span><span class="progress"><i id="homeProgress" style="width:0%"></i></span><span id="homeProgressMotivation" class="progress-copy"></span></button></div>
+    <div class="card"><button id="homeProgressBtn" class="home-panel-action" type="button"><span class="eyebrow">Jackie Chan</span><span class="home-panel-title">Votre progression</span><span id="homeProgressText" class="meta">Chargement…</span><span class="progress"><i id="homeProgress"></i></span><span id="homeProgressMotivation" class="progress-copy"></span></button></div>
     <div class="card"><button id="homeWatchingBtn" class="home-panel-action" type="button"><span class="eyebrow">Watchlist</span><span class="home-panel-title">Séries en cours</span><span id="watchingPreview" class="meta">Aucune série en cours.</span></button></div>
   </div>
 </section>
@@ -440,13 +497,13 @@
 </section>
 
 <section id="page-series" class="hidden">
-  <div class="section-head"><div><div class="eyebrow">Télévision</div><h1 style="font-size:42px">Ma watchlist séries</h1><p class="lead">Gardez vos séries à voir, retrouvez celles en cours et suivez votre progression.</p></div><button id="addSeriesBtn" class="btn">+ Ajouter à ma watchlist</button></div>
-  <div class="toolbar" style="margin-bottom:22px"><select id="seriesFilter" class="control"><option value="all">Toutes</option><option>À voir</option><option>En cours</option><option>Terminée</option><option>Abandonnée</option></select></div>
+  <div class="section-head"><div><div class="eyebrow">Télévision</div><h1 class="series-page-title">Ma watchlist séries</h1><p class="lead">Gardez vos séries à voir, retrouvez celles en cours et suivez votre progression.</p></div><button id="addSeriesBtn" type="button" class="btn">Ajouter à ma watchlist</button></div>
+  <div class="toolbar series-toolbar"><select id="seriesFilter" class="control"><option value="all">Toutes</option><option>À voir</option><option>En cours</option><option>Terminée</option><option>Abandonnée</option></select></div>
   <div id="seriesGrid" class="grid"></div>
 </section>
 </main>
 
-<dialog id="accountDialog" class="account-dialog"><div class="modal"><div class="modal-head"><div><div class="eyebrow">Compte CineTrack</div><h2 style="margin-top:6px">Paramètres du compte</h2></div><button class="ghost" data-close aria-label="Fermer">✕</button></div>
+<dialog id="accountDialog" class="account-dialog dialog-lg" aria-labelledby="accountDialogTitle"><div class="modal"><div class="modal-head"><div><div class="eyebrow">Compte CineTrack</div><h2 id="accountDialogTitle">Paramètres du compte</h2></div><button type="button" class="ghost" data-close aria-label="Fermer">✕</button></div>
   <div class="account-settings-tabs" role="tablist" aria-label="Catégories des paramètres">
     <button type="button" class="active" role="tab" aria-selected="true" data-account-panel="profile">Profil</button>
     <button type="button" role="tab" aria-selected="false" data-account-panel="security">Sécurité</button>
@@ -461,8 +518,8 @@
       <label>Nom affiché *<input name="displayName" maxlength="60" autocomplete="name" placeholder="Votre nom" required></label>
       <label>Adresse e-mail<input name="accountEmail" type="email" disabled></label>
       <p class="account-dialog-note">L’adresse e-mail utilisée pour la connexion ne peut pas être modifiée depuis cette page.</p>
-      <div id="accountStatus" class="account-status" role="status" aria-live="polite"></div>
-      <div class="form-actions"><button type="button" class="btn secondary" data-close>Annuler</button><button id="accountSaveBtn" class="btn">Enregistrer</button></div>
+      <div id="accountStatus" class="account-status feedback" role="status" aria-live="polite"></div>
+      <div class="form-actions"><button type="button" class="btn secondary" data-close>Annuler</button><button id="accountSaveBtn" type="submit" class="btn">Enregistrer</button></div>
     </form>
   </section>
   <section class="account-settings-panel" data-account-content="security">
@@ -475,27 +532,27 @@
         <p class="backup-note">Cette sauvegarde contient vos éditions et leurs visuels, mais aucun mot de passe ni donnée de connexion.</p>
         <div class="security-setting"><div><div class="setting-title"><strong>Exporter ma collection</strong><button type="button" class="info-tip" aria-label="Télécharge une copie de toutes vos éditions personnelles : formats, pays, EAN, éditeurs, commentaires et visuels. Conservez ce fichier dans un emplacement privé." data-tooltip="Télécharge une copie de toutes vos éditions personnelles : formats, pays, EAN, éditeurs, commentaires et visuels. Conservez ce fichier dans un emplacement privé.">i</button></div><p class="profile-help">Créer une sauvegarde personnelle JSON.</p></div><button id="exportPersonalCollectionBtn" type="button" class="btn secondary">Exporter</button></div>
         <div class="security-setting"><div><div class="setting-title"><strong>Restaurer ma collection</strong><button type="button" class="info-tip" aria-label="Relit une sauvegarde personnelle CineTrack et recrée uniquement les éditions manquantes. Les éditions actuellement présentes ne sont ni supprimées ni remplacées." data-tooltip="Relit une sauvegarde personnelle CineTrack et recrée uniquement les éditions manquantes. Les éditions actuellement présentes ne sont ni supprimées ni remplacées.">i</button></div><p class="profile-help">Récupérer des éditions depuis une sauvegarde.</p></div><button id="choosePersonalBackupBtn" type="button" class="btn secondary">Choisir un fichier</button><input id="personalBackupFileInput" type="file" accept="application/json,.json" class="hidden"></div>
-        <div id="collectionBackupStatus" class="account-status" role="status" aria-live="polite"></div>
+        <div id="collectionBackupStatus" class="account-status feedback" role="status" aria-live="polite"></div>
       </div>
       <div id="catalogBackupSettings" class="backup-group hidden">
         <div class="backup-group-head"><h3>Catalogue Jackie Chan</h3><span class="admin-data-badge">Administrateur</span></div>
         <div class="security-setting"><div><div class="setting-title"><strong>Exporter le catalogue</strong><button type="button" class="info-tip" aria-label="Télécharge la version actuelle du catalogue commun utilisé par le site. Ce fichier sert à remplacer jackie-chan-films.json sur GitHub et constitue la sauvegarde de référence du catalogue." data-tooltip="Télécharge la version actuelle du catalogue commun utilisé par le site. Ce fichier sert à remplacer jackie-chan-films.json sur GitHub et constitue la sauvegarde de référence du catalogue.">i</button></div><p class="profile-help">Créer le fichier de sauvegarde du catalogue commun.</p></div><button id="exportCatalogBtn" type="button" class="btn secondary">Exporter</button></div>
         <div class="security-setting"><div><div class="setting-title"><strong>Restaurer / compléter le catalogue</strong><button type="button" class="info-tip" aria-label="Lit le fichier jackie-chan-films.json publié à côté du site sur GitHub, crée les films manquants et complète les champs absents sans écraser les modifications déjà présentes sur le site." data-tooltip="Lit le fichier jackie-chan-films.json publié à côté du site sur GitHub, crée les films manquants et complète les champs absents sans écraser les modifications déjà présentes sur le site.">i</button></div><p class="profile-help">Mettre à jour le catalogue depuis le fichier publié sur GitHub.</p></div><button id="importCatalogBtn" type="button" class="btn secondary">Restaurer / compléter</button></div>
-        <div id="catalogBackupStatus" class="account-status" role="status" aria-live="polite"></div>
+        <div id="catalogBackupStatus" class="account-status feedback" role="status" aria-live="polite"></div>
       </div>
     </div>
   </section>
 </div></dialog>
 
-<dialog id="passwordDialog"><div class="modal"><div class="modal-head"><div><div class="eyebrow">Sécurité du compte</div><h2 style="margin-top:6px">Changer le mot de passe</h2></div><button class="ghost" data-close aria-label="Fermer">✕</button></div><form id="passwordForm" class="form">
+<dialog id="passwordDialog" class="dialog-sm" aria-labelledby="passwordDialogTitle"><div class="modal"><div class="modal-head"><div><div class="eyebrow">Sécurité du compte</div><h2 id="passwordDialogTitle">Changer le mot de passe</h2></div><button type="button" class="ghost" data-close aria-label="Fermer">✕</button></div><form id="passwordForm" class="form">
   <label>Mot de passe actuel *<span class="password-field"><input id="currentAccountPassword" type="password" autocomplete="current-password" required><button type="button" class="password-eye" data-password-target="currentAccountPassword">Afficher</button></span></label>
   <label>Nouveau mot de passe *<span class="password-field"><input id="newAccountPassword" type="password" autocomplete="new-password" minlength="6" required placeholder="Minimum 6 caractères"><button type="button" class="password-eye" data-password-target="newAccountPassword">Afficher</button></span></label>
   <label>Confirmer le nouveau mot de passe *<span class="password-field"><input id="confirmAccountPassword" type="password" autocomplete="new-password" minlength="6" required><button type="button" class="password-eye" data-password-target="confirmAccountPassword">Afficher</button></span></label>
-  <div id="passwordError" class="account-status error" role="alert"></div><div id="passwordSuccess" class="password-success" role="status"></div>
-  <div class="form-actions"><button type="button" class="btn secondary" data-close>Annuler</button><button id="passwordSubmitBtn" class="btn">Modifier le mot de passe</button></div>
+  <div id="passwordError" class="account-status feedback is-error" role="alert"></div><div id="passwordSuccess" class="password-success feedback is-success" role="status"></div>
+  <div class="form-actions"><button type="button" class="btn secondary" data-close>Annuler</button><button id="passwordSubmitBtn" type="submit" class="btn">Modifier le mot de passe</button></div>
 </form></div></dialog>
 
-<dialog id="tmdbImportDialog"><div class="modal"><div class="modal-head"><div><div class="eyebrow">Affiches officielles</div><h2 style="margin-top:6px">Importer depuis TMDB</h2></div><button id="tmdbCloseBtn" type="button" class="ghost" aria-label="Fermer">✕</button></div>
+<dialog id="tmdbImportDialog" class="dialog-md" aria-labelledby="tmdbImportDialogTitle"><div class="modal"><div class="modal-head"><div><div class="eyebrow">Affiches officielles</div><h2 id="tmdbImportDialogTitle">Importer depuis TMDB</h2></div><button id="tmdbCloseBtn" type="button" class="ghost" aria-label="Fermer">✕</button></div>
   <p class="tmdb-import-intro">CineTrack recherche chaque œuvre par son identifiant IMDb, puis par titre et année si nécessaire. Les correspondances incertaines sont laissées de côté pour éviter d’associer une mauvaise affiche.</p>
   <form id="tmdbImportForm" class="form">
     <label>API Read Access Token TMDB<input id="tmdbToken" type="password" required autocomplete="off" autocapitalize="off" spellcheck="false" data-1p-ignore placeholder="Collez temporairement le nouveau jeton"></label>
@@ -503,15 +560,15 @@
     <label class="check-row"><input id="tmdbReplaceExisting" type="checkbox" checked> Remplacer les images actuellement enregistrées</label>
     <div class="tmdb-security-note">Le jeton reste uniquement dans la mémoire de ce navigateur pendant l’import. Il n’est jamais écrit dans Firebase, téléchargé dans le JSON ou conservé après la fermeture de cette fenêtre.</div>
     <div id="tmdbProgressWrap" class="tmdb-progress-wrap hidden"><div class="tmdb-progress-head"><span id="tmdbProgressText">Préparation…</span><span id="tmdbProgressCount">0 / 0</span></div><div class="tmdb-progress"><i id="tmdbProgressBar"></i></div></div>
-    <div id="tmdbImportStatus" class="tmdb-import-status" role="status" aria-live="polite"></div>
+    <div id="tmdbImportStatus" class="tmdb-import-status feedback" role="status" aria-live="polite"></div>
     <div id="tmdbImportReport" class="tmdb-report hidden"></div>
-    <div class="form-actions"><button id="tmdbCancelBtn" type="button" class="btn secondary">Annuler</button><button id="tmdbStartBtn" class="btn">Lancer l’import</button></div>
+    <div class="form-actions"><button id="tmdbCancelBtn" type="button" class="btn secondary">Annuler</button><button id="tmdbStartBtn" type="submit" class="btn">Lancer l’import</button></div>
   </form>
 </div></dialog>
 
-<dialog id="filmDetailsDialog"><div class="modal"><div class="modal-head"><div><div id="detailsBadges" class="badges"></div><div id="detailsTitle" class="details-title"></div><div id="detailsSubtitle" class="details-subtitle"></div></div><button class="ghost" data-close aria-label="Fermer">✕</button></div><div id="detailsContent"></div><div class="form-actions"><button id="detailsEditBtn" type="button" class="btn secondary hidden">Modifier le film</button><button type="button" class="btn" data-close>Fermer</button></div></div></dialog>
+<dialog id="filmDetailsDialog" class="dialog-md" aria-labelledby="detailsTitle"><div class="modal"><div class="modal-head"><div><div id="detailsBadges" class="badges"></div><div id="detailsTitle" class="details-title"></div><div id="detailsSubtitle" class="details-subtitle"></div></div><button type="button" class="ghost" data-close aria-label="Fermer">✕</button></div><div id="detailsContent"></div><div class="form-actions"><button id="detailsEditBtn" type="button" class="btn secondary hidden">Modifier le film</button><button type="button" class="btn" data-close>Fermer</button></div></div></dialog>
 
-<dialog id="filmDialog"><div class="modal"><div class="modal-head"><h2 id="filmDialogTitle">Ajouter un film</h2><button class="ghost" data-close>✕</button></div><form id="filmForm" class="form">
+<dialog id="filmDialog" class="dialog-md" aria-labelledby="filmDialogTitle"><div class="modal"><div class="modal-head"><h2 id="filmDialogTitle">Ajouter un film</h2><button type="button" class="ghost" data-close aria-label="Fermer">✕</button></div><form id="filmForm" class="form">
   <input name="filmId" type="hidden">
   <div class="row"><label>Titre français<input name="titleFr"></label><label>Titre anglais / international<input name="titleEn" required></label></div>
   <div class="row three"><label>Année<input name="year" type="number" min="1900" max="2100" required></label><label>Statut<select name="status"><option>Sorti</option><option>À venir</option><option>En production</option><option>Annoncé</option></select></label><label>Participation<input name="participation" placeholder="Acteur"></label></div>
@@ -523,37 +580,37 @@
     <div class="poster-editor-copy">
       <label>Image de l’affiche — compression automatique à 5 Ko maximum<input id="posterFileInput" type="file" accept="image/jpeg,image/png,image/webp"></label>
       <p>L’image est recadrée au format affiche puis enregistrée dans Firebase. L’image téléversée est prioritaire sur l’URL externe.</p>
-      <div id="posterUploadStatus" class="poster-upload-status"></div>
+      <div id="posterUploadStatus" class="poster-upload-status feedback" role="status" aria-live="polite"></div>
       <button id="removePosterBtn" type="button" class="ghost hidden">Supprimer l’image</button>
     </div>
   </div>
   <label>Notes<textarea name="notes"></textarea></label>
   <label class="check-row"><input name="countsTowardProgress" type="checkbox" checked> Compte dans la progression de la collection</label>
-  <div class="form-actions"><button id="deleteFilmBtn" type="button" class="btn danger hidden">Supprimer</button><button type="button" class="btn secondary" data-close>Annuler</button><button id="filmSubmitBtn" class="btn">Enregistrer</button></div>
+  <div id="filmError" class="feedback is-error" role="alert"></div><div class="form-actions"><button id="deleteFilmBtn" type="button" class="btn danger hidden">Supprimer</button><button type="button" class="btn secondary" data-close>Annuler</button><button id="filmSubmitBtn" type="submit" class="btn">Enregistrer</button></div>
 </form></div></dialog>
 
-<dialog id="globalEanDialog" class="global-ean-dialog"><div class="modal">
-  <div class="modal-head"><div><div class="eyebrow">Ajout rapide</div><h2>Ajouter à partir d’un EAN</h2></div><button class="ghost" data-close aria-label="Fermer">✕</button></div>
+<dialog id="globalEanDialog" class="global-ean-dialog dialog-lg" aria-labelledby="globalEanDialogTitle"><div class="modal">
+  <div class="modal-head"><div><div class="eyebrow">Ajout rapide</div><h2 id="globalEanDialogTitle">Ajouter à partir d’un EAN</h2></div><button type="button" class="ghost" data-close aria-label="Fermer">✕</button></div>
   <form id="globalEanForm" class="form global-ean-form">
-    <section class="global-ean-stage"><div class="global-ean-stage-head"><span>1</span><div><strong>Identifier l’édition</strong><small>Scannez le code-barres ou saisissez ses 8, 12 ou 13 chiffres.</small></div></div><div class="global-ean-input-row"><input id="globalEanInput" inputmode="numeric" autocomplete="off" maxlength="13" placeholder="EAN / UPC"><button id="globalEanScanBtn" type="button" class="btn secondary">▣ Scanner</button><button id="globalEanSearchBtn" type="submit" class="btn">Identifier</button></div><div id="globalEanStatus" class="ean-status" role="status" aria-live="polite"></div></section>
+    <section class="global-ean-stage"><div class="global-ean-stage-head"><span>1</span><div><strong>Identifier l’édition</strong><small>Scannez le code-barres ou saisissez ses 8, 12 ou 13 chiffres.</small></div></div><div class="global-ean-input-row"><input id="globalEanInput" inputmode="numeric" autocomplete="off" maxlength="13" placeholder="EAN / UPC"><button id="globalEanScanBtn" type="button" class="btn secondary">▣ Scanner</button><button id="globalEanSearchBtn" type="submit" class="btn">Identifier</button></div><div id="globalEanStatus" class="ean-status feedback" role="status" aria-live="polite"></div></section>
     <section id="globalEanResult" class="global-ean-stage hidden"><div class="global-ean-stage-head"><span>2</span><div><strong>Vérifier le produit</strong><small>Les informations proviennent de Serper et doivent être confirmées.</small></div></div><div class="global-product-card"><div id="globalProductImage" class="ean-product-image"><span>AUCUN VISUEL</span></div><div><strong id="globalProductTitle" class="ean-product-title"></strong><div id="globalProductMeta" class="ean-product-meta"></div><span id="globalProductConfidence" class="ean-confidence hidden"></span><p id="globalProductEvidence" class="ean-evidence"></p></div></div></section>
-    <section id="globalFilmMatchStage" class="global-ean-stage hidden"><div class="global-ean-stage-head"><span>3</span><div><strong>Choisir les films</strong><small>Toute la filmographie est affichée. Cochez uniquement les films présents dans cette édition ou ce coffret.</small></div></div><div id="globalExistingEan" class="duplicate-ean-note hidden"></div><div class="global-film-toolbar"><label class="global-film-search">Filtrer la filmographie<input id="globalFilmSearch" type="search" placeholder="Titre, alias ou année…"></label><span id="globalFilmListMeta" class="global-film-list-meta"></span></div><div id="globalFilmSuggestions" class="global-film-suggestions" role="group" aria-label="Liste complète des films"></div><div id="globalFilmMatchStatus" class="form-error" role="alert"></div></section>
+    <section id="globalFilmMatchStage" class="global-ean-stage hidden"><div class="global-ean-stage-head"><span>3</span><div><strong>Choisir les films</strong><small>Toute la filmographie est affichée. Cochez uniquement les films présents dans cette édition ou ce coffret.</small></div></div><div id="globalExistingEan" class="duplicate-ean-note hidden"></div><div class="global-film-toolbar"><label class="global-film-search">Filtrer la filmographie<input id="globalFilmSearch" type="search" placeholder="Titre, alias ou année…"></label><span id="globalFilmListMeta" class="global-film-list-meta"></span></div><div id="globalFilmSuggestions" class="global-film-suggestions" role="group" aria-label="Liste complète des films"></div><div id="globalFilmMatchStatus" class="form-error feedback is-error" role="alert"></div></section>
     <div class="form-actions"><button type="button" class="btn secondary" data-close>Annuler</button><button id="globalEanContinueBtn" type="button" class="btn hidden">Continuer avec la sélection</button></div>
   </form>
 </div></dialog>
 
-<dialog id="editionDialog"><div class="modal">
-  <div class="modal-head"><div><div class="eyebrow">Ma collection personnelle</div><h2 id="editionDialogTitle">Ajouter une édition</h2></div><button class="ghost" data-close aria-label="Fermer">✕</button></div>
+<dialog id="editionDialog" class="dialog-lg" aria-labelledby="editionDialogTitle"><div class="modal">
+  <div class="modal-head"><div><div class="eyebrow">Ma collection personnelle</div><h2 id="editionDialogTitle">Ajouter une édition</h2></div><button type="button" class="ghost" data-close aria-label="Fermer">✕</button></div>
   <form id="editionForm" class="form edition-form"><input name="filmId" type="hidden"><input name="editionId" type="hidden">
     <section class="edition-step">
       <div class="edition-step-head"><span class="edition-step-number">1</span><div><strong class="edition-step-title">Identifier l’édition</strong><span class="edition-step-copy">Scannez le code-barres ou saisissez l’EAN, puis lancez la recherche. Cette étape reste facultative.</span></div></div>
-      <div class="ean-field"><label for="editionEan">EAN / code-barres</label><div class="ean-input-row"><input id="editionEan" name="ean" inputmode="numeric" autocomplete="off" maxlength="13" placeholder="8, 12 ou 13 chiffres" aria-describedby="eanHelp eanStatus"><button id="openEanScannerBtn" type="button" class="btn secondary">▣ Scanner</button><button id="identifyEanBtn" type="button" class="btn secondary">Rechercher ce code</button></div><p id="eanHelp" class="ean-help">La recherche tente de compléter le format, le pays, l’éditeur et le visuel. Vous pourrez tout corriger avant l’enregistrement.</p><div id="eanStatus" class="ean-status" aria-live="polite"></div></div>
+      <div class="ean-field"><label for="editionEan">EAN / code-barres</label><div class="ean-input-row"><input id="editionEan" name="ean" inputmode="numeric" autocomplete="off" maxlength="13" placeholder="8, 12 ou 13 chiffres" aria-describedby="eanHelp eanStatus"><button id="openEanScannerBtn" type="button" class="btn secondary">▣ Scanner</button><button id="identifyEanBtn" type="button" class="btn secondary">Rechercher ce code</button></div><p id="eanHelp" class="ean-help">La recherche tente de compléter le format, le pays, l’éditeur et le visuel. Vous pourrez tout corriger avant l’enregistrement.</p><div id="eanStatus" class="ean-status feedback" aria-live="polite"></div></div>
       <div id="duplicateEanPanel" class="duplicate-ean-note hidden"><span id="duplicateEanMessage"></span><label class="check-row"><input id="allowDuplicateEan" type="checkbox"> Il s’agit d’un second exemplaire physique distinct</label></div>
       <div id="eanProductPreview" class="ean-product-preview hidden"><div id="eanProductImage" class="ean-product-image"><span>VISUEL</span></div><div class="ean-product-copy"><div class="ean-product-kicker">Informations trouvées automatiquement</div><strong id="eanProductTitle" class="ean-product-title"></strong><div id="eanProductMeta" class="ean-product-meta"></div><span id="eanConfidence" class="ean-confidence hidden"></span><p id="eanEvidence" class="ean-evidence"></p><p class="ean-product-note">Vérifiez les informations préremplies : elles peuvent contenir des erreurs.</p></div></div>
     </section>
     <section class="edition-step">
       <div class="edition-step-head"><span class="edition-step-number">2</span><div><strong class="edition-step-title">Vérifier les informations</strong><span class="edition-step-copy">Indiquez ce qui est réellement présent dans le coffret.</span></div></div>
-      <fieldset style="margin:0;padding:0;border:0"><legend style="font-size:12px;color:#666c71">Formats inclus <span class="meta">· plusieurs choix possibles</span></legend><div class="format-choices"><label class="format-choice"><input name="formats" type="checkbox" value="DVD"> DVD</label><label class="format-choice"><input name="formats" type="checkbox" value="Blu-ray"> Blu-ray</label><label class="format-choice"><input name="formats" type="checkbox" value="4K UHD"> 4K UHD</label><label class="format-choice"><input name="formats" type="checkbox" value="VHS"> VHS</label><label class="format-choice"><input name="formats" type="checkbox" value="Numérique"> Numérique</label><label class="format-choice"><input name="formats" type="checkbox" value="Autre"> Autre</label></div></fieldset>
+      <fieldset class="format-fieldset"><legend class="format-legend">Formats inclus <span class="meta">· plusieurs choix possibles</span></legend><div class="format-choices"><label class="format-choice"><input name="formats" type="checkbox" value="DVD"> DVD</label><label class="format-choice"><input name="formats" type="checkbox" value="Blu-ray"> Blu-ray</label><label class="format-choice"><input name="formats" type="checkbox" value="4K UHD"> 4K UHD</label><label class="format-choice"><input name="formats" type="checkbox" value="VHS"> VHS</label><label class="format-choice"><input name="formats" type="checkbox" value="Numérique"> Numérique</label><label class="format-choice"><input name="formats" type="checkbox" value="Autre"> Autre</label></div></fieldset>
       <div class="row"><label>Pays<input name="country" list="editionCountryOptions" placeholder="Ex. Royaume-Uni"></label><label>Éditeur<input name="publisher" placeholder="Ex. 88 Films"></label></div>
       <datalist id="editionCountryOptions"><option value="France"><option value="Royaume-Uni"><option value="États-Unis"><option value="Hong Kong"><option value="Japon"><option value="Allemagne"><option value="Italie"><option value="Espagne"><option value="Canada"><option value="Australie"><option value="Chine"><option value="Taïwan"><option value="Corée du Sud"><option value="Pays-Bas"><option value="Belgique"><option value="Suisse"></datalist>
       <label>Édition / collection<input name="edition" placeholder="Ex. Deluxe Limited Edition"></label>
@@ -561,16 +618,20 @@
     </section>
     <section class="edition-step">
       <div class="edition-step-head"><span class="edition-step-number">3</span><div><strong class="edition-step-title">Finaliser l’ajout</strong><span class="edition-step-copy">Ajoutez, si vous le souhaitez, le visuel exact de votre édition et un commentaire personnel.</span></div></div>
-      <div class="edition-visual-editor"><div id="editionVisualPreview" class="edition-visual-preview"><span>Aucun visuel</span></div><div class="edition-visual-copy"><label>Visuel de cette édition — optimisé à 32 Ko maximum<input id="editionVisualFileInput" type="file" accept="image/jpeg,image/png,image/webp"></label><div id="editionVisualStatus" class="edition-visual-status" aria-live="polite"></div><button id="removeEditionVisualBtn" type="button" class="ghost hidden">Supprimer le visuel</button><label class="check-row"><input id="useEditionVisualAsFilm" name="useAsFilmVisual" type="checkbox"> Afficher ce visuel à la place de l’affiche TMDB</label><p>Chaque édition conserve son propre visuel. Une seule édition peut remplacer l’affiche du film à la fois.</p></div></div>
+      <div class="edition-visual-editor"><div id="editionVisualPreview" class="edition-visual-preview"><span>Aucun visuel</span></div><div class="edition-visual-copy"><label>Visuel de cette édition — optimisé à 32 Ko maximum<input id="editionVisualFileInput" type="file" accept="image/jpeg,image/png,image/webp"></label><div id="editionVisualStatus" class="edition-visual-status feedback" aria-live="polite"></div><button id="removeEditionVisualBtn" type="button" class="ghost hidden">Supprimer le visuel</button><label class="check-row"><input id="useEditionVisualAsFilm" name="useAsFilmVisual" type="checkbox"> Afficher ce visuel à la place de l’affiche TMDB</label><p>Chaque édition conserve son propre visuel. Une seule édition peut remplacer l’affiche du film à la fois.</p></div></div>
       <label>Commentaire<textarea name="notes" placeholder="Ex. Coffret numéroté, steelbook, livret inclus…"></textarea></label>
     </section>
-    <div id="editionError" class="meta form-error" role="alert"></div><div class="form-actions"><button type="button" class="btn secondary" data-close>Annuler</button><button id="editionSubmitBtn" class="btn">Ajouter cette édition</button></div>
+    <div id="editionError" class="form-error feedback is-error" role="alert"></div><div class="form-actions"><button type="button" class="btn secondary" data-close>Annuler</button><button id="editionSubmitBtn" type="submit" class="btn">Ajouter cette édition</button></div>
   </form>
 </div></dialog>
 
-<dialog id="eanScannerDialog"><div class="modal"><div class="modal-head"><div><div class="eyebrow">Édition physique</div><h2 style="margin-top:6px">Scanner le code-barres</h2></div><button id="eanScannerCloseBtn" type="button" class="ghost" aria-label="Fermer">✕</button></div><p class="scanner-intro">Placez le code-barres horizontalement dans le cadre. Vous pouvez aussi sélectionner une photo déjà prise.</p><div id="eanReader" class="scanner-frame"></div><div id="eanScannerStatus" class="scanner-status" aria-live="polite"></div><p class="scanner-privacy">La caméra ne s’active qu’après votre autorisation. Les images sont analysées sur votre appareil et ne sont pas enregistrées.</p><div class="form-actions"><button id="eanScannerCancelBtn" type="button" class="btn secondary">Annuler</button></div></div></dialog>
+<dialog id="eanScannerDialog" class="dialog-md" aria-labelledby="eanScannerDialogTitle"><div class="modal"><div class="modal-head"><div><div class="eyebrow">Édition physique</div><h2 id="eanScannerDialogTitle">Scanner le code-barres</h2></div><button id="eanScannerCloseBtn" type="button" class="ghost" aria-label="Fermer">✕</button></div><p class="scanner-intro">Placez le code-barres horizontalement dans le cadre. Vous pouvez aussi sélectionner une photo déjà prise.</p><div id="eanReader" class="scanner-frame"></div><div id="eanScannerStatus" class="scanner-status feedback" aria-live="polite"></div><p class="scanner-privacy">La caméra ne s’active qu’après votre autorisation. Les images sont analysées sur votre appareil et ne sont pas enregistrées.</p><div class="form-actions"><button id="eanScannerCancelBtn" type="button" class="btn secondary">Annuler</button></div></div></dialog>
 
-<dialog id="seriesDialog"><div class="modal"><div class="modal-head"><h2>Ajouter une série</h2><button class="ghost" data-close>✕</button></div><form id="seriesForm" class="form"><label>Titre<input name="title" required></label><label>URL de l’affiche<input name="posterUrl" type="url"></label><div class="row"><label>Statut<select name="status"><option>À voir</option><option>En cours</option><option>Terminée</option><option>Abandonnée</option></select></label><label>Plateforme<input name="platform"></label></div><div class="row"><label>Saison<input name="season" type="number" min="0"></label><label>Épisode<input name="episode" type="number" min="0"></label></div><label>Commentaire<textarea name="notes"></textarea></label><div id="seriesError" class="meta form-error" role="alert"></div><div class="form-actions"><button type="button" class="btn secondary" data-close>Annuler</button><button id="seriesSubmitBtn" class="btn">Enregistrer</button></div></form></div></dialog>
+<dialog id="seriesDialog" class="dialog-sm" aria-labelledby="seriesDialogTitle"><div class="modal"><div class="modal-head"><h2 id="seriesDialogTitle">Ajouter une série</h2><button type="button" class="ghost" data-close aria-label="Fermer">✕</button></div><form id="seriesForm" class="form"><label>Titre<input name="title" required></label><label>URL de l’affiche<input name="posterUrl" type="url"></label><div class="row"><label>Statut<select name="status"><option>À voir</option><option>En cours</option><option>Terminée</option><option>Abandonnée</option></select></label><label>Plateforme<input name="platform"></label></div><div class="row"><label>Saison<input name="season" type="number" min="0"></label><label>Épisode<input name="episode" type="number" min="0"></label></div><label>Commentaire<textarea name="notes"></textarea></label><div id="seriesError" class="form-error feedback is-error" role="alert"></div><div class="form-actions"><button type="button" class="btn secondary" data-close>Annuler</button><button id="seriesSubmitBtn" type="submit" class="btn">Enregistrer</button></div></form></div></dialog>
+
+<dialog id="confirmDialog" class="dialog-sm confirm-dialog" aria-labelledby="confirmDialogTitle" aria-describedby="confirmDialogMessage"><div class="modal"><div class="modal-head"><div><div id="confirmDialogEyebrow" class="eyebrow">Confirmation</div><h2 id="confirmDialogTitle">Confirmer l’action</h2></div><button type="button" class="ghost" data-confirm-cancel aria-label="Fermer">✕</button></div><p id="confirmDialogMessage" class="modal-message"></p><div class="form-actions"><button id="confirmCancelBtn" type="button" class="btn secondary" data-confirm-cancel>Annuler</button><button id="confirmAcceptBtn" type="button" class="btn">Confirmer</button></div></div></dialog>
+
+<div id="toastRegion" class="toast-region" aria-live="polite" aria-atomic="true"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
 <script type="module">
@@ -786,7 +847,47 @@ async function compressProfileImage(file,maxBytes=5*1024){
   }finally{URL.revokeObjectURL(objectUrl)}
 }
 
+const dialogReturnFocus=new WeakMap();
+function openModal(dialog,focusTarget,returnTarget){
+  if(!dialog||dialog.open)return;
+  const origin=returnTarget||document.activeElement;
+  if(origin&&origin!==document.body)dialogReturnFocus.set(dialog,origin);
+  dialog.showModal();
+  if(focusTarget)setTimeout(function(){const target=typeof focusTarget==="string"?dialog.querySelector(focusTarget):focusTarget;if(target)target.focus()},40);
+}
+document.querySelectorAll("dialog").forEach(function(dialog){dialog.addEventListener("close",function(){const origin=dialogReturnFocus.get(dialog);dialogReturnFocus.delete(dialog);if(origin&&origin.isConnected)setTimeout(function(){origin.focus({preventScroll:true})},0)})});
 document.querySelectorAll("[data-close]").forEach(function(button){button.onclick=function(){button.closest("dialog").close()}});
+
+function showToast(message,type="success"){
+  const region=$("#toastRegion"),toast=document.createElement("div"),copy=document.createElement("span"),close=document.createElement("button");
+  toast.className="toast"+(type&&type!=="success"?" "+type:"");toast.setAttribute("role",type==="error"?"alert":"status");
+  copy.textContent=message;close.type="button";close.className="toast-dismiss";close.textContent="×";close.setAttribute("aria-label","Fermer la notification");
+  toast.append(copy,close);region.replaceChildren(toast);
+  let timer=setTimeout(function(){toast.remove()},4200);
+  close.onclick=function(){clearTimeout(timer);toast.remove()};
+}
+function setBusyState(button,busy){
+  if(!button)return;
+  button.disabled=Boolean(busy);button.setAttribute("aria-busy",String(Boolean(busy)));
+}
+
+let pendingConfirmResolve=null;
+function settleConfirmation(value,closeDialog=true){
+  const resolve=pendingConfirmResolve;pendingConfirmResolve=null;
+  if(closeDialog&&$("#confirmDialog").open)$("#confirmDialog").close();
+  if(resolve)resolve(value);
+}
+function confirmAction(options){
+  const config=options||{},dialog=$("#confirmDialog"),accept=$("#confirmAcceptBtn");
+  if(dialog.open)settleConfirmation(false);
+  $("#confirmDialogEyebrow").textContent=config.eyebrow||"Confirmation";$("#confirmDialogTitle").textContent=config.title||"Confirmer l’action";$("#confirmDialogMessage").textContent=config.message||"";
+  accept.textContent=config.confirmLabel||"Confirmer";accept.classList.toggle("danger",Boolean(config.danger));
+  return new Promise(function(resolve){pendingConfirmResolve=resolve;openModal(dialog,"#confirmAcceptBtn")});
+}
+$("#confirmAcceptBtn").onclick=function(){settleConfirmation(true)};
+document.querySelectorAll("[data-confirm-cancel]").forEach(function(button){button.onclick=function(){settleConfirmation(false)}});
+$("#confirmDialog").addEventListener("cancel",function(event){event.preventDefault();settleConfirmation(false)});
+$("#confirmDialog").addEventListener("close",function(){if(pendingConfirmResolve)settleConfirmation(false,false)});
 const mobileNavBtn=$("#mobileNavBtn"),mainNav=$("#mainNav"),mobileFiltersToggle=$("#mobileFiltersToggle"),filmFilterGroups=$("#filmFilterGroups");
 
 function setMobileNav(open){
@@ -853,18 +954,18 @@ $("#openAccountSettingsBtn").onclick=function(){
   const form=$("#accountForm"),displayName=(accountProfile.displayName||user.displayName||"").trim();
   pendingProfilePhoto=profilePhoto(accountProfile.photo);form.elements.displayName.value=displayName;form.elements.accountEmail.value=user.email||"";
   renderProfileAvatar($("#profilePhotoPreview"),pendingProfilePhoto,displayName,user.email);$("#removeProfilePhotoBtn").classList.toggle("hidden",!pendingProfilePhoto);
-  $("#accountStatus").textContent="";$("#accountStatus").classList.remove("error");$("#catalogBackupSettings").classList.toggle("hidden",!isAdmin());setAccountSettingsPanel("profile");$("#accountMenu").removeAttribute("open");$("#accountDialog").showModal();
+  $("#accountStatus").textContent="";$("#accountStatus").classList.remove("error");$("#catalogBackupSettings").classList.toggle("hidden",!isAdmin());setAccountSettingsPanel("profile");$("#accountMenu").removeAttribute("open");openModal($("#accountDialog"));
 };
 
 document.querySelectorAll("[data-account-panel]").forEach(function(button){button.onclick=function(){setAccountSettingsPanel(button.dataset.accountPanel)}});
 
 $("#profilePhotoInput").onchange=async function(){
   const file=this.files&&this.files[0],status=$("#accountStatus");if(!file)return;
-  profileCompressionPending=true;$("#accountSaveBtn").disabled=true;status.classList.remove("error");status.textContent="Compression de la photo…";
+  profileCompressionPending=true;setBusyState($("#accountSaveBtn"),true);status.classList.remove("error");status.textContent="Compression de la photo…";
   try{
     pendingProfilePhoto=await compressProfileImage(file);renderProfileAvatar($("#profilePhotoPreview"),pendingProfilePhoto,$("#accountForm").elements.displayName.value,user&&user.email);$("#removeProfilePhotoBtn").classList.remove("hidden");status.textContent="Photo prête à être enregistrée.";
   }catch(error){status.classList.add("error");status.textContent="Cette photo ne peut pas être compressée sous 5 Ko. Essayez une autre image."}
-  finally{profileCompressionPending=false;$("#accountSaveBtn").disabled=false;this.value=""}
+  finally{profileCompressionPending=false;setBusyState($("#accountSaveBtn"),false);this.value=""}
 };
 
 $("#removeProfilePhotoBtn").onclick=function(){
@@ -877,15 +978,15 @@ $("#accountForm").onsubmit=async function(event){
   event.preventDefault();if(!user)return;const submit=$("#accountSaveBtn"),status=$("#accountStatus"),displayName=event.currentTarget.elements.displayName.value.trim();
   if(profileCompressionPending){status.classList.add("error");status.textContent="Attendez la fin de la compression de la photo.";return}
   if(!displayName){status.classList.add("error");status.textContent="Le nom affiché est obligatoire.";event.currentTarget.elements.displayName.focus();return}
-  submit.disabled=true;submit.textContent="Enregistrement…";status.textContent="";status.classList.remove("error");
+  setBusyState(submit,true);submit.textContent="Enregistrement…";status.textContent="";status.classList.remove("error");
   try{
     const payload={displayName:displayName,photo:pendingProfilePhoto,updatedAt:serverTimestamp()};
     await setDoc(doc(db,"users",user.uid),payload,{merge:true});
     try{await updateProfile(user,{displayName:displayName})}catch(profileError){console.warn(profileError)}
-    accountProfile={displayName:displayName,photo:pendingProfilePhoto};refreshAccountUi();status.textContent="Les paramètres du compte ont été enregistrés.";
+    accountProfile={displayName:displayName,photo:pendingProfilePhoto};refreshAccountUi();status.textContent="Les paramètres du compte ont été enregistrés.";showToast("Les paramètres du compte ont été enregistrés.");
   }
-  catch(error){console.error(error);status.classList.add("error");status.textContent="Impossible d’enregistrer les paramètres du compte pour le moment."}
-  finally{submit.disabled=false;submit.textContent="Enregistrer"}
+  catch(error){console.error(error);status.classList.add("error");status.textContent="Impossible d’enregistrer les paramètres du compte pour le moment.";showToast("Impossible d’enregistrer les paramètres du compte.","error")}
+  finally{setBusyState(submit,false);submit.textContent="Enregistrer"}
 };
 
 function resetPasswordDialog(){
@@ -894,7 +995,7 @@ function resetPasswordDialog(){
 }
 
 $("#openPasswordDialogBtn").onclick=function(){
-  $("#accountDialog").close();resetPasswordDialog();$("#passwordDialog").showModal();setTimeout(function(){$("#currentAccountPassword").focus()},50);
+  $("#accountDialog").close();resetPasswordDialog();openModal($("#passwordDialog"),"#currentAccountPassword",$("#accountMenu .account-trigger"));
 };
 
 $("#exportPersonalCollectionBtn").onclick=exportPersonalCollection;
@@ -916,28 +1017,28 @@ $("#passwordForm").onsubmit=async function(event){
   if(next.length<6){error.textContent="Le nouveau mot de passe doit contenir au moins 6 caractères.";return}
   if(next!==confirmation){error.textContent="Les deux nouveaux mots de passe ne correspondent pas.";return}
   if(current===next){error.textContent="Le nouveau mot de passe doit être différent du mot de passe actuel.";return}
-  submit.disabled=true;submit.textContent="Modification…";
+  setBusyState(submit,true);submit.textContent="Modification…";
   try{
-    const credential=EmailAuthProvider.credential(user.email,current);await reauthenticateWithCredential(user,credential);await updatePassword(user,next);success.textContent="Votre mot de passe a bien été modifié.";setTimeout(function(){if($("#passwordDialog").open)$("#passwordDialog").close()},1300);
+    const credential=EmailAuthProvider.credential(user.email,current);await reauthenticateWithCredential(user,credential);await updatePassword(user,next);success.textContent="Votre mot de passe a bien été modifié.";showToast("Votre mot de passe a été modifié.");setTimeout(function(){if($("#passwordDialog").open)$("#passwordDialog").close()},1300);
   }catch(problem){
     const code=problem&&problem.code||"";
     if(code==="auth/invalid-credential"||code==="auth/wrong-password")error.textContent="Le mot de passe actuel est incorrect.";
     else if(code==="auth/weak-password")error.textContent="Le nouveau mot de passe est trop faible.";
     else if(code==="auth/too-many-requests")error.textContent="Trop de tentatives. Réessayez un peu plus tard.";
     else error.textContent="Impossible de modifier le mot de passe pour le moment.";
-  }finally{submit.disabled=false;submit.textContent="Modifier le mot de passe"}
+  }finally{setBusyState(submit,false);submit.textContent="Modifier le mot de passe"}
 };
 $("#authForm").onsubmit=async function(event){
-  event.preventDefault();const submit=event.currentTarget.querySelector('button[type="submit"],button:not([type])');$("#authError").textContent="";submit.disabled=true;submit.textContent="Connexion…";
+  event.preventDefault();const submit=event.currentTarget.querySelector('button[type="submit"]');$("#authError").textContent="";setBusyState(submit,true);submit.textContent="Connexion…";
   try{await signInWithEmailAndPassword(auth,$("#email").value,$("#password").value);event.currentTarget.reset()}
   catch(error){$("#authError").textContent="Connexion impossible. Vérifiez vos identifiants."}
-  finally{submit.disabled=false;submit.textContent="Se connecter"}
+  finally{setBusyState(submit,false);submit.textContent="Se connecter"}
 };
 $("#addFilmBtn").onclick=function(){$("#catalogAdminMenu").removeAttribute("open");openFilmEditor(null)};
 $("#tmdbImportBtn").onclick=function(){$("#catalogAdminMenu").removeAttribute("open");openTmdbImporter()};
 $("#importCatalogBtn").onclick=importCatalogFromBackup;
 $("#exportCatalogBtn").onclick=exportCatalogBackup;
-$("#addSeriesBtn").onclick=function(){if(user)$("#seriesDialog").showModal()};
+$("#addSeriesBtn").onclick=function(){if(user)openModal($("#seriesDialog"),'input[name="title"]')};
 $("#sortSelect").onchange=function(){const parts=this.value.split(":");setFilmSort(parts[0],parts[1])};
 document.querySelectorAll("[data-sort-key]").forEach(function(button){button.onclick=function(){setFilmSort(button.dataset.sortKey)}});
 $("#listViewBtn").onclick=function(){setFilmView("list")};
@@ -1002,9 +1103,9 @@ async function loadAll(){
 
 async function importCatalogFromBackup(){
   if(!isAdmin())return;
-  if(!confirm("Restaurer ou compléter le catalogue depuis jackie-chan-films.json ? Les ajouts et corrections déjà présents seront conservés."))return;
+  if(!await confirmAction({eyebrow:"Catalogue Jackie Chan",title:"Restaurer ou compléter le catalogue ?",message:"Le fichier jackie-chan-films.json sera relu. Les ajouts et corrections déjà présents seront conservés.",confirmLabel:"Restaurer / compléter"}))return;
   const button=$("#importCatalogBtn"),originalLabel=button.textContent;
-  button.disabled=true;button.textContent="Import en cours…";setCatalogDataStatus("Lecture du catalogue publié sur GitHub…",false);
+  setBusyState(button,true);button.textContent="Import en cours…";setCatalogDataStatus("Lecture du catalogue publié sur GitHub…",false);
   try{
     const response=await fetch("./jackie-chan-films.json",{cache:"no-store"});
     if(!response.ok)throw new Error("Fichier JSON introuvable (HTTP "+response.status+")");
@@ -1032,13 +1133,13 @@ async function importCatalogFromBackup(){
     }
     await loadAll();
     showCatalogNotice("Catalogue Firebase synchronisé : "+catalog.length+" films vérifiés, "+createdCount+" créés et "+(catalog.length-createdCount)+" complétés sans écraser les modifications existantes.",false);
-    setCatalogDataStatus("Catalogue synchronisé : "+createdCount+" film"+(createdCount>1?"s créés":" créé")+" et "+(catalog.length-createdCount)+" déjà présent"+(catalog.length-createdCount>1?"s":"")+".",false);
+    setCatalogDataStatus("Catalogue synchronisé : "+createdCount+" film"+(createdCount>1?"s créés":" créé")+" et "+(catalog.length-createdCount)+" déjà présent"+(catalog.length-createdCount>1?"s":"")+".",false);showToast("Le catalogue Jackie Chan a été synchronisé.");
   }catch(error){
     console.error(error);
     showCatalogNotice("Import impossible : "+(error&&error.message?error.message:"erreur inconnue")+" Vérifiez que le fichier jackie-chan-films.json est bien publié à côté de l’index.",true);
-    setCatalogDataStatus("Import impossible. Vérifiez que jackie-chan-films.json est bien publié à côté de l’index sur GitHub.",true);
+    setCatalogDataStatus("Import impossible. Vérifiez que jackie-chan-films.json est bien publié à côté de l’index sur GitHub.",true);showToast("Impossible de synchroniser le catalogue.","error");
   }finally{
-    button.disabled=false;button.textContent=originalLabel;
+    setBusyState(button,false);button.textContent=originalLabel;
   }
 }
 
@@ -1052,11 +1153,10 @@ function openTmdbImporter(){
   $("#tmdbImportReport").innerHTML="";
   $("#tmdbImportStatus").textContent="";
   $("#tmdbImportStatus").classList.remove("error");
-  $("#tmdbStartBtn").disabled=false;
+  setBusyState($("#tmdbStartBtn"),false);
   $("#tmdbStartBtn").textContent="Lancer l’import";
   $("#tmdbCancelBtn").textContent="Annuler";
-  $("#tmdbImportDialog").showModal();
-  setTimeout(function(){$("#tmdbToken").focus()},50);
+  openModal($("#tmdbImportDialog"),"#tmdbToken");
 }
 
 function closeTmdbImporter(){
@@ -1196,7 +1296,7 @@ $("#tmdbImportForm").onsubmit=async function(event){
   const replaceExisting=$("#tmdbReplaceExisting").checked,posterPreference=$("#tmdbPosterPreference").value,total=films.length;
   const startButton=$("#tmdbStartBtn"),cancelButton=$("#tmdbCancelBtn"),status=$("#tmdbImportStatus"),report=$("#tmdbImportReport");
   tmdbImportRunning=true;tmdbAbortRequested=false;
-  startButton.disabled=true;startButton.textContent="Import en cours…";cancelButton.textContent="Arrêter";cancelButton.disabled=false;
+  setBusyState(startButton,true);startButton.textContent="Import en cours…";cancelButton.textContent="Arrêter";cancelButton.disabled=false;
   $("#tmdbReplaceExisting").disabled=true;$("#tmdbPosterPreference").disabled=true;$("#tmdbToken").disabled=true;$("#tmdbProgressWrap").classList.remove("hidden");report.classList.add("hidden");report.innerHTML="";status.classList.remove("error");status.textContent="Vérification du jeton TMDB…";updateTmdbProgress(0,total,"Connexion à TMDB…");
   let imported=0,skipped=0,unmatched=[],errors=[],pendingWrites=[];
   async function commitWrites(){
@@ -1245,12 +1345,12 @@ $("#tmdbImportForm").onsubmit=async function(event){
     status.textContent=stopped?"Import arrêté. Les affiches déjà enregistrées ont été conservées.":"Import terminé. Le jeton TMDB a été effacé de cette page.";
     report.innerHTML=tmdbReportHtml(imported,skipped,unmatched,errors,stopped);report.classList.remove("hidden");
     showCatalogNotice(stopped?"Import TMDB interrompu : "+imported+" affiches enregistrées.":"Affiches TMDB synchronisées : "+imported+" importées, "+unmatched.length+" à compléter manuellement et "+errors.length+" erreurs.",errors.length>0);
-    updateTmdbProgress(stopped?Math.min(imported+skipped+unmatched.length+errors.length,total):total,total,stopped?"Import interrompu":"Import terminé");
+    updateTmdbProgress(stopped?Math.min(imported+skipped+unmatched.length+errors.length,total):total,total,stopped?"Import interrompu":"Import terminé");showToast(stopped?"Import TMDB interrompu.":imported+" affiche"+(imported>1?"s importées.":" importée."),errors.length?"warning":"success");
   }catch(error){
     console.error(error);status.classList.add("error");status.textContent=error&&error.message?error.message:"Impossible de démarrer l’import TMDB.";
   }finally{
     token="";$("#tmdbToken").value="";$("#tmdbToken").disabled=false;$("#tmdbReplaceExisting").disabled=false;$("#tmdbPosterPreference").disabled=false;tmdbImportRunning=false;tmdbAbortRequested=false;
-    startButton.disabled=false;startButton.textContent="Relancer l’import";cancelButton.disabled=false;cancelButton.textContent="Fermer";
+    setBusyState(startButton,false);startButton.textContent="Relancer l’import";cancelButton.disabled=false;cancelButton.textContent="Fermer";
   }
 };
 
@@ -1365,10 +1465,10 @@ async function restorePersonalCollection(file){
     const reasons=[];if(skipped)reasons.push(skipped+" déjà présente"+(skipped>1?"s":""));if(invalid)reasons.push(invalid+" entrée"+(invalid>1?"s incompatibles":" incompatible"));
     setCollectionBackupStatus("Aucune édition à restaurer"+(reasons.length?" : "+reasons.join(" et "):"")+".",false);return;
   }
-  if(!confirm("Restaurer "+candidates.length+" édition"+(candidates.length>1?"s":"")+" manquante"+(candidates.length>1?"s":"")+" ? Les éditions actuelles ne seront ni supprimées ni remplacées.")){
+  if(!await confirmAction({eyebrow:"Ma collection",title:"Restaurer la sauvegarde ?",message:"CineTrack va restaurer "+candidates.length+" édition"+(candidates.length>1?"s manquantes":" manquante")+". Les éditions actuelles ne seront ni supprimées ni remplacées.",confirmLabel:"Restaurer"})){
     setCollectionBackupStatus("Restauration annulée. Aucune donnée n’a été modifiée.",false);return;
   }
-  button.disabled=true;button.textContent="Restauration…";
+  setBusyState(button,true);button.textContent="Restauration…";
   try{
     for(let start=0;start<candidates.length;start+=400){
       const batch=writeBatch(db);
@@ -1381,10 +1481,10 @@ async function restorePersonalCollection(file){
     await loadAll();
     let message=candidates.length+" édition"+(candidates.length>1?"s restaurées":" restaurée")+"."+(skipped?" "+skipped+" déjà présente"+(skipped>1?"s":"")+".":"");
     if(invalid||invalidEans||invalidVisuals)message+=" Éléments ignorés : "+invalid+" entrée(s), "+invalidEans+" EAN invalide(s), "+invalidVisuals+" visuel(s) invalide(s).";
-    setCollectionBackupStatus(message,false);
+    setCollectionBackupStatus(message,false);showToast(candidates.length+" édition"+(candidates.length>1?"s restaurées.":" restaurée."));
   }catch(error){
-    console.error(error);setCollectionBackupStatus(error&&error.code==="permission-denied"?"Restauration refusée par les règles Firestore.":"Impossible de restaurer la collection. Vérifiez votre connexion.",true);
-  }finally{button.disabled=false;button.textContent="Choisir un fichier"}
+    console.error(error);setCollectionBackupStatus(error&&error.code==="permission-denied"?"Restauration refusée par les règles Firestore.":"Impossible de restaurer la collection. Vérifiez votre connexion.",true);showToast("Impossible de restaurer la collection.","error");
+  }finally{setBusyState(button,false);button.textContent="Choisir un fichier"}
 }
 
 function editionFilmIds(edition){
@@ -1535,7 +1635,7 @@ function renderFilms(){
   $("#filmSummary").textContent=data.length+" résultat"+(data.length>1?"s":"")+" sur "+films.length+" crédits";
   const emptyHtml='<div class="empty empty-action"><strong>Aucun résultat avec ces filtres.</strong><p>Retirez un format, un pays ou réinitialisez la recherche.</p><button type="button" class="btn secondary reset-empty-filters">Réinitialiser les filtres</button></div>';
   $("#filmRows").innerHTML=data.length?data.map(renderFilmRow).join(""):'<tr><td colspan="8">'+emptyHtml+'</td></tr>';
-  $("#filmVisualGrid").innerHTML=data.length?data.map(renderFilmCard).join(""):'<div style="grid-column:1/-1">'+emptyHtml+'</div>';
+  $("#filmVisualGrid").innerHTML=data.length?data.map(renderFilmCard).join(""):'<div class="film-grid-empty">'+emptyHtml+'</div>';
   const visualMode=filmView==="visual";
   $("#filmTableWrap").classList.toggle("hidden",visualMode);
   $("#filmVisualGrid").classList.toggle("hidden",!visualMode);
@@ -1565,11 +1665,11 @@ function renderFilmRow(film){
     '<td class="collector-no">'+esc(film.sourceOrder===9999?"—":String(film.sourceOrder).padStart(3,"0"))+'</td>'+
     '<td class="list-poster-cell">'+posterHtml+'</td>'+
     '<td class="year-cell">'+esc(film.year||"—")+'</td>'+
-    '<td class="title-cell"><button class="film-title" data-id="'+esc(film.id)+'">'+esc(displayedTitle(film))+'</button><span class="film-subtitle">'+esc(secondaryTitle(film))+'</span></td>'+
+    '<td class="title-cell"><button type="button" class="film-title" data-id="'+esc(film.id)+'">'+esc(displayedTitle(film))+'</button><span class="film-subtitle">'+esc(secondaryTitle(film))+'</span></td>'+
     '<td><span class="badge '+participationClass+'">'+esc(film.participation)+'</span></td>'+
     '<td class="role-cell">'+esc(text(film.role))+'</td>'+
     '<td><span class="badge'+statusClass+'">'+esc(film.status)+'</span></td>'+
-    '<td class="collection-cell"><div class="collection-cell-layout">'+editionSummary+'<button type="button" class="quick-add-edition" data-id="'+esc(film.id)+'" aria-label="Ajouter une édition de '+esc(displayedTitle(film))+'">+ Édition</button></div></td>'+
+    '<td class="collection-cell"><div class="collection-cell-layout">'+editionSummary+'<button type="button" class="quick-add-edition" data-id="'+esc(film.id)+'" aria-label="Ajouter une édition de '+esc(displayedTitle(film))+'">Ajouter une édition</button></div></td>'+
   '</tr>';
 }
 
@@ -1584,7 +1684,7 @@ function renderFilmCard(film){
     '<span class="collector-poster">'+imageHtml+'<span class="collector-year">'+esc(film.year||"—")+'</span>'+(formatLabel?'<span class="collector-format">'+esc(formatLabel)+'</span>':"")+'</span>'+
     '<span class="collector-card-body"><span class="collector-card-title">'+esc(displayedTitle(film))+'</span><span class="collector-card-subtitle">'+esc(secondaryTitle(film)||film.participation)+'</span>'+
     editionSummary+
-    '<span class="collector-card-foot"><span>'+esc(film.status)+'</span><span class="'+(filmEditions.length?"owned-state":"missing-state")+'">'+(filmEditions.length?(filmEditions.length+" édition"+(filmEditions.length>1?"s":"")):"Manquant")+'</span></span></span></button><div class="collector-card-actions"><span class="collector-card-state '+(filmEditions.length?"owned":"")+'">'+(filmEditions.length?"Dans ma collection":"À collectionner")+'</span><button type="button" class="quick-add-edition" data-id="'+esc(film.id)+'" aria-label="Ajouter une édition de '+esc(displayedTitle(film))+'">+ Édition</button></div></article>';
+    '<span class="collector-card-foot"><span>'+esc(film.status)+'</span><span class="'+(filmEditions.length?"owned-state":"missing-state")+'">'+(filmEditions.length?(filmEditions.length+" édition"+(filmEditions.length>1?"s":"")):"Manquant")+'</span></span></span></button><div class="collector-card-actions"><span class="collector-card-state '+(filmEditions.length?"owned":"")+'">'+(filmEditions.length?"Dans ma collection":"À collectionner")+'</span><button type="button" class="quick-add-edition" data-id="'+esc(film.id)+'" aria-label="Ajouter une édition de '+esc(displayedTitle(film))+'">Ajouter une édition</button></div></article>';
 }
 
 function renderSeries(){
@@ -1595,7 +1695,7 @@ function renderSeries(){
       (item.status==="En cours"&&item.season?' · S'+esc(item.season)+' E'+esc(item.episode||0):"")+
       (item.platform?' · '+esc(item.platform):"")+'</div></article>';
   }).join(""):'<div class="empty empty-action"><strong>Aucune série dans cette catégorie.</strong><p>Ajoutez une série ou choisissez un autre statut.</p><button type="button" class="btn secondary empty-add-series">Ajouter à ma watchlist</button></div>';
-  document.querySelectorAll(".empty-add-series").forEach(function(button){button.onclick=function(){if(user)$("#seriesDialog").showModal()}});
+  document.querySelectorAll(".empty-add-series").forEach(function(button){button.onclick=function(){if(user)openModal($("#seriesDialog"),'input[name="title"]')}});
 }
 
 function renderAll(){
@@ -1679,7 +1779,7 @@ function openFilmDetails(filmId){
     const attributesHtml='<div class="edition-attributes">'+(attributes.length?attributes.map(function(attribute){return '<div class="edition-attribute '+attribute[2]+'"><b>'+esc(attribute[0])+'</b><span>'+esc(attribute[1])+'</span></div>'}).join(""):'<div class="edition-attribute notes"><span>Aucun détail supplémentaire.</span></div>')+'</div>';
     const editIcon='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4ZM14 6l4 4M16 4l1-1a1.4 1.4 0 0 1 2 0l2 2a1.4 1.4 0 0 1 0 2l-1 1"/></svg>';
     const deleteIcon='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M7 7l1 14h8l1-14M10 11v6M14 11v6"/></svg>';
-    return '<article class="edition-item"><div class="edition-card-top"><div class="edition-card-flags"><span class="edition-index">Édition '+(index+1)+(filmEditions.length>1?" / "+filmEditions.length:"")+'</span>'+(linkedFilmIds.length>1?'<span class="edition-primary-badge">Coffret · '+linkedFilmIds.length+' films</span>':"")+(edition.useAsFilmVisual&&productImage?'<span class="edition-primary-badge">Visuel principal</span>':"")+'</div>'+(user?'<div class="edition-actions"><button class="edition-action-btn edit-edition" data-id="'+esc(edition.id)+'" title="Modifier cette édition" aria-label="Modifier cette édition">'+editIcon+'</button><button class="edition-action-btn delete-edition" data-id="'+esc(edition.id)+'" title="Supprimer cette édition" aria-label="Supprimer cette édition">'+deleteIcon+'</button></div>':"")+'</div><div class="edition-item-main">'+visual+'<div class="edition-item-copy"><div class="edition-card-title">'+esc(editionTitle)+'</div><div class="edition-heading"><div class="badges">'+formatBadges+'</div></div>'+attributesHtml+'</div></div></article>';
+    return '<article class="edition-item"><div class="edition-card-top"><div class="edition-card-flags"><span class="edition-index">Édition '+(index+1)+(filmEditions.length>1?" / "+filmEditions.length:"")+'</span>'+(linkedFilmIds.length>1?'<span class="edition-primary-badge">Coffret · '+linkedFilmIds.length+' films</span>':"")+(edition.useAsFilmVisual&&productImage?'<span class="edition-primary-badge">Visuel principal</span>':"")+'</div>'+(user?'<div class="edition-actions"><button type="button" class="edition-action-btn edit-edition" data-id="'+esc(edition.id)+'" title="Modifier cette édition" aria-label="Modifier cette édition">'+editIcon+'</button><button type="button" class="edition-action-btn delete-edition" data-id="'+esc(edition.id)+'" title="Supprimer cette édition" aria-label="Supprimer cette édition">'+deleteIcon+'</button></div>':"")+'</div><div class="edition-item-main">'+visual+'<div class="edition-item-copy"><div class="edition-card-title">'+esc(editionTitle)+'</div><div class="edition-heading"><div class="badges">'+formatBadges+'</div></div>'+attributesHtml+'</div></div></article>';
   }).join(""):'<div class="empty edition-empty"><span>Aucune édition enregistrée.</span></div>')+'</div></div>';
   $("#detailsContent").innerHTML=detailsHtml+sourcesHtml+editionsHtml;
   $("#detailsEditBtn").classList.toggle("hidden",!isAdmin());
@@ -1689,7 +1789,7 @@ function openFilmDetails(filmId){
     $("#filmDetailsDialog").close();openEditionDialog(selectedFilmId||edition.filmId,edition);
   }});
   document.querySelectorAll(".delete-edition").forEach(function(button){button.onclick=function(){removeEdition(button.dataset.id)}});
-  if(!$("#filmDetailsDialog").open)$("#filmDetailsDialog").showModal();
+  if(!$("#filmDetailsDialog").open)openModal($("#filmDetailsDialog"));
 }
 
 $("#detailsEditBtn").onclick=function(){
@@ -1731,10 +1831,10 @@ function openEditionDialog(filmId,edition){
   $("#eanStatus").textContent=edition&&edition.ean?"Code-barres enregistré. Vous pouvez relancer la recherche si nécessaire.":"";
   $("#eanStatus").classList.remove("error");
   $("#editionDialogTitle").textContent=edition?"Modifier l’édition":"Ajouter une édition";
-  $("#editionSubmitBtn").disabled=false;
+  setBusyState($("#editionSubmitBtn"),false);
   $("#editionSubmitBtn").textContent=edition?"Enregistrer les modifications":"Ajouter cette édition";
   updateEditionVisualPreview(pendingEditionImageData||(edition&&edition.productImageUrl)||"");
-  $("#editionDialog").showModal();
+  openModal($("#editionDialog"));
 }
 
 function editionsWithEan(ean,ignoredEditionId){
@@ -1833,12 +1933,12 @@ function renderGlobalProduct(product){
 function openGlobalEanDialog(){
   if(!user)return;globalEanProduct=null;globalFilmMatches=[];globalSelectedFilmIds=new Set();if(globalEanController){globalEanController.abort();globalEanController=null}
   $("#globalEanForm").reset();$("#globalEanStatus").textContent="";$("#globalEanStatus").classList.remove("error");$("#globalEanResult").classList.add("hidden");$("#globalFilmMatchStage").classList.add("hidden");$("#globalExistingEan").classList.add("hidden");$("#globalFilmSuggestions").innerHTML="";$("#globalFilmListMeta").textContent="";$("#globalFilmMatchStatus").textContent="";updateGlobalContinueButton();
-  $("#globalEanDialog").showModal();setTimeout(function(){$("#globalEanInput").focus()},40);
+  openModal($("#globalEanDialog"),"#globalEanInput");
 }
 async function lookupGlobalEan(value){
   const ean=normalizedEan(value),status=$("#globalEanStatus"),button=$("#globalEanSearchBtn");
   if(!isValidEan(ean)){status.textContent="Saisissez un EAN ou UPC valide de 8, 12 ou 13 chiffres.";status.classList.add("error");$("#globalEanInput").focus();return}
-  if(globalEanController)globalEanController.abort();const controller=new AbortController();globalEanController=controller;button.disabled=true;button.textContent="Recherche…";status.classList.remove("error");status.textContent="Recherche des informations de cette édition…";
+  if(globalEanController)globalEanController.abort();const controller=new AbortController();globalEanController=controller;setBusyState(button,true);button.textContent="Recherche…";status.classList.remove("error");status.textContent="Recherche des informations de cette édition…";
   try{
     const response=await fetch(EAN_LOOKUP_BASE+"?ean="+encodeURIComponent(ean),{signal:controller.signal,headers:{Accept:"application/json"}}),result=await response.json().catch(function(){return {}});if(!response.ok)throw new Error(result.error||"Recherche indisponible.");
     globalEanProduct=result.found?productFromLookupResult(result,ean):{ean:ean,title:"Édition non identifiée",description:"",publisher:"",country:"",formats:[],format:"",imageUrl:"",source:"Recherche web",confidence:0,evidence:[]};
@@ -1849,7 +1949,7 @@ async function lookupGlobalEan(value){
     const existingBox=$("#globalExistingEan");existingBox.classList.toggle("hidden",!existing.length);if(existing.length){const names=existingIds.map(function(id){const film=films.find(function(item){return item.id===id});return film?displayedTitle(film):""}).filter(Boolean);existingBox.innerHTML='<span class="global-existing-title">EAN déjà présent dans votre collection</span><span>Il est actuellement associé à '+esc(names.join(" · ")||"une édition")+'. La sélection modifiera ou complétera cette édition.</span><label class="check-row"><input id="globalSeparateCopy" type="checkbox"> Enregistrer plutôt un second exemplaire physique distinct</label>'}
     renderGlobalFilmSuggestions();status.textContent=result.found?"Produit identifié. Choisissez maintenant le ou les films dans la liste complète.":"Aucun produit fiable trouvé. Choisissez le ou les films dans la liste complète.";
   }catch(error){if(error.name!=="AbortError"){status.textContent=error.message||"La recherche est momentanément indisponible.";status.classList.add("error")}}
-  finally{if(globalEanController===controller)globalEanController=null;button.disabled=false;button.textContent="Identifier"}
+  finally{if(globalEanController===controller)globalEanController=null;setBusyState(button,false);button.textContent="Identifier"}
 }
 function continueGlobalEan(){
   const filmIds=[...globalSelectedFilmIds];if(!globalEanProduct||!filmIds.length){$("#globalFilmMatchStatus").textContent="Sélectionnez au moins un film avant de continuer.";return}
@@ -1942,7 +2042,7 @@ async function acceptScannedEan(decodedText){
 function openEanScanner(mode){
   const dialog=$("#eanScannerDialog"),status=$("#eanScannerStatus");
   eanScanMode=mode==="global"?"global":"edition";eanScanAccepted=false;status.classList.remove("error");status.textContent="Autorisez l’accès à la caméra, ou choisissez une image.";
-  if(!dialog.open)dialog.showModal();
+  if(!dialog.open)openModal(dialog);
   if(!window.Html5QrcodeScanner||!window.Html5QrcodeSupportedFormats){
     status.classList.add("error");
     status.textContent="Le module de scan n’a pas pu être chargé. Fermez cette fenêtre et saisissez l’EAN manuellement.";
@@ -1972,8 +2072,8 @@ $("#identifyEanBtn").onclick=async function(){
   const button=this,ean=$("#editionEan").value;
   if(!ean){setEanStatus("Saisissez ou scannez d’abord un code-barres.",true);$("#editionEan").focus();return}
   if(!describeEan(ean,true)){$("#editionEan").focus();return}
-  button.disabled=true;button.textContent="Recherche…";
-  try{await lookupEanProduct(ean,true)}finally{button.disabled=false;button.textContent="Rechercher ce code"}
+  setBusyState(button,true);button.textContent="Recherche…";
+  try{await lookupEanProduct(ean,true)}finally{setBusyState(button,false);button.textContent="Rechercher ce code"}
 };
 $("#eanScannerCloseBtn").onclick=function(){stopEanScanner(true)};
 $("#eanScannerCancelBtn").onclick=function(){stopEanScanner(true)};
@@ -1991,10 +2091,10 @@ $("#editionFilmSearch").addEventListener("input",function(){renderEditionFilmCho
 async function removeEdition(editionId){
   const edition=editions.find(function(item){return item.id===editionId}),linkedCount=edition?editionFilmIds(edition).length:0;
   const message=linkedCount>1?"Supprimer ce coffret de votre collection ? Il disparaîtra des "+linkedCount+" films auxquels il est relié.":"Supprimer cette édition de votre collection ?";
-  if(!user||!confirm(message))return;
-  await deleteDoc(doc(db,"users",user.uid,"collection",editionId));
-  await loadAll();
-  if(selectedFilmId)openFilmDetails(selectedFilmId);
+  if(!user||!await confirmAction({eyebrow:"Ma collection",title:linkedCount>1?"Supprimer ce coffret ?":"Supprimer cette édition ?",message:message,confirmLabel:"Supprimer",danger:true}))return;
+  try{
+    await deleteDoc(doc(db,"users",user.uid,"collection",editionId));await loadAll();showToast(linkedCount>1?"Le coffret a été supprimé.":"L’édition a été supprimée.");if(selectedFilmId)openFilmDetails(selectedFilmId);
+  }catch(error){console.error(error);showToast("Impossible de supprimer cette édition.","error")}
 }
 
 function canvasToBlob(canvas,type,quality){
@@ -2040,14 +2140,14 @@ function updatePosterPreview(value){
 $("#posterFileInput").onchange=async function(event){
   const file=event.target.files&&event.target.files[0];if(!file)return;
   const status=$("#posterUploadStatus"),submit=$("#filmSubmitBtn");
-  posterCompressionPending=true;submit.disabled=true;status.classList.remove("error");status.textContent="Compression de l’image…";
+  posterCompressionPending=true;setBusyState(submit,true);status.classList.remove("error");status.textContent="Compression de l’image…";
   try{
     const compressed=await compressPosterImage(file);
     pendingPosterData=compressed.dataUrl;posterDataChanged=true;updatePosterPreview(pendingPosterData);
     status.textContent="Image prête : "+(compressed.bytes/1024).toFixed(1).replace(".",",")+" Ko · "+compressed.width+" × "+compressed.height+" px";
   }catch(error){
     console.error(error);event.target.value="";status.classList.add("error");status.textContent=error.message||"Compression impossible.";
-  }finally{posterCompressionPending=false;submit.disabled=false}
+  }finally{posterCompressionPending=false;setBusyState(submit,false)}
 };
 
 $("#removePosterBtn").onclick=function(){
@@ -2091,14 +2191,14 @@ function updateEditionVisualPreview(value){
 $("#editionVisualFileInput").onchange=async function(event){
   const file=event.target.files&&event.target.files[0];if(!file)return;
   const status=$("#editionVisualStatus"),submit=$("#editionSubmitBtn");
-  editionImageCompressionPending=true;submit.disabled=true;status.classList.remove("error");status.textContent="Compression du visuel…";
+  editionImageCompressionPending=true;setBusyState(submit,true);status.classList.remove("error");status.textContent="Compression du visuel…";
   try{
     const compressed=await compressEditionVisual(file);
     pendingEditionImageData=compressed.dataUrl;updateEditionVisualPreview(pendingEditionImageData);
     status.textContent="Visuel prêt : "+(compressed.bytes/1024).toFixed(1).replace(".",",")+" Ko · "+compressed.width+" × "+compressed.height+" px";
   }catch(error){
     console.error(error);event.target.value="";status.classList.add("error");status.textContent=error.message||"Compression impossible.";
-  }finally{editionImageCompressionPending=false;submit.disabled=false}
+  }finally{editionImageCompressionPending=false;setBusyState(submit,false)}
 };
 
 $("#removeEditionVisualBtn").onclick=function(){
@@ -2112,7 +2212,8 @@ function openFilmEditor(film){
   if(!isAdmin())return;
   const form=$("#filmForm");form.reset();
   pendingPosterData=film&&film.posterData?film.posterData:null;posterDataChanged=false;posterCompressionPending=false;
-  $("#posterFileInput").value="";$("#posterUploadStatus").textContent="";$("#posterUploadStatus").classList.remove("error");$("#filmSubmitBtn").disabled=false;
+  $("#posterFileInput").value="";$("#posterUploadStatus").textContent="";$("#posterUploadStatus").classList.remove("error");setBusyState($("#filmSubmitBtn"),false);
+  $("#filmError").textContent="";
   $("#filmDialogTitle").textContent=film?"Modifier le film":"Ajouter un film";
   $("#deleteFilmBtn").classList.toggle("hidden",!film);
   form.elements.filmId.value=film?film.id:"";
@@ -2125,13 +2226,13 @@ function openFilmEditor(film){
     form.elements.countsTowardProgress.checked=true;
   }
   updatePosterPreview(pendingPosterData||(film&&film.posterUrl)||"");
-  $("#filmDialog").showModal();
+  openModal($("#filmDialog"),'input[name="titleFr"]');
 }
 
 $("#filmForm").onsubmit=async function(event){
   event.preventDefault();if(!isAdmin())return;
   if(posterCompressionPending){$("#posterUploadStatus").classList.add("error");$("#posterUploadStatus").textContent="Attendez la fin de la compression avant d’enregistrer.";return}
-  const form=event.currentTarget,data=Object.fromEntries(new FormData(form)),filmId=data.filmId;
+  const form=event.currentTarget,submit=$("#filmSubmitBtn"),data=Object.fromEntries(new FormData(form)),filmId=data.filmId;
   delete data.filmId;
   data.year=Number(data.year);
   data.countsTowardProgress=form.elements.countsTowardProgress.checked;
@@ -2143,17 +2244,20 @@ $("#filmForm").onsubmit=async function(event){
     data.posterSource=pendingPosterData?"manuel":null;
     if(pendingPosterData){data.tmdbId=null;data.tmdbPosterPath=null;data.tmdbPageUrl=null;data.tmdbMatchMethod=null}
   }
-  data.updatedAt=serverTimestamp();
-  if(filmId)await setDoc(doc(db,"films",filmId),data,{merge:true});
-  else await addDoc(collection(db,"films"),Object.assign(data,{createdAt:serverTimestamp()}));
-  form.reset();$("#filmDialog").close();await loadAll();
+  data.updatedAt=serverTimestamp();$("#filmError").textContent="";setBusyState(submit,true);submit.textContent=filmId?"Mise à jour…":"Enregistrement…";
+  try{
+    if(filmId)await setDoc(doc(db,"films",filmId),data,{merge:true});
+    else await addDoc(collection(db,"films"),Object.assign(data,{createdAt:serverTimestamp()}));
+    form.reset();$("#filmDialog").close();await loadAll();showToast(filmId?"Le film a été modifié.":"Le film a été ajouté au catalogue.");
+  }catch(error){console.error(error);$("#filmError").textContent="Impossible d’enregistrer ce film. Vérifiez votre connexion puis réessayez.";showToast("Impossible d’enregistrer ce film.","error")}
+  finally{setBusyState(submit,false);submit.textContent=filmId?"Enregistrer les modifications":"Enregistrer"}
 };
 
 $("#deleteFilmBtn").onclick=async function(){
   if(!isAdmin())return;
-  const filmId=$("#filmForm").elements.filmId.value;if(!filmId||!confirm("Supprimer ce film du catalogue commun ?"))return;
-  await deleteDoc(doc(db,"films",filmId));
-  $("#filmDialog").close();await loadAll();
+  const filmId=$("#filmForm").elements.filmId.value;if(!filmId||!await confirmAction({eyebrow:"Catalogue Jackie Chan",title:"Supprimer ce film ?",message:"Le film sera supprimé du catalogue commun pour tous les utilisateurs.",confirmLabel:"Supprimer",danger:true}))return;
+  try{await deleteDoc(doc(db,"films",filmId));$("#filmDialog").close();await loadAll();showToast("Le film a été supprimé du catalogue.")}
+  catch(error){console.error(error);$("#filmError").textContent="Impossible de supprimer ce film. Vérifiez votre connexion.";showToast("Impossible de supprimer ce film.","error")}
 };
 
 $("#editionForm").onsubmit=async function(event){
@@ -2190,7 +2294,7 @@ $("#editionForm").onsubmit=async function(event){
     form.elements.ean.focus();return;
   }
   $("#editionError").textContent="";
-  submit.disabled=true;
+  setBusyState(submit,true);
   try{
     data=Object.fromEntries(new FormData(form));
     delete data.editionId;delete data.formats;
@@ -2227,12 +2331,12 @@ $("#editionForm").onsubmit=async function(event){
         await batch.commit();
       }
     }
-    form.reset();resetEanProductLookup();$("#editionDialog").close();await loadAll();openFilmDetails(filmId);
+    form.reset();resetEanProductLookup();$("#editionDialog").close();await loadAll();showToast(editing?"L’édition a été modifiée.":"L’édition a été ajoutée à votre collection.");openFilmDetails(filmId);
   }catch(error){
     console.error(error);
-    $("#editionError").textContent=error&&error.code==="permission-denied"?"Enregistrement refusé par les règles Firestore. Vérifiez que les règles fournies sont bien publiées.":"Impossible d’enregistrer cette édition. Vérifiez votre connexion puis réessayez.";
+    $("#editionError").textContent=error&&error.code==="permission-denied"?"Enregistrement refusé par les règles Firestore. Vérifiez que les règles fournies sont bien publiées.":"Impossible d’enregistrer cette édition. Vérifiez votre connexion puis réessayez.";showToast("Impossible d’enregistrer cette édition.","error");
   }finally{
-    submit.disabled=false;submit.textContent=editing?"Enregistrer les modifications":"Ajouter cette édition";
+    setBusyState(submit,false);submit.textContent=editing?"Enregistrer les modifications":"Ajouter cette édition";
   }
 };
 
@@ -2244,15 +2348,15 @@ $("#seriesForm").onsubmit=async function(event){
   data.episode=data.episode?Number(data.episode):null;
   data.createdAt=serverTimestamp();
   $("#seriesError").textContent="";
-  submit.disabled=true;submit.textContent="Enregistrement…";
+  setBusyState(submit,true);submit.textContent="Enregistrement…";
   try{
     await addDoc(collection(db,"users",user.uid,"series"),data);
-    form.reset();$("#seriesDialog").close();await loadAll();
+    form.reset();$("#seriesDialog").close();await loadAll();showToast("La série a été ajoutée à votre watchlist.");
   }catch(error){
     console.error(error);
-    $("#seriesError").textContent="Impossible d’enregistrer cette série. Vérifiez votre connexion puis réessayez.";
+    $("#seriesError").textContent="Impossible d’enregistrer cette série. Vérifiez votre connexion puis réessayez.";showToast("Impossible d’enregistrer cette série.","error");
   }finally{
-    submit.disabled=false;submit.textContent="Enregistrer";
+    setBusyState(submit,false);submit.textContent="Enregistrer";
   }
 };
 
