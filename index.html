@@ -324,6 +324,11 @@
     .global-film-toolbar{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:12px}.global-film-list-meta{padding-bottom:11px;color:#6f777c;font-size:9px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}.global-film-suggestions{max-height:390px}.global-film-suggestion{width:100%;margin:0;appearance:none;background:#fff;font:inherit;text-align:left}.global-film-suggestion.is-selected{border-color:#5dc2e5;background:#eaf9fe}.global-film-suggestion:focus-visible{outline:2px solid var(--jackie);outline-offset:-2px}.global-film-score{width:30px;min-width:30px;height:30px;border-color:var(--jackie);border-radius:0;background:#fff;color:#007da9;font-size:16px;line-height:1;cursor:inherit;pointer-events:none;transition:background .15s ease,border-color .15s ease,color .15s ease}.global-film-suggestion:hover .global-film-score{background:#e5f8fe}.global-film-suggestion.is-selected .global-film-score{border-color:#111315;background:var(--jackie);color:#071e2b}
     @media(max-width:760px){.collection-cell{min-width:0}.global-film-toolbar{grid-template-columns:1fr}.global-film-list-meta{padding:0}.global-film-suggestions{max-height:48dvh}}
 
+    /* Repérage des films sans édition */
+    .missing-films-cta{display:grid;grid-template-columns:46px minmax(0,1fr) 22px;align-items:center;gap:11px;min-width:270px;padding:10px 12px;border:1px solid #cfd4d7;background:#fff;color:#171a1c;text-align:left;cursor:pointer;transition:border-color .15s ease,background .15s ease,transform .15s ease}.missing-films-cta:hover,.missing-films-cta:focus-visible{border-color:#0088b8;background:#f2fbfe;transform:translateY(-1px);outline:3px solid rgba(8,169,230,.14)}.missing-films-count{display:grid;width:46px;height:46px;place-items:center;background:#111315;color:#fff;font-size:19px;font-weight:950}.missing-films-copy{display:grid;gap:3px}.missing-films-copy strong{font-size:11px;font-weight:950;letter-spacing:.045em;text-transform:uppercase}.missing-films-copy small{color:#687177;font-size:10px;line-height:1.35}.missing-films-cta>.ui-icon{color:#0088b8}.missing-edition-state{gap:1px!important;padding-left:9px;border-left:3px solid #c99232}.missing-edition-state strong{color:#805d1f;font-size:9px;font-weight:950;letter-spacing:.035em;text-transform:uppercase}.missing-edition-state small{color:#8a8172;font-size:8px}.missing-edition-row td:first-child{box-shadow:inset 3px 0 0 #d5aa5f}.collector-card.missing-edition-card{box-shadow:inset 0 3px 0 #d5aa5f}.collector-format.is-missing{background:#fff4da;color:#765718}.collector-card-state.missing{border-color:#d8bd86;background:#fff8e8;color:#765718}
+    @media(max-width:760px){.missing-films-cta{width:100%;min-width:0}}
+    @media(max-width:430px){.missing-films-cta{grid-template-columns:42px minmax(0,1fr) 18px}.missing-films-count{width:42px;height:42px}}
+
     /* Design System P0 — composants et comportements communs */
     .icon-sprite{position:absolute;width:0;height:0;overflow:hidden}
     .ui-icon{display:inline-block;width:20px;height:20px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
@@ -467,6 +472,7 @@
   </div>
   <div class="jackie-command-bar">
     <button id="globalEanBtn" type="button" class="global-ean-cta"><span class="global-ean-icon" aria-hidden="true"><svg class="ui-icon lg"><use href="#icon-barcode"></use></svg></span><span class="global-ean-copy"><strong>Scanner ou saisir un EAN</strong><small>Identifier l’édition, puis choisir le ou les films</small></span><span class="global-ean-arrow" aria-hidden="true"><svg class="ui-icon"><use href="#icon-arrow-right"></use></svg></span></button>
+    <button id="missingFilmsBtn" type="button" class="missing-films-cta"><span id="missingShortcutCount" class="missing-films-count">0</span><span class="missing-films-copy"><strong>Films sans édition</strong><small>Afficher la liste à compléter</small></span><svg class="ui-icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></button>
     <details id="catalogAdminMenu" class="admin-menu catalog-admin-menu hidden">
       <summary>Gérer le catalogue <svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary>
       <div class="admin-dropdown">
@@ -486,8 +492,8 @@
     <button id="mobileFiltersToggle" class="mobile-filter-toggle" type="button" aria-controls="filmFilterGroups" aria-expanded="false"><span>Afficher les filtres <span id="mobileFilterCount" class="mobile-filter-count"></span></span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></button>
     <div id="filmFilterGroups" class="filter-groups">
       <div class="filter-primary">
-        <div class="filter-group"><span class="filter-label">Disponibilité dans ma collection</span><div class="filter-segment"><button type="button" data-owned-value="all">Tous <span id="ownedAllCount" class="filter-count"></span></button><button type="button" data-owned-value="owned">Possédés <span id="ownedCount" class="filter-count"></span></button><button type="button" data-owned-value="missing">Manquants <span id="missingCount" class="filter-count"></span></button></div></div>
-        <div class="filter-group"><span class="filter-label">Format</span><details id="formatFilterMenu" class="filter-multiselect"><summary><span id="formatFilterLabel">Tous les formats</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div class="filter-options"><label><input type="checkbox" name="formatFilter" value="DVD"> DVD</label><label><input type="checkbox" name="formatFilter" value="Blu-ray"> Blu-ray</label><label><input type="checkbox" name="formatFilter" value="4K UHD"> 4K UHD</label><label><input type="checkbox" name="formatFilter" value="VHS"> VHS</label><label><input type="checkbox" name="formatFilter" value="Numérique"> Numérique</label><label><input type="checkbox" name="formatFilter" value="Autre"> Autre</label></div></details></div>
+        <div class="filter-group"><span class="filter-label">Disponibilité dans ma collection</span><div class="filter-segment"><button type="button" data-owned-value="all">Tous <span id="ownedAllCount" class="filter-count"></span></button><button type="button" data-owned-value="owned">Possédés <span id="ownedCount" class="filter-count"></span></button><button type="button" data-owned-value="missing">Sans édition <span id="missingCount" class="filter-count"></span></button></div></div>
+        <div class="filter-group"><span class="filter-label">Format</span><details id="formatFilterMenu" class="filter-multiselect"><summary><span id="formatFilterLabel">Tous les formats</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div class="filter-options"><label><input type="checkbox" name="formatFilter" value="4K UHD"> 4K UHD</label><label><input type="checkbox" name="formatFilter" value="Blu-ray"> Blu-ray</label><label><input type="checkbox" name="formatFilter" value="DVD"> DVD</label><label><input type="checkbox" name="formatFilter" value="VHS"> VHS</label><label><input type="checkbox" name="formatFilter" value="Numérique"> Numérique</label><label><input type="checkbox" name="formatFilter" value="Autre"> Autre</label></div></details></div>
         <div class="filter-group"><span class="filter-label">Pays de l’édition</span><details id="countryFilterMenu" class="filter-multiselect"><summary><span id="countryFilterLabel">Tous les pays</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div class="filter-options"><label><input type="checkbox" name="countryFilter" value="France"> France</label><label><input type="checkbox" name="countryFilter" value="Royaume-Uni"> Royaume-Uni</label><label><input type="checkbox" name="countryFilter" value="États-Unis"> États-Unis</label><label><input type="checkbox" name="countryFilter" value="Hong Kong"> Hong Kong</label><label><input type="checkbox" name="countryFilter" value="Japon"> Japon</label><label><input type="checkbox" name="countryFilter" value="Allemagne"> Allemagne</label><label><input type="checkbox" name="countryFilter" value="Italie"> Italie</label><label><input type="checkbox" name="countryFilter" value="Espagne"> Espagne</label><label><input type="checkbox" name="countryFilter" value="Canada"> Canada</label><label><input type="checkbox" name="countryFilter" value="Australie"> Australie</label><label><input type="checkbox" name="countryFilter" value="Chine"> Chine</label><label><input type="checkbox" name="countryFilter" value="Taïwan"> Taïwan</label><label><input type="checkbox" name="countryFilter" value="Corée du Sud"> Corée du Sud</label><label><input type="checkbox" name="countryFilter" value="Pays-Bas"> Pays-Bas</label><label><input type="checkbox" name="countryFilter" value="Belgique"> Belgique</label><label><input type="checkbox" name="countryFilter" value="Suisse"> Suisse</label></div></details></div>
         <div class="filter-group filter-view"><span class="filter-label">Affichage</span><div class="view-switch" aria-label="Mode d’affichage"><button id="listViewBtn" type="button">Liste</button><button id="visualViewBtn" type="button">Visuels</button></div></div>
       </div>
@@ -628,7 +634,7 @@
     </section>
     <section class="edition-step">
       <div class="edition-step-head"><span class="edition-step-number">2</span><div><strong class="edition-step-title">Vérifier les informations</strong><span class="edition-step-copy">Indiquez ce qui est réellement présent dans le coffret.</span></div></div>
-      <fieldset class="format-fieldset"><legend class="format-legend">Formats inclus <span class="meta">· plusieurs choix possibles</span></legend><div class="format-choices"><label class="format-choice"><input name="formats" type="checkbox" value="DVD"> DVD</label><label class="format-choice"><input name="formats" type="checkbox" value="Blu-ray"> Blu-ray</label><label class="format-choice"><input name="formats" type="checkbox" value="4K UHD"> 4K UHD</label><label class="format-choice"><input name="formats" type="checkbox" value="VHS"> VHS</label><label class="format-choice"><input name="formats" type="checkbox" value="Numérique"> Numérique</label><label class="format-choice"><input name="formats" type="checkbox" value="Autre"> Autre</label></div></fieldset>
+      <fieldset class="format-fieldset"><legend class="format-legend">Formats inclus <span class="meta">· plusieurs choix possibles</span></legend><div class="format-choices"><label class="format-choice"><input name="formats" type="checkbox" value="4K UHD"> 4K UHD</label><label class="format-choice"><input name="formats" type="checkbox" value="Blu-ray"> Blu-ray</label><label class="format-choice"><input name="formats" type="checkbox" value="DVD"> DVD</label><label class="format-choice"><input name="formats" type="checkbox" value="VHS"> VHS</label><label class="format-choice"><input name="formats" type="checkbox" value="Numérique"> Numérique</label><label class="format-choice"><input name="formats" type="checkbox" value="Autre"> Autre</label></div></fieldset>
       <div class="row"><label>Pays<input name="country" list="editionCountryOptions" placeholder="Ex. Royaume-Uni"></label><label>Éditeur<input name="publisher" placeholder="Ex. 88 Films"></label></div>
       <datalist id="editionCountryOptions"><option value="France"><option value="Royaume-Uni"><option value="États-Unis"><option value="Hong Kong"><option value="Japon"><option value="Allemagne"><option value="Italie"><option value="Espagne"><option value="Canada"><option value="Australie"><option value="Chine"><option value="Taïwan"><option value="Corée du Sud"><option value="Pays-Bas"><option value="Belgique"><option value="Suisse"></datalist>
       <label>Édition / collection<input name="edition" placeholder="Ex. Deluxe Limited Edition"></label>
@@ -745,7 +751,7 @@ function filterSelectionLabel(values,emptyLabel,singularLabel){
 function renderFilterChips(scope,owned,query,formats,statuses,countries){
   const container=$("#filterChips"),items=[];
   if(scope!=="progress")items.push({kind:"scope",value:scope,label:scope==="all"?"Tous les crédits":"Crédits techniques"});
-  if(owned!=="all")items.push({kind:"owned",value:owned,label:owned==="owned"?"Possédés":"Manquants"});
+  if(owned!=="all")items.push({kind:"owned",value:owned,label:owned==="owned"?"Possédés":"Sans édition"});
   if(query)items.push({kind:"query",value:"",label:'Recherche : “'+query+'”'});
   formats.forEach(function(value){items.push({kind:"format",value:value,label:value})});
   statuses.forEach(function(value){items.push({kind:"status",value:value,label:value})});
@@ -1082,6 +1088,7 @@ function openJackieCollection(owned){
 
 $("#homeOpenJackieBtn").onclick=function(){openJackieCollection("all")};
 $("#homeProgressBtn").onclick=function(){openJackieCollection("all")};
+$("#missingFilmsBtn").onclick=function(){openJackieCollection("missing");setTimeout(function(){const target=$("#filmSummary");if(target)target.scrollIntoView({behavior:"smooth",block:"center"})},80)};
 $("#homeAddEditionBtn").onclick=function(){showPage("jackie",true);setTimeout(openGlobalEanDialog,60)};
 $("#homeOpenSeriesBtn").onclick=function(){showPage("series",true)};
 $("#homeWatchingBtn").onclick=function(){$("#seriesFilter").value="En cours";showPage("series",true);renderSeries()};
@@ -1515,13 +1522,23 @@ function editionFilmIds(edition){
   return [...new Set(ids.concat(edition&&edition.filmId||[]).map(function(id){return String(id||"").trim()}).filter(Boolean))];
 }
 function editionsFor(filmId){return editions.filter(function(edition){return editionFilmIds(edition).includes(filmId)})}
+const EDITION_FORMAT_ORDER=["4K UHD","Blu-ray","DVD","VHS","Numérique","Autre"];
+function editionFormatRank(format){
+  const value=normalized(String(format||"").replace(/blu[\s-]?ray/i,"Blu-ray"));
+  const index=EDITION_FORMAT_ORDER.findIndex(function(expected){return normalized(expected)===value});
+  return index<0?EDITION_FORMAT_ORDER.length:index;
+}
+function compareEditionFormats(a,b){return editionFormatRank(a)-editionFormatRank(b)||String(a||"").localeCompare(String(b||""),"fr",{sensitivity:"base"})}
 function editionFormats(edition){
   const stored=Array.isArray(edition&&edition.formats)?edition.formats:[];
   const legacy=stored.length?stored:String(edition&&edition.format||"").split(/\s*(?:\+|,|\/)\s*/);
-  return [...new Set(legacy.map(function(format){return String(format||"").trim()}).filter(Boolean))];
+  return [...new Set(legacy.map(function(format){return String(format||"").trim()}).filter(Boolean))].sort(compareEditionFormats);
 }
 function editionFormatLabel(edition){return editionFormats(edition).join(" + ")||"Format non précisé"}
 function compareEditions(a,b){
+  const rankA=Math.min.apply(null,editionFormats(a).map(editionFormatRank).concat(EDITION_FORMAT_ORDER.length));
+  const rankB=Math.min.apply(null,editionFormats(b).map(editionFormatRank).concat(EDITION_FORMAT_ORDER.length));
+  if(rankA!==rankB)return rankA-rankB;
   const createdA=a&&a.createdAt&&typeof a.createdAt.toMillis==="function"?a.createdAt.toMillis():0;
   const createdB=b&&b.createdAt&&typeof b.createdAt.toMillis==="function"?b.createdAt.toMillis():0;
   if(createdA&&createdB&&createdA!==createdB)return createdA-createdB;
@@ -1591,7 +1608,7 @@ function editionFormatCountryBadges(items){
 }
 function editionSummaryGroups(items,compact){
   const sorted=(items||[]).slice().sort(compareEditions);
-  if(!sorted.length)return '<span class="edition-stack missing"><span class="badge">Manquant</span></span>';
+  if(!sorted.length)return '<span class="edition-stack missing missing-edition-state"><strong>Aucune édition</strong><small>À rechercher</small></span>';
   const countLabel=sorted.length+" édition"+(sorted.length>1?"s":"");
   const groups=sorted.map(function(edition){
     const formats=editionFormats(edition),country=countryIdentity(edition.country),countryCode=shortCountryCode(edition.country);
@@ -1684,7 +1701,7 @@ function renderFilmRow(film){
   const editionSummary=editionSummaryGroups(filmEditions,false);
   const participationClass=film.countsTowardProgress?"progression":"technical";
   const statusClass=film.status==="Sorti"?"":" upcoming";
-  return '<tr class="film-row '+(film.countsTowardProgress?"":"technical-row")+'" data-id="'+esc(film.id)+'" tabindex="0" aria-label="Ouvrir la fiche de '+esc(displayedTitle(film))+'">'+
+  return '<tr class="film-row '+(film.countsTowardProgress?"":"technical-row")+(filmEditions.length?"":" missing-edition-row")+'" data-id="'+esc(film.id)+'" tabindex="0" aria-label="Ouvrir la fiche de '+esc(displayedTitle(film))+'">'+
     '<td class="collector-no">'+esc(film.sourceOrder===9999?"—":String(film.sourceOrder).padStart(3,"0"))+'</td>'+
     '<td class="list-poster-cell">'+posterHtml+'</td>'+
     '<td class="year-cell">'+esc(film.year||"—")+'</td>'+
@@ -1697,17 +1714,17 @@ function renderFilmRow(film){
 }
 
 function renderFilmCard(film){
-  const filmEditions=editionsFor(film.id),formats=[...new Set(filmEditions.flatMap(editionFormats))];
+  const filmEditions=editionsFor(film.id),formats=[...new Set(filmEditions.flatMap(editionFormats))].sort(compareEditionFormats);
   const image=filmImage(film),number=film.sourceOrder===9999?"—":String(film.sourceOrder).padStart(3,"0");
   const imageHtml=image?'<img src="'+esc(image)+'" alt="Affiche de '+esc(displayedTitle(film))+'" loading="lazy">':'<span class="collector-poster-placeholder">'+esc(displayedTitle(film))+'</span>';
-  const formatLabel=formats.includes("4K UHD")?"4K":(formats[0]||"");
+  const formatLabel=formats[0]==="4K UHD"?"4K":(formats[0]||"");
   const editionSummary=filmEditions.length?editionSummaryGroups(filmEditions,true):"";
-  return '<article class="collector-card '+(film.countsTowardProgress?"":"technical-card")+'"><button type="button" class="collector-card-open" data-id="'+esc(film.id)+'" aria-label="Voir les détails de '+esc(displayedTitle(film))+'">'+
+  return '<article class="collector-card '+(film.countsTowardProgress?"":"technical-card")+(filmEditions.length?"":" missing-edition-card")+'"><button type="button" class="collector-card-open" data-id="'+esc(film.id)+'" aria-label="Voir les détails de '+esc(displayedTitle(film))+'">'+
     '<span class="collector-spine">CineTrack · '+esc(number)+'</span>'+
-    '<span class="collector-poster">'+imageHtml+'<span class="collector-year">'+esc(film.year||"—")+'</span>'+(formatLabel?'<span class="collector-format">'+esc(formatLabel)+'</span>':"")+'</span>'+
+    '<span class="collector-poster">'+imageHtml+'<span class="collector-year">'+esc(film.year||"—")+'</span>'+(formatLabel?'<span class="collector-format">'+esc(formatLabel)+'</span>':'<span class="collector-format is-missing">À trouver</span>')+'</span>'+
     '<span class="collector-card-body"><span class="collector-card-title">'+esc(displayedTitle(film))+'</span><span class="collector-card-subtitle">'+esc(secondaryTitle(film)||film.participation)+'</span>'+
     editionSummary+
-    '<span class="collector-card-foot"><span>'+esc(film.status)+'</span><span class="'+(filmEditions.length?"owned-state":"missing-state")+'">'+(filmEditions.length?(filmEditions.length+" édition"+(filmEditions.length>1?"s":"")):"Manquant")+'</span></span></span></button><div class="collector-card-actions"><span class="collector-card-state '+(filmEditions.length?"owned":"")+'">'+(filmEditions.length?"Dans ma collection":"À collectionner")+'</span><button type="button" class="quick-add-edition" data-id="'+esc(film.id)+'" aria-label="Ajouter une édition de '+esc(displayedTitle(film))+'">Ajouter une édition</button></div></article>';
+    '<span class="collector-card-foot"><span>'+esc(film.status)+'</span><span class="'+(filmEditions.length?"owned-state":"missing-state")+'">'+(filmEditions.length?(filmEditions.length+" édition"+(filmEditions.length>1?"s":"")):"Aucune édition")+'</span></span></span></button><div class="collector-card-actions"><span class="collector-card-state '+(filmEditions.length?"owned":"missing")+'">'+(filmEditions.length?"Dans ma collection":"À rechercher")+'</span><button type="button" class="quick-add-edition" data-id="'+esc(film.id)+'" aria-label="Ajouter une édition de '+esc(displayedTitle(film))+'">Ajouter une édition</button></div></article>';
 }
 
 function renderSeries(){
@@ -1744,6 +1761,7 @@ function renderAll(){
   $("#ownedAllCount").textContent=progressFilms.length;
   $("#ownedCount").textContent=ownedProgress;
   $("#missingCount").textContent=missingProgress;
+  $("#missingShortcutCount").textContent=missingProgress;
   $("#homeProgress").style.width=percent+"%";
   $("#homeProgressText").textContent="Vous possédez "+ownedProgress+" film"+(ownedProgress>1?"s":"")+" sur "+progressFilms.length+" · "+percent+" %";
   const nextMilestone=Math.min(100,Math.max(25,Math.ceil((percent+1)/25)*25)),targetCount=Math.ceil(progressFilms.length*nextMilestone/100),remainingToTarget=Math.max(0,targetCount-ownedProgress);
