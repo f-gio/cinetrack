@@ -411,7 +411,17 @@
     #page-jackie table{min-width:1020px}#page-jackie th{height:39px;font-size:9px}#page-jackie td{padding-top:10px;padding-bottom:10px}.list-poster-cell{width:46px;padding-top:7px!important;padding-bottom:7px!important}.list-poster{width:32px;height:48px}.list-poster-empty{font-size:10px}.collection-cell{min-width:230px}.collection-cell-layout{gap:9px}.edition-stack-head{display:none}.edition-bundle,.edition-bundle.combined{min-height:20px}.edition-bundle-format{padding:2px 5px;font-size:8px}.edition-empty-state{display:inline-grid;width:26px;height:26px;place-items:center;border:1px solid #d4d9dc;border-radius:50%;background:#fafbfb}.edition-empty-state>span{display:block;width:7px;height:7px;border:2px solid #aab1b5;border-radius:50%}.missing-edition-row td:first-child{box-shadow:none}.quick-add-edition.icon-only{display:grid;width:34px;height:34px;min-height:34px;flex:0 0 34px;place-items:center;padding:0;border-radius:50%;background:#fff}.quick-add-edition.icon-only .ui-icon{width:15px;height:15px}.quick-add-edition.card-add{gap:5px;background:#fff}.quick-add-edition.card-add .ui-icon{width:14px;height:14px}.collector-card-state.missing{border:0;background:transparent;color:#7a8084}
     @media(max-width:1050px){.jackie-hero{grid-template-columns:1fr}.jackie-identity{padding-bottom:2px}.jackie-hero-panel{grid-template-columns:minmax(180px,.72fr) minmax(280px,1.28fr)}}
     @media(max-width:760px){.jackie-hero{gap:20px;margin-top:8px;padding:20px 16px}.jackie-title-line h1{font-size:clamp(43px,14vw,60px)}.jackie-hero-panel{grid-template-columns:1fr}.jackie-hero-tools{grid-column:auto;align-items:stretch;flex-direction:column}.jackie-hero .missing-films-cta{width:100%;min-height:48px}.jackie-hero .catalog-admin-menu{width:100%}.jackie-hero .admin-menu>summary{justify-content:space-between}.filter-panel{position:relative;top:auto;padding:9px}.filter-search-row.filter-toolbar{grid-template-columns:minmax(0,1fr) auto}.filter-toolbar .filter-search{grid-column:1/-1}.filter-toolbar .mobile-filter-toggle{width:100%}.filter-toolbar .filter-view{width:100%}.filter-toolbar .view-switch{display:grid;grid-template-columns:1fr 1fr;width:100%}.filter-toolbar .filter-reset{grid-column:1/-1;justify-self:end;height:34px}.filter-groups{margin-top:8px;padding:12px 1px 1px}.scope-picker{grid-template-columns:1fr}#page-jackie tbody tr.film-row{grid-template-columns:44px minmax(0,1fr);gap:5px 9px}#page-jackie tbody .list-poster{width:38px;height:57px}#page-jackie tbody .collection-cell .quick-add-edition.icon-only{width:44px!important;min-width:44px;min-height:44px}.collection-cell-layout{grid-template-columns:minmax(0,1fr) auto}}
-    @media(max-width:430px){.jackie-hero{padding:17px 13px}.jackie-hero .global-ean-cta{grid-template-columns:38px minmax(0,1fr)}.jackie-stat-line{align-items:center}.filter-search-row.filter-toolbar{grid-template-columns:1fr 1fr}.filter-toolbar .filter-search,.filter-toolbar .filter-reset{grid-column:1/-1}.filter-toolbar .mobile-filter-toggle{padding:0 9px}.filter-toolbar .view-switch button{padding:6px 8px}}
+    @media(max-width:430px){.jackie-hero{padding:17px 13px}.jackie-stat-line{align-items:center}.filter-search-row.filter-toolbar{grid-template-columns:1fr 1fr}.filter-toolbar .filter-search,.filter-toolbar .filter-reset{grid-column:1/-1}.filter-toolbar .mobile-filter-toggle{padding:0 9px}.filter-toolbar .view-switch button{padding:6px 8px}}
+    /* Page Jackie Chan — header clair et filtres unifiés */
+    .jackie-hero{grid-template-columns:minmax(300px,1fr) auto;align-items:center;background:#fff;color:#111315;border-color:#d7dcdf;border-top-color:var(--jackie);box-shadow:0 8px 24px rgba(16,25,32,.045)}
+    .jackie-kicker{color:#5f686e}.jackie-title-line h1{color:#111315}.jackie-personal{min-width:245px;border-color:#d7dcdf;background:#f7f9fa}.jackie-personal-label{color:#626b70}.jackie-personal .jackie-stat-line strong{color:#111315}.jackie-progress{background:#dce2e5}
+    .jackie-hero-panel{grid-template-columns:minmax(245px,1fr) auto;align-items:stretch}.jackie-hero-tools{grid-column:auto;padding:0}.jackie-hero .catalog-admin-menu{align-self:stretch}.jackie-hero .admin-menu>summary{height:100%;min-height:62px;border-color:#cbd2d6;background:#fff;color:#111315}.jackie-hero .admin-menu[open]>summary,.jackie-hero .admin-menu>summary:hover{border-color:var(--jackie);background:#f1fbfe;color:#007da9}
+    .admin-dropdown .manage-ean-action{border-left:3px solid var(--jackie);background:#f1fbfe}.admin-dropdown .manage-ean-action:hover{background:#ddf5fd}
+    .filter-dropdown-grid{display:grid;grid-template-columns:repeat(4,minmax(170px,1fr));gap:12px;align-items:end}.filter-dropdown-grid .filter-group,.filter-dropdown-grid .filter-select{width:100%;min-width:0}.filter-dropdown-grid .filter-select{display:grid;gap:6px}.filter-dropdown-grid .filter-select select,.filter-dropdown-grid .filter-multiselect>summary{width:100%;min-height:42px}.filter-dropdown-grid .filter-multiselect{width:100%}.filter-dropdown-grid .filter-label,.filter-dropdown-grid .filter-select{font-size:9px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.filter-dropdown-grid .filter-select select{margin-top:6px;font-size:11px;letter-spacing:0;text-transform:none}.filter-dropdown-grid .filter-options{min-width:100%;max-height:260px;overflow:auto}.filter-groups{padding-bottom:4px}
+    #page-jackie tbody tr.missing-edition-row td:first-child{box-shadow:inset 4px 0 0 var(--jackie)}.collector-card.missing-edition-card{box-shadow:inset 4px 0 0 var(--jackie)}
+    @media(max-width:1050px){.filter-dropdown-grid{grid-template-columns:repeat(3,minmax(170px,1fr))}}
+    @media(max-width:760px){.jackie-hero{grid-template-columns:1fr}.jackie-hero-panel{grid-template-columns:minmax(0,1fr) auto}.jackie-hero-tools{grid-column:auto;flex-direction:row}.jackie-hero .catalog-admin-menu{width:auto}.filter-dropdown-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#page-jackie tbody tr.missing-edition-row{border-left:4px solid var(--jackie)}#page-jackie tbody tr.missing-edition-row td:first-child{box-shadow:none}}
+    @media(max-width:480px){.jackie-hero-panel{grid-template-columns:1fr}.jackie-hero-tools,.jackie-hero .catalog-admin-menu{width:100%}.filter-dropdown-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body class="auth-pending">
@@ -494,14 +504,13 @@
         <div class="jackie-stat-line"><strong><span id="jackieOwnedCount">0</span> / <span id="jackieProgressTotal">154</span></strong><span id="jackiePercent" class="jackie-percent">0%</span></div>
         <div id="jackieProgressTrack" class="jackie-progress" role="progressbar" aria-label="Progression de la collection" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="jackieProgress"></i></div>
       </div>
-      <button id="globalEanBtn" type="button" class="global-ean-cta"><span class="global-ean-icon" aria-hidden="true"><svg class="ui-icon lg"><use href="#icon-barcode"></use></svg></span><span class="global-ean-copy"><strong>Scanner ou ajouter un EAN</strong><small>Identifier rapidement une édition</small></span><span class="global-ean-arrow" aria-hidden="true"><svg class="ui-icon"><use href="#icon-arrow-right"></use></svg></span></button>
       <div class="jackie-hero-tools">
-        <button id="missingFilmsBtn" type="button" class="missing-films-cta"><span id="missingShortcutCount" class="missing-films-count">0</span><span class="missing-films-copy"><strong>Sans édition</strong><small>Films à compléter</small></span><svg class="ui-icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></button>
         <details id="catalogAdminMenu" class="admin-menu catalog-admin-menu hidden">
           <summary>Gérer <svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary>
           <div class="admin-dropdown">
-            <button id="addFilmBtn" type="button"><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-plus"></use></svg> Ajouter un film au catalogue</button>
-            <button id="tmdbImportBtn" type="button">Compléter avec TMDB</button>
+            <button id="globalEanBtn" type="button" class="manage-ean-action"><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-barcode"></use></svg> Scanner ou saisir un EAN</button>
+            <button id="addFilmBtn" type="button" class="catalog-admin-action hidden"><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-plus"></use></svg> Ajouter un film au catalogue</button>
+            <button id="tmdbImportBtn" type="button" class="catalog-admin-action hidden">Compléter avec TMDB</button>
           </div>
         </details>
       </div>
@@ -515,19 +524,16 @@
       <div class="filter-group filter-view"><span class="sr-only">Affichage</span><div class="view-switch" aria-label="Mode d’affichage"><button id="listViewBtn" type="button">Liste</button><button id="visualViewBtn" type="button">Visuels</button></div></div>
       <button id="resetFiltersBtn" type="button" class="filter-reset" disabled>Réinitialiser</button>
     </div>
-    <select id="scopeFilter" class="hidden" aria-hidden="true"><option value="progress">Filmographie suivie · 154</option><option value="all">Catalogue complet · 191</option><option value="technical">Crédits techniques seuls · 37</option></select>
-    <select id="filmFilter" class="hidden" aria-hidden="true"><option value="all">Tous</option><option value="owned">Possédés</option><option value="missing">Manquants</option></select>
     <div id="filmFilterGroups" class="filter-groups mobile-collapsed">
-      <div class="filter-primary">
-        <div class="filter-group"><span class="filter-label">Disponibilité dans ma collection</span><div class="filter-segment"><button type="button" data-owned-value="all">Tous <span id="ownedAllCount" class="filter-count"></span></button><button type="button" data-owned-value="owned">Possédés <span id="ownedCount" class="filter-count"></span></button><button type="button" data-owned-value="missing">Sans édition <span id="missingCount" class="filter-count"></span></button></div></div>
+      <div class="filter-dropdown-grid">
+        <label class="filter-select">Disponibilité<select id="filmFilter"><option value="all">Tous les films</option><option value="owned">Avec édition</option><option value="missing">Sans édition</option></select></label>
+        <label class="filter-select">Périmètre<select id="scopeFilter"><option value="progress">Filmographie suivie · 154</option><option value="all">Catalogue complet · 191</option><option value="technical">Crédits techniques seuls · 37</option></select></label>
         <div class="filter-group"><span class="filter-label">Format</span><details id="formatFilterMenu" class="filter-multiselect"><summary><span id="formatFilterLabel">Tous les formats</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div class="filter-options"><label><input type="checkbox" name="formatFilter" value="4K UHD"> 4K UHD</label><label><input type="checkbox" name="formatFilter" value="Blu-ray"> Blu-ray</label><label><input type="checkbox" name="formatFilter" value="DVD"> DVD</label><label><input type="checkbox" name="formatFilter" value="VHS"> VHS</label><label><input type="checkbox" name="formatFilter" value="Numérique"> Numérique</label><label><input type="checkbox" name="formatFilter" value="Autre"> Autre</label></div></details></div>
         <div class="filter-group"><span class="filter-label">Pays de l’édition</span><details id="countryFilterMenu" class="filter-multiselect"><summary><span id="countryFilterLabel">Tous les pays</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div class="filter-options"><label><input type="checkbox" name="countryFilter" value="France"> France</label><label><input type="checkbox" name="countryFilter" value="Royaume-Uni"> Royaume-Uni</label><label><input type="checkbox" name="countryFilter" value="États-Unis"> États-Unis</label><label><input type="checkbox" name="countryFilter" value="Hong Kong"> Hong Kong</label><label><input type="checkbox" name="countryFilter" value="Japon"> Japon</label><label><input type="checkbox" name="countryFilter" value="Allemagne"> Allemagne</label><label><input type="checkbox" name="countryFilter" value="Italie"> Italie</label><label><input type="checkbox" name="countryFilter" value="Espagne"> Espagne</label><label><input type="checkbox" name="countryFilter" value="Canada"> Canada</label><label><input type="checkbox" name="countryFilter" value="Australie"> Australie</label><label><input type="checkbox" name="countryFilter" value="Chine"> Chine</label><label><input type="checkbox" name="countryFilter" value="Taïwan"> Taïwan</label><label><input type="checkbox" name="countryFilter" value="Corée du Sud"> Corée du Sud</label><label><input type="checkbox" name="countryFilter" value="Pays-Bas"> Pays-Bas</label><label><input type="checkbox" name="countryFilter" value="Belgique"> Belgique</label><label><input type="checkbox" name="countryFilter" value="Suisse"> Suisse</label></div></details></div>
-      </div>
-      <details id="advancedFiltersPanel" class="filter-advanced"><summary><span>Filtres et tri avancés</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div class="filter-advanced-content">
-        <div class="filter-group scope-filter-group"><span class="filter-label">Contenu affiché</span><div class="scope-picker" role="group" aria-label="Choisir le contenu de la filmographie"><button type="button" data-scope-value="progress"><span><strong>Filmographie suivie</strong><small>Films, voix et apparitions</small></span><b id="scopeProgressCount" class="filter-count">154</b></button><button type="button" data-scope-value="all"><span><strong>Catalogue complet</strong><small>Inclut les crédits techniques</small></span><b id="scopeAllCount" class="filter-count">191</b></button><button type="button" data-scope-value="technical"><span><strong>Crédits techniques seuls</strong><small>Réalisation, production, cascades…</small></span><b id="scopeTechnicalCount" class="filter-count">37</b></button></div></div>
         <div class="filter-group"><span class="filter-label">Statut de sortie</span><details id="statusFilterMenu" class="filter-multiselect"><summary><span id="statusFilterLabel">Tous les statuts</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div class="filter-options"><label><input type="checkbox" name="statusFilter" value="Sorti"> Sorti</label><label><input type="checkbox" name="statusFilter" value="À venir"> À venir</label><label><input type="checkbox" name="statusFilter" value="En production"> En production</label><label><input type="checkbox" name="statusFilter" value="Annoncé"> Annoncé</label></div></details></div>
+        <label class="filter-select">Type de rôle<select id="roleFilter"><option value="all">Tous les rôles</option></select></label>
         <label class="filter-select">Trier par<select id="sortSelect"><option value="year:asc">Année · ancien → récent</option><option value="year:desc">Année · récent → ancien</option><option value="order:asc">Numéro · croissant</option><option value="order:desc">Numéro · décroissant</option><option value="title:asc">Titre · A → Z</option><option value="title:desc">Titre · Z → A</option><option value="participation:asc">Participation · A → Z</option><option value="participation:desc">Participation · Z → A</option><option value="status:asc">Statut · A → Z</option><option value="status:desc">Statut · Z → A</option><option value="collection:desc">Éditions · plus → moins</option><option value="collection:asc">Éditions · moins → plus</option><option value="poster:desc">Avec affiche d’abord</option><option value="poster:asc">Sans affiche d’abord</option></select></label>
-      </div></details>
+      </div>
     </div>
     <div id="filterChips" class="filter-chips hidden" aria-label="Filtres actifs"></div>
   </div>
@@ -704,7 +710,7 @@ const TMDB_API_BASE="https://api.themoviedb.org/3";
 const TMDB_IMAGE_BASE="https://image.tmdb.org/t/p/w342";
 const EAN_LOOKUP_BASE="https://cinetrack-ean.giovannoni-f.workers.dev/lookup";
 const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app);
-let user=null,films=[],editions=[],series=[],sortKey="year",sortDirection="asc",selectedFilmId=null,filmView="list";
+let user=null,films=[],editions=[],series=[],sortKey="year",sortDirection="asc",selectedFilmId=null,filmView="list",pendingRoleFilter="all";
 let pendingPosterData=null,posterDataChanged=false,posterCompressionPending=false;
 let pendingEditionImageData=null,editionImageCompressionPending=false;
 let tmdbImportRunning=false,tmdbAbortRequested=false;
@@ -785,7 +791,7 @@ function filterSelectionLabel(values,emptyLabel,singularLabel){
   return values.length+" "+(singularLabel==="pays"?"pays":singularLabel+"s");
 }
 
-function renderFilterChips(scope,owned,query,formats,statuses,countries){
+function renderFilterChips(scope,owned,query,formats,statuses,countries,role){
   const container=$("#filterChips"),items=[];
   if(scope!=="progress")items.push({kind:"scope",value:scope,label:scope==="all"?"Catalogue complet":"Crédits techniques seuls"});
   if(owned!=="all")items.push({kind:"owned",value:owned,label:owned==="owned"?"Possédés":"Sans édition"});
@@ -793,6 +799,7 @@ function renderFilterChips(scope,owned,query,formats,statuses,countries){
   formats.forEach(function(value){items.push({kind:"format",value:value,label:value})});
   statuses.forEach(function(value){items.push({kind:"status",value:value,label:value})});
   countries.forEach(function(value){items.push({kind:"country",value:value,label:value})});
+  if(role!=="all")items.push({kind:"role",value:role,label:"Rôle : "+role});
   container.replaceChildren();container.classList.toggle("hidden",!items.length);
   items.forEach(function(item){
     const chip=document.createElement("span");chip.className="filter-chip";chip.appendChild(document.createTextNode(item.label));
@@ -800,6 +807,7 @@ function renderFilterChips(scope,owned,query,formats,statuses,countries){
       if(item.kind==="scope")$("#scopeFilter").value="progress";
       else if(item.kind==="owned")$("#filmFilter").value="all";
       else if(item.kind==="query")$("#filmSearch").value="";
+      else if(item.kind==="role")$("#roleFilter").value="all";
       else{const input=Array.from(document.querySelectorAll('input[name="'+item.kind+'Filter"]')).find(function(option){return option.value===item.value});if(input)input.checked=false}
       renderFilms();
     };chip.appendChild(remove);container.appendChild(chip);
@@ -815,32 +823,29 @@ function updateSortUi(){
 }
 
 function updateFilterUi(){
-  const scope=$("#scopeFilter").value,owned=$("#filmFilter").value,query=$("#filmSearch").value.trim(),formats=checkedFilterValues("formatFilter"),statuses=checkedFilterValues("statusFilter"),countries=checkedFilterValues("countryFilter");
-  document.querySelectorAll("[data-scope-value]").forEach(function(button){const active=button.dataset.scopeValue===scope;button.classList.toggle("active",active);button.setAttribute("aria-pressed",String(active))});
-  document.querySelectorAll("[data-owned-value]").forEach(function(button){button.classList.toggle("active",button.dataset.ownedValue===owned)});
+  const scope=$("#scopeFilter").value,owned=$("#filmFilter").value,query=$("#filmSearch").value.trim(),formats=checkedFilterValues("formatFilter"),statuses=checkedFilterValues("statusFilter"),countries=checkedFilterValues("countryFilter"),role=$("#roleFilter").value;
   $("#clearSearchBtn").classList.toggle("hidden",!query);
   $("#formatFilterLabel").textContent=filterSelectionLabel(formats,"Tous les formats","format");
   $("#statusFilterLabel").textContent=filterSelectionLabel(statuses,"Tous les statuts","statut");
   $("#countryFilterLabel").textContent=filterSelectionLabel(countries,"Tous les pays","pays");
-  const activeCount=(scope!=="progress"?1:0)+(owned!=="all"?1:0)+(query?1:0)+(formats.length?1:0)+(statuses.length?1:0)+(countries.length?1:0);
-  const advancedCount=(scope!=="progress"?1:0)+(owned!=="all"?1:0)+(formats.length?1:0)+(statuses.length?1:0)+(countries.length?1:0);
+  const activeCount=(scope!=="progress"?1:0)+(owned!=="all"?1:0)+(query?1:0)+(formats.length?1:0)+(statuses.length?1:0)+(countries.length?1:0)+(role!=="all"?1:0);
+  const advancedCount=(scope!=="progress"?1:0)+(owned!=="all"?1:0)+(formats.length?1:0)+(statuses.length?1:0)+(countries.length?1:0)+(role!=="all"?1:0);
   $("#resetFiltersBtn").disabled=activeCount===0;
   $("#activeFilterSummary").classList.toggle("hidden",activeCount===0);
   $("#activeFilterSummary").textContent=activeCount+" filtre"+(activeCount>1?"s":"")+" actif"+(activeCount>1?"s":"");
   $("#mobileFilterCount").textContent=advancedCount?advancedCount+" actif"+(advancedCount>1?"s":""):"";
-  renderFilterChips(scope,owned,query,formats,statuses,countries);
-  if(scope!=="progress"||statuses.length)$("#advancedFiltersPanel").open=true;
+  renderFilterChips(scope,owned,query,formats,statuses,countries,role);
   updateSortUi();
 }
 
 function resetFilmFilters(){
-  $("#filmSearch").value="";$("#scopeFilter").value="progress";$("#filmFilter").value="all";document.querySelectorAll('input[name="formatFilter"],input[name="statusFilter"],input[name="countryFilter"]').forEach(function(input){input.checked=false});
+  $("#filmSearch").value="";$("#scopeFilter").value="progress";$("#filmFilter").value="all";$("#roleFilter").value="all";document.querySelectorAll('input[name="formatFilter"],input[name="statusFilter"],input[name="countryFilter"]').forEach(function(input){input.checked=false});
   renderFilms();
 }
 
 function saveFilmPreferences(){
   try{
-    localStorage.setItem("cinetrack-jackie-filters",JSON.stringify({query:$("#filmSearch").value,scope:$("#scopeFilter").value,owned:$("#filmFilter").value,formats:checkedFilterValues("formatFilter"),statuses:checkedFilterValues("statusFilter"),countries:checkedFilterValues("countryFilter"),sortKey:sortKey,sortDirection:sortDirection,view:filmView}));
+    localStorage.setItem("cinetrack-jackie-filters",JSON.stringify({query:$("#filmSearch").value,scope:$("#scopeFilter").value,owned:$("#filmFilter").value,role:$("#roleFilter").value,formats:checkedFilterValues("formatFilter"),statuses:checkedFilterValues("statusFilter"),countries:checkedFilterValues("countryFilter"),sortKey:sortKey,sortDirection:sortDirection,view:filmView}));
   }catch(error){}
 }
 
@@ -850,6 +855,7 @@ function restoreFilmPreferences(){
     $("#filmSearch").value=String(saved.query||"");
     if(["progress","all","technical"].includes(saved.scope))$("#scopeFilter").value=saved.scope;
     if(["all","owned","missing"].includes(saved.owned))$("#filmFilter").value=saved.owned;
+    pendingRoleFilter=typeof saved.role==="string"?saved.role:"all";
     [["formatFilter",saved.formats],["statusFilter",saved.statuses],["countryFilter",saved.countries]].forEach(function(group){const values=Array.isArray(group[1])?group[1]:[];document.querySelectorAll('input[name="'+group[0]+'"]').forEach(function(input){input.checked=values.includes(input.value)})});
     if(["order","poster","year","title","participation","status","collection"].includes(saved.sortKey))sortKey=saved.sortKey;
     if(["asc","desc"].includes(saved.sortDirection))sortDirection=saved.sortDirection;
@@ -1112,21 +1118,18 @@ $("#listViewBtn").onclick=function(){setFilmView("list")};
 $("#visualViewBtn").onclick=function(){setFilmView("visual")};
 $("#clearSearchBtn").onclick=function(){$("#filmSearch").value="";renderFilms();$("#filmSearch").focus()};
 $("#resetFiltersBtn").onclick=resetFilmFilters;
-document.querySelectorAll("[data-scope-value]").forEach(function(button){button.onclick=function(){$("#scopeFilter").value=button.dataset.scopeValue;renderFilms()}});
-document.querySelectorAll("[data-owned-value]").forEach(function(button){button.onclick=function(){$("#filmFilter").value=button.dataset.ownedValue;renderFilms()}});
 
 function openJackieCollection(owned){
   $("#filmSearch").value="";
   $("#scopeFilter").value="progress";
   $("#filmFilter").value=owned||"all";
+  $("#roleFilter").value="all";
   document.querySelectorAll('input[name="formatFilter"],input[name="statusFilter"],input[name="countryFilter"]').forEach(function(input){input.checked=false});
-  $("#advancedFiltersPanel").open=false;
   showPage("jackie",true);renderFilms();
 }
 
 $("#homeOpenJackieBtn").onclick=function(){openJackieCollection("all")};
 $("#homeProgressBtn").onclick=function(){openJackieCollection("all")};
-$("#missingFilmsBtn").onclick=function(){openJackieCollection("missing");setTimeout(function(){const target=$("#filmSummary");if(target)target.scrollIntoView({behavior:"smooth",block:"center"})},80)};
 $("#homeAddEditionBtn").onclick=function(){showPage("jackie",true);setTimeout(openGlobalEanDialog,60)};
 $("#homeOpenSeriesBtn").onclick=function(){showPage("series",true)};
 $("#homeWatchingBtn").onclick=function(){$("#seriesFilter").value="En cours";showPage("series",true);renderSeries()};
@@ -1137,7 +1140,8 @@ document.querySelectorAll("[data-home-series]").forEach(function(button){button.
 onAuthStateChanged(auth,async function(currentUser){
   user=currentUser;
   $("#accountMenu").classList.toggle("hidden",!user);
-  $("#catalogAdminMenu").classList.toggle("hidden",!isAdmin());
+  $("#catalogAdminMenu").classList.toggle("hidden",!user);
+  document.querySelectorAll(".catalog-admin-action").forEach(function(action){action.classList.toggle("hidden",!isAdmin())});
   $("#catalogBackupSettings").classList.toggle("hidden",!isAdmin());
   if(user){
     await loadAccountProfile();await loadAll();showPage(savedPage(),false);$("#loginNotice").classList.add("hidden");document.body.classList.remove("auth-pending","auth-required");document.body.classList.add("auth-ready");
@@ -1726,13 +1730,14 @@ function setFilmSort(key,direction){
 }
 
 function renderFilms(){
-  const query=normalized($("#filmSearch").value),scope=$("#scopeFilter").value,ownedFilter=$("#filmFilter").value,formats=checkedFilterValues("formatFilter"),statuses=checkedFilterValues("statusFilter"),countries=checkedFilterValues("countryFilter");
+  const query=normalized($("#filmSearch").value),scope=$("#scopeFilter").value,ownedFilter=$("#filmFilter").value,roleFilter=$("#roleFilter").value,formats=checkedFilterValues("formatFilter"),statuses=checkedFilterValues("statusFilter"),countries=checkedFilterValues("countryFilter");
   let data=films.filter(function(film){
     const filmEditions=editionsFor(film.id),owned=filmEditions.length>0;
     if(scope==="progress"&&!film.countsTowardProgress)return false;
     if(scope==="technical"&&film.countsTowardProgress)return false;
     if(ownedFilter==="owned"&&!owned)return false;
     if(ownedFilter==="missing"&&owned)return false;
+    if(roleFilter!=="all"&&film.participation!==roleFilter)return false;
     if(formats.length&&!filmEditions.some(function(edition){return editionFormats(edition).some(function(format){return formats.includes(format)})}))return false;
     if(countries.length&&!filmEditions.some(function(edition){return countries.includes(String(edition.country||"").trim())}))return false;
     if(statuses.length&&!statuses.includes(film.status))return false;
@@ -1810,7 +1815,17 @@ function renderSeries(){
   document.querySelectorAll(".empty-add-series").forEach(function(button){button.onclick=function(){if(user)openModal($("#seriesDialog"),'input[name="title"]')}});
 }
 
+function populateRoleFilter(){
+  const select=$("#roleFilter"),current=pendingRoleFilter!=="all"?pendingRoleFilter:select.value;
+  const roles=[...new Set(films.map(function(film){return String(film.participation||"").trim()}).filter(Boolean))].sort(function(a,b){return a.localeCompare(b,"fr",{sensitivity:"base"})});
+  select.replaceChildren();
+  const allOption=document.createElement("option");allOption.value="all";allOption.textContent="Tous les rôles";select.appendChild(allOption);
+  roles.forEach(function(role){const option=document.createElement("option");option.value=role;option.textContent=role;select.appendChild(option)});
+  select.value=roles.includes(current)?current:"all";pendingRoleFilter="all";
+}
+
 function renderAll(){
+  populateRoleFilter();
   renderFilms();renderSeries();
   const progressFilms=films.filter(function(film){return film.countsTowardProgress});
   const technicalFilms=films.filter(function(film){return !film.countsTowardProgress});
@@ -1826,13 +1841,6 @@ function renderAll(){
   $("#scopeFilter").options[0].textContent="Filmographie suivie · "+progressFilms.length;
   $("#scopeFilter").options[1].textContent="Catalogue complet · "+films.length;
   $("#scopeFilter").options[2].textContent="Crédits techniques seuls · "+technicalFilms.length;
-  $("#scopeProgressCount").textContent=progressFilms.length;
-  $("#scopeAllCount").textContent=films.length;
-  $("#scopeTechnicalCount").textContent=technicalFilms.length;
-  $("#ownedAllCount").textContent=progressFilms.length;
-  $("#ownedCount").textContent=ownedProgress;
-  $("#missingCount").textContent=missingProgress;
-  $("#missingShortcutCount").textContent=missingProgress;
   $("#homeProgress").style.width=percent+"%";
   $("#homeProgressText").textContent="Vous possédez "+ownedProgress+" film"+(ownedProgress>1?"s":"")+" sur "+progressFilms.length+" · "+percent+" %";
   const nextMilestone=Math.min(100,Math.max(25,Math.ceil((percent+1)/25)*25)),targetCount=Math.ceil(progressFilms.length*nextMilestone/100),remainingToTarget=Math.max(0,targetCount-ownedProgress);
@@ -2191,7 +2199,7 @@ function openEanScanner(mode){
 
 $("#openEanScannerBtn").onclick=function(){openEanScanner("edition")};
 $("#globalEanScanBtn").onclick=function(){openEanScanner("global")};
-$("#globalEanBtn").onclick=openGlobalEanDialog;
+$("#globalEanBtn").onclick=function(){$("#catalogAdminMenu").removeAttribute("open");openGlobalEanDialog()};
 $("#globalEanForm").onsubmit=function(event){event.preventDefault();lookupGlobalEan($("#globalEanInput").value,true)};
 $("#globalEanInput").addEventListener("input",function(){this.value=normalizedEan(this.value).slice(0,14);$("#globalEanStatus").textContent="";$("#globalEanStatus").classList.remove("error")});
 $("#globalFilmSearch").addEventListener("input",renderGlobalFilmSuggestions);
@@ -2495,7 +2503,7 @@ $("#seriesForm").onsubmit=async function(event){
   }
 };
 
-["filmSearch","scopeFilter","filmFilter"].forEach(function(id){$("#"+id).addEventListener(id==="filmSearch"?"input":"change",renderFilms)});
+["filmSearch","scopeFilter","filmFilter","roleFilter"].forEach(function(id){$("#"+id).addEventListener(id==="filmSearch"?"input":"change",renderFilms)});
 document.querySelectorAll('input[name="formatFilter"],input[name="statusFilter"],input[name="countryFilter"]').forEach(function(input){input.addEventListener("change",renderFilms)});
 $("#seriesFilter").onchange=renderSeries;
 </script>
