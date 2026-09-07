@@ -487,7 +487,7 @@
       <summary>Gérer le catalogue <svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary>
       <div class="admin-dropdown">
         <button id="addFilmBtn" type="button"><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-plus"></use></svg> Ajouter un film au catalogue</button>
-        <button id="tmdbImportBtn" type="button">Compléter les affiches avec TMDB</button>
+        <button id="tmdbImportBtn" type="button">Compléter avec TMDB</button>
       </div>
     </details>
   </div>
@@ -586,12 +586,13 @@
   <div class="form-actions"><button type="button" class="btn secondary" data-close>Annuler</button><button id="passwordSubmitBtn" type="submit" class="btn">Modifier le mot de passe</button></div>
 </form></div></dialog>
 
-<dialog id="tmdbImportDialog" class="dialog-md" aria-labelledby="tmdbImportDialogTitle"><div class="modal"><div class="modal-head"><div><div class="eyebrow">Affiches officielles</div><h2 id="tmdbImportDialogTitle">Importer depuis TMDB</h2></div><button id="tmdbCloseBtn" type="button" class="ghost" aria-label="Fermer"><svg class="ui-icon" aria-hidden="true"><use href="#icon-close"></use></svg></button></div>
-  <p class="tmdb-import-intro">CineTrack recherche chaque œuvre par son identifiant IMDb, puis par titre et année si nécessaire. Les correspondances incertaines sont laissées de côté pour éviter d’associer une mauvaise affiche.</p>
+<dialog id="tmdbImportDialog" class="dialog-md" aria-labelledby="tmdbImportDialogTitle"><div class="modal"><div class="modal-head"><div><div class="eyebrow">Affiches et crédits officiels</div><h2 id="tmdbImportDialogTitle">Importer depuis TMDB</h2></div><button id="tmdbCloseBtn" type="button" class="ghost" aria-label="Fermer"><svg class="ui-icon" aria-hidden="true"><use href="#icon-close"></use></svg></button></div>
+  <p class="tmdb-import-intro">CineTrack recherche chaque œuvre par son identifiant IMDb, puis par titre et année si nécessaire. Les correspondances incertaines sont laissées de côté afin d’éviter une mauvaise affiche ou un mauvais réalisateur.</p>
   <form id="tmdbImportForm" class="form">
     <label>API Read Access Token TMDB<input id="tmdbToken" type="password" required autocomplete="off" autocapitalize="off" spellcheck="false" data-1p-ignore placeholder="Collez temporairement le nouveau jeton"></label>
     <label>Version d’affiche prioritaire<select id="tmdbPosterPreference"><option value="original">Version originale du film</option><option value="fr">Version française</option><option value="international">Version internationale / anglaise</option></select></label>
     <label class="check-row"><input id="tmdbReplaceExisting" type="checkbox" checked> Remplacer les images actuellement enregistrées</label>
+    <label class="check-row"><input id="tmdbImportDirectors" type="checkbox" checked> Compléter les réalisateurs manquants <span class="field-help">— les réalisateurs déjà saisis manuellement sont conservés</span></label>
     <div class="tmdb-security-note">Le jeton reste uniquement dans la mémoire de ce navigateur pendant l’import. Il n’est jamais écrit dans Firebase, téléchargé dans le JSON ou conservé après la fermeture de cette fenêtre.</div>
     <div id="tmdbProgressWrap" class="tmdb-progress-wrap hidden"><div class="tmdb-progress-head"><span id="tmdbProgressText">Préparation…</span><span id="tmdbProgressCount">0 / 0</span></div><div class="tmdb-progress"><i id="tmdbProgressBar"></i></div></div>
     <div id="tmdbImportStatus" class="feedback is-info" role="status" aria-live="polite"></div>
@@ -1198,6 +1199,7 @@ function openTmdbImporter(){
   $("#tmdbToken").value="";
   $("#tmdbPosterPreference").value="original";
   $("#tmdbReplaceExisting").checked=true;
+  $("#tmdbImportDirectors").checked=true;
   $("#tmdbProgressWrap").classList.add("hidden");
   $("#tmdbImportReport").classList.add("hidden");
   $("#tmdbImportReport").innerHTML="";
@@ -1317,6 +1319,12 @@ async function chooseTmdbPoster(movie,token,preference){
   return movie.poster_path?{path:movie.poster_path,language:"principale"}:null;
 }
 
+async function tmdbDirectors(movie,token){
+  const credits=await tmdbApi("/movie/"+encodeURIComponent(movie.id)+"/credits?language=fr-FR",token);
+  const names=(credits.crew||[]).filter(function(person){return person&&person.job==="Director"&&person.name}).map(function(person){return String(person.name).trim()}).filter(Boolean);
+  return [...new Set(names)].join(" · ")||null;
+}
+
 async function downloadTmdbPoster(posterPath){
   const response=await fetch(TMDB_IMAGE_BASE+posterPath,{mode:"cors",cache:"force-cache",referrerPolicy:"no-referrer"});
   if(!response.ok)throw new Error("Affiche TMDB inaccessible (HTTP "+response.status+").");
@@ -1332,10 +1340,10 @@ function updateTmdbProgress(index,total,label){
   $("#tmdbProgressBar").style.width=percent+"%";
 }
 
-function tmdbReportHtml(imported,skipped,unmatched,errors,stopped){
+function tmdbReportHtml(postersImported,directorsImported,skipped,unmatched,errors,stopped){
   const issues=unmatched.concat(errors).slice(0,60);
-  return '<strong>'+(stopped?'Import interrompu':'Import terminé')+' · '+imported+' affiche'+(imported>1?'s':'')+' enregistrée'+(imported>1?'s':'')+' · '+skipped+' conservée'+(skipped>1?'s':'')+' · '+unmatched.length+' sans correspondance · '+errors.length+' erreur'+(errors.length>1?'s':'')+'</strong>'+
-    (issues.length?'<ul>'+issues.map(function(item){return '<li>'+esc(item.title)+' — '+esc(item.reason)+'</li>'}).join('')+'</ul>':'<span>Toutes les œuvres traitées disposent maintenant d’une affiche TMDB.</span>');
+  return '<strong>'+(stopped?'Import interrompu':'Import terminé')+' · '+postersImported+' affiche'+(postersImported>1?'s':'')+' enregistrée'+(postersImported>1?'s':'')+' · '+directorsImported+' réalisateur'+(directorsImported>1?'s':'')+' complété'+(directorsImported>1?'s':'')+' · '+skipped+' élément'+(skipped>1?'s':'')+' déjà à jour · '+unmatched.length+' sans correspondance · '+errors.length+' erreur'+(errors.length>1?'s':'')+'</strong>'+
+    (issues.length?'<ul>'+issues.map(function(item){return '<li>'+esc(item.title)+' — '+esc(item.reason)+'</li>'}).join('')+'</ul>':'<span>Les affiches et réalisateurs disponibles ont été synchronisés.</span>');
 }
 
 $("#tmdbImportForm").onsubmit=async function(event){
@@ -1343,12 +1351,12 @@ $("#tmdbImportForm").onsubmit=async function(event){
   if(!isAdmin()||tmdbImportRunning)return;
   let token=$("#tmdbToken").value.trim();
   if(!token)return;
-  const replaceExisting=$("#tmdbReplaceExisting").checked,posterPreference=$("#tmdbPosterPreference").value,total=films.length;
+  const replaceExisting=$("#tmdbReplaceExisting").checked,importDirectors=$("#tmdbImportDirectors").checked,posterPreference=$("#tmdbPosterPreference").value,total=films.length;
   const startButton=$("#tmdbStartBtn"),cancelButton=$("#tmdbCancelBtn"),status=$("#tmdbImportStatus"),report=$("#tmdbImportReport");
   tmdbImportRunning=true;tmdbAbortRequested=false;
   setBusyState(startButton,true);startButton.textContent="Import en cours…";cancelButton.textContent="Arrêter";cancelButton.disabled=false;
-  $("#tmdbReplaceExisting").disabled=true;$("#tmdbPosterPreference").disabled=true;$("#tmdbToken").disabled=true;$("#tmdbProgressWrap").classList.remove("hidden");report.classList.add("hidden");report.innerHTML="";status.classList.remove("error");status.textContent="Vérification du jeton TMDB…";updateTmdbProgress(0,total,"Connexion à TMDB…");
-  let imported=0,skipped=0,unmatched=[],errors=[],pendingWrites=[];
+  $("#tmdbReplaceExisting").disabled=true;$("#tmdbImportDirectors").disabled=true;$("#tmdbPosterPreference").disabled=true;$("#tmdbToken").disabled=true;$("#tmdbProgressWrap").classList.remove("hidden");report.classList.add("hidden");report.innerHTML="";status.classList.remove("error");status.textContent="Vérification du jeton TMDB…";updateTmdbProgress(0,total,"Connexion à TMDB…");
+  let postersImported=0,directorsImported=0,skipped=0,unmatched=[],errors=[],pendingWrites=[];
   async function commitWrites(){
     if(!pendingWrites.length)return;
     const batch=writeBatch(db);
@@ -1362,24 +1370,35 @@ $("#tmdbImportForm").onsubmit=async function(event){
     for(let index=0;index<catalog.length;index++){
       if(tmdbAbortRequested)break;
       const film=catalog[index],title=displayedTitle(film);
+      const needsPoster=replaceExisting||!baseFilmImage(film);
+      const needsDirector=importDirectors&&!String(film.director||"").trim();
       updateTmdbProgress(index,total,"Recherche : "+title);
-      if(!replaceExisting&&baseFilmImage(film)){skipped++;updateTmdbProgress(index+1,total,"Affiche existante conservée");continue}
+      if(!needsPoster&&!needsDirector){skipped++;updateTmdbProgress(index+1,total,"Déjà à jour");continue}
       try{
         const match=await findTmdbMovie(film,token);
         if(!match){
           unmatched.push({title:title,reason:"aucune correspondance suffisamment fiable"});
-          if(replaceExisting)pendingWrites.push({id:film.id,payload:{posterData:null,posterSource:null,tmdbId:null,tmdbPosterPath:null,tmdbPageUrl:null,posterUpdatedAt:serverTimestamp()}});
+          if(needsPoster&&replaceExisting)pendingWrites.push({id:film.id,payload:{posterData:null,posterSource:null,tmdbId:null,tmdbPosterPath:null,tmdbPageUrl:null,posterUpdatedAt:serverTimestamp()}});
         }else{
-          const selected=await chooseTmdbPoster(match.movie,token,posterPreference);
-          if(!selected){
-            unmatched.push({title:title,reason:"film identifié, mais aucune affiche disponible"});
-            if(replaceExisting)pendingWrites.push({id:film.id,payload:{posterData:null,posterSource:null,tmdbId:match.movie.id,tmdbPosterPath:null,tmdbPageUrl:"https://www.themoviedb.org/movie/"+match.movie.id,posterUpdatedAt:serverTimestamp()}});
-          }else{
-            updateTmdbProgress(index,total,"Compression : "+title);
-            const compressed=await downloadTmdbPoster(selected.path);
-            pendingWrites.push({id:film.id,payload:{posterData:compressed.dataUrl,posterSource:"TMDB",tmdbId:match.movie.id,tmdbPosterPath:selected.path,tmdbPosterLanguage:selected.language,tmdbPosterPreference:posterPreference,tmdbMatchedTitle:match.movie.title||match.movie.original_title||null,tmdbMatchedYear:tmdbYear(match.movie),tmdbMatchMethod:match.method,tmdbPageUrl:"https://www.themoviedb.org/movie/"+match.movie.id,posterUpdatedAt:serverTimestamp()}});
-            imported++;
+          const payload={tmdbId:match.movie.id,tmdbMatchedTitle:match.movie.title||match.movie.original_title||null,tmdbMatchedYear:tmdbYear(match.movie),tmdbMatchMethod:match.method,tmdbPageUrl:"https://www.themoviedb.org/movie/"+match.movie.id};
+          if(needsDirector){
+            updateTmdbProgress(index,total,"Réalisateur : "+title);
+            const director=await tmdbDirectors(match.movie,token);
+            if(director){payload.director=director;directorsImported++}
           }
+          if(needsPoster){
+            const selected=await chooseTmdbPoster(match.movie,token,posterPreference);
+            if(!selected){
+              unmatched.push({title:title,reason:"film identifié, mais aucune affiche disponible"});
+              if(replaceExisting)Object.assign(payload,{posterData:null,posterSource:null,tmdbPosterPath:null,posterUpdatedAt:serverTimestamp()});
+            }else{
+              updateTmdbProgress(index,total,"Compression : "+title);
+              const compressed=await downloadTmdbPoster(selected.path);
+              Object.assign(payload,{posterData:compressed.dataUrl,posterSource:"TMDB",tmdbPosterPath:selected.path,tmdbPosterLanguage:selected.language,tmdbPosterPreference:posterPreference,posterUpdatedAt:serverTimestamp()});
+              postersImported++;
+            }
+          }
+          pendingWrites.push({id:film.id,payload:payload});
         }
         if(pendingWrites.length>=18)await commitWrites();
       }catch(error){
@@ -1392,14 +1411,14 @@ $("#tmdbImportForm").onsubmit=async function(event){
     await commitWrites();
     await loadAll();
     const stopped=tmdbAbortRequested;
-    status.textContent=stopped?"Import arrêté. Les affiches déjà enregistrées ont été conservées.":"Import terminé. Le jeton TMDB a été effacé de cette page.";
-    report.innerHTML=tmdbReportHtml(imported,skipped,unmatched,errors,stopped);report.classList.remove("hidden");
-    showCatalogNotice(stopped?"Import TMDB interrompu : "+imported+" affiches enregistrées.":"Affiches TMDB synchronisées : "+imported+" importées, "+unmatched.length+" à compléter manuellement et "+errors.length+" erreurs.",errors.length>0);
-    updateTmdbProgress(stopped?Math.min(imported+skipped+unmatched.length+errors.length,total):total,total,stopped?"Import interrompu":"Import terminé");showToast(stopped?"Import TMDB interrompu.":imported+" affiche"+(imported>1?"s importées.":" importée."),errors.length?"warning":"success");
+    status.textContent=stopped?"Import arrêté. Les données déjà enregistrées ont été conservées.":"Import terminé. Le jeton TMDB a été effacé de cette page.";
+    report.innerHTML=tmdbReportHtml(postersImported,directorsImported,skipped,unmatched,errors,stopped);report.classList.remove("hidden");
+    showCatalogNotice(stopped?"Import TMDB interrompu : "+postersImported+" affiches et "+directorsImported+" réalisateurs enregistrés.":"TMDB synchronisé : "+postersImported+" affiches, "+directorsImported+" réalisateurs, "+unmatched.length+" à compléter manuellement et "+errors.length+" erreurs.",errors.length>0);
+    updateTmdbProgress(stopped?Math.min(postersImported+directorsImported+skipped+unmatched.length+errors.length,total):total,total,stopped?"Import interrompu":"Import terminé");showToast(stopped?"Import TMDB interrompu.":postersImported+" affiche"+(postersImported>1?"s":"")+" et "+directorsImported+" réalisateur"+(directorsImported>1?"s":"")+" synchronisés.",errors.length?"warning":"success");
   }catch(error){
     console.error(error);status.classList.add("error");status.textContent=error&&error.message?error.message:"Impossible de démarrer l’import TMDB.";
   }finally{
-    token="";$("#tmdbToken").value="";$("#tmdbToken").disabled=false;$("#tmdbReplaceExisting").disabled=false;$("#tmdbPosterPreference").disabled=false;tmdbImportRunning=false;tmdbAbortRequested=false;
+    token="";$("#tmdbToken").value="";$("#tmdbToken").disabled=false;$("#tmdbReplaceExisting").disabled=false;$("#tmdbImportDirectors").disabled=false;$("#tmdbPosterPreference").disabled=false;tmdbImportRunning=false;tmdbAbortRequested=false;
     setBusyState(startButton,false);startButton.textContent="Relancer l’import";cancelButton.disabled=false;cancelButton.textContent="Fermer";
   }
 };
