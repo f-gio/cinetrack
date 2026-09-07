@@ -398,6 +398,20 @@
     /* Visuel commun aux éditions numériques */
     .digital-edition-art{position:relative;display:grid;place-items:center;overflow:hidden;background:linear-gradient(155deg,#082f3b 0%,#0b5161 58%,#08a9e6 100%);color:#fff;text-align:center}.digital-edition-art:before{content:"";position:absolute;inset:8px;border:1px solid rgba(255,255,255,.38)}.digital-edition-art-inner{position:relative;z-index:1;display:grid;gap:7px;place-items:center;padding:10px}.digital-edition-art svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.6}.digital-edition-art strong{font-size:8px;font-weight:950;letter-spacing:.11em;line-height:1.35;text-transform:uppercase}.digital-edition-art small{font-size:6px;font-weight:800;letter-spacing:.08em;opacity:.75;text-transform:uppercase}.edition-visual-preview.digital-standard{border-color:#4aa8bc}.edition-visual-editor.is-digital .edition-visual-copy>label,.edition-visual-editor.is-digital .edition-visual-copy>p,.edition-visual-editor.is-digital #removeEditionVisualBtn{display:none!important}
     @media(max-width:760px){.scope-picker{grid-template-columns:1fr}.scope-picker button{min-height:62px}}
+    /* Page Jackie Chan — hiérarchie unifiée */
+    .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+    .jackie-hero{grid-template-columns:minmax(300px,.88fr) minmax(520px,1.12fr);gap:32px;margin-top:12px;padding:26px 28px;border:1px solid #111315;border-top:6px solid var(--jackie);background:#111315;color:#fff}
+    .jackie-kicker{margin-bottom:12px;color:#aab3b8}.jackie-kicker:before{background:var(--jackie);color:#062733}.jackie-title-line{gap:19px}.jackie-title-line h1{color:#fff;font-size:clamp(54px,6.2vw,88px)}.jackie-chinese{font-size:clamp(30px,3.2vw,47px)}
+    .jackie-hero-panel{display:grid;grid-template-columns:minmax(160px,.72fr) minmax(270px,1.28fr);gap:10px;align-items:stretch}.jackie-personal{min-width:0;padding:14px 16px;border:1px solid #34393c;background:#171a1c}.jackie-personal-label{color:#aab3b8}.jackie-stat-line{display:flex;align-items:flex-end;justify-content:space-between;gap:12px}.jackie-personal .jackie-stat-line strong{color:#fff;font-size:25px;line-height:1}.jackie-personal .jackie-stat-line strong span:first-child{color:var(--jackie)}.jackie-percent{font-size:30px}.jackie-progress{margin-top:auto;background:#343a3e}
+    .jackie-hero .global-ean-cta{width:100%;min-width:0;height:100%;padding:12px;border:0;border-left:5px solid #fff;background:var(--jackie);color:#062733}.jackie-hero .global-ean-cta:hover,.jackie-hero .global-ean-cta:focus-visible{border-color:#fff;background:#23b5e9}.jackie-hero .global-ean-icon{width:40px;height:40px;background:#111315}.jackie-hero .global-ean-copy small{color:#174553}.jackie-hero .global-ean-arrow{color:#062733}
+    .jackie-hero-tools{grid-column:1/-1;display:flex;align-items:center;justify-content:flex-end;gap:8px;padding-top:2px}.jackie-hero .missing-films-cta{display:flex;min-width:0;padding:7px 9px;border-color:#3a4044;background:transparent;color:#fff}.jackie-hero .missing-films-cta:hover,.jackie-hero .missing-films-cta:focus-visible{border-color:var(--jackie);background:#1a2023}.jackie-hero .missing-films-count{width:32px;height:32px;flex:0 0 32px;background:#fff;color:#111315;font-size:14px}.jackie-hero .missing-films-copy{gap:1px}.jackie-hero .missing-films-copy strong{font-size:9px}.jackie-hero .missing-films-copy small{color:#aab3b8;font-size:8px}.jackie-hero .missing-films-cta>.ui-icon{width:16px;color:var(--jackie)}.jackie-hero .catalog-admin-menu{width:auto;margin:0}.jackie-hero .admin-menu>summary{min-height:48px;border-color:#3a4044;background:transparent;color:#fff}.jackie-hero .admin-menu[open]>summary,.jackie-hero .admin-menu>summary:hover{border-color:var(--jackie);color:var(--jackie)}
+    /* Toolbar compacte et rétractable */
+    .filter-panel{position:sticky;top:82px;z-index:12;margin:12px 0 20px;padding:10px;border:1px solid #d8dcdf;border-top:3px solid var(--jackie);box-shadow:0 10px 26px rgba(16,25,32,.055)}.filter-search-row.filter-toolbar{display:grid;grid-template-columns:minmax(260px,1fr) auto auto auto;gap:8px;align-items:center;padding:0;border:0}.filter-toolbar .filter-search{display:block}.filter-toolbar .search-field input{height:42px;padding-left:42px;background:#fff;font-size:13px}.filter-toolbar .mobile-filter-toggle{display:flex;width:auto;min-height:42px;align-items:center;justify-content:center;gap:9px;margin:0;padding:0 13px;border:1px solid #cfd4d7;background:#fff;color:#202427;font-size:10px;font-weight:900;letter-spacing:.07em;text-transform:uppercase}.filter-toolbar .mobile-filter-toggle:hover,.filter-toolbar .mobile-filter-toggle.active{border-color:var(--jackie);background:#eefaff;color:#007da9}.filter-toolbar .mobile-filter-toggle .ui-icon{transition:transform .18s ease}.filter-toolbar .mobile-filter-toggle.active .ui-icon{transform:rotate(180deg)}.filter-toolbar .mobile-filter-count:not(:empty){margin-left:5px;color:#007da9}.filter-toolbar .filter-view{width:auto;margin:0}.filter-toolbar .view-switch{min-height:42px}.filter-toolbar .view-switch button{min-height:40px}.filter-toolbar .filter-reset{height:42px;padding:0 10px;white-space:nowrap}.filter-toolbar .filter-reset:disabled{display:none}.filter-groups{padding:14px 4px 2px;border-top:1px solid #e3e6e8;margin-top:10px}.filter-groups.mobile-collapsed{display:none!important}.filter-chips{margin-top:10px;padding:10px 3px 1px}.filter-advanced{width:100%}
+    /* Tableau allégé */
+    #page-jackie table{min-width:1020px}#page-jackie th{height:39px;font-size:9px}#page-jackie td{padding-top:10px;padding-bottom:10px}.list-poster-cell{width:46px;padding-top:7px!important;padding-bottom:7px!important}.list-poster{width:32px;height:48px}.list-poster-empty{font-size:10px}.collection-cell{min-width:230px}.collection-cell-layout{gap:9px}.edition-stack-head{display:none}.edition-bundle,.edition-bundle.combined{min-height:20px}.edition-bundle-format{padding:2px 5px;font-size:8px}.edition-empty-state{display:inline-grid;width:26px;height:26px;place-items:center;border:1px solid #d4d9dc;border-radius:50%;background:#fafbfb}.edition-empty-state>span{display:block;width:7px;height:7px;border:2px solid #aab1b5;border-radius:50%}.missing-edition-row td:first-child{box-shadow:none}.quick-add-edition.icon-only{display:grid;width:34px;height:34px;min-height:34px;flex:0 0 34px;place-items:center;padding:0;border-radius:50%;background:#fff}.quick-add-edition.icon-only .ui-icon{width:15px;height:15px}.quick-add-edition.card-add{gap:5px;background:#fff}.quick-add-edition.card-add .ui-icon{width:14px;height:14px}.collector-card-state.missing{border:0;background:transparent;color:#7a8084}
+    @media(max-width:1050px){.jackie-hero{grid-template-columns:1fr}.jackie-identity{padding-bottom:2px}.jackie-hero-panel{grid-template-columns:minmax(180px,.72fr) minmax(280px,1.28fr)}}
+    @media(max-width:760px){.jackie-hero{gap:20px;margin-top:8px;padding:20px 16px}.jackie-title-line h1{font-size:clamp(43px,14vw,60px)}.jackie-hero-panel{grid-template-columns:1fr}.jackie-hero-tools{grid-column:auto;align-items:stretch;flex-direction:column}.jackie-hero .missing-films-cta{width:100%;min-height:48px}.jackie-hero .catalog-admin-menu{width:100%}.jackie-hero .admin-menu>summary{justify-content:space-between}.filter-panel{position:relative;top:auto;padding:9px}.filter-search-row.filter-toolbar{grid-template-columns:minmax(0,1fr) auto}.filter-toolbar .filter-search{grid-column:1/-1}.filter-toolbar .mobile-filter-toggle{width:100%}.filter-toolbar .filter-view{width:100%}.filter-toolbar .view-switch{display:grid;grid-template-columns:1fr 1fr;width:100%}.filter-toolbar .filter-reset{grid-column:1/-1;justify-self:end;height:34px}.filter-groups{margin-top:8px;padding:12px 1px 1px}.scope-picker{grid-template-columns:1fr}#page-jackie tbody tr.film-row{grid-template-columns:44px minmax(0,1fr);gap:5px 9px}#page-jackie tbody .list-poster{width:38px;height:57px}#page-jackie tbody .collection-cell .quick-add-edition.icon-only{width:44px!important;min-width:44px;min-height:44px}.collection-cell-layout{grid-template-columns:minmax(0,1fr) auto}}
+    @media(max-width:430px){.jackie-hero{padding:17px 13px}.jackie-hero .global-ean-cta{grid-template-columns:38px minmax(0,1fr)}.jackie-stat-line{align-items:center}.filter-search-row.filter-toolbar{grid-template-columns:1fr 1fr}.filter-toolbar .filter-search,.filter-toolbar .filter-reset{grid-column:1/-1}.filter-toolbar .mobile-filter-toggle{padding:0 9px}.filter-toolbar .view-switch button{padding:6px 8px}}
   </style>
 </head>
 <body class="auth-pending">
@@ -470,47 +484,44 @@
 
 <section id="page-jackie" class="hidden jackie-page">
   <div class="jackie-hero">
-    <div>
+    <div class="jackie-identity">
       <div class="jackie-kicker">CineTrack · Collection privée</div>
       <div class="jackie-title-line"><h1>Jackie Chan</h1><span class="jackie-chinese" lang="zh-Hant">成<br>龍</span></div>
-      <p class="jackie-tagline">La filmographie complète, suivie édition par édition.</p>
     </div>
-    <div class="jackie-dashboard">
-      <div class="jackie-total"><strong id="jackieCatalogTotal">154</strong><span>Films suivis</span></div>
+    <div class="jackie-hero-panel">
       <div class="jackie-personal">
         <span class="jackie-personal-label">Ma collection</span>
-        <strong><span id="jackieOwnedCount">0</span> / <span id="jackieProgressTotal">154</span></strong>
+        <div class="jackie-stat-line"><strong><span id="jackieOwnedCount">0</span> / <span id="jackieProgressTotal">154</span></strong><span id="jackiePercent" class="jackie-percent">0%</span></div>
         <div id="jackieProgressTrack" class="jackie-progress" role="progressbar" aria-label="Progression de la collection" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="jackieProgress"></i></div>
-        <span id="jackiePercent" class="jackie-percent">0%</span>
+      </div>
+      <button id="globalEanBtn" type="button" class="global-ean-cta"><span class="global-ean-icon" aria-hidden="true"><svg class="ui-icon lg"><use href="#icon-barcode"></use></svg></span><span class="global-ean-copy"><strong>Scanner ou ajouter un EAN</strong><small>Identifier rapidement une édition</small></span><span class="global-ean-arrow" aria-hidden="true"><svg class="ui-icon"><use href="#icon-arrow-right"></use></svg></span></button>
+      <div class="jackie-hero-tools">
+        <button id="missingFilmsBtn" type="button" class="missing-films-cta"><span id="missingShortcutCount" class="missing-films-count">0</span><span class="missing-films-copy"><strong>Sans édition</strong><small>Films à compléter</small></span><svg class="ui-icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></button>
+        <details id="catalogAdminMenu" class="admin-menu catalog-admin-menu hidden">
+          <summary>Gérer <svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary>
+          <div class="admin-dropdown">
+            <button id="addFilmBtn" type="button"><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-plus"></use></svg> Ajouter un film au catalogue</button>
+            <button id="tmdbImportBtn" type="button">Compléter avec TMDB</button>
+          </div>
+        </details>
       </div>
     </div>
-  </div>
-  <div class="jackie-command-bar">
-    <button id="globalEanBtn" type="button" class="global-ean-cta"><span class="global-ean-icon" aria-hidden="true"><svg class="ui-icon lg"><use href="#icon-barcode"></use></svg></span><span class="global-ean-copy"><strong>Scanner ou saisir un EAN</strong><small>Identifier l’édition, puis choisir le ou les films</small></span><span class="global-ean-arrow" aria-hidden="true"><svg class="ui-icon"><use href="#icon-arrow-right"></use></svg></span></button>
-    <button id="missingFilmsBtn" type="button" class="missing-films-cta"><span id="missingShortcutCount" class="missing-films-count">0</span><span class="missing-films-copy"><strong>Films sans édition</strong><small>Afficher la liste à compléter</small></span><svg class="ui-icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></button>
-    <details id="catalogAdminMenu" class="admin-menu catalog-admin-menu hidden">
-      <summary>Gérer le catalogue <svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary>
-      <div class="admin-dropdown">
-        <button id="addFilmBtn" type="button"><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-plus"></use></svg> Ajouter un film au catalogue</button>
-        <button id="tmdbImportBtn" type="button">Compléter avec TMDB</button>
-      </div>
-    </details>
   </div>
   <div id="catalogNotice" class="notice hidden"></div>
   <div class="filter-panel">
-    <div class="filter-search-row">
-      <label class="filter-search"><span class="filter-label">Rechercher dans la filmographie</span><span class="search-field"><svg class="ui-icon search-icon" aria-hidden="true"><use href="#icon-search"></use></svg><input id="filmSearch" type="search" placeholder="Titre, alias, personnage, rôle…" autocomplete="off"><button id="clearSearchBtn" type="button" class="clear-search hidden" aria-label="Effacer la recherche"><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-close"></use></svg></button></span></label>
-      <button id="resetFiltersBtn" type="button" class="filter-reset" disabled>Réinitialiser les filtres</button>
+    <div class="filter-search-row filter-toolbar">
+      <label class="filter-search"><span class="sr-only">Rechercher dans la filmographie</span><span class="search-field"><svg class="ui-icon search-icon" aria-hidden="true"><use href="#icon-search"></use></svg><input id="filmSearch" type="search" placeholder="Rechercher un titre, un alias ou un rôle…" autocomplete="off"><button id="clearSearchBtn" type="button" class="clear-search hidden" aria-label="Effacer la recherche"><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-close"></use></svg></button></span></label>
+      <button id="mobileFiltersToggle" class="mobile-filter-toggle" type="button" aria-controls="filmFilterGroups" aria-expanded="false"><span>Filtres <span id="mobileFilterCount" class="mobile-filter-count"></span></span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></button>
+      <div class="filter-group filter-view"><span class="sr-only">Affichage</span><div class="view-switch" aria-label="Mode d’affichage"><button id="listViewBtn" type="button">Liste</button><button id="visualViewBtn" type="button">Visuels</button></div></div>
+      <button id="resetFiltersBtn" type="button" class="filter-reset" disabled>Réinitialiser</button>
     </div>
     <select id="scopeFilter" class="hidden" aria-hidden="true"><option value="progress">Filmographie suivie · 154</option><option value="all">Catalogue complet · 191</option><option value="technical">Crédits techniques seuls · 37</option></select>
     <select id="filmFilter" class="hidden" aria-hidden="true"><option value="all">Tous</option><option value="owned">Possédés</option><option value="missing">Manquants</option></select>
-    <button id="mobileFiltersToggle" class="mobile-filter-toggle" type="button" aria-controls="filmFilterGroups" aria-expanded="false"><span>Afficher les filtres <span id="mobileFilterCount" class="mobile-filter-count"></span></span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></button>
-    <div id="filmFilterGroups" class="filter-groups">
+    <div id="filmFilterGroups" class="filter-groups mobile-collapsed">
       <div class="filter-primary">
         <div class="filter-group"><span class="filter-label">Disponibilité dans ma collection</span><div class="filter-segment"><button type="button" data-owned-value="all">Tous <span id="ownedAllCount" class="filter-count"></span></button><button type="button" data-owned-value="owned">Possédés <span id="ownedCount" class="filter-count"></span></button><button type="button" data-owned-value="missing">Sans édition <span id="missingCount" class="filter-count"></span></button></div></div>
         <div class="filter-group"><span class="filter-label">Format</span><details id="formatFilterMenu" class="filter-multiselect"><summary><span id="formatFilterLabel">Tous les formats</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div class="filter-options"><label><input type="checkbox" name="formatFilter" value="4K UHD"> 4K UHD</label><label><input type="checkbox" name="formatFilter" value="Blu-ray"> Blu-ray</label><label><input type="checkbox" name="formatFilter" value="DVD"> DVD</label><label><input type="checkbox" name="formatFilter" value="VHS"> VHS</label><label><input type="checkbox" name="formatFilter" value="Numérique"> Numérique</label><label><input type="checkbox" name="formatFilter" value="Autre"> Autre</label></div></details></div>
         <div class="filter-group"><span class="filter-label">Pays de l’édition</span><details id="countryFilterMenu" class="filter-multiselect"><summary><span id="countryFilterLabel">Tous les pays</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div class="filter-options"><label><input type="checkbox" name="countryFilter" value="France"> France</label><label><input type="checkbox" name="countryFilter" value="Royaume-Uni"> Royaume-Uni</label><label><input type="checkbox" name="countryFilter" value="États-Unis"> États-Unis</label><label><input type="checkbox" name="countryFilter" value="Hong Kong"> Hong Kong</label><label><input type="checkbox" name="countryFilter" value="Japon"> Japon</label><label><input type="checkbox" name="countryFilter" value="Allemagne"> Allemagne</label><label><input type="checkbox" name="countryFilter" value="Italie"> Italie</label><label><input type="checkbox" name="countryFilter" value="Espagne"> Espagne</label><label><input type="checkbox" name="countryFilter" value="Canada"> Canada</label><label><input type="checkbox" name="countryFilter" value="Australie"> Australie</label><label><input type="checkbox" name="countryFilter" value="Chine"> Chine</label><label><input type="checkbox" name="countryFilter" value="Taïwan"> Taïwan</label><label><input type="checkbox" name="countryFilter" value="Corée du Sud"> Corée du Sud</label><label><input type="checkbox" name="countryFilter" value="Pays-Bas"> Pays-Bas</label><label><input type="checkbox" name="countryFilter" value="Belgique"> Belgique</label><label><input type="checkbox" name="countryFilter" value="Suisse"> Suisse</label></div></details></div>
-        <div class="filter-group filter-view"><span class="filter-label">Affichage</span><div class="view-switch" aria-label="Mode d’affichage"><button id="listViewBtn" type="button">Liste</button><button id="visualViewBtn" type="button">Visuels</button></div></div>
       </div>
       <details id="advancedFiltersPanel" class="filter-advanced"><summary><span>Filtres et tri avancés</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div class="filter-advanced-content">
         <div class="filter-group scope-filter-group"><span class="filter-label">Contenu affiché</span><div class="scope-picker" role="group" aria-label="Choisir le contenu de la filmographie"><button type="button" data-scope-value="progress"><span><strong>Filmographie suivie</strong><small>Films, voix et apparitions</small></span><b id="scopeProgressCount" class="filter-count">154</b></button><button type="button" data-scope-value="all"><span><strong>Catalogue complet</strong><small>Inclut les crédits techniques</small></span><b id="scopeAllCount" class="filter-count">191</b></button><button type="button" data-scope-value="technical"><span><strong>Crédits techniques seuls</strong><small>Réalisation, production, cascades…</small></span><b id="scopeTechnicalCount" class="filter-count">37</b></button></div></div>
@@ -955,6 +966,7 @@ function setMobileNav(open){
 function setMobileFilters(open){
   filmFilterGroups.classList.toggle("mobile-collapsed",!open);
   mobileFiltersToggle.setAttribute("aria-expanded",String(open));
+  mobileFiltersToggle.classList.toggle("active",open);
 }
 
 mobileNavBtn.onclick=function(){setMobileNav(mobileNavBtn.getAttribute("aria-expanded")!=="true")};
@@ -963,7 +975,7 @@ mobileFiltersToggle.onclick=function(){setMobileFilters(mobileFiltersToggle.getA
 const mobileLayout=window.matchMedia("(max-width: 760px)");
 function syncResponsiveControls(){
   setMobileNav(false);
-  setMobileFilters(!mobileLayout.matches);
+  setMobileFilters(false);
 }
 syncResponsiveControls();
 if(mobileLayout.addEventListener)mobileLayout.addEventListener("change",syncResponsiveControls);
@@ -1659,7 +1671,7 @@ function editionFormatCountryBadges(items){
 }
 function editionSummaryGroups(items,compact){
   const sorted=(items||[]).slice().sort(compareEditions);
-  if(!sorted.length)return '<span class="edition-stack missing missing-edition-state"><strong>Aucune édition</strong><small>À rechercher</small></span>';
+  if(!sorted.length)return '<span class="edition-empty-state" title="Aucune édition enregistrée" aria-label="Aucune édition enregistrée"><span aria-hidden="true"></span></span>';
   const countLabel=sorted.length+" édition"+(sorted.length>1?"s":"");
   const groups=sorted.map(function(edition){
     const formats=editionFormats(edition),country=countryIdentity(edition.country),countryCode=shortCountryCode(edition.country);
@@ -1769,7 +1781,7 @@ function renderFilmRow(film){
     '<td class="title-cell"><button type="button" class="film-title" data-id="'+esc(film.id)+'">'+esc(displayedTitle(film))+'</button><span class="film-subtitle">'+esc(secondaryTitle(film))+'</span></td>'+
     '<td><span class="badge '+participationClass+'">'+esc(film.participation)+'</span></td>'+
     '<td><span class="badge'+statusClass+'">'+esc(film.status)+'</span></td>'+
-    '<td class="collection-cell"><div class="collection-cell-layout">'+editionSummary+'<button type="button" class="quick-add-edition" data-id="'+esc(film.id)+'" aria-label="Ajouter une édition de '+esc(displayedTitle(film))+'">Ajouter une édition</button></div></td>'+
+    '<td class="collection-cell"><div class="collection-cell-layout">'+editionSummary+'<button type="button" class="quick-add-edition icon-only" data-id="'+esc(film.id)+'" title="Ajouter une édition" aria-label="Ajouter une édition de '+esc(displayedTitle(film))+'">'+iconSvg("plus","sm")+'</button></div></td>'+
   '</tr>';
 }
 
@@ -1784,7 +1796,7 @@ function renderFilmCard(film){
     '<span class="collector-poster">'+imageHtml+'<span class="collector-year">'+esc(film.year||"—")+'</span>'+(formatLabel?'<span class="collector-format '+formatCssClass(formats[0])+'">'+esc(formatLabel)+'</span>':'<span class="collector-format is-missing">À trouver</span>')+'</span>'+
     '<span class="collector-card-body"><span class="collector-card-title">'+esc(displayedTitle(film))+'</span><span class="collector-card-subtitle">'+esc(secondaryTitle(film)||film.participation)+'</span>'+
     editionSummary+
-    '<span class="collector-card-foot"><span>'+esc(film.status)+'</span><span class="'+(filmEditions.length?"owned-state":"missing-state")+'">'+(filmEditions.length?(filmEditions.length+" édition"+(filmEditions.length>1?"s":"")):"Aucune édition")+'</span></span></span></button><div class="collector-card-actions"><span class="collector-card-state '+(filmEditions.length?"owned":"missing")+'">'+(filmEditions.length?"Dans ma collection":"À rechercher")+'</span><button type="button" class="quick-add-edition" data-id="'+esc(film.id)+'" aria-label="Ajouter une édition de '+esc(displayedTitle(film))+'">Ajouter une édition</button></div></article>';
+    '<span class="collector-card-foot"><span>'+esc(film.status)+'</span><span class="'+(filmEditions.length?"owned-state":"missing-state")+'">'+(filmEditions.length?(filmEditions.length+" édition"+(filmEditions.length>1?"s":"")):"À compléter")+'</span></span></span></button><div class="collector-card-actions"><span class="collector-card-state '+(filmEditions.length?"owned":"missing")+'">'+(filmEditions.length?"Dans ma collection":"À rechercher")+'</span><button type="button" class="quick-add-edition card-add" data-id="'+esc(film.id)+'" aria-label="Ajouter une édition de '+esc(displayedTitle(film))+'">'+iconSvg("plus","sm")+' <span>Édition</span></button></div></article>';
 }
 
 function renderSeries(){
@@ -1825,7 +1837,6 @@ function renderAll(){
   $("#homeProgressText").textContent="Vous possédez "+ownedProgress+" film"+(ownedProgress>1?"s":"")+" sur "+progressFilms.length+" · "+percent+" %";
   const nextMilestone=Math.min(100,Math.max(25,Math.ceil((percent+1)/25)*25)),targetCount=Math.ceil(progressFilms.length*nextMilestone/100),remainingToTarget=Math.max(0,targetCount-ownedProgress);
   $("#homeProgressMotivation").textContent=missingProgress===0?"Votre filmographie est complète.":remainingToTarget?"Plus que "+remainingToTarget+" film"+(remainingToTarget>1?"s":"")+" pour atteindre "+nextMilestone+" %.":"Il vous reste "+missingProgress+" film"+(missingProgress>1?"s":"")+" à collectionner.";
-  $("#jackieCatalogTotal").textContent=progressFilms.length;
   $("#jackieOwnedCount").textContent=ownedProgress;
   $("#jackieProgressTotal").textContent=progressFilms.length;
   $("#jackieProgress").style.width=percent+"%";
