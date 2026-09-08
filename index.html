@@ -415,7 +415,7 @@
     /* Page Jackie Chan — header clair et filtres unifiés */
     .jackie-hero{grid-template-columns:minmax(300px,1fr) auto;align-items:center;background:#fff;color:#111315;border-color:#d7dcdf;border-top-color:var(--jackie);box-shadow:0 8px 24px rgba(16,25,32,.045)}
     .jackie-kicker{color:#5f686e}.jackie-title-line h1{color:#111315}.jackie-personal{min-width:245px;border-color:#d7dcdf;background:#f7f9fa}.jackie-personal-label{color:#626b70}.jackie-personal .jackie-stat-line strong{color:#111315}.jackie-progress{background:#dce2e5}
-    .jackie-hero{z-index:13}.jackie-hero-panel{grid-template-columns:minmax(245px,1fr) auto;align-items:center}.jackie-hero-tools{grid-column:auto;align-self:center;padding:0}.jackie-hero .catalog-admin-menu{position:relative;align-self:center}.jackie-hero .admin-menu>summary{height:auto;min-height:42px;padding:8px 11px;border-color:#cbd2d6;background:#fff;color:#111315}.jackie-hero .admin-menu[open]{z-index:60}.jackie-hero .admin-menu[open]>summary,.jackie-hero .admin-menu>summary:hover{border-color:var(--jackie);background:#f1fbfe;color:#007da9}.jackie-hero .admin-dropdown{z-index:70;top:calc(100% + 6px);right:0;left:auto;width:min(300px,calc(100vw - 28px));max-height:calc(100dvh - 120px);overflow:auto}
+    .jackie-hero{z-index:11}.jackie-hero-panel{display:block}.filter-toolbar .toolbar-admin-menu{position:relative;width:auto;margin:0}.filter-toolbar .toolbar-admin-menu>summary{height:42px;min-height:42px;padding:8px 11px;border-color:#cbd2d6;background:#fff;color:#111315}.filter-toolbar .toolbar-admin-menu[open]{z-index:60}.filter-toolbar .toolbar-admin-menu[open]>summary,.filter-toolbar .toolbar-admin-menu>summary:hover{border-color:var(--jackie);background:#f1fbfe;color:#007da9}.filter-toolbar .toolbar-admin-menu .admin-dropdown{position:absolute;z-index:70;top:calc(100% + 6px);right:0;left:auto;width:min(300px,calc(100vw - 28px));max-height:calc(100dvh - 120px);overflow:auto}
     .admin-dropdown .manage-ean-action{border-left:3px solid var(--jackie);background:#f1fbfe}.admin-dropdown .manage-ean-action:hover{background:#ddf5fd}
     .add-edition-inline{display:inline-flex;align-items:center;justify-content:center;gap:7px;border-color:#70cbe9!important;background:#edfaff!important;color:#007da9!important}.add-edition-inline:hover,.add-edition-inline:focus-visible{border-color:#009bd2!important;background:#dff6fd!important;color:#006f98!important}
     .filter-dropdown-grid{display:grid;grid-template-columns:repeat(4,minmax(170px,1fr));gap:12px;align-items:end}.filter-dropdown-grid .filter-group,.filter-dropdown-grid .filter-select{width:100%;min-width:0}.filter-dropdown-grid .filter-select{display:grid;gap:6px}.filter-dropdown-grid .filter-select select,.filter-dropdown-grid .filter-multiselect>summary{width:100%;min-height:42px}.filter-dropdown-grid .filter-multiselect{width:100%}.filter-dropdown-grid .filter-label,.filter-dropdown-grid .filter-select{font-size:9px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.filter-dropdown-grid .filter-select select{margin-top:6px;font-size:11px;letter-spacing:0;text-transform:none}.filter-dropdown-grid .filter-options{min-width:100%;max-height:260px;overflow:auto}.filter-groups{padding-bottom:4px}
@@ -687,6 +687,33 @@
       .modal-head{padding-block:9px}
       .scanner-frame{min-height:150px;max-height:42dvh}
     }
+
+    /* Ajustements finaux — gestion dans la toolbar et action mobile dédiée */
+    .filter-search-row.filter-toolbar{grid-template-columns:minmax(260px,1fr) auto auto auto auto}
+    .filter-toolbar .toolbar-admin-menu{position:relative;width:auto;margin:0}
+    .filter-toolbar .toolbar-admin-menu>summary{height:42px;min-height:42px;padding:8px 11px;border-color:#cbd2d6;background:#fff;color:#111315}
+    .filter-toolbar .toolbar-admin-menu[open]{z-index:60}
+    .filter-toolbar .toolbar-admin-menu[open]>summary,.filter-toolbar .toolbar-admin-menu>summary:hover{border-color:var(--jackie);background:#f1fbfe;color:#007da9}
+    .filter-toolbar .toolbar-admin-menu .admin-dropdown{position:absolute;z-index:70;top:calc(100% + 6px);right:0;left:auto;width:min(300px,calc(100vw - 28px));max-height:calc(100dvh - 120px);margin:0;overflow:auto}
+
+    @media(max-width:768px){
+      .filter-search-row.filter-toolbar{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"search search" "filters view" "manage reset"}
+      .filter-toolbar .toolbar-admin-menu{grid-area:manage;justify-self:start}
+      .filter-toolbar .toolbar-admin-menu>summary{height:var(--mobile-touch);min-height:var(--mobile-touch)}
+      .filter-toolbar .toolbar-admin-menu .admin-dropdown{right:auto;left:0;width:min(300px,calc(100vw - 48px));max-width:none;box-shadow:0 12px 28px rgba(16,24,30,.12)}
+      #page-jackie tbody tr.film-row{padding:10px 56px 10px 11px}
+      .collection-cell-layout{padding-right:0}
+      .collection-cell-layout .quick-add-edition.icon-only{top:50%;right:10px;bottom:auto;transform:translateY(-50%)}
+    }
+
+    @media(max-width:390px){
+      .filter-search-row.filter-toolbar{grid-template-columns:1fr;grid-template-areas:"search" "filters" "view" "manage" "reset"}
+      .filter-toolbar .toolbar-admin-menu{width:100%;justify-self:stretch}
+      .filter-toolbar .toolbar-admin-menu>summary{width:100%;justify-content:space-between}
+      .filter-toolbar .toolbar-admin-menu .admin-dropdown{width:100%;max-width:100%}
+      #page-jackie tbody tr.film-row{padding:9px 50px 9px 9px}
+      .collection-cell-layout .quick-add-edition.icon-only{right:8px;bottom:auto}
+    }
   </style>
 </head>
 <body class="auth-pending">
@@ -769,16 +796,6 @@
         <div class="jackie-stat-line"><strong><span id="jackieOwnedCount">0</span> / <span id="jackieProgressTotal">154</span></strong><span id="jackiePercent" class="jackie-percent">0%</span></div>
         <div id="jackieProgressTrack" class="jackie-progress" role="progressbar" aria-label="Progression de la collection" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="jackieProgress"></i></div>
       </div>
-      <div class="jackie-hero-tools">
-        <details id="catalogAdminMenu" class="admin-menu catalog-admin-menu hidden">
-          <summary>Gérer <svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary>
-          <div class="admin-dropdown">
-            <button id="globalEanBtn" type="button" class="manage-ean-action"><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-barcode"></use></svg> Scanner ou saisir un EAN</button>
-            <button id="addFilmBtn" type="button" class="catalog-admin-action hidden"><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-plus"></use></svg> Ajouter un film au catalogue</button>
-            <button id="tmdbImportBtn" type="button" class="catalog-admin-action hidden">Compléter avec TMDB</button>
-          </div>
-        </details>
-      </div>
     </div>
   </div>
   <div id="catalogNotice" class="notice hidden"></div>
@@ -787,6 +804,14 @@
       <label class="filter-search"><span class="sr-only">Rechercher dans la filmographie</span><span class="search-field"><svg class="ui-icon search-icon" aria-hidden="true"><use href="#icon-search"></use></svg><input id="filmSearch" type="search" placeholder="Rechercher un titre, un alias ou un rôle…" autocomplete="off"><button id="clearSearchBtn" type="button" class="clear-search hidden" aria-label="Effacer la recherche"><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-close"></use></svg></button></span></label>
       <button id="mobileFiltersToggle" class="mobile-filter-toggle" type="button" aria-controls="filmFilterGroups" aria-expanded="false"><span>Filtres <span id="mobileFilterCount" class="mobile-filter-count"></span></span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></button>
       <div class="filter-group filter-view"><span class="sr-only">Affichage</span><div class="view-switch" aria-label="Mode d’affichage"><button id="listViewBtn" type="button">Liste</button><button id="visualViewBtn" type="button">Visuels</button></div></div>
+      <details id="catalogAdminMenu" class="admin-menu catalog-admin-menu toolbar-admin-menu hidden">
+        <summary>Gérer <svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary>
+        <div class="admin-dropdown">
+          <button id="globalEanBtn" type="button" class="manage-ean-action"><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-barcode"></use></svg> Scanner ou saisir un EAN</button>
+          <button id="addFilmBtn" type="button" class="catalog-admin-action hidden"><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-plus"></use></svg> Ajouter un film au catalogue</button>
+          <button id="tmdbImportBtn" type="button" class="catalog-admin-action hidden">Compléter avec TMDB</button>
+        </div>
+      </details>
       <button id="resetFiltersBtn" type="button" class="filter-reset" disabled>Réinitialiser</button>
     </div>
     <div id="filmFilterGroups" class="filter-groups mobile-collapsed">
