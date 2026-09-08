@@ -395,8 +395,11 @@
     @media(max-width:760px){#page-jackie tbody tr.film-row{grid-template-areas:"poster number" "poster year" "poster title" "participation participation" "status status" "collection collection"}#page-jackie tbody td:nth-child(6){grid-area:status;align-self:center}#page-jackie tbody td:nth-child(7){grid-area:collection;min-width:0;padding-top:9px!important;border-top:1px solid #e2e5e7!important}}
     /* Périmètre du catalogue — choix explicite */
     .scope-filter-group{width:100%}.scope-picker{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:100%;margin-top:6px}.scope-picker button{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;min-height:68px;padding:11px 12px;border:1px solid #d5dade;border-radius:var(--radius-control);background:#fff;color:#30363a;text-align:left;cursor:pointer;transition:border-color .15s ease,background .15s ease,box-shadow .15s ease}.scope-picker button:hover,.scope-picker button:focus-visible{border-color:#66c7e7;background:#f3fbfe;outline:3px solid rgba(8,169,230,.13)}.scope-picker button.active{border-color:#0089b9;background:#eaf9fe;box-shadow:inset 3px 0 0 var(--jackie)}.scope-picker button span{display:grid;min-width:0;gap:3px}.scope-picker button strong{font-size:11px;font-weight:950;line-height:1.25;text-transform:none}.scope-picker button small{color:#70777c;font-size:9px;line-height:1.35}.scope-picker .filter-count{display:grid;min-width:31px;height:31px;place-items:center;border:1px solid #d0d6d9;border-radius:50%;background:#f5f7f8;color:#4d555a;font-size:10px}.scope-picker button.active .filter-count{border-color:#111315;background:#111315;color:#fff}
-    /* Visuel commun aux éditions numériques */
-    .digital-edition-art{position:relative;display:grid;place-items:center;overflow:hidden;background:linear-gradient(155deg,#082f3b 0%,#0b5161 58%,#08a9e6 100%);color:#fff;text-align:center}.digital-edition-art:before{content:"";position:absolute;inset:8px;border:1px solid rgba(255,255,255,.38)}.digital-edition-art-inner{position:relative;z-index:1;display:grid;gap:7px;place-items:center;padding:10px}.digital-edition-art svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.6}.digital-edition-art strong{font-size:8px;font-weight:950;letter-spacing:.11em;line-height:1.35;text-transform:uppercase}.digital-edition-art small{font-size:6px;font-weight:800;letter-spacing:.08em;opacity:.75;text-transform:uppercase}.edition-visual-preview.digital-standard{border-color:#4aa8bc}.edition-visual-editor.is-digital .edition-visual-copy>label,.edition-visual-editor.is-digital .edition-visual-copy>p,.edition-visual-editor.is-digital #removeEditionVisualBtn{display:none!important}
+    /* Visuel commun aux éditions Digital, décliné selon la définition */
+    .digital-edition-art{position:relative;display:grid;place-items:center;overflow:hidden;background:linear-gradient(155deg,#071f29 0%,#0a4858 58%,#08a9e6 100%);color:#fff;text-align:center}.digital-edition-art:before{content:"";position:absolute;inset:8px;border:1px solid rgba(255,255,255,.38)}.digital-edition-art-inner{position:relative;z-index:1;display:grid;gap:6px;place-items:center;padding:10px}.digital-edition-art svg{width:38px;height:34px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.digital-edition-art strong{font-size:8px;font-weight:950;letter-spacing:.13em;line-height:1.2;text-transform:uppercase}.digital-edition-art small{display:inline-flex;min-height:17px;align-items:center;padding:2px 6px;border:1px solid rgba(255,255,255,.72);border-radius:9px;background:rgba(5,28,37,.35);font-size:7px;font-weight:950;letter-spacing:.08em;line-height:1;text-transform:uppercase}.edition-visual-preview.digital-standard{border-color:#4aa8bc}.edition-visual-editor.is-digital .edition-visual-copy>label,.edition-visual-editor.is-digital .edition-visual-copy>p,.edition-visual-editor.is-digital #removeEditionVisualBtn{display:none!important}
+    .digital-edition-art.digital-720{background:linear-gradient(155deg,#2f4650 0%,#527786 58%,#73b9cc 100%)}
+    .digital-edition-art.digital-1080{background:linear-gradient(155deg,#071f29 0%,#0a5364 58%,#08a9e6 100%)}
+    .digital-edition-art.digital-4k{background:linear-gradient(155deg,#05070a 0%,#102a43 54%,#087eae 100%);box-shadow:inset 0 4px 0 #78ddff}
     @media(max-width:760px){.scope-picker{grid-template-columns:1fr}.scope-picker button{min-height:62px}}
     /* Page Jackie Chan — hiérarchie unifiée */
     .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
@@ -718,6 +721,21 @@
     @media(max-width:340px){
       #page-jackie tbody tr.film-row{grid-template-columns:50px auto minmax(0,1fr)}
     }
+
+    /* Lecture neutre : seul un film sans édition porte un liseré de statut */
+    .jackie-kicker{gap:0}
+    .jackie-kicker:before{display:none!important;content:none!important}
+    #page-jackie tbody tr.film-row,
+    #page-jackie tbody tr.film-row:nth-child(even){background:#fff}
+    #page-jackie tbody tr.film-row:hover{background:#f8fbfc}
+    #page-jackie tbody tr.film-row:not(.missing-edition-row) td:first-child{box-shadow:none}
+    #page-jackie tbody tr.film-row.missing-edition-row td:first-child{box-shadow:inset 4px 0 0 var(--jackie)}
+    @media(max-width:768px){
+      #page-jackie tbody tr.film-row,
+      #page-jackie tbody tr.film-row.technical-row:not(.missing-edition-row){border-left:1px solid #d8dcdf}
+      #page-jackie tbody tr.film-row.missing-edition-row{border-left:4px solid var(--jackie)}
+      #page-jackie tbody tr.film-row.missing-edition-row td:first-child{box-shadow:none}
+    }
   </style>
 </head>
 <body class="auth-pending">
@@ -822,7 +840,7 @@
       <div class="filter-dropdown-grid">
         <label class="filter-select">Disponibilité<select id="filmFilter"><option value="all">Tous les films</option><option value="owned">Avec édition</option><option value="missing">Sans édition</option></select></label>
         <label class="filter-select">Périmètre<select id="scopeFilter"><option value="progress">Filmographie suivie · 154</option><option value="all">Catalogue complet · 191</option><option value="technical">Crédits techniques seuls · 37</option></select></label>
-        <div class="filter-group"><span class="filter-label">Format</span><details id="formatFilterMenu" class="filter-multiselect"><summary><span id="formatFilterLabel">Tous les formats</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div class="filter-options"><label><input type="checkbox" name="formatFilter" value="4K UHD"> 4K UHD</label><label><input type="checkbox" name="formatFilter" value="Blu-ray"> Blu-ray</label><label><input type="checkbox" name="formatFilter" value="DVD"> DVD</label><label><input type="checkbox" name="formatFilter" value="VHS"> VHS</label><label><input type="checkbox" name="formatFilter" value="Numérique"> Numérique</label><label><input type="checkbox" name="formatFilter" value="Autre"> Autre</label></div></details></div>
+        <div class="filter-group"><span class="filter-label">Format</span><details id="formatFilterMenu" class="filter-multiselect"><summary><span id="formatFilterLabel">Tous les formats</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div class="filter-options"><label><input type="checkbox" name="formatFilter" value="4K UHD"> 4K UHD</label><label><input type="checkbox" name="formatFilter" value="Blu-ray"> Blu-ray</label><label><input type="checkbox" name="formatFilter" value="DVD"> DVD</label><label><input type="checkbox" name="formatFilter" value="VHS"> VHS</label><label><input type="checkbox" name="formatFilter" value="Digital 4K"> Digital 4K</label><label><input type="checkbox" name="formatFilter" value="Digital 1080p"> Digital 1080p</label><label><input type="checkbox" name="formatFilter" value="Digital 720p"> Digital 720p</label><label><input type="checkbox" name="formatFilter" value="Autre"> Autre</label></div></details></div>
         <div class="filter-group"><span class="filter-label">Pays de l’édition</span><details id="countryFilterMenu" class="filter-multiselect"><summary><span id="countryFilterLabel">Tous les pays</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div class="filter-options"><label><input type="checkbox" name="countryFilter" value="France"> France</label><label><input type="checkbox" name="countryFilter" value="Royaume-Uni"> Royaume-Uni</label><label><input type="checkbox" name="countryFilter" value="États-Unis"> États-Unis</label><label><input type="checkbox" name="countryFilter" value="Hong Kong"> Hong Kong</label><label><input type="checkbox" name="countryFilter" value="Japon"> Japon</label><label><input type="checkbox" name="countryFilter" value="Allemagne"> Allemagne</label><label><input type="checkbox" name="countryFilter" value="Italie"> Italie</label><label><input type="checkbox" name="countryFilter" value="Espagne"> Espagne</label><label><input type="checkbox" name="countryFilter" value="Canada"> Canada</label><label><input type="checkbox" name="countryFilter" value="Australie"> Australie</label><label><input type="checkbox" name="countryFilter" value="Chine"> Chine</label><label><input type="checkbox" name="countryFilter" value="Taïwan"> Taïwan</label><label><input type="checkbox" name="countryFilter" value="Corée du Sud"> Corée du Sud</label><label><input type="checkbox" name="countryFilter" value="Pays-Bas"> Pays-Bas</label><label><input type="checkbox" name="countryFilter" value="Belgique"> Belgique</label><label><input type="checkbox" name="countryFilter" value="Suisse"> Suisse</label></div></details></div>
         <div class="filter-group"><span class="filter-label">Statut de sortie</span><details id="statusFilterMenu" class="filter-multiselect"><summary><span id="statusFilterLabel">Tous les statuts</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div class="filter-options"><label><input type="checkbox" name="statusFilter" value="Sorti"> Sorti</label><label><input type="checkbox" name="statusFilter" value="À venir"> À venir</label><label><input type="checkbox" name="statusFilter" value="En production"> En production</label><label><input type="checkbox" name="statusFilter" value="Annoncé"> Annoncé</label></div></details></div>
         <div class="filter-group"><span class="filter-label">Type de rôle</span><details id="roleFilterMenu" class="filter-multiselect"><summary><span id="roleFilterLabel">Tous les rôles</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div id="roleFilterOptions" class="filter-options"></div></details></div>
@@ -962,7 +980,7 @@
     </section>
     <section class="edition-step">
       <div class="edition-step-head"><span class="edition-step-number">2</span><div><strong class="edition-step-title">Vérifier les informations</strong><span class="edition-step-copy">Indiquez ce qui est réellement présent dans le coffret.</span></div></div>
-      <fieldset class="format-fieldset"><legend class="format-legend">Formats inclus <span class="meta">· plusieurs choix possibles</span></legend><div class="format-choices"><label class="format-choice"><input name="formats" type="checkbox" value="4K UHD"> 4K UHD</label><label class="format-choice"><input name="formats" type="checkbox" value="Blu-ray"> Blu-ray</label><label class="format-choice"><input name="formats" type="checkbox" value="DVD"> DVD</label><label class="format-choice"><input name="formats" type="checkbox" value="VHS"> VHS</label><label class="format-choice"><input name="formats" type="checkbox" value="Numérique"> Numérique</label><label class="format-choice"><input name="formats" type="checkbox" value="Autre"> Autre</label></div></fieldset>
+      <fieldset class="format-fieldset"><legend class="format-legend">Formats inclus <span class="meta">· plusieurs choix possibles</span></legend><div class="format-choices"><label class="format-choice"><input name="formats" type="checkbox" value="4K UHD"> 4K UHD</label><label class="format-choice"><input name="formats" type="checkbox" value="Blu-ray"> Blu-ray</label><label class="format-choice"><input name="formats" type="checkbox" value="DVD"> DVD</label><label class="format-choice"><input name="formats" type="checkbox" value="VHS"> VHS</label><label class="format-choice"><input name="formats" type="checkbox" value="Digital 4K"> Digital 4K</label><label class="format-choice"><input name="formats" type="checkbox" value="Digital 1080p"> Digital 1080p</label><label class="format-choice"><input name="formats" type="checkbox" value="Digital 720p"> Digital 720p</label><label class="format-choice"><input name="formats" type="checkbox" value="Autre"> Autre</label></div></fieldset>
       <div class="row"><label>Pays<input name="country" list="editionCountryOptions" placeholder="Ex. Royaume-Uni"></label><label>Éditeur<input name="publisher" placeholder="Ex. 88 Films"></label></div>
       <datalist id="editionCountryOptions"><option value="France"><option value="Royaume-Uni"><option value="États-Unis"><option value="Hong Kong"><option value="Japon"><option value="Allemagne"><option value="Italie"><option value="Espagne"><option value="Canada"><option value="Australie"><option value="Chine"><option value="Taïwan"><option value="Corée du Sud"><option value="Pays-Bas"><option value="Belgique"><option value="Suisse"></datalist>
       <label>Édition / collection<input name="edition" placeholder="Ex. Deluxe Limited Edition"></label>
@@ -1792,7 +1810,7 @@ function sanitizeBackupEdition(raw,knownFilmIds){
   const filmIds=[...new Set((Array.isArray(raw.filmIds)?raw.filmIds:[legacyFilmId]).map(function(id){return backupText(id,1500)}).filter(function(id){return knownFilmIds.has(id)}))];
   if(!filmIds.length)return null;
   const filmId=knownFilmIds.has(legacyFilmId)?legacyFilmId:filmIds[0];
-  const allowedFormats=new Set(["DVD","Blu-ray","4K UHD","VHS","Numérique","Autre"]);
+  const allowedFormats=new Set(["DVD","Blu-ray","4K UHD","VHS","Digital 4K","Digital 1080p","Digital 720p","Autre"]);
   const formats=editionFormats(raw).filter(function(format){return allowedFormats.has(format)});if(!formats.length)return null;
   const rawImage=typeof raw.editionImageData==="string"&&raw.editionImageData.length<=128*1024?raw.editionImageData:"";
   const editionImageData=/^data:image\/(?:webp|jpeg|png);base64,/i.test(rawImage)&&safeImageUrl(rawImage)?rawImage:null;
@@ -1875,9 +1893,17 @@ function editionFilmIds(edition){
   return [...new Set(ids.concat(edition&&edition.filmId||[]).map(function(id){return String(id||"").trim()}).filter(Boolean))];
 }
 function editionsFor(filmId){return editions.filter(function(edition){return editionFilmIds(edition).includes(filmId)})}
-const EDITION_FORMAT_ORDER=["4K UHD","Blu-ray","DVD","VHS","Numérique","Autre"];
+const EDITION_FORMAT_ORDER=["4K UHD","Blu-ray","DVD","VHS","Digital 4K","Digital 1080p","Digital 720p","Autre"];
+function canonicalEditionFormat(format){
+  const raw=String(format||"").trim(),value=normalized(raw).replace(/[^a-z0-9]/g,"");
+  if(value==="numerique"||value==="digital")return "Digital 1080p";
+  if(value==="digital4k"||value==="4kdigital")return "Digital 4K";
+  if(value==="digital1080p"||value==="1080pdigital"||value==="fullhd")return "Digital 1080p";
+  if(value==="digital720p"||value==="720pdigital"||value==="hd")return "Digital 720p";
+  return raw;
+}
 function editionFormatRank(format){
-  const value=normalized(String(format||"").replace(/blu[\s-]?ray/i,"Blu-ray"));
+  const value=normalized(canonicalEditionFormat(String(format||"").replace(/blu[\s-]?ray/i,"Blu-ray")));
   const index=EDITION_FORMAT_ORDER.findIndex(function(expected){return normalized(expected)===value});
   return index<0?EDITION_FORMAT_ORDER.length:index;
 }
@@ -1885,15 +1911,22 @@ function compareEditionFormats(a,b){return editionFormatRank(a)-editionFormatRan
 function editionFormats(edition){
   const stored=Array.isArray(edition&&edition.formats)?edition.formats:[];
   const legacy=stored.length?stored:String(edition&&edition.format||"").split(/\s*(?:\+|,|\/)\s*/);
-  return [...new Set(legacy.map(function(format){return String(format||"").trim()}).filter(Boolean))].sort(compareEditionFormats);
+  return [...new Set(legacy.map(canonicalEditionFormat).filter(Boolean))].sort(compareEditionFormats);
 }
 function editionFormatLabel(edition){return editionFormats(edition).join(" + ")||"Format non précisé"}
 function isDigitalOnlyEdition(edition){
   const formats=editionFormats(edition);
-  return formats.length===1&&normalized(formats[0])==="numerique";
+  return formats.length===1&&normalized(formats[0]).startsWith("digital");
 }
-function digitalEditionArtContent(){
-  return '<span class="digital-edition-art-inner"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="6" width="24" height="17" rx="2"></rect><path d="M11 27h10M16 23v4M14 12l6 4-6 4z"></path></svg><strong>Édition<br>numérique</strong><small>CineTrack</small></span>';
+function digitalResolution(edition){
+  const format=editionFormats(edition).find(function(item){return normalized(item).startsWith("digital")})||"Digital 1080p";
+  if(normalized(format).includes("4k"))return "4K";
+  if(normalized(format).includes("720"))return "720p";
+  return "1080p";
+}
+function digitalProfileClass(edition){return "digital-"+digitalResolution(edition).toLowerCase().replace("p","")}
+function digitalEditionArtContent(edition){
+  return '<span class="digital-edition-art-inner"><svg viewBox="0 0 48 40" aria-hidden="true"><rect x="3" y="4" width="42" height="28" rx="3"></rect><path d="M18 37h12M24 32v5M8 9h32v18H8zM18 14l10 5-10 5z"></path><circle cx="38" cy="29" r="1"></circle></svg><strong>Digital</strong><small>'+esc(digitalResolution(edition))+'</small></span>';
 }
 function compareEditions(a,b){
   const rankA=Math.min.apply(null,editionFormats(a).map(editionFormatRank).concat(EDITION_FORMAT_ORDER.length));
@@ -1985,7 +2018,7 @@ function formatCssClass(format){
   if(value==="bluray"||value==="bluraydisc")return "format-bluray";
   if(value==="dvd")return "format-dvd";
   if(value==="vhs")return "format-vhs";
-  if(value==="numerique"||value==="digital")return "format-digital";
+  if(value==="numerique"||value.startsWith("digital"))return "format-digital";
   return "format-other";
 }
 function filmImage(film){
@@ -2187,7 +2220,7 @@ function openFilmDetails(filmId){
   const editionsHtml='<div class="edition-section"><div class="edition-section-head"><div><h3>Mes éditions</h3><span class="edition-count">'+esc(editionCountLabel)+'</span></div><button type="button" class="btn small secondary add-edition-inline">'+(user?iconSvg("plus","sm")+" ":"")+esc(addEditionLabel)+'</button></div><div class="edition-list">'+(filmEditions.length?filmEditions.map(function(edition,index){
     const digitalOnly=isDigitalOnlyEdition(edition),productImage=digitalOnly?"":editionVisual(edition),productTitle=edition.productTitle||"";
     const linkedFilmIds=editionFilmIds(edition),linkedTitles=linkedFilmIds.map(function(id){const linkedFilm=films.find(function(item){return item.id===id});return linkedFilm?displayedTitle(linkedFilm):""}).filter(Boolean);
-    const visual=digitalOnly?'<span class="edition-product-thumb digital-edition-art" aria-label="Visuel standard d’édition numérique">'+digitalEditionArtContent()+'</span>':productImage?'<span class="edition-product-thumb"><img src="'+esc(productImage)+'" alt="Visuel de l’édition '+(index+1)+'" loading="lazy" referrerpolicy="no-referrer"></span>':'<span class="edition-product-thumb">Sans visuel</span>';
+    const visual=digitalOnly?'<span class="edition-product-thumb digital-edition-art '+digitalProfileClass(edition)+'" aria-label="Visuel standard '+esc(editionFormatLabel(edition))+'">'+digitalEditionArtContent(edition)+'</span>':productImage?'<span class="edition-product-thumb"><img src="'+esc(productImage)+'" alt="Visuel de l’édition '+(index+1)+'" loading="lazy" referrerpolicy="no-referrer"></span>':'<span class="edition-product-thumb">Sans visuel</span>';
     const editionTitle=edition.edition||productTitle||"Édition sans intitulé";
     const productDetail=productTitle&&normalized(productTitle)!==normalized(editionTitle)?productTitle:"";
     const formatBadges=editionFormatCountryBadges([edition])||'<span class="badge">Format non précisé</span>';
@@ -2613,17 +2646,21 @@ async function compressEditionVisual(file){
 }
 
 function updateEditionVisualPreview(value){
-  const preview=$("#editionVisualPreview"),url=safeImageUrl(value),primary=$("#useEditionVisualAsFilm"),editor=preview.closest(".edition-visual-editor"),digitalOnly=isDigitalOnlyEdition({formats:selectedEditionFormats()});preview.textContent="";
+  const preview=$("#editionVisualPreview"),url=safeImageUrl(value),primary=$("#useEditionVisualAsFilm"),editor=preview.closest(".edition-visual-editor"),selectedFormats=selectedEditionFormats(),digitalEdition={formats:selectedFormats},digitalOnly=isDigitalOnlyEdition(digitalEdition);preview.textContent="";
+  preview.classList.remove("digital-720","digital-1080","digital-4k");
   editor.classList.toggle("is-digital",digitalOnly);preview.classList.toggle("digital-standard",digitalOnly);
-  if(digitalOnly){preview.classList.add("digital-edition-art");preview.innerHTML=digitalEditionArtContent();$("#editionVisualStatus").textContent="Le visuel standard CineTrack sera utilisé automatiquement pour cette édition numérique."}
-  else if(url){preview.classList.remove("digital-edition-art");if($("#editionVisualStatus").textContent.startsWith("Le visuel standard CineTrack"))$("#editionVisualStatus").textContent="";const image=document.createElement("img");image.src=url;image.alt="Prévisualisation du visuel de l’édition";preview.appendChild(image)}
-  else{preview.classList.remove("digital-edition-art");if($("#editionVisualStatus").textContent.startsWith("Le visuel standard CineTrack"))$("#editionVisualStatus").textContent="";const empty=document.createElement("span");empty.textContent="Aucun visuel";preview.appendChild(empty)}
+  if(digitalOnly){preview.classList.add("digital-edition-art",digitalProfileClass(digitalEdition));preview.innerHTML=digitalEditionArtContent(digitalEdition);$("#editionVisualStatus").textContent="Le visuel standard "+editionFormatLabel(digitalEdition)+" sera utilisé automatiquement."}
+  else if(url){preview.classList.remove("digital-edition-art");if($("#editionVisualStatus").textContent.startsWith("Le visuel standard "))$("#editionVisualStatus").textContent="";const image=document.createElement("img");image.src=url;image.alt="Prévisualisation du visuel de l’édition";preview.appendChild(image)}
+  else{preview.classList.remove("digital-edition-art");if($("#editionVisualStatus").textContent.startsWith("Le visuel standard "))$("#editionVisualStatus").textContent="";const empty=document.createElement("span");empty.textContent="Aucun visuel";preview.appendChild(empty)}
   $("#removeEditionVisualBtn").classList.toggle("hidden",digitalOnly||!url);
   primary.disabled=digitalOnly||!url;
   if(digitalOnly||!url)primary.checked=false;
 }
 
-document.querySelectorAll('#editionForm input[name="formats"]').forEach(function(input){input.addEventListener("change",function(){updateEditionVisualPreview(pendingEditionImageData||(pendingEanProduct&&pendingEanProduct.imageUrl)||"")})});
+document.querySelectorAll('#editionForm input[name="formats"]').forEach(function(input){input.addEventListener("change",function(){
+  if(input.checked&&normalized(input.value).startsWith("digital"))document.querySelectorAll('#editionForm input[name="formats"]:checked').forEach(function(other){if(other!==input&&normalized(other.value).startsWith("digital"))other.checked=false});
+  updateEditionVisualPreview(pendingEditionImageData||(pendingEanProduct&&pendingEanProduct.imageUrl)||"");
+})});
 
 $("#editionVisualFileInput").onchange=async function(event){
   const file=event.target.files&&event.target.files[0];if(!file)return;
