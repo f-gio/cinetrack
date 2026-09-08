@@ -52,7 +52,7 @@
     :root{
       color-scheme:light;
       --bg:#f4f5f4;--panel:#fff;--panel2:#eceeef;--text:#111315;--muted:#70757a;--line:#d8dbde;
-      --accent:#173b91;--danger:#b33a3a;--ok:#14705b;--warn:#9a6818;--silver:#b9bec3;--jackie:#08a9e6;--jackie-dark:#007eae;
+      --accent:#173b91;--danger:#b33a3a;--ok:#14705b;--warn:#9a6818;--silver:#b9bec3;--jackie:#08a9e6;--jackie-dark:#007eae;--missing-edition:#e2a126;
       --color-surface:#fff;--color-surface-subtle:#f4f5f4;--color-text:#111315;--color-muted:#70757a;--color-border:#d8dbde;
       --color-primary:#173b91;--color-primary-hover:#102b6d;--color-collection:#08a9e6;--color-collection-text:#007eae;
       --color-success:#14705b;--color-warning:#9a6818;--color-danger:#b33a3a;
@@ -389,17 +389,17 @@
     .badge.edition-pair.format-bluray,.edition-bundle-format.format-bluray,.collector-format.format-bluray{border-color:#78aee5;background:#eaf4ff;color:#14599e}
     .badge.edition-pair.format-dvd,.edition-bundle-format.format-dvd,.collector-format.format-dvd{border-color:#aeb6bb;background:#f0f2f3;color:#454e54}
     .badge.edition-pair.format-vhs,.edition-bundle-format.format-vhs,.collector-format.format-vhs{border-color:#d4a17e;background:#fff1e7;color:#8d4d26}
-    .badge.edition-pair.format-digital,.edition-bundle-format.format-digital,.collector-format.format-digital{border-color:#77b9ae;background:#eaf8f5;color:#176d62}
+    .badge.edition-pair.format-digital,.edition-bundle-format.format-digital,.collector-format.format-digital{border-color:#c8a7dc;background:#f5ecfb;color:#6f4786}
     .badge.edition-pair.format-other,.edition-bundle-format.format-other,.collector-format.format-other{border-color:#c4b0d8;background:#f6effc;color:#68458a}
-    .edition-item.format-4k{border-top:3px solid #171a1c}.edition-item.format-bluray{border-top:3px solid #4b91d8}.edition-item.format-dvd{border-top:3px solid #8b949a}.edition-item.format-vhs{border-top:3px solid #b56f42}.edition-item.format-digital{border-top:3px solid #268b7e}.edition-item.format-other{border-top:3px solid #8060a0}
+    .edition-item.format-4k{border-top:3px solid #171a1c}.edition-item.format-bluray{border-top:3px solid #4b91d8}.edition-item.format-dvd{border-top:3px solid #8b949a}.edition-item.format-vhs{border-top:3px solid #b56f42}.edition-item.format-digital{border-top:3px solid #a879c2}.edition-item.format-other{border-top:3px solid #8060a0}
     @media(max-width:760px){#page-jackie tbody tr.film-row{grid-template-areas:"poster number" "poster year" "poster title" "participation participation" "status status" "collection collection"}#page-jackie tbody td:nth-child(6){grid-area:status;align-self:center}#page-jackie tbody td:nth-child(7){grid-area:collection;min-width:0;padding-top:9px!important;border-top:1px solid #e2e5e7!important}}
     /* Périmètre du catalogue — choix explicite */
     .scope-filter-group{width:100%}.scope-picker{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:100%;margin-top:6px}.scope-picker button{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;min-height:68px;padding:11px 12px;border:1px solid #d5dade;border-radius:var(--radius-control);background:#fff;color:#30363a;text-align:left;cursor:pointer;transition:border-color .15s ease,background .15s ease,box-shadow .15s ease}.scope-picker button:hover,.scope-picker button:focus-visible{border-color:#66c7e7;background:#f3fbfe;outline:3px solid rgba(8,169,230,.13)}.scope-picker button.active{border-color:#0089b9;background:#eaf9fe;box-shadow:inset 3px 0 0 var(--jackie)}.scope-picker button span{display:grid;min-width:0;gap:3px}.scope-picker button strong{font-size:11px;font-weight:950;line-height:1.25;text-transform:none}.scope-picker button small{color:#70777c;font-size:9px;line-height:1.35}.scope-picker .filter-count{display:grid;min-width:31px;height:31px;place-items:center;border:1px solid #d0d6d9;border-radius:50%;background:#f5f7f8;color:#4d555a;font-size:10px}.scope-picker button.active .filter-count{border-color:#111315;background:#111315;color:#fff}
     /* Visuel commun aux éditions Digital, décliné selon la définition */
-    .digital-edition-art{position:relative;display:grid;place-items:center;overflow:hidden;background:linear-gradient(155deg,#071f29 0%,#0a4858 58%,#08a9e6 100%);color:#fff;text-align:center}.digital-edition-art:before{content:"";position:absolute;inset:8px;border:1px solid rgba(255,255,255,.38)}.digital-edition-art-inner{position:relative;z-index:1;display:grid;gap:6px;place-items:center;padding:10px}.digital-edition-art svg{width:38px;height:34px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.digital-edition-art strong{font-size:8px;font-weight:950;letter-spacing:.13em;line-height:1.2;text-transform:uppercase}.digital-edition-art small{display:inline-flex;min-height:17px;align-items:center;padding:2px 6px;border:1px solid rgba(255,255,255,.72);border-radius:9px;background:rgba(5,28,37,.35);font-size:7px;font-weight:950;letter-spacing:.08em;line-height:1;text-transform:uppercase}.edition-visual-preview.digital-standard{border-color:#4aa8bc}.edition-visual-editor.is-digital .edition-visual-copy>label,.edition-visual-editor.is-digital .edition-visual-copy>p,.edition-visual-editor.is-digital #removeEditionVisualBtn{display:none!important}
-    .digital-edition-art.digital-720{background:linear-gradient(155deg,#2f4650 0%,#527786 58%,#73b9cc 100%)}
-    .digital-edition-art.digital-1080{background:linear-gradient(155deg,#071f29 0%,#0a5364 58%,#08a9e6 100%)}
-    .digital-edition-art.digital-4k{background:linear-gradient(155deg,#05070a 0%,#102a43 54%,#087eae 100%);box-shadow:inset 0 4px 0 #78ddff}
+    .digital-edition-art{position:relative;display:grid;place-items:center;overflow:hidden;background:linear-gradient(155deg,#f4eaf5 0%,#dfc5e4 58%,#c7a8d1 100%);color:#4d355c;text-align:center}.digital-edition-art:before{content:"";position:absolute;inset:8px;border:1px solid rgba(77,53,92,.28)}.digital-edition-art-inner{position:relative;z-index:1;display:grid;gap:6px;place-items:center;padding:10px}.digital-edition-art svg{width:38px;height:34px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.digital-edition-art strong{font-size:8px;font-weight:950;letter-spacing:.13em;line-height:1.2;text-transform:uppercase}.digital-edition-art small{display:inline-flex;min-height:17px;align-items:center;padding:2px 6px;border:1px solid rgba(77,53,92,.42);border-radius:9px;background:rgba(255,255,255,.52);font-size:7px;font-weight:950;letter-spacing:.08em;line-height:1;text-transform:uppercase}.edition-visual-preview.digital-standard{border-color:#b88bca}.edition-visual-editor.is-digital .edition-visual-copy>label,.edition-visual-editor.is-digital .edition-visual-copy>p,.edition-visual-editor.is-digital #removeEditionVisualBtn{display:none!important}
+    .digital-edition-art.digital-720{background:linear-gradient(155deg,#f1eef8 0%,#ddd6ee 58%,#c5b8df 100%)}
+    .digital-edition-art.digital-1080{background:linear-gradient(155deg,#faedf5 0%,#efd3e3 58%,#ddb4cf 100%)}
+    .digital-edition-art.digital-4k{background:linear-gradient(155deg,#f1eafa 0%,#d9c9e9 54%,#bda7d6 100%);box-shadow:inset 0 4px 0 #80629a}
     @media(max-width:760px){.scope-picker{grid-template-columns:1fr}.scope-picker button{min-height:62px}}
     /* Page Jackie Chan — hiérarchie unifiée */
     .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
@@ -422,9 +422,9 @@
     .admin-dropdown .manage-ean-action{border-left:3px solid var(--jackie);background:#f1fbfe}.admin-dropdown .manage-ean-action:hover{background:#ddf5fd}
     .add-edition-inline{display:inline-flex;align-items:center;justify-content:center;gap:7px;border-color:#70cbe9!important;background:#edfaff!important;color:#007da9!important}.add-edition-inline:hover,.add-edition-inline:focus-visible{border-color:#009bd2!important;background:#dff6fd!important;color:#006f98!important}
     .filter-dropdown-grid{display:grid;grid-template-columns:repeat(4,minmax(170px,1fr));gap:12px;align-items:end}.filter-dropdown-grid .filter-group,.filter-dropdown-grid .filter-select{width:100%;min-width:0}.filter-dropdown-grid .filter-select{display:grid;gap:6px}.filter-dropdown-grid .filter-select select,.filter-dropdown-grid .filter-multiselect>summary{width:100%;min-height:42px}.filter-dropdown-grid .filter-multiselect{width:100%}.filter-dropdown-grid .filter-label,.filter-dropdown-grid .filter-select{font-size:9px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.filter-dropdown-grid .filter-select select{margin-top:6px;font-size:11px;letter-spacing:0;text-transform:none}.filter-dropdown-grid .filter-options{min-width:100%;max-height:260px;overflow:auto}.filter-groups{padding-bottom:4px}
-    #page-jackie tbody tr.missing-edition-row td:first-child{box-shadow:inset 4px 0 0 var(--jackie)}.collector-card.missing-edition-card{box-shadow:inset 4px 0 0 var(--jackie)}
+    #page-jackie tbody tr.missing-edition-row td:first-child{box-shadow:inset 4px 0 0 var(--missing-edition)}.collector-card.missing-edition-card{box-shadow:inset 4px 0 0 var(--missing-edition)}
     @media(max-width:1050px){.filter-dropdown-grid{grid-template-columns:repeat(3,minmax(170px,1fr))}}
-    @media(max-width:760px){.jackie-hero{grid-template-columns:1fr}.jackie-hero-panel{grid-template-columns:minmax(0,1fr) auto}.jackie-hero-tools{grid-column:auto;flex-direction:row}.jackie-hero .catalog-admin-menu{width:auto}.filter-dropdown-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#page-jackie tbody tr.missing-edition-row{border-left:4px solid var(--jackie)}#page-jackie tbody tr.missing-edition-row td:first-child{box-shadow:none}}
+    @media(max-width:760px){.jackie-hero{grid-template-columns:1fr}.jackie-hero-panel{grid-template-columns:minmax(0,1fr) auto}.jackie-hero-tools{grid-column:auto;flex-direction:row}.jackie-hero .catalog-admin-menu{width:auto}.filter-dropdown-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#page-jackie tbody tr.missing-edition-row{border-left:4px solid var(--missing-edition)}#page-jackie tbody tr.missing-edition-row td:first-child{box-shadow:none}}
     @media(max-width:480px){.jackie-hero-panel{grid-template-columns:1fr}.jackie-hero-tools,.jackie-hero .catalog-admin-menu{width:100%}.filter-dropdown-grid{grid-template-columns:1fr}}
 
     /* Responsive 2026 — couche de référence unique */
@@ -523,7 +523,7 @@
       #page-jackie thead{display:none}
       #page-jackie tbody{display:grid;gap:9px}
       #page-jackie tbody tr.film-row{position:relative;display:grid;width:100%;min-width:0;grid-template-columns:62px minmax(0,1fr) auto;grid-template-areas:"poster number year" "poster title title" "poster participation status" "poster collection collection";gap:4px 10px;padding:10px 11px;border:1px solid #d8dcdf;border-left:1px solid #d8dcdf;border-radius:11px;background:#fff!important;box-shadow:0 3px 12px rgba(16,25,32,.035)}
-      #page-jackie tbody tr.film-row.missing-edition-row{border-left:4px solid var(--jackie)}
+      #page-jackie tbody tr.film-row.missing-edition-row{border-left:4px solid var(--missing-edition)}
       #page-jackie tbody tr.film-row.technical-row:not(.missing-edition-row){border-left-color:#aeb4b8}
       #page-jackie tbody tr.film-row>td{display:block;min-width:0;width:auto;max-width:none;padding:0!important;border:0!important}
       #page-jackie tbody tr.film-row>td:first-child{box-shadow:none}
@@ -560,7 +560,7 @@
       .collector-card-foot{align-items:flex-start;flex-direction:column;gap:4px}
       .collector-card-actions{align-items:stretch;flex-direction:column;gap:7px}
       .collector-card-actions .quick-add-edition{width:100%;min-height:var(--mobile-touch);justify-content:center}
-      .collector-card.missing-edition-card{box-shadow:inset 4px 0 0 var(--jackie)}
+      .collector-card.missing-edition-card{box-shadow:inset 4px 0 0 var(--missing-edition)}
 
       dialog,dialog.dialog-sm,dialog.dialog-md,dialog.dialog-lg,.global-ean-dialog,.account-dialog{inset:auto 0 0;width:100%;max-width:none;height:auto;max-height:calc(100dvh - 8px);margin:auto 0 0;border-width:1px 0 0;border-radius:14px 14px 0 0;overflow:hidden;overscroll-behavior:contain}
       dialog>.modal{max-height:calc(100dvh - 8px);padding:16px 14px max(18px,env(safe-area-inset-bottom));overflow:auto;overscroll-behavior:contain}
@@ -729,11 +729,11 @@
     #page-jackie tbody tr.film-row:nth-child(even){background:#fff}
     #page-jackie tbody tr.film-row:hover{background:#f8fbfc}
     #page-jackie tbody tr.film-row:not(.missing-edition-row) td:first-child{box-shadow:none}
-    #page-jackie tbody tr.film-row.missing-edition-row td:first-child{box-shadow:inset 4px 0 0 var(--jackie)}
+    #page-jackie tbody tr.film-row.missing-edition-row td:first-child{box-shadow:inset 4px 0 0 var(--missing-edition)}
     @media(max-width:768px){
       #page-jackie tbody tr.film-row,
       #page-jackie tbody tr.film-row.technical-row:not(.missing-edition-row){border-left:1px solid #d8dcdf}
-      #page-jackie tbody tr.film-row.missing-edition-row{border-left:4px solid var(--jackie)}
+      #page-jackie tbody tr.film-row.missing-edition-row{border-left:4px solid var(--missing-edition)}
       #page-jackie tbody tr.film-row.missing-edition-row td:first-child{box-shadow:none}
     }
   </style>
