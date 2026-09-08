@@ -415,8 +415,9 @@
     /* Page Jackie Chan — header clair et filtres unifiés */
     .jackie-hero{grid-template-columns:minmax(300px,1fr) auto;align-items:center;background:#fff;color:#111315;border-color:#d7dcdf;border-top-color:var(--jackie);box-shadow:0 8px 24px rgba(16,25,32,.045)}
     .jackie-kicker{color:#5f686e}.jackie-title-line h1{color:#111315}.jackie-personal{min-width:245px;border-color:#d7dcdf;background:#f7f9fa}.jackie-personal-label{color:#626b70}.jackie-personal .jackie-stat-line strong{color:#111315}.jackie-progress{background:#dce2e5}
-    .jackie-hero-panel{grid-template-columns:minmax(245px,1fr) auto;align-items:stretch}.jackie-hero-tools{grid-column:auto;padding:0}.jackie-hero .catalog-admin-menu{align-self:stretch}.jackie-hero .admin-menu>summary{height:100%;min-height:62px;border-color:#cbd2d6;background:#fff;color:#111315}.jackie-hero .admin-menu[open]>summary,.jackie-hero .admin-menu>summary:hover{border-color:var(--jackie);background:#f1fbfe;color:#007da9}
+    .jackie-hero{z-index:13}.jackie-hero-panel{grid-template-columns:minmax(245px,1fr) auto;align-items:center}.jackie-hero-tools{grid-column:auto;align-self:center;padding:0}.jackie-hero .catalog-admin-menu{position:relative;align-self:center}.jackie-hero .admin-menu>summary{height:auto;min-height:42px;padding:8px 11px;border-color:#cbd2d6;background:#fff;color:#111315}.jackie-hero .admin-menu[open]{z-index:60}.jackie-hero .admin-menu[open]>summary,.jackie-hero .admin-menu>summary:hover{border-color:var(--jackie);background:#f1fbfe;color:#007da9}.jackie-hero .admin-dropdown{z-index:70;top:calc(100% + 6px);right:0;left:auto;width:min(300px,calc(100vw - 28px));max-height:calc(100dvh - 120px);overflow:auto}
     .admin-dropdown .manage-ean-action{border-left:3px solid var(--jackie);background:#f1fbfe}.admin-dropdown .manage-ean-action:hover{background:#ddf5fd}
+    .add-edition-inline{display:inline-flex;align-items:center;justify-content:center;gap:7px;border-color:#70cbe9!important;background:#edfaff!important;color:#007da9!important}.add-edition-inline:hover,.add-edition-inline:focus-visible{border-color:#009bd2!important;background:#dff6fd!important;color:#006f98!important}
     .filter-dropdown-grid{display:grid;grid-template-columns:repeat(4,minmax(170px,1fr));gap:12px;align-items:end}.filter-dropdown-grid .filter-group,.filter-dropdown-grid .filter-select{width:100%;min-width:0}.filter-dropdown-grid .filter-select{display:grid;gap:6px}.filter-dropdown-grid .filter-select select,.filter-dropdown-grid .filter-multiselect>summary{width:100%;min-height:42px}.filter-dropdown-grid .filter-multiselect{width:100%}.filter-dropdown-grid .filter-label,.filter-dropdown-grid .filter-select{font-size:9px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}.filter-dropdown-grid .filter-select select{margin-top:6px;font-size:11px;letter-spacing:0;text-transform:none}.filter-dropdown-grid .filter-options{min-width:100%;max-height:260px;overflow:auto}.filter-groups{padding-bottom:4px}
     #page-jackie tbody tr.missing-edition-row td:first-child{box-shadow:inset 4px 0 0 var(--jackie)}.collector-card.missing-edition-card{box-shadow:inset 4px 0 0 var(--jackie)}
     @media(max-width:1050px){.filter-dropdown-grid{grid-template-columns:repeat(3,minmax(170px,1fr))}}
@@ -482,14 +483,14 @@
       .jackie-title-line{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:start}
       .jackie-title-line h1{min-width:0;margin-bottom:0;color:#111315;font-size:clamp(42px,13vw,58px);line-height:.94;letter-spacing:-1.5px}
       .jackie-chinese{font-size:30px;line-height:.9}
-      .jackie-hero-panel{grid-template-columns:minmax(0,1fr) auto;gap:9px}
+      .jackie-hero-panel{grid-template-columns:minmax(0,1fr) auto;gap:9px;align-items:center}
       .jackie-personal{min-width:0;padding:12px 14px}
       .jackie-personal .jackie-stat-line strong{font-size:22px}
       .jackie-percent{font-size:27px}
       .jackie-hero-tools{width:auto;align-items:stretch;flex-direction:row}
-      .jackie-hero .catalog-admin-menu{width:auto;min-width:104px;margin:0}
-      .jackie-hero .admin-menu>summary{min-height:100%;justify-content:center;padding:10px 12px}
-      .admin-dropdown{position:static;width:min(100%,320px);max-width:calc(100vw - 60px);margin-top:6px;box-shadow:0 12px 28px rgba(16,24,30,.12)}
+      .jackie-hero .catalog-admin-menu{position:relative;width:auto;min-width:0;margin:0}
+      .jackie-hero .admin-menu>summary{min-height:44px;justify-content:center;padding:9px 11px}
+      .jackie-hero .admin-dropdown{position:absolute;top:calc(100% + 6px);right:0;left:auto;width:min(300px,calc(100vw - 28px));max-width:none;margin-top:0;box-shadow:0 12px 28px rgba(16,24,30,.12)}
       .admin-dropdown button{min-height:var(--mobile-touch);white-space:normal}
 
       .filter-panel{position:relative;top:auto;width:100%;margin:10px 0 18px;padding:10px;overflow:visible}
@@ -518,19 +519,19 @@
       #page-jackie table,#page-jackie tbody{display:block;width:100%;min-width:0}
       #page-jackie thead{display:none}
       #page-jackie tbody{display:grid;gap:11px}
-      #page-jackie tbody tr.film-row{display:grid;width:100%;min-width:0;grid-template-columns:56px minmax(0,1fr) auto;grid-template-areas:"poster title title" "poster number year" "poster participation participation" "status status status" "collection collection collection";gap:6px 10px;padding:12px;border:1px solid #d8dcdf;border-left:1px solid #d8dcdf;background:#fff!important;box-shadow:0 7px 20px rgba(16,25,32,.05)}
+      #page-jackie tbody tr.film-row{display:grid;width:100%;min-width:0;grid-template-columns:56px minmax(0,1fr) auto;grid-template-areas:"poster number year" "poster title title" "poster participation participation" "poster status status" "collection collection collection";gap:6px 10px;padding:12px;border:1px solid #d8dcdf;border-left:1px solid #d8dcdf;background:#fff!important;box-shadow:0 7px 20px rgba(16,25,32,.05)}
       #page-jackie tbody tr.film-row.missing-edition-row{border-left:4px solid var(--jackie)}
       #page-jackie tbody tr.film-row.technical-row:not(.missing-edition-row){border-left-color:#aeb4b8}
       #page-jackie tbody tr.film-row>td{display:block;min-width:0;width:auto;max-width:none;padding:0!important;border:0!important}
       #page-jackie tbody tr.film-row>td:first-child{box-shadow:none}
-      #page-jackie tbody .collector-no{grid-area:number;align-self:center;font-size:13px}
+      #page-jackie tbody .collector-no{grid-area:number;align-self:start;font-size:13px}
       #page-jackie tbody .list-poster-cell{grid-area:poster}
-      #page-jackie tbody .year-cell{grid-area:year;align-self:center;color:#5f686e;font-size:12px;text-align:right}
+      #page-jackie tbody .year-cell{grid-area:year;align-self:start;color:#5f686e;font-size:12px;text-align:right}
       #page-jackie tbody .title-cell{grid-area:title;align-self:start}
-      #page-jackie tbody .participation-cell{grid-area:participation;display:flex;align-items:center}
-      #page-jackie tbody .status-cell{grid-area:status;display:flex;align-items:center;gap:7px;padding-top:7px!important;border-top:1px solid #e5e8ea!important}
+      #page-jackie tbody .participation-cell{grid-area:participation;display:grid;grid-template-columns:76px minmax(0,1fr);align-items:center}
+      #page-jackie tbody .status-cell{grid-area:status;display:grid;grid-template-columns:76px minmax(0,1fr);align-items:center;gap:0}
       #page-jackie tbody .collection-cell{grid-area:collection;padding-top:8px!important;border-top:1px solid #e5e8ea!important}
-      #page-jackie tbody .participation-cell:before,#page-jackie tbody .status-cell:before,#page-jackie tbody .collection-cell:before{content:attr(data-label);display:block;flex:0 0 auto;margin-right:7px;color:#747c81;font-size:8px;font-weight:900;letter-spacing:.07em;text-transform:uppercase}
+      #page-jackie tbody .participation-cell:before,#page-jackie tbody .status-cell:before,#page-jackie tbody .collection-cell:before{content:attr(data-label);display:block;min-width:0;margin-right:7px;color:#747c81;font-size:8px;font-weight:900;letter-spacing:.07em;text-transform:uppercase}
       #page-jackie tbody .collection-cell:before{margin:0 0 6px}
       #page-jackie tbody .list-poster{width:56px;height:84px}
       #page-jackie tbody .film-title{max-width:100%;color:#111315;font-size:15px;line-height:1.23;white-space:normal;overflow-wrap:anywhere}
@@ -544,6 +545,7 @@
       .edition-bundle-format{white-space:normal}
       .edition-bundle-country{min-height:22px;align-items:center}
       .quick-add-edition.icon-only{width:var(--mobile-touch)!important;height:var(--mobile-touch)!important;min-width:var(--mobile-touch);min-height:var(--mobile-touch);justify-self:end}
+      .edition-empty-state{display:inline-flex;width:auto;height:30px;align-items:center;gap:7px;padding:0 9px;border-radius:15px}.edition-empty-state:after{content:"Sans édition";color:#6f777c;font-size:9px;font-weight:850;letter-spacing:.04em;text-transform:uppercase}
 
       .film-visual-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:1fr;gap:11px}
       .collector-card{width:100%;min-width:0;height:100%}
@@ -577,6 +579,7 @@
       .edition-section-head{align-items:stretch;flex-direction:column}
       .edition-section-head>div{flex-wrap:wrap}
       .edition-section-head .btn{width:100%;min-height:var(--mobile-touch)}
+      .add-edition-inline{border-color:#70cbe9!important;background:#edfaff!important;color:#007da9!important}.add-edition-inline:hover,.add-edition-inline:focus-visible{border-color:#009bd2!important;background:#dff6fd!important;color:#006f98!important}
       .edition-list{grid-template-columns:1fr;gap:12px}
       .edition-card-top{align-items:flex-start;gap:7px}
       .edition-card-flags{align-items:flex-start}
@@ -638,9 +641,9 @@
     @media(max-width:520px){
       .hero-actions{grid-template-columns:1fr}
       .jackie-hero-panel{grid-template-columns:1fr}
-      .jackie-hero-tools,.jackie-hero .catalog-admin-menu{width:100%}
-      .jackie-hero .admin-menu>summary{width:100%;min-height:46px}
-      .admin-dropdown{width:100%;max-width:100%}
+      .jackie-hero-tools{width:auto;justify-self:end}.jackie-hero .catalog-admin-menu{width:auto}
+      .jackie-hero .admin-menu>summary{width:auto;min-height:44px}
+      .jackie-hero .admin-dropdown{right:0;width:min(300px,calc(100vw - 48px));max-width:none}
       .filter-dropdown-grid{grid-template-columns:1fr}
       .filter-dropdown-grid .filter-select select,.filter-dropdown-grid .filter-multiselect>summary{font-size:15px}
     }
@@ -789,7 +792,7 @@
         <div class="filter-group"><span class="filter-label">Format</span><details id="formatFilterMenu" class="filter-multiselect"><summary><span id="formatFilterLabel">Tous les formats</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div class="filter-options"><label><input type="checkbox" name="formatFilter" value="4K UHD"> 4K UHD</label><label><input type="checkbox" name="formatFilter" value="Blu-ray"> Blu-ray</label><label><input type="checkbox" name="formatFilter" value="DVD"> DVD</label><label><input type="checkbox" name="formatFilter" value="VHS"> VHS</label><label><input type="checkbox" name="formatFilter" value="Numérique"> Numérique</label><label><input type="checkbox" name="formatFilter" value="Autre"> Autre</label></div></details></div>
         <div class="filter-group"><span class="filter-label">Pays de l’édition</span><details id="countryFilterMenu" class="filter-multiselect"><summary><span id="countryFilterLabel">Tous les pays</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div class="filter-options"><label><input type="checkbox" name="countryFilter" value="France"> France</label><label><input type="checkbox" name="countryFilter" value="Royaume-Uni"> Royaume-Uni</label><label><input type="checkbox" name="countryFilter" value="États-Unis"> États-Unis</label><label><input type="checkbox" name="countryFilter" value="Hong Kong"> Hong Kong</label><label><input type="checkbox" name="countryFilter" value="Japon"> Japon</label><label><input type="checkbox" name="countryFilter" value="Allemagne"> Allemagne</label><label><input type="checkbox" name="countryFilter" value="Italie"> Italie</label><label><input type="checkbox" name="countryFilter" value="Espagne"> Espagne</label><label><input type="checkbox" name="countryFilter" value="Canada"> Canada</label><label><input type="checkbox" name="countryFilter" value="Australie"> Australie</label><label><input type="checkbox" name="countryFilter" value="Chine"> Chine</label><label><input type="checkbox" name="countryFilter" value="Taïwan"> Taïwan</label><label><input type="checkbox" name="countryFilter" value="Corée du Sud"> Corée du Sud</label><label><input type="checkbox" name="countryFilter" value="Pays-Bas"> Pays-Bas</label><label><input type="checkbox" name="countryFilter" value="Belgique"> Belgique</label><label><input type="checkbox" name="countryFilter" value="Suisse"> Suisse</label></div></details></div>
         <div class="filter-group"><span class="filter-label">Statut de sortie</span><details id="statusFilterMenu" class="filter-multiselect"><summary><span id="statusFilterLabel">Tous les statuts</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div class="filter-options"><label><input type="checkbox" name="statusFilter" value="Sorti"> Sorti</label><label><input type="checkbox" name="statusFilter" value="À venir"> À venir</label><label><input type="checkbox" name="statusFilter" value="En production"> En production</label><label><input type="checkbox" name="statusFilter" value="Annoncé"> Annoncé</label></div></details></div>
-        <label class="filter-select">Type de rôle<select id="roleFilter"><option value="all">Tous les rôles</option></select></label>
+        <div class="filter-group"><span class="filter-label">Type de rôle</span><details id="roleFilterMenu" class="filter-multiselect"><summary><span id="roleFilterLabel">Tous les rôles</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div id="roleFilterOptions" class="filter-options"></div></details></div>
         <label class="filter-select">Trier par<select id="sortSelect"><option value="year:asc">Année · ancien → récent</option><option value="year:desc">Année · récent → ancien</option><option value="order:asc">Numéro · croissant</option><option value="order:desc">Numéro · décroissant</option><option value="title:asc">Titre · A → Z</option><option value="title:desc">Titre · Z → A</option><option value="participation:asc">Participation · A → Z</option><option value="participation:desc">Participation · Z → A</option><option value="status:asc">Statut · A → Z</option><option value="status:desc">Statut · Z → A</option><option value="collection:desc">Éditions · plus → moins</option><option value="collection:asc">Éditions · moins → plus</option><option value="poster:desc">Avec affiche d’abord</option><option value="poster:asc">Sans affiche d’abord</option></select></label>
       </div>
     </div>
@@ -968,7 +971,7 @@ const TMDB_API_BASE="https://api.themoviedb.org/3";
 const TMDB_IMAGE_BASE="https://image.tmdb.org/t/p/w342";
 const EAN_LOOKUP_BASE="https://cinetrack-ean.giovannoni-f.workers.dev/lookup";
 const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app);
-let user=null,films=[],editions=[],series=[],sortKey="year",sortDirection="asc",selectedFilmId=null,filmView="list",pendingRoleFilter="all";
+let user=null,films=[],editions=[],series=[],sortKey="year",sortDirection="asc",selectedFilmId=null,filmView="list",pendingRoleFilters=[];
 let pendingPosterData=null,posterDataChanged=false,posterCompressionPending=false;
 let pendingEditionImageData=null,editionImageCompressionPending=false;
 let tmdbImportRunning=false,tmdbAbortRequested=false;
@@ -1049,7 +1052,7 @@ function filterSelectionLabel(values,emptyLabel,singularLabel){
   return values.length+" "+(singularLabel==="pays"?"pays":singularLabel+"s");
 }
 
-function renderFilterChips(scope,owned,query,formats,statuses,countries,role){
+function renderFilterChips(scope,owned,query,formats,statuses,countries,roles){
   const container=$("#filterChips"),items=[];
   if(scope!=="progress")items.push({kind:"scope",value:scope,label:scope==="all"?"Catalogue complet":"Crédits techniques seuls"});
   if(owned!=="all")items.push({kind:"owned",value:owned,label:owned==="owned"?"Possédés":"Sans édition"});
@@ -1057,7 +1060,7 @@ function renderFilterChips(scope,owned,query,formats,statuses,countries,role){
   formats.forEach(function(value){items.push({kind:"format",value:value,label:value})});
   statuses.forEach(function(value){items.push({kind:"status",value:value,label:value})});
   countries.forEach(function(value){items.push({kind:"country",value:value,label:value})});
-  if(role!=="all")items.push({kind:"role",value:role,label:"Rôle : "+role});
+  roles.forEach(function(value){items.push({kind:"role",value:value,label:"Rôle : "+value})});
   container.replaceChildren();container.classList.toggle("hidden",!items.length);
   items.forEach(function(item){
     const chip=document.createElement("span");chip.className="filter-chip";chip.appendChild(document.createTextNode(item.label));
@@ -1065,7 +1068,6 @@ function renderFilterChips(scope,owned,query,formats,statuses,countries,role){
       if(item.kind==="scope")$("#scopeFilter").value="progress";
       else if(item.kind==="owned")$("#filmFilter").value="all";
       else if(item.kind==="query")$("#filmSearch").value="";
-      else if(item.kind==="role")$("#roleFilter").value="all";
       else{const input=Array.from(document.querySelectorAll('input[name="'+item.kind+'Filter"]')).find(function(option){return option.value===item.value});if(input)input.checked=false}
       renderFilms();
     };chip.appendChild(remove);container.appendChild(chip);
@@ -1081,29 +1083,30 @@ function updateSortUi(){
 }
 
 function updateFilterUi(){
-  const scope=$("#scopeFilter").value,owned=$("#filmFilter").value,query=$("#filmSearch").value.trim(),formats=checkedFilterValues("formatFilter"),statuses=checkedFilterValues("statusFilter"),countries=checkedFilterValues("countryFilter"),role=$("#roleFilter").value;
+  const scope=$("#scopeFilter").value,owned=$("#filmFilter").value,query=$("#filmSearch").value.trim(),formats=checkedFilterValues("formatFilter"),statuses=checkedFilterValues("statusFilter"),countries=checkedFilterValues("countryFilter"),roles=checkedFilterValues("roleFilter");
   $("#clearSearchBtn").classList.toggle("hidden",!query);
   $("#formatFilterLabel").textContent=filterSelectionLabel(formats,"Tous les formats","format");
   $("#statusFilterLabel").textContent=filterSelectionLabel(statuses,"Tous les statuts","statut");
   $("#countryFilterLabel").textContent=filterSelectionLabel(countries,"Tous les pays","pays");
-  const activeCount=(scope!=="progress"?1:0)+(owned!=="all"?1:0)+(query?1:0)+(formats.length?1:0)+(statuses.length?1:0)+(countries.length?1:0)+(role!=="all"?1:0);
-  const advancedCount=(scope!=="progress"?1:0)+(owned!=="all"?1:0)+(formats.length?1:0)+(statuses.length?1:0)+(countries.length?1:0)+(role!=="all"?1:0);
+  $("#roleFilterLabel").textContent=filterSelectionLabel(roles,"Tous les rôles","rôle");
+  const activeCount=(scope!=="progress"?1:0)+(owned!=="all"?1:0)+(query?1:0)+(formats.length?1:0)+(statuses.length?1:0)+(countries.length?1:0)+(roles.length?1:0);
+  const advancedCount=(scope!=="progress"?1:0)+(owned!=="all"?1:0)+(formats.length?1:0)+(statuses.length?1:0)+(countries.length?1:0)+(roles.length?1:0);
   $("#resetFiltersBtn").disabled=activeCount===0;
   $("#activeFilterSummary").classList.toggle("hidden",activeCount===0);
   $("#activeFilterSummary").textContent=activeCount+" filtre"+(activeCount>1?"s":"")+" actif"+(activeCount>1?"s":"");
   $("#mobileFilterCount").textContent=advancedCount?advancedCount+" actif"+(advancedCount>1?"s":""):"";
-  renderFilterChips(scope,owned,query,formats,statuses,countries,role);
+  renderFilterChips(scope,owned,query,formats,statuses,countries,roles);
   updateSortUi();
 }
 
 function resetFilmFilters(){
-  $("#filmSearch").value="";$("#scopeFilter").value="progress";$("#filmFilter").value="all";$("#roleFilter").value="all";document.querySelectorAll('input[name="formatFilter"],input[name="statusFilter"],input[name="countryFilter"]').forEach(function(input){input.checked=false});
+  $("#filmSearch").value="";$("#scopeFilter").value="progress";$("#filmFilter").value="all";document.querySelectorAll('input[name="formatFilter"],input[name="statusFilter"],input[name="countryFilter"],input[name="roleFilter"]').forEach(function(input){input.checked=false});
   renderFilms();
 }
 
 function saveFilmPreferences(){
   try{
-    localStorage.setItem("cinetrack-jackie-filters",JSON.stringify({query:$("#filmSearch").value,scope:$("#scopeFilter").value,owned:$("#filmFilter").value,role:$("#roleFilter").value,formats:checkedFilterValues("formatFilter"),statuses:checkedFilterValues("statusFilter"),countries:checkedFilterValues("countryFilter"),sortKey:sortKey,sortDirection:sortDirection,view:filmView}));
+    localStorage.setItem("cinetrack-jackie-filters",JSON.stringify({query:$("#filmSearch").value,scope:$("#scopeFilter").value,owned:$("#filmFilter").value,roles:checkedFilterValues("roleFilter"),formats:checkedFilterValues("formatFilter"),statuses:checkedFilterValues("statusFilter"),countries:checkedFilterValues("countryFilter"),sortKey:sortKey,sortDirection:sortDirection,view:filmView}));
   }catch(error){}
 }
 
@@ -1113,7 +1116,7 @@ function restoreFilmPreferences(){
     $("#filmSearch").value=String(saved.query||"");
     if(["progress","all","technical"].includes(saved.scope))$("#scopeFilter").value=saved.scope;
     if(["all","owned","missing"].includes(saved.owned))$("#filmFilter").value=saved.owned;
-    pendingRoleFilter=typeof saved.role==="string"?saved.role:"all";
+    pendingRoleFilters=Array.isArray(saved.roles)?saved.roles:(typeof saved.role==="string"&&saved.role!=="all"?[saved.role]:[]);
     [["formatFilter",saved.formats],["statusFilter",saved.statuses],["countryFilter",saved.countries]].forEach(function(group){const values=Array.isArray(group[1])?group[1]:[];document.querySelectorAll('input[name="'+group[0]+'"]').forEach(function(input){input.checked=values.includes(input.value)})});
     if(["order","poster","year","title","participation","status","collection"].includes(saved.sortKey))sortKey=saved.sortKey;
     if(["asc","desc"].includes(saved.sortDirection))sortDirection=saved.sortDirection;
@@ -1381,8 +1384,7 @@ function openJackieCollection(owned){
   $("#filmSearch").value="";
   $("#scopeFilter").value="progress";
   $("#filmFilter").value=owned||"all";
-  $("#roleFilter").value="all";
-  document.querySelectorAll('input[name="formatFilter"],input[name="statusFilter"],input[name="countryFilter"]').forEach(function(input){input.checked=false});
+  document.querySelectorAll('input[name="formatFilter"],input[name="statusFilter"],input[name="countryFilter"],input[name="roleFilter"]').forEach(function(input){input.checked=false});
   showPage("jackie",true);renderFilms();
 }
 
@@ -1988,14 +1990,14 @@ function setFilmSort(key,direction){
 }
 
 function renderFilms(){
-  const query=normalized($("#filmSearch").value),scope=$("#scopeFilter").value,ownedFilter=$("#filmFilter").value,roleFilter=$("#roleFilter").value,formats=checkedFilterValues("formatFilter"),statuses=checkedFilterValues("statusFilter"),countries=checkedFilterValues("countryFilter");
+  const query=normalized($("#filmSearch").value),scope=$("#scopeFilter").value,ownedFilter=$("#filmFilter").value,roleFilters=checkedFilterValues("roleFilter"),formats=checkedFilterValues("formatFilter"),statuses=checkedFilterValues("statusFilter"),countries=checkedFilterValues("countryFilter");
   let data=films.filter(function(film){
     const filmEditions=editionsFor(film.id),owned=filmEditions.length>0;
     if(scope==="progress"&&!film.countsTowardProgress)return false;
     if(scope==="technical"&&film.countsTowardProgress)return false;
     if(ownedFilter==="owned"&&!owned)return false;
     if(ownedFilter==="missing"&&owned)return false;
-    if(roleFilter!=="all"&&film.participation!==roleFilter)return false;
+    if(roleFilters.length&&!roleFilters.includes(film.participation))return false;
     if(formats.length&&!filmEditions.some(function(edition){return editionFormats(edition).some(function(format){return formats.includes(format)})}))return false;
     if(countries.length&&!filmEditions.some(function(edition){return countries.includes(String(edition.country||"").trim())}))return false;
     if(statuses.length&&!statuses.includes(film.status))return false;
@@ -2042,7 +2044,7 @@ function renderFilmRow(film){
     '<td class="list-poster-cell">'+posterHtml+'</td>'+
     '<td class="year-cell" data-label="Année">'+esc(film.year||"—")+'</td>'+
     '<td class="title-cell"><button type="button" class="film-title" data-id="'+esc(film.id)+'">'+esc(displayedTitle(film))+'</button><span class="film-subtitle">'+esc(secondaryTitle(film))+'</span></td>'+
-    '<td class="participation-cell" data-label="Rôle"><span class="badge '+participationClass+'">'+esc(film.participation)+'</span></td>'+
+    '<td class="participation-cell" data-label="Type de rôle"><span class="badge '+participationClass+'">'+esc(film.participation)+'</span></td>'+
     '<td class="status-cell" data-label="Statut"><span class="badge'+statusClass+'">'+esc(film.status)+'</span></td>'+
     '<td class="collection-cell" data-label="Éditions"><div class="collection-cell-layout">'+editionSummary+'<button type="button" class="quick-add-edition icon-only" data-id="'+esc(film.id)+'" title="Ajouter une édition" aria-label="Ajouter une édition de '+esc(displayedTitle(film))+'">'+iconSvg("plus","sm")+'</button></div></td>'+
   '</tr>';
@@ -2074,12 +2076,15 @@ function renderSeries(){
 }
 
 function populateRoleFilter(){
-  const select=$("#roleFilter"),current=pendingRoleFilter!=="all"?pendingRoleFilter:select.value;
+  const container=$("#roleFilterOptions"),current=pendingRoleFilters.length?pendingRoleFilters:checkedFilterValues("roleFilter");
   const roles=[...new Set(films.map(function(film){return String(film.participation||"").trim()}).filter(Boolean))].sort(function(a,b){return a.localeCompare(b,"fr",{sensitivity:"base"})});
-  select.replaceChildren();
-  const allOption=document.createElement("option");allOption.value="all";allOption.textContent="Tous les rôles";select.appendChild(allOption);
-  roles.forEach(function(role){const option=document.createElement("option");option.value=role;option.textContent=role;select.appendChild(option)});
-  select.value=roles.includes(current)?current:"all";pendingRoleFilter="all";
+  container.replaceChildren();
+  roles.forEach(function(role){
+    const label=document.createElement("label"),input=document.createElement("input");
+    input.type="checkbox";input.name="roleFilter";input.value=role;input.checked=current.includes(role);input.addEventListener("change",renderFilms);
+    label.appendChild(input);label.appendChild(document.createTextNode(" "+role));container.appendChild(label);
+  });
+  pendingRoleFilters=[];
 }
 
 function renderAll(){
@@ -2144,9 +2149,9 @@ function openFilmDetails(filmId){
     ["Affiche TMDB",film.tmdbPageUrl||(film.tmdbId?"https://www.themoviedb.org/movie/"+film.tmdbId:null)]
   ].filter(function(item){return safeUrl(item[1])});
   const sourcesHtml=sources.length?'<div class="source-links">'+sources.map(function(item){return '<a href="'+esc(safeUrl(item[1]))+'" target="_blank" rel="noopener noreferrer">'+esc(item[0])+' ↗</a>'}).join("")+'</div>':"";
-  const addEditionLabel=user?"+ Ajouter une édition à ma collection":"Se connecter pour ajouter";
+  const addEditionLabel=user?"Ajouter une édition à ma collection":"Se connecter pour ajouter";
   const editionCountLabel=filmEditions.length+" édition"+(filmEditions.length>1?"s":"");
-  const editionsHtml='<div class="edition-section"><div class="edition-section-head"><div><h3>Mes éditions</h3><span class="edition-count">'+esc(editionCountLabel)+'</span></div><button type="button" class="btn small add-edition-inline">'+esc(addEditionLabel)+'</button></div><div class="edition-list">'+(filmEditions.length?filmEditions.map(function(edition,index){
+  const editionsHtml='<div class="edition-section"><div class="edition-section-head"><div><h3>Mes éditions</h3><span class="edition-count">'+esc(editionCountLabel)+'</span></div><button type="button" class="btn small secondary add-edition-inline">'+(user?iconSvg("plus","sm")+" ":"")+esc(addEditionLabel)+'</button></div><div class="edition-list">'+(filmEditions.length?filmEditions.map(function(edition,index){
     const digitalOnly=isDigitalOnlyEdition(edition),productImage=digitalOnly?"":editionVisual(edition),productTitle=edition.productTitle||"";
     const linkedFilmIds=editionFilmIds(edition),linkedTitles=linkedFilmIds.map(function(id){const linkedFilm=films.find(function(item){return item.id===id});return linkedFilm?displayedTitle(linkedFilm):""}).filter(Boolean);
     const visual=digitalOnly?'<span class="edition-product-thumb digital-edition-art" aria-label="Visuel standard d’édition numérique">'+digitalEditionArtContent()+'</span>':productImage?'<span class="edition-product-thumb"><img src="'+esc(productImage)+'" alt="Visuel de l’édition '+(index+1)+'" loading="lazy" referrerpolicy="no-referrer"></span>':'<span class="edition-product-thumb">Sans visuel</span>';
@@ -2761,7 +2766,7 @@ $("#seriesForm").onsubmit=async function(event){
   }
 };
 
-["filmSearch","scopeFilter","filmFilter","roleFilter"].forEach(function(id){$("#"+id).addEventListener(id==="filmSearch"?"input":"change",renderFilms)});
+["filmSearch","scopeFilter","filmFilter"].forEach(function(id){$("#"+id).addEventListener(id==="filmSearch"?"input":"change",renderFilms)});
 document.querySelectorAll('input[name="formatFilter"],input[name="statusFilter"],input[name="countryFilter"]').forEach(function(input){input.addEventListener("change",renderFilms)});
 $("#seriesFilter").onchange=renderSeries;
 </script>
