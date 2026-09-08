@@ -518,34 +518,35 @@
       #page-jackie .table-wrap{width:100%;max-width:100%;overflow:visible;border:0;background:transparent;box-shadow:none}
       #page-jackie table,#page-jackie tbody{display:block;width:100%;min-width:0}
       #page-jackie thead{display:none}
-      #page-jackie tbody{display:grid;gap:11px}
-      #page-jackie tbody tr.film-row{display:grid;width:100%;min-width:0;grid-template-columns:56px minmax(0,1fr) auto;grid-template-areas:"poster number year" "poster title title" "poster participation participation" "poster status status" "collection collection collection";gap:6px 10px;padding:12px;border:1px solid #d8dcdf;border-left:1px solid #d8dcdf;background:#fff!important;box-shadow:0 7px 20px rgba(16,25,32,.05)}
+      #page-jackie tbody{display:grid;gap:9px}
+      #page-jackie tbody tr.film-row{position:relative;display:grid;width:100%;min-width:0;grid-template-columns:62px minmax(0,1fr) auto;grid-template-areas:"poster number year" "poster title title" "poster participation status" "poster collection collection";gap:4px 10px;padding:10px 11px;border:1px solid #d8dcdf;border-left:1px solid #d8dcdf;border-radius:11px;background:#fff!important;box-shadow:0 3px 12px rgba(16,25,32,.035)}
       #page-jackie tbody tr.film-row.missing-edition-row{border-left:4px solid var(--jackie)}
       #page-jackie tbody tr.film-row.technical-row:not(.missing-edition-row){border-left-color:#aeb4b8}
       #page-jackie tbody tr.film-row>td{display:block;min-width:0;width:auto;max-width:none;padding:0!important;border:0!important}
       #page-jackie tbody tr.film-row>td:first-child{box-shadow:none}
-      #page-jackie tbody .collector-no{grid-area:number;align-self:start;font-size:13px}
-      #page-jackie tbody .list-poster-cell{grid-area:poster}
-      #page-jackie tbody .year-cell{grid-area:year;align-self:start;color:#5f686e;font-size:12px;text-align:right}
+      #page-jackie tbody .collector-no{grid-area:number;width:auto;align-self:start;color:#747c81;font-family:inherit;font-size:11px;font-weight:800;letter-spacing:0}
+      #page-jackie tbody .collector-no:before{font-size:9px}
+      #page-jackie tbody .list-poster-cell{grid-area:poster;align-self:start}
+      #page-jackie tbody .year-cell{grid-area:year;align-self:start;color:#747c81;font-size:10px;font-weight:750;text-align:right}
       #page-jackie tbody .title-cell{grid-area:title;align-self:start}
-      #page-jackie tbody .participation-cell{grid-area:participation;display:grid;grid-template-columns:76px minmax(0,1fr);align-items:center}
-      #page-jackie tbody .status-cell{grid-area:status;display:grid;grid-template-columns:76px minmax(0,1fr);align-items:center;gap:0}
-      #page-jackie tbody .collection-cell{grid-area:collection;padding-top:8px!important;border-top:1px solid #e5e8ea!important}
-      #page-jackie tbody .participation-cell:before,#page-jackie tbody .status-cell:before,#page-jackie tbody .collection-cell:before{content:attr(data-label);display:block;min-width:0;margin-right:7px;color:#747c81;font-size:8px;font-weight:900;letter-spacing:.07em;text-transform:uppercase}
-      #page-jackie tbody .collection-cell:before{margin:0 0 6px}
-      #page-jackie tbody .list-poster{width:56px;height:84px}
-      #page-jackie tbody .film-title{max-width:100%;color:#111315;font-size:15px;line-height:1.23;white-space:normal;overflow-wrap:anywhere}
-      #page-jackie tbody .film-subtitle{font-size:10px;overflow-wrap:anywhere}
-      #page-jackie tbody .badge{max-width:100%;padding:4px 6px;font-size:9px;line-height:1.25;white-space:normal}
+      #page-jackie tbody .participation-cell{grid-area:participation;display:flex;align-items:center}
+      #page-jackie tbody .status-cell{grid-area:status;display:flex;align-items:center;justify-content:flex-start}
+      #page-jackie tbody .collection-cell{grid-area:collection;min-height:29px}
+      #page-jackie tbody .participation-cell:before,#page-jackie tbody .status-cell:before,#page-jackie tbody .collection-cell:before{display:none}
+      #page-jackie tbody .list-poster{width:62px;height:93px;border-color:#d7dcdf;background:#f3f5f6}
+      #page-jackie tbody .film-title{max-width:100%;color:#111315;font-size:14px;line-height:1.2;white-space:normal;overflow-wrap:anywhere}
+      #page-jackie tbody .film-subtitle{margin-top:3px;color:#596167;font-size:10px;font-style:italic;line-height:1.25;overflow-wrap:anywhere}
+      #page-jackie tbody .badge{max-width:100%;padding:3px 7px;border-radius:12px;font-size:9px;line-height:1.2;white-space:normal}
       #page-jackie tbody tr:has(.empty){display:block;width:100%;padding:0;border:0;box-shadow:none}
-      .collection-cell-layout{display:grid;grid-template-columns:minmax(0,1fr) var(--mobile-touch);gap:8px;align-items:end}
-      .edition-stack{min-width:0;gap:6px}
-      .edition-bundle,.edition-bundle.combined{width:fit-content;max-width:100%;align-items:flex-start}
+      .collection-cell-layout{display:block;min-height:29px;padding-right:43px}
+      .edition-stack{display:flex;min-width:0;align-items:center;gap:5px;flex-wrap:wrap}
+      .edition-bundle,.edition-bundle.combined{width:fit-content;max-width:100%;min-height:23px;align-items:center;border-radius:12px;box-shadow:none}
       .edition-bundle-formats{min-width:0;flex-wrap:wrap}
-      .edition-bundle-format{white-space:normal}
-      .edition-bundle-country{min-height:22px;align-items:center}
-      .quick-add-edition.icon-only{width:var(--mobile-touch)!important;height:var(--mobile-touch)!important;min-width:var(--mobile-touch);min-height:var(--mobile-touch);justify-self:end}
-      .edition-empty-state{display:inline-flex;width:auto;height:30px;align-items:center;gap:7px;padding:0 9px;border-radius:15px}.edition-empty-state:after{content:"Sans édition";color:#6f777c;font-size:9px;font-weight:850;letter-spacing:.04em;text-transform:uppercase}
+      .edition-bundle-format{padding:2px 6px;white-space:normal}
+      .edition-bundle-country{min-height:21px;align-items:center;padding-inline:6px;border-radius:0 11px 11px 0}
+      .collection-cell-layout .quick-add-edition.icon-only{position:absolute;right:10px;bottom:10px;width:36px!important;height:36px!important;min-width:36px;min-height:36px;margin:0;border-color:#9eddf1;background:#eefaff;color:#007da9;box-shadow:none}
+      .collection-cell-layout .quick-add-edition.icon-only:hover,.collection-cell-layout .quick-add-edition.icon-only:focus-visible{border-color:#009bd2;background:#dff6fd}
+      .edition-empty-state{display:inline-flex;width:auto;height:24px;align-items:center;gap:6px;padding:0 8px;border-radius:12px}.edition-empty-state:after{content:"Sans édition";color:#6f777c;font-size:8px;font-weight:850;letter-spacing:.04em;text-transform:uppercase}
 
       .film-visual-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:1fr;gap:11px}
       .collector-card{width:100%;min-width:0;height:100%}
@@ -656,8 +657,11 @@
       .filter-toolbar .filter-reset{justify-self:stretch;width:100%}
       .jackie-title-line h1{font-size:clamp(39px,13vw,48px)}
       .jackie-chinese{font-size:27px}
-      #page-jackie tbody tr.film-row{grid-template-columns:50px minmax(0,1fr) auto;padding:10px 9px}
-      #page-jackie tbody .list-poster{width:50px;height:75px}
+      #page-jackie tbody tr.film-row{grid-template-columns:54px minmax(0,1fr) auto;gap:4px 8px;padding:9px}
+      #page-jackie tbody .list-poster{width:54px;height:81px}
+      #page-jackie tbody .film-title{font-size:13px}
+      .collection-cell-layout{padding-right:40px}
+      .collection-cell-layout .quick-add-edition.icon-only{right:8px;bottom:8px;width:34px!important;height:34px!important;min-width:34px;min-height:34px}
       .collector-card-actions .quick-add-edition span{display:none}
       .collector-card-actions .quick-add-edition{width:var(--mobile-touch);align-self:flex-end}
       .profile-photo-row{grid-template-columns:1fr}
@@ -671,8 +675,8 @@
       .stats{grid-template-columns:1fr}
       .stats .stat:last-child:nth-child(odd){grid-column:auto}
       .film-visual-grid,#page-series .grid{grid-template-columns:1fr}
-      #page-jackie tbody tr.film-row{grid-template-columns:46px minmax(0,1fr) auto}
-      #page-jackie tbody .list-poster{width:46px;height:69px}
+      #page-jackie tbody tr.film-row{grid-template-columns:50px minmax(0,1fr) auto}
+      #page-jackie tbody .list-poster{width:50px;height:75px}
       .format-choices{grid-template-columns:1fr}
       .account-settings-tabs button{font-size:9px;padding-inline:5px}
     }
