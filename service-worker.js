@@ -1,8 +1,9 @@
-const CACHE_VERSION="cinetrack-shell-v1";
+const CACHE_VERSION="cinetrack-shell-v2";
 const APP_SHELL=[
   "./",
   "./index.html",
   "./manifest.webmanifest",
+  "./icons/favicon-32.png",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./icons/icon-maskable-512.png",
