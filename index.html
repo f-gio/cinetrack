@@ -736,6 +736,19 @@
       #page-jackie tbody tr.film-row.missing-edition-row{border-left:4px solid var(--missing-edition)}
       #page-jackie tbody tr.film-row.missing-edition-row td:first-child{box-shadow:none}
     }
+
+    /* Enrichissement collection : périodes, sagas, références et améliorations */
+    .reference-edition-choice{min-height:46px;padding:11px 12px;border:1px solid #c9b0d9;background:#f8f1fb;color:#563b67!important}
+    .reference-edition-choice:has(input:checked){border-color:#8f63aa;background:#efe2f5}
+    .feature-choices{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .reference-badge{border-color:#ad84c2!important;background:#f3e8f8!important;color:#68457c!important}
+    .upgrade-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 6px;border:1px solid #dfaf55;background:#fff5df;color:#755114;font-size:8px;font-weight:950;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+    .collection-cell-layout .upgrade-badge{align-self:center}
+    .collection-upgrade{display:flex;align-items:flex-start;gap:11px;margin:12px 0;padding:12px 14px;border:1px solid #e4bf79;border-left:4px solid var(--missing-edition);background:#fff8e9;color:#5f461c}
+    .collection-upgrade strong{display:block;font-size:12px}.collection-upgrade span{display:block;margin-top:3px;font-size:10px;line-height:1.45}
+    .edition-feature-list{display:flex;gap:5px;flex-wrap:wrap}.edition-feature{padding:3px 6px;border:1px solid #d7c7df;background:#faf5fc;color:#60436e;font-size:8px;font-weight:850}
+    @media(max-width:768px){.feature-choices{grid-template-columns:repeat(2,minmax(0,1fr))}.collection-cell-layout .upgrade-badge{grid-column:1/-1;justify-self:start}}
+    @media(max-width:390px){.feature-choices{grid-template-columns:1fr}}
   </style>
 </head>
 <body class="auth-pending">
@@ -838,12 +851,14 @@
     </div>
     <div id="filmFilterGroups" class="filter-groups mobile-collapsed">
       <div class="filter-dropdown-grid">
-        <label class="filter-select">Disponibilité<select id="filmFilter"><option value="all">Tous les films</option><option value="owned">Avec édition</option><option value="missing">Sans édition</option></select></label>
+        <label class="filter-select">Disponibilité<select id="filmFilter"><option value="all">Tous les films</option><option value="owned">Avec édition</option><option value="missing">Sans édition</option><option value="upgrade">Amélioration disponible</option></select></label>
         <label class="filter-select">Périmètre<select id="scopeFilter"><option value="progress">Filmographie suivie · 154</option><option value="all">Catalogue complet · 191</option><option value="technical">Crédits techniques seuls · 37</option></select></label>
         <div class="filter-group"><span class="filter-label">Format</span><details id="formatFilterMenu" class="filter-multiselect"><summary><span id="formatFilterLabel">Tous les formats</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div class="filter-options"><label><input type="checkbox" name="formatFilter" value="4K UHD"> 4K UHD</label><label><input type="checkbox" name="formatFilter" value="Blu-ray"> Blu-ray</label><label><input type="checkbox" name="formatFilter" value="DVD"> DVD</label><label><input type="checkbox" name="formatFilter" value="VHS"> VHS</label><label><input type="checkbox" name="formatFilter" value="Digital 4K"> Digital 4K</label><label><input type="checkbox" name="formatFilter" value="Digital 1080p"> Digital 1080p</label><label><input type="checkbox" name="formatFilter" value="Digital 720p"> Digital 720p</label><label><input type="checkbox" name="formatFilter" value="Autre"> Autre</label></div></details></div>
         <div class="filter-group"><span class="filter-label">Pays de l’édition</span><details id="countryFilterMenu" class="filter-multiselect"><summary><span id="countryFilterLabel">Tous les pays</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div class="filter-options"><label><input type="checkbox" name="countryFilter" value="France"> France</label><label><input type="checkbox" name="countryFilter" value="Royaume-Uni"> Royaume-Uni</label><label><input type="checkbox" name="countryFilter" value="États-Unis"> États-Unis</label><label><input type="checkbox" name="countryFilter" value="Hong Kong"> Hong Kong</label><label><input type="checkbox" name="countryFilter" value="Japon"> Japon</label><label><input type="checkbox" name="countryFilter" value="Allemagne"> Allemagne</label><label><input type="checkbox" name="countryFilter" value="Italie"> Italie</label><label><input type="checkbox" name="countryFilter" value="Espagne"> Espagne</label><label><input type="checkbox" name="countryFilter" value="Canada"> Canada</label><label><input type="checkbox" name="countryFilter" value="Australie"> Australie</label><label><input type="checkbox" name="countryFilter" value="Chine"> Chine</label><label><input type="checkbox" name="countryFilter" value="Taïwan"> Taïwan</label><label><input type="checkbox" name="countryFilter" value="Corée du Sud"> Corée du Sud</label><label><input type="checkbox" name="countryFilter" value="Pays-Bas"> Pays-Bas</label><label><input type="checkbox" name="countryFilter" value="Belgique"> Belgique</label><label><input type="checkbox" name="countryFilter" value="Suisse"> Suisse</label></div></details></div>
         <div class="filter-group"><span class="filter-label">Statut de sortie</span><details id="statusFilterMenu" class="filter-multiselect"><summary><span id="statusFilterLabel">Tous les statuts</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div class="filter-options"><label><input type="checkbox" name="statusFilter" value="Sorti"> Sorti</label><label><input type="checkbox" name="statusFilter" value="À venir"> À venir</label><label><input type="checkbox" name="statusFilter" value="En production"> En production</label><label><input type="checkbox" name="statusFilter" value="Annoncé"> Annoncé</label></div></details></div>
         <div class="filter-group"><span class="filter-label">Type de rôle</span><details id="roleFilterMenu" class="filter-multiselect"><summary><span id="roleFilterLabel">Tous les rôles</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div id="roleFilterOptions" class="filter-options"></div></details></div>
+        <div class="filter-group"><span class="filter-label">Période</span><details id="periodFilterMenu" class="filter-multiselect"><summary><span id="periodFilterLabel">Toutes les périodes</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div id="periodFilterOptions" class="filter-options"></div></details></div>
+        <div class="filter-group"><span class="filter-label">Franchise / saga</span><details id="franchiseFilterMenu" class="filter-multiselect"><summary><span id="franchiseFilterLabel">Toutes les sagas</span><svg class="ui-icon sm" aria-hidden="true"><use href="#icon-chevron-down"></use></svg></summary><div id="franchiseFilterOptions" class="filter-options"></div></details></div>
         <label class="filter-select">Trier par<select id="sortSelect"><option value="year:asc">Année · ancien → récent</option><option value="year:desc">Année · récent → ancien</option><option value="order:asc">Numéro · croissant</option><option value="order:desc">Numéro · décroissant</option><option value="title:asc">Titre · A → Z</option><option value="title:desc">Titre · Z → A</option><option value="participation:asc">Participation · A → Z</option><option value="participation:desc">Participation · Z → A</option><option value="status:asc">Statut · A → Z</option><option value="status:desc">Statut · Z → A</option><option value="collection:desc">Éditions · plus → moins</option><option value="collection:asc">Éditions · moins → plus</option><option value="poster:desc">Avec affiche d’abord</option><option value="poster:asc">Sans affiche d’abord</option></select></label>
       </div>
     </div>
@@ -944,6 +959,9 @@
   <div class="row"><label>Titre original<input name="originalTitle"></label><label>Romanisation<input name="romanization"></label></div>
   <label>Alias<input name="aliases"></label>
   <div class="row"><label>Personnage / rôle<input name="role"></label><label>Réalisateur<input name="director"></label></div>
+  <div class="row"><label>Période de carrière<select name="careerPeriod"><option value="">Déterminée automatiquement par l’année</option><option>Premiers rôles (1962–1975)</option><option>Révélation (1976–1985)</option><option>Âge d’or hongkongais (1986–1995)</option><option>Expansion internationale (1996–2009)</option><option>Carrière contemporaine (2010–2019)</option><option>Période récente (2020–…)</option></select></label><label>Franchise / saga<input name="franchise" list="franchiseOptions" placeholder="Ex. Police Story"></label></div>
+  <datalist id="franchiseOptions"><option value="Police Story"><option value="Rush Hour"><option value="Armour of God"><option value="Project A"><option value="Drunken Master"><option value="Lucky Stars"><option value="Shanghai"><option value="The Karate Kid"><option value="Cannonball Run"></datalist>
+  <fieldset class="format-fieldset"><legend class="format-legend">Formats commercialisés connus <span class="meta">· permet de détecter une amélioration disponible</span></legend><div class="format-choices"><label class="format-choice"><input name="availableFormats" type="checkbox" value="4K UHD"> 4K UHD</label><label class="format-choice"><input name="availableFormats" type="checkbox" value="Blu-ray"> Blu-ray</label><label class="format-choice"><input name="availableFormats" type="checkbox" value="DVD"> DVD</label><label class="format-choice"><input name="availableFormats" type="checkbox" value="VHS"> VHS</label><label class="format-choice"><input name="availableFormats" type="checkbox" value="Digital 4K"> Digital 4K</label><label class="format-choice"><input name="availableFormats" type="checkbox" value="Digital 1080p"> Digital 1080p</label><label class="format-choice"><input name="availableFormats" type="checkbox" value="Digital 720p"> Digital 720p</label><label class="format-choice"><input name="availableFormats" type="checkbox" value="Autre"> Autre</label></div></fieldset>
   <label>URL externe de l’affiche (facultatif)<input name="posterUrl" type="url"></label>
   <div class="poster-editor">
     <div id="posterPreview" class="poster-preview"><span>Aucune image</span></div>
@@ -984,6 +1002,10 @@
       <div class="row"><label>Pays<input name="country" list="editionCountryOptions" placeholder="Ex. Royaume-Uni"></label><label>Éditeur<input name="publisher" placeholder="Ex. 88 Films"></label></div>
       <datalist id="editionCountryOptions"><option value="France"><option value="Royaume-Uni"><option value="États-Unis"><option value="Hong Kong"><option value="Japon"><option value="Allemagne"><option value="Italie"><option value="Espagne"><option value="Canada"><option value="Australie"><option value="Chine"><option value="Taïwan"><option value="Corée du Sud"><option value="Pays-Bas"><option value="Belgique"><option value="Suisse"></datalist>
       <label>Édition / collection<input name="edition" placeholder="Ex. Deluxe Limited Edition"></label>
+      <label class="check-row reference-edition-choice"><input id="editionIsReference" type="checkbox"> Définir comme édition de référence pour les films sélectionnés</label>
+      <fieldset class="format-fieldset"><legend class="format-legend">Versions du film incluses <span class="meta">· plusieurs choix possibles</span></legend><div class="format-choices feature-choices"><label class="format-choice"><input name="filmVersions" type="checkbox" value="Montage hongkongais"> Montage hongkongais</label><label class="format-choice"><input name="filmVersions" type="checkbox" value="Montage international"> Montage international</label><label class="format-choice"><input name="filmVersions" type="checkbox" value="Montage américain"> Montage américain</label><label class="format-choice"><input name="filmVersions" type="checkbox" value="Director’s Cut"> Director’s Cut</label><label class="format-choice"><input name="filmVersions" type="checkbox" value="Version longue"> Version longue</label><label class="format-choice"><input name="filmVersions" type="checkbox" value="Version censurée"> Version censurée</label><label class="format-choice"><input name="filmVersions" type="checkbox" value="Autre version"> Autre version</label></div></fieldset>
+      <fieldset class="format-fieldset"><legend class="format-legend">Bonus spécifiques <span class="meta">· contenus réellement présents</span></legend><div class="format-choices feature-choices"><label class="format-choice"><input name="bonusFeatures" type="checkbox" value="Interviews"> Interviews</label><label class="format-choice"><input name="bonusFeatures" type="checkbox" value="Commentaire audio"> Commentaire audio</label><label class="format-choice"><input name="bonusFeatures" type="checkbox" value="Making-of"> Making-of</label><label class="format-choice"><input name="bonusFeatures" type="checkbox" value="Scènes coupées"> Scènes coupées</label><label class="format-choice"><input name="bonusFeatures" type="checkbox" value="Documentaire"> Documentaire</label><label class="format-choice"><input name="bonusFeatures" type="checkbox" value="Livret"> Livret</label><label class="format-choice"><input name="bonusFeatures" type="checkbox" value="Galerie photos"> Galerie photos</label><label class="format-choice"><input name="bonusFeatures" type="checkbox" value="Bandes-annonces"> Bandes-annonces</label><label class="format-choice"><input name="bonusFeatures" type="checkbox" value="Autre bonus"> Autre bonus</label></div></fieldset>
+      <label>Détail des bonus<textarea name="bonusNotes" placeholder="Ex. entretien inédit de 45 min, livret de 80 pages…"></textarea></label>
       <div class="boxset-panel"><label class="check-row"><input id="editionIsBoxSet" type="checkbox"> Ce coffret contient plusieurs films du catalogue</label><div id="editionFilmLinker" class="edition-film-linker hidden"><label class="edition-film-search">Rechercher un film<input id="editionFilmSearch" type="search" placeholder="Titre ou année…"></label><div id="editionFilmChoices" class="edition-film-choices" role="group" aria-label="Films présents dans le coffret"></div><p class="meta">Une seule édition et un seul EAN seront enregistrés, mais le coffret apparaîtra sur chacun des films sélectionnés.</p></div></div>
     </section>
     <section class="edition-step">
@@ -1022,7 +1044,7 @@ const TMDB_API_BASE="https://api.themoviedb.org/3";
 const TMDB_IMAGE_BASE="https://image.tmdb.org/t/p/w342";
 const EAN_LOOKUP_BASE="https://cinetrack-ean.giovannoni-f.workers.dev/lookup";
 const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app);
-let user=null,films=[],editions=[],series=[],sortKey="year",sortDirection="asc",selectedFilmId=null,filmView="list",pendingRoleFilters=[];
+let user=null,films=[],editions=[],series=[],sortKey="year",sortDirection="asc",selectedFilmId=null,filmView="list",pendingRoleFilters=[],pendingPeriodFilters=[],pendingFranchiseFilters=[];
 let pendingPosterData=null,posterDataChanged=false,posterCompressionPending=false;
 let pendingEditionImageData=null,editionImageCompressionPending=false;
 let tmdbImportRunning=false,tmdbAbortRequested=false;
@@ -1059,10 +1081,25 @@ function normalizeFilm(raw,id){
   film.participation=film.participation||film.credit||"Acteur";
   film.role=film.role||null;
   film.director=film.director||null;
+  film.careerPeriod=film.careerPeriod||film.period||null;
+  film.franchise=film.franchise||film.saga||null;
+  film.availableFormats=[...new Set((Array.isArray(film.availableFormats)?film.availableFormats:[]).map(canonicalEditionFormat).filter(Boolean))].sort(compareEditionFormats);
   film.countsTowardProgress=film.countsTowardProgress!==false&&film.countsTowardProgress!=="Non";
   film.sourceOrder=Number(film.sourceOrder)||9999;
   return film;
 }
+
+function automaticCareerPeriod(year){
+  const value=Number(year);
+  if(!value)return "Période non renseignée";
+  if(value<=1975)return "Premiers rôles (1962–1975)";
+  if(value<=1985)return "Révélation (1976–1985)";
+  if(value<=1995)return "Âge d’or hongkongais (1986–1995)";
+  if(value<=2009)return "Expansion internationale (1996–2009)";
+  if(value<=2019)return "Carrière contemporaine (2010–2019)";
+  return "Période récente (2020–…)";
+}
+function filmCareerPeriod(film){return String(film&&film.careerPeriod||automaticCareerPeriod(film&&film.year)).trim()}
 
 function compareFilms(a,b){
   const yearA=Number(a.year)>0?Number(a.year):Number.MAX_SAFE_INTEGER;
@@ -1103,15 +1140,17 @@ function filterSelectionLabel(values,emptyLabel,singularLabel){
   return values.length+" "+(singularLabel==="pays"?"pays":singularLabel+"s");
 }
 
-function renderFilterChips(scope,owned,query,formats,statuses,countries,roles){
+function renderFilterChips(scope,owned,query,formats,statuses,countries,roles,periods,franchises){
   const container=$("#filterChips"),items=[];
   if(scope!=="progress")items.push({kind:"scope",value:scope,label:scope==="all"?"Catalogue complet":"Crédits techniques seuls"});
-  if(owned!=="all")items.push({kind:"owned",value:owned,label:owned==="owned"?"Possédés":"Sans édition"});
+  if(owned!=="all")items.push({kind:"owned",value:owned,label:owned==="owned"?"Possédés":owned==="missing"?"Sans édition":"Amélioration disponible"});
   if(query)items.push({kind:"query",value:"",label:'Recherche : “'+query+'”'});
   formats.forEach(function(value){items.push({kind:"format",value:value,label:value})});
   statuses.forEach(function(value){items.push({kind:"status",value:value,label:value})});
   countries.forEach(function(value){items.push({kind:"country",value:value,label:value})});
   roles.forEach(function(value){items.push({kind:"role",value:value,label:"Rôle : "+value})});
+  periods.forEach(function(value){items.push({kind:"period",value:value,label:value})});
+  franchises.forEach(function(value){items.push({kind:"franchise",value:value,label:"Saga : "+value})});
   container.replaceChildren();container.classList.toggle("hidden",!items.length);
   items.forEach(function(item){
     const chip=document.createElement("span");chip.className="filter-chip";chip.appendChild(document.createTextNode(item.label));
@@ -1134,30 +1173,32 @@ function updateSortUi(){
 }
 
 function updateFilterUi(){
-  const scope=$("#scopeFilter").value,owned=$("#filmFilter").value,query=$("#filmSearch").value.trim(),formats=checkedFilterValues("formatFilter"),statuses=checkedFilterValues("statusFilter"),countries=checkedFilterValues("countryFilter"),roles=checkedFilterValues("roleFilter");
+  const scope=$("#scopeFilter").value,owned=$("#filmFilter").value,query=$("#filmSearch").value.trim(),formats=checkedFilterValues("formatFilter"),statuses=checkedFilterValues("statusFilter"),countries=checkedFilterValues("countryFilter"),roles=checkedFilterValues("roleFilter"),periods=checkedFilterValues("periodFilter"),franchises=checkedFilterValues("franchiseFilter");
   $("#clearSearchBtn").classList.toggle("hidden",!query);
   $("#formatFilterLabel").textContent=filterSelectionLabel(formats,"Tous les formats","format");
   $("#statusFilterLabel").textContent=filterSelectionLabel(statuses,"Tous les statuts","statut");
   $("#countryFilterLabel").textContent=filterSelectionLabel(countries,"Tous les pays","pays");
   $("#roleFilterLabel").textContent=filterSelectionLabel(roles,"Tous les rôles","rôle");
-  const activeCount=(scope!=="progress"?1:0)+(owned!=="all"?1:0)+(query?1:0)+(formats.length?1:0)+(statuses.length?1:0)+(countries.length?1:0)+(roles.length?1:0);
-  const advancedCount=(scope!=="progress"?1:0)+(owned!=="all"?1:0)+(formats.length?1:0)+(statuses.length?1:0)+(countries.length?1:0)+(roles.length?1:0);
+  $("#periodFilterLabel").textContent=filterSelectionLabel(periods,"Toutes les périodes","période");
+  $("#franchiseFilterLabel").textContent=filterSelectionLabel(franchises,"Toutes les sagas","saga");
+  const activeCount=(scope!=="progress"?1:0)+(owned!=="all"?1:0)+(query?1:0)+(formats.length?1:0)+(statuses.length?1:0)+(countries.length?1:0)+(roles.length?1:0)+(periods.length?1:0)+(franchises.length?1:0);
+  const advancedCount=(scope!=="progress"?1:0)+(owned!=="all"?1:0)+(formats.length?1:0)+(statuses.length?1:0)+(countries.length?1:0)+(roles.length?1:0)+(periods.length?1:0)+(franchises.length?1:0);
   $("#resetFiltersBtn").disabled=activeCount===0;
   $("#activeFilterSummary").classList.toggle("hidden",activeCount===0);
   $("#activeFilterSummary").textContent=activeCount+" filtre"+(activeCount>1?"s":"")+" actif"+(activeCount>1?"s":"");
   $("#mobileFilterCount").textContent=advancedCount?advancedCount+" actif"+(advancedCount>1?"s":""):"";
-  renderFilterChips(scope,owned,query,formats,statuses,countries,roles);
+  renderFilterChips(scope,owned,query,formats,statuses,countries,roles,periods,franchises);
   updateSortUi();
 }
 
 function resetFilmFilters(){
-  $("#filmSearch").value="";$("#scopeFilter").value="progress";$("#filmFilter").value="all";document.querySelectorAll('input[name="formatFilter"],input[name="statusFilter"],input[name="countryFilter"],input[name="roleFilter"]').forEach(function(input){input.checked=false});
+  $("#filmSearch").value="";$("#scopeFilter").value="progress";$("#filmFilter").value="all";document.querySelectorAll('input[name="formatFilter"],input[name="statusFilter"],input[name="countryFilter"],input[name="roleFilter"],input[name="periodFilter"],input[name="franchiseFilter"]').forEach(function(input){input.checked=false});
   renderFilms();
 }
 
 function saveFilmPreferences(){
   try{
-    localStorage.setItem("cinetrack-jackie-filters",JSON.stringify({query:$("#filmSearch").value,scope:$("#scopeFilter").value,owned:$("#filmFilter").value,roles:checkedFilterValues("roleFilter"),formats:checkedFilterValues("formatFilter"),statuses:checkedFilterValues("statusFilter"),countries:checkedFilterValues("countryFilter"),sortKey:sortKey,sortDirection:sortDirection,view:filmView}));
+    localStorage.setItem("cinetrack-jackie-filters",JSON.stringify({query:$("#filmSearch").value,scope:$("#scopeFilter").value,owned:$("#filmFilter").value,roles:checkedFilterValues("roleFilter"),periods:checkedFilterValues("periodFilter"),franchises:checkedFilterValues("franchiseFilter"),formats:checkedFilterValues("formatFilter"),statuses:checkedFilterValues("statusFilter"),countries:checkedFilterValues("countryFilter"),sortKey:sortKey,sortDirection:sortDirection,view:filmView}));
   }catch(error){}
 }
 
@@ -1166,8 +1207,10 @@ function restoreFilmPreferences(){
     const saved=JSON.parse(localStorage.getItem("cinetrack-jackie-filters")||"null");if(!saved)return;
     $("#filmSearch").value=String(saved.query||"");
     if(["progress","all","technical"].includes(saved.scope))$("#scopeFilter").value=saved.scope;
-    if(["all","owned","missing"].includes(saved.owned))$("#filmFilter").value=saved.owned;
+    if(["all","owned","missing","upgrade"].includes(saved.owned))$("#filmFilter").value=saved.owned;
     pendingRoleFilters=Array.isArray(saved.roles)?saved.roles:(typeof saved.role==="string"&&saved.role!=="all"?[saved.role]:[]);
+    pendingPeriodFilters=Array.isArray(saved.periods)?saved.periods:[];
+    pendingFranchiseFilters=Array.isArray(saved.franchises)?saved.franchises:[];
     [["formatFilter",saved.formats],["statusFilter",saved.statuses],["countryFilter",saved.countries]].forEach(function(group){const values=Array.isArray(group[1])?group[1]:[];document.querySelectorAll('input[name="'+group[0]+'"]').forEach(function(input){input.checked=values.includes(input.value)})});
     if(["order","poster","year","title","participation","status","collection"].includes(saved.sortKey))sortKey=saved.sortKey;
     if(["asc","desc"].includes(saved.sortDirection))sortDirection=saved.sortDirection;
@@ -1435,7 +1478,7 @@ function openJackieCollection(owned){
   $("#filmSearch").value="";
   $("#scopeFilter").value="progress";
   $("#filmFilter").value=owned||"all";
-  document.querySelectorAll('input[name="formatFilter"],input[name="statusFilter"],input[name="countryFilter"],input[name="roleFilter"]').forEach(function(input){input.checked=false});
+  document.querySelectorAll('input[name="formatFilter"],input[name="statusFilter"],input[name="countryFilter"],input[name="roleFilter"],input[name="periodFilter"],input[name="franchiseFilter"]').forEach(function(input){input.checked=false});
   showPage("jackie",true);renderFilms();
 }
 
@@ -1773,7 +1816,7 @@ function exportCatalogBackup(){
 }
 
 const PERSONAL_BACKUP_TYPE="cinetrack-personal-collection";
-const PERSONAL_BACKUP_VERSION=2;
+const PERSONAL_BACKUP_VERSION=3;
 
 function setCollectionBackupStatus(message,isError){
   const status=$("#collectionBackupStatus");status.textContent=message||"";status.classList.toggle("error",Boolean(isError));
@@ -1789,7 +1832,7 @@ function downloadJsonFile(data,fileName){
 function exportPersonalCollection(){
   if(!user)return;
   if(!editions.length){setCollectionBackupStatus("Votre collection ne contient encore aucune édition à sauvegarder.",true);return}
-  const fields=["filmId","filmIds","isBoxSet","formats","format","ean","country","publisher","edition","notes","editionImageData","useAsFilmVisual","productTitle","productImageUrl","productSource","productConfidence","productEvidence"];
+  const fields=["filmId","filmIds","isBoxSet","formats","format","ean","country","publisher","edition","filmVersions","bonusFeatures","bonusNotes","referenceFilmIds","isReference","notes","editionImageData","useAsFilmVisual","productTitle","productImageUrl","productSource","productConfidence","productEvidence"];
   const backupEditions=editions.map(function(item){
     const clean={id:item.id};
     fields.forEach(function(field){if(item[field]!==undefined)clean[field]=item[field]});
@@ -1810,6 +1853,7 @@ function sanitizeBackupEdition(raw,knownFilmIds){
   const filmIds=[...new Set((Array.isArray(raw.filmIds)?raw.filmIds:[legacyFilmId]).map(function(id){return backupText(id,1500)}).filter(function(id){return knownFilmIds.has(id)}))];
   if(!filmIds.length)return null;
   const filmId=knownFilmIds.has(legacyFilmId)?legacyFilmId:filmIds[0];
+  const referenceFilmIds=[...new Set((Array.isArray(raw.referenceFilmIds)?raw.referenceFilmIds:(raw.isReference?filmIds:[])).map(function(id){return backupText(id,1500)}).filter(function(id){return filmIds.includes(id)}))];
   const allowedFormats=new Set(["DVD","Blu-ray","4K UHD","VHS","Digital 4K","Digital 1080p","Digital 720p","Autre"]);
   const formats=editionFormats(raw).filter(function(format){return allowedFormats.has(format)});if(!formats.length)return null;
   const rawImage=typeof raw.editionImageData==="string"&&raw.editionImageData.length<=128*1024?raw.editionImageData:"";
@@ -1827,6 +1871,11 @@ function sanitizeBackupEdition(raw,knownFilmIds){
     country:backupText(raw.country,100),
     publisher:backupText(raw.publisher,200),
     edition:backupText(raw.edition,500),
+    filmVersions:cleanChoiceList(raw.filmVersions,EDITION_VERSION_OPTIONS),
+    bonusFeatures:cleanChoiceList(raw.bonusFeatures,EDITION_BONUS_OPTIONS),
+    bonusNotes:backupText(raw.bonusNotes,5000),
+    referenceFilmIds:referenceFilmIds,
+    isReference:referenceFilmIds.length>0,
     notes:backupText(raw.notes,5000),
     editionImageData:editionImageData,
     useAsFilmVisual:Boolean(raw.useAsFilmVisual)&&Boolean(editionImageData||productImageUrl),
@@ -1847,7 +1896,7 @@ async function restorePersonalCollection(file){
   let backup;
   try{backup=JSON.parse(await file.text())}
   catch(error){setCollectionBackupStatus("Ce fichier ne contient pas un JSON valide.",true);return}
-  if(!backup||backup.type!==PERSONAL_BACKUP_TYPE||![1,PERSONAL_BACKUP_VERSION].includes(backup.version)||!Array.isArray(backup.editions)){
+  if(!backup||backup.type!==PERSONAL_BACKUP_TYPE||![1,2,PERSONAL_BACKUP_VERSION].includes(backup.version)||!Array.isArray(backup.editions)){
     setCollectionBackupStatus("Ce fichier n’est pas une sauvegarde de collection CineTrack compatible.",true);return;
   }
   if(backup.editions.length>5000){setCollectionBackupStatus("Cette sauvegarde contient trop d’entrées pour être restaurée en une seule fois.",true);return}
@@ -1914,6 +1963,31 @@ function editionFormats(edition){
   return [...new Set(legacy.map(canonicalEditionFormat).filter(Boolean))].sort(compareEditionFormats);
 }
 function editionFormatLabel(edition){return editionFormats(edition).join(" + ")||"Format non précisé"}
+const EDITION_VERSION_OPTIONS=["Montage hongkongais","Montage international","Montage américain","Director’s Cut","Version longue","Version censurée","Autre version"];
+const EDITION_BONUS_OPTIONS=["Interviews","Commentaire audio","Making-of","Scènes coupées","Documentaire","Livret","Galerie photos","Bandes-annonces","Autre bonus"];
+function cleanChoiceList(value,allowed){return [...new Set((Array.isArray(value)?value:[]).map(function(item){return String(item||"").trim()}).filter(function(item){return allowed.includes(item)}))]}
+function editionVersions(edition){return cleanChoiceList(edition&&edition.filmVersions,EDITION_VERSION_OPTIONS)}
+function editionBonuses(edition){return cleanChoiceList(edition&&edition.bonusFeatures,EDITION_BONUS_OPTIONS)}
+function editionReferenceFilmIds(edition){
+  const explicit=Array.isArray(edition&&edition.referenceFilmIds)?edition.referenceFilmIds.map(String).filter(Boolean):[];
+  return [...new Set(explicit.length?explicit:(edition&&edition.isReference?editionFilmIds(edition):[]))];
+}
+function isReferenceEditionFor(edition,filmId){return editionReferenceFilmIds(edition).includes(String(filmId||""))}
+function formatQualityScore(format){
+  const value=canonicalEditionFormat(format);
+  if(value==="4K UHD"||value==="Digital 4K")return 4;
+  if(value==="Blu-ray"||value==="Digital 1080p")return 3;
+  if(value==="DVD"||value==="Digital 720p")return 2;
+  if(value==="VHS")return 1;
+  return 0;
+}
+function filmAvailableFormats(film){return [...new Set((Array.isArray(film&&film.availableFormats)?film.availableFormats:[]).map(canonicalEditionFormat).filter(Boolean))].sort(compareEditionFormats)}
+function filmUpgrade(film){
+  const filmEditions=editionsFor(film.id),available=filmAvailableFormats(film);if(!filmEditions.length||!available.length)return null;
+  const ownedFormats=[...new Set(filmEditions.flatMap(editionFormats))],ownedScore=Math.max.apply(null,ownedFormats.map(formatQualityScore).concat(0));
+  const upgrades=available.filter(function(format){return formatQualityScore(format)>ownedScore}).sort(function(a,b){return formatQualityScore(b)-formatQualityScore(a)||compareEditionFormats(a,b)});
+  return upgrades.length?{format:upgrades[0],ownedFormats:ownedFormats}:null;
+}
 function isDigitalOnlyEdition(edition){
   const formats=editionFormats(edition);
   return formats.length===1&&normalized(formats[0]).startsWith("digital");
@@ -1938,6 +2012,8 @@ function compareEditions(a,b){
   return editionFormatLabel(a).localeCompare(editionFormatLabel(b),"fr",{sensitivity:"base"})||String(a&&a.country||"").localeCompare(String(b&&b.country||""),"fr",{sensitivity:"base"});
 }
 function selectedEditionFormats(){return [...document.querySelectorAll('#editionForm input[name="formats"]:checked')].map(function(input){return input.value})}
+function selectedEditionChoices(name){return [...document.querySelectorAll('#editionForm input[name="'+name+'"]:checked')].map(function(input){return input.value})}
+function setEditionChoices(name,values){const selected=new Set(Array.isArray(values)?values:[]);document.querySelectorAll('#editionForm input[name="'+name+'"]').forEach(function(input){input.checked=selected.has(input.value)})}
 function setEditionFormats(formats){
   const selected=new Set((formats||[]).filter(Boolean));
   document.querySelectorAll('#editionForm input[name="formats"]').forEach(function(input){input.checked=selected.has(input.value)});
@@ -2056,19 +2132,22 @@ function setFilmSort(key,direction){
 }
 
 function renderFilms(){
-  const query=normalized($("#filmSearch").value),scope=$("#scopeFilter").value,ownedFilter=$("#filmFilter").value,roleFilters=checkedFilterValues("roleFilter"),formats=checkedFilterValues("formatFilter"),statuses=checkedFilterValues("statusFilter"),countries=checkedFilterValues("countryFilter");
+  const query=normalized($("#filmSearch").value),scope=$("#scopeFilter").value,ownedFilter=$("#filmFilter").value,roleFilters=checkedFilterValues("roleFilter"),periodFilters=checkedFilterValues("periodFilter"),franchiseFilters=checkedFilterValues("franchiseFilter"),formats=checkedFilterValues("formatFilter"),statuses=checkedFilterValues("statusFilter"),countries=checkedFilterValues("countryFilter");
   let data=films.filter(function(film){
     const filmEditions=editionsFor(film.id),owned=filmEditions.length>0;
     if(scope==="progress"&&!film.countsTowardProgress)return false;
     if(scope==="technical"&&film.countsTowardProgress)return false;
     if(ownedFilter==="owned"&&!owned)return false;
     if(ownedFilter==="missing"&&owned)return false;
+    if(ownedFilter==="upgrade"&&!filmUpgrade(film))return false;
     if(roleFilters.length&&!roleFilters.includes(film.participation))return false;
+    if(periodFilters.length&&!periodFilters.includes(filmCareerPeriod(film)))return false;
+    if(franchiseFilters.length&&!franchiseFilters.includes(String(film.franchise||"").trim()))return false;
     if(formats.length&&!filmEditions.some(function(edition){return editionFormats(edition).some(function(format){return formats.includes(format)})}))return false;
     if(countries.length&&!filmEditions.some(function(edition){return countries.includes(String(edition.country||"").trim())}))return false;
     if(statuses.length&&!statuses.includes(film.status))return false;
     if(query){
-      const haystack=normalized([film.titleFr,film.titleEn,film.originalTitle,film.romanization,film.aliases,film.role,film.director,film.participation,film.year].filter(Boolean).join(" "));
+      const haystack=normalized([film.titleFr,film.titleEn,film.originalTitle,film.romanization,film.aliases,film.role,film.director,film.participation,film.franchise,filmCareerPeriod(film),film.year].filter(Boolean).join(" "));
       if(!haystack.includes(query))return false;
     }
     return true;
@@ -2103,6 +2182,7 @@ function renderFilmRow(film){
   const image=filmImage(film);
   const posterHtml=image?'<span class="list-poster"><img src="'+esc(image)+'" alt="Affiche de '+esc(displayedTitle(film))+'" loading="lazy"></span>':'<span class="list-poster"><span class="list-poster-empty">—</span></span>';
   const editionSummary=editionSummaryGroups(filmEditions,false);
+  const upgrade=filmUpgrade(film),upgradeHtml=upgrade?'<span class="upgrade-badge" title="Une édition de meilleure définition est indiquée dans le catalogue">Amélioration · '+esc(upgrade.format)+'</span>':"";
   const participationClass=film.countsTowardProgress?"progression":"technical";
   const statusClass=film.status==="Sorti"?"":" upcoming";
   return '<tr class="film-row '+(film.countsTowardProgress?"":"technical-row")+(filmEditions.length?"":" missing-edition-row")+'" data-id="'+esc(film.id)+'" tabindex="0" aria-label="Ouvrir la fiche de '+esc(displayedTitle(film))+'">'+
@@ -2112,7 +2192,7 @@ function renderFilmRow(film){
     '<td class="title-cell"><button type="button" class="film-title" data-id="'+esc(film.id)+'">'+esc(displayedTitle(film))+'</button><span class="film-subtitle">'+esc(secondaryTitle(film))+'</span></td>'+
     '<td class="participation-cell" data-label="Type de rôle"><span class="badge '+participationClass+'">'+esc(film.participation)+'</span></td>'+
     '<td class="status-cell" data-label="Statut"><span class="badge'+statusClass+'">'+esc(film.status)+'</span></td>'+
-    '<td class="collection-cell" data-label="Éditions"><div class="collection-cell-layout">'+editionSummary+'<button type="button" class="quick-add-edition icon-only" data-id="'+esc(film.id)+'" title="Ajouter une édition" aria-label="Ajouter une édition de '+esc(displayedTitle(film))+'">'+iconSvg("plus","sm")+'</button></div></td>'+
+    '<td class="collection-cell" data-label="Éditions"><div class="collection-cell-layout">'+editionSummary+upgradeHtml+'<button type="button" class="quick-add-edition icon-only" data-id="'+esc(film.id)+'" title="Ajouter une édition" aria-label="Ajouter une édition de '+esc(displayedTitle(film))+'">'+iconSvg("plus","sm")+'</button></div></td>'+
   '</tr>';
 }
 
@@ -2122,11 +2202,12 @@ function renderFilmCard(film){
   const imageHtml=image?'<img src="'+esc(image)+'" alt="Affiche de '+esc(displayedTitle(film))+'" loading="lazy">':'<span class="collector-poster-placeholder">'+esc(displayedTitle(film))+'</span>';
   const formatLabel=formats[0]==="4K UHD"?"4K":(formats[0]||"");
   const editionSummary=filmEditions.length?editionSummaryGroups(filmEditions,true):"";
+  const upgrade=filmUpgrade(film),upgradeHtml=upgrade?'<span class="upgrade-badge">Amélioration · '+esc(upgrade.format)+'</span>':"";
   return '<article class="collector-card '+(film.countsTowardProgress?"":"technical-card")+(filmEditions.length?"":" missing-edition-card")+'"><button type="button" class="collector-card-open" data-id="'+esc(film.id)+'" aria-label="Voir les détails de '+esc(displayedTitle(film))+'">'+
     '<span class="collector-spine">CineTrack · '+esc(number)+'</span>'+
     '<span class="collector-poster">'+imageHtml+'<span class="collector-year">'+esc(film.year||"—")+'</span>'+(formatLabel?'<span class="collector-format '+formatCssClass(formats[0])+'">'+esc(formatLabel)+'</span>':'<span class="collector-format is-missing">À trouver</span>')+'</span>'+
     '<span class="collector-card-body"><span class="collector-card-title">'+esc(displayedTitle(film))+'</span><span class="collector-card-subtitle">'+esc(secondaryTitle(film)||film.participation)+'</span>'+
-    editionSummary+
+    editionSummary+upgradeHtml+
     '<span class="collector-card-foot"><span>'+esc(film.status)+'</span><span class="'+(filmEditions.length?"owned-state":"missing-state")+'">'+(filmEditions.length?(filmEditions.length+" édition"+(filmEditions.length>1?"s":"")):"À compléter")+'</span></span></span></button><div class="collector-card-actions"><span class="collector-card-state '+(filmEditions.length?"owned":"missing")+'">'+(filmEditions.length?"Dans ma collection":"À rechercher")+'</span><button type="button" class="quick-add-edition card-add" data-id="'+esc(film.id)+'" aria-label="Ajouter une édition de '+esc(displayedTitle(film))+'">'+iconSvg("plus","sm")+' <span>Édition</span></button></div></article>';
 }
 
@@ -2141,20 +2222,32 @@ function renderSeries(){
   document.querySelectorAll(".empty-add-series").forEach(function(button){button.onclick=function(){if(user)openModal($("#seriesDialog"),'input[name="title"]')}});
 }
 
-function populateRoleFilter(){
-  const container=$("#roleFilterOptions"),current=pendingRoleFilters.length?pendingRoleFilters:checkedFilterValues("roleFilter");
-  const roles=[...new Set(films.map(function(film){return String(film.participation||"").trim()}).filter(Boolean))].sort(function(a,b){return a.localeCompare(b,"fr",{sensitivity:"base"})});
+function populateDynamicFilter(containerSelector,name,values,pendingValues){
+  const container=$(containerSelector),current=pendingValues.length?pendingValues:checkedFilterValues(name);
   container.replaceChildren();
-  roles.forEach(function(role){
+  values.forEach(function(value){
     const label=document.createElement("label"),input=document.createElement("input");
-    input.type="checkbox";input.name="roleFilter";input.value=role;input.checked=current.includes(role);input.addEventListener("change",renderFilms);
-    label.appendChild(input);label.appendChild(document.createTextNode(" "+role));container.appendChild(label);
+    input.type="checkbox";input.name=name;input.value=value;input.checked=current.includes(value);input.addEventListener("change",renderFilms);
+    label.appendChild(input);label.appendChild(document.createTextNode(" "+value));container.appendChild(label);
   });
+}
+function populateCatalogFilters(){
+  const alphabetical=function(a,b){return a.localeCompare(b,"fr",{sensitivity:"base"})};
+  const roles=[...new Set(films.map(function(film){return String(film.participation||"").trim()}).filter(Boolean))].sort(alphabetical);
+  const periods=[...new Set(films.map(filmCareerPeriod).filter(Boolean))];
+  const periodOrder=["Premiers rôles (1962–1975)","Révélation (1976–1985)","Âge d’or hongkongais (1986–1995)","Expansion internationale (1996–2009)","Carrière contemporaine (2010–2019)","Période récente (2020–…)","Période non renseignée"];
+  periods.sort(function(a,b){const ai=periodOrder.indexOf(a),bi=periodOrder.indexOf(b);return (ai<0?999:ai)-(bi<0?999:bi)||alphabetical(a,b)});
+  const franchises=[...new Set(films.map(function(film){return String(film.franchise||"").trim()}).filter(Boolean))].sort(alphabetical);
+  populateDynamicFilter("#roleFilterOptions","roleFilter",roles,pendingRoleFilters);
+  populateDynamicFilter("#periodFilterOptions","periodFilter",periods,pendingPeriodFilters);
+  populateDynamicFilter("#franchiseFilterOptions","franchiseFilter",franchises,pendingFranchiseFilters);
   pendingRoleFilters=[];
+  pendingPeriodFilters=[];
+  pendingFranchiseFilters=[];
 }
 
 function renderAll(){
-  populateRoleFilter();
+  populateCatalogFilters();
   renderFilms();renderSeries();
   const progressFilms=films.filter(function(film){return film.countsTowardProgress});
   const technicalFilms=films.filter(function(film){return !film.countsTowardProgress});
@@ -2192,7 +2285,7 @@ function poster(item){
 function openFilmDetails(filmId){
   const film=films.find(function(item){return item.id===filmId});if(!film)return;
   selectedFilmId=filmId;
-  const filmEditions=editionsFor(filmId).slice().sort(compareEditions);
+  const filmEditions=editionsFor(filmId).slice().sort(function(a,b){return Number(isReferenceEditionFor(b,filmId))-Number(isReferenceEditionFor(a,filmId))||compareEditions(a,b)}),upgrade=filmUpgrade(film);
   $("#detailsBadges").innerHTML='<span class="badge">'+esc(film.year)+'</span><span class="badge '+(film.countsTowardProgress?"progression":"technical")+'">'+esc(film.participation)+'</span><span class="badge'+(film.status==="Sorti"?"":" upcoming")+'">'+esc(film.status)+'</span>';
   $("#detailsTitle").textContent=displayedTitle(film);
   $("#detailsSubtitle").textContent=film.titleFr?film.titleEn:"Aucun titre français fiable identifié.";
@@ -2201,6 +2294,9 @@ function openFilmDetails(filmId){
     ["Romanisation",film.romanization],
     ["Alias",film.aliases],
     ["Réalisateur",film.director],
+    ["Période",filmCareerPeriod(film)],
+    ["Franchise / saga",film.franchise],
+    ["Formats commercialisés connus",filmAvailableFormats(film).join(" · ")],
     ["Personnage / rôle",film.role],
     ["Type de participation",film.participation],
     ["Niveau de vérification",film.verification],
@@ -2215,6 +2311,7 @@ function openFilmDetails(filmId){
     ["Affiche TMDB",film.tmdbPageUrl||(film.tmdbId?"https://www.themoviedb.org/movie/"+film.tmdbId:null)]
   ].filter(function(item){return safeUrl(item[1])});
   const sourcesHtml=sources.length?'<div class="source-links">'+sources.map(function(item){return '<a href="'+esc(safeUrl(item[1]))+'" target="_blank" rel="noopener noreferrer">'+esc(item[0])+' ↗</a>'}).join("")+'</div>':"";
+  const upgradeHtml=upgrade?'<div class="collection-upgrade"><div><strong>Amélioration disponible en '+esc(upgrade.format)+'</strong><span>Votre meilleure édition actuelle est de définition inférieure. Le format disponible a été renseigné dans le catalogue.</span></div></div>':"";
   const addEditionLabel=user?"Ajouter une édition à ma collection":"Se connecter pour ajouter";
   const editionCountLabel=filmEditions.length+" édition"+(filmEditions.length>1?"s":"");
   const editionsHtml='<div class="edition-section"><div class="edition-section-head"><div><h3>Mes éditions</h3><span class="edition-count">'+esc(editionCountLabel)+'</span></div><button type="button" class="btn small secondary add-edition-inline">'+(user?iconSvg("plus","sm")+" ":"")+esc(addEditionLabel)+'</button></div><div class="edition-list">'+(filmEditions.length?filmEditions.map(function(edition,index){
@@ -2224,12 +2321,14 @@ function openFilmDetails(filmId){
     const editionTitle=edition.edition||productTitle||"Édition sans intitulé";
     const productDetail=productTitle&&normalized(productTitle)!==normalized(editionTitle)?productTitle:"";
     const formatBadges=editionFormatCountryBadges([edition])||'<span class="badge">Format non précisé</span>';
-    const attributes=[["Films du coffret",linkedFilmIds.length>1?linkedTitles.join(" · "):"","notes"],["Éditeur",edition.publisher,""],["EAN",edition.ean,""],["Produit reconnu",productDetail,""],["Commentaire",edition.notes,"notes"]].filter(function(attribute){return attribute[1]});
+    const versions=editionVersions(edition),bonuses=editionBonuses(edition);
+    const featuresHtml=(versions.length||bonuses.length)?'<div class="edition-feature-list">'+versions.map(function(value){return '<span class="edition-feature">'+esc(value)+'</span>'}).join("")+bonuses.map(function(value){return '<span class="edition-feature">Bonus · '+esc(value)+'</span>'}).join("")+'</div>':"";
+    const attributes=[["Films du coffret",linkedFilmIds.length>1?linkedTitles.join(" · "):"","notes"],["Éditeur",edition.publisher,""],["EAN",edition.ean,""],["Produit reconnu",productDetail,""],["Détail des bonus",edition.bonusNotes,"notes"],["Commentaire",edition.notes,"notes"]].filter(function(attribute){return attribute[1]});
     const attributesHtml='<div class="edition-attributes">'+(attributes.length?attributes.map(function(attribute){return '<div class="edition-attribute '+attribute[2]+'"><b>'+esc(attribute[0])+'</b><span>'+esc(attribute[1])+'</span></div>'}).join(""):'<div class="edition-attribute notes"><span>Aucun détail supplémentaire.</span></div>')+'</div>';
     const editIcon=iconSvg("edit","sm"),deleteIcon=iconSvg("trash","sm"),editionColorClass=formatCssClass(editionFormats(edition)[0]);
-    return '<article class="edition-item '+editionColorClass+'"><div class="edition-card-top"><div class="edition-card-flags"><span class="edition-index">Édition '+(index+1)+(filmEditions.length>1?" / "+filmEditions.length:"")+'</span>'+(linkedFilmIds.length>1?'<span class="edition-primary-badge">Coffret · '+linkedFilmIds.length+' films</span>':"")+(edition.useAsFilmVisual&&productImage?'<span class="edition-primary-badge">Visuel principal</span>':"")+'</div>'+(user?'<div class="edition-actions"><button type="button" class="edition-action-btn edit-edition" data-id="'+esc(edition.id)+'" title="Modifier cette édition" aria-label="Modifier cette édition">'+editIcon+'</button><button type="button" class="edition-action-btn delete-edition" data-id="'+esc(edition.id)+'" title="Supprimer cette édition" aria-label="Supprimer cette édition">'+deleteIcon+'</button></div>':"")+'</div><div class="edition-item-main">'+visual+'<div class="edition-item-copy"><div class="edition-card-title">'+esc(editionTitle)+'</div><div class="edition-heading"><div class="badges">'+formatBadges+'</div></div>'+attributesHtml+'</div></div></article>';
+    return '<article class="edition-item '+editionColorClass+'"><div class="edition-card-top"><div class="edition-card-flags"><span class="edition-index">Édition '+(index+1)+(filmEditions.length>1?" / "+filmEditions.length:"")+'</span>'+(isReferenceEditionFor(edition,filmId)?'<span class="edition-primary-badge reference-badge">Édition de référence</span>':"")+(linkedFilmIds.length>1?'<span class="edition-primary-badge">Coffret · '+linkedFilmIds.length+' films</span>':"")+(edition.useAsFilmVisual&&productImage?'<span class="edition-primary-badge">Visuel principal</span>':"")+'</div>'+(user?'<div class="edition-actions"><button type="button" class="edition-action-btn edit-edition" data-id="'+esc(edition.id)+'" title="Modifier cette édition" aria-label="Modifier cette édition">'+editIcon+'</button><button type="button" class="edition-action-btn delete-edition" data-id="'+esc(edition.id)+'" title="Supprimer cette édition" aria-label="Supprimer cette édition">'+deleteIcon+'</button></div>':"")+'</div><div class="edition-item-main">'+visual+'<div class="edition-item-copy"><div class="edition-card-title">'+esc(editionTitle)+'</div><div class="edition-heading"><div class="badges">'+formatBadges+'</div></div>'+featuresHtml+attributesHtml+'</div></div></article>';
   }).join(""):'<div class="empty edition-empty"><span>Aucune édition enregistrée.</span></div>')+'</div></div>';
-  $("#detailsContent").innerHTML=detailsHtml+sourcesHtml+editionsHtml;
+  $("#detailsContent").innerHTML=detailsHtml+upgradeHtml+sourcesHtml+editionsHtml;
   $("#detailsEditBtn").classList.toggle("hidden",!isAdmin());
   document.querySelectorAll(".add-edition-inline").forEach(function(button){button.onclick=function(){if(!user)return;$("#filmDetailsDialog").close();openEditionDialog(selectedFilmId)}});
   document.querySelectorAll(".edit-edition").forEach(function(button){button.onclick=function(){
@@ -2258,16 +2357,20 @@ function openEditionDialog(filmId,edition){
   form.elements.filmId.value=filmId;
   form.elements.editionId.value=edition&&edition.id||"";
   setEditionFormats(edition?editionFormats(edition):[]);
+  setEditionChoices("filmVersions",edition?editionVersions(edition):[]);
+  setEditionChoices("bonusFeatures",edition?editionBonuses(edition):[]);
   form.elements.ean.value=edition&&edition.ean||"";
   form.elements.country.value=edition&&edition.country||"";
   form.elements.publisher.value=edition&&edition.publisher||"";
   form.elements.edition.value=edition&&edition.edition||"";
+  form.elements.bonusNotes.value=edition&&edition.bonusNotes||"";
   form.elements.notes.value=edition&&edition.notes||"";
   const linkedFilmIds=edition?editionFilmIds(edition):[filmId];
   $("#editionIsBoxSet").checked=linkedFilmIds.length>1;
   $("#editionFilmSearch").value="";
   updateEditionBoxSetUi(linkedFilmIds);
   $("#allowDuplicateEan").checked=false;
+  $("#editionIsReference").checked=Boolean(edition&&isReferenceEditionFor(edition,filmId));
   updateDuplicateEanUi();
   $("#useEditionVisualAsFilm").checked=Boolean(edition&&edition.useAsFilmVisual);
   if(edition&&edition.productTitle){
@@ -2692,7 +2795,8 @@ function openFilmEditor(film){
   $("#deleteFilmBtn").classList.toggle("hidden",!film);
   form.elements.filmId.value=film?film.id:"";
   if(film){
-    ["titleFr","titleEn","year","status","originalTitle","romanization","aliases","role","director","participation","posterUrl","notes"].forEach(function(name){form.elements[name].value=film[name]||""});
+    ["titleFr","titleEn","year","status","originalTitle","romanization","aliases","role","director","participation","careerPeriod","franchise","posterUrl","notes"].forEach(function(name){form.elements[name].value=film[name]||""});
+    const available=new Set(filmAvailableFormats(film));document.querySelectorAll('#filmForm input[name="availableFormats"]').forEach(function(input){input.checked=available.has(input.value)});
     form.elements.countsTowardProgress.checked=film.countsTowardProgress;
   }else{
     form.elements.status.value="Sorti";
@@ -2712,6 +2816,9 @@ $("#filmForm").onsubmit=async function(event){
   data.countsTowardProgress=form.elements.countsTowardProgress.checked;
   data.titleFr=data.titleFr.trim()||null;
   data.titleEn=data.titleEn.trim();
+  data.careerPeriod=String(data.careerPeriod||"").trim()||null;
+  data.franchise=String(data.franchise||"").trim()||null;
+  data.availableFormats=[...document.querySelectorAll('#filmForm input[name="availableFormats"]:checked')].map(function(input){return input.value}).sort(compareEditionFormats);
   const existingFilm=filmId?films.find(function(item){return item.id===filmId}):null;
   const existingOrder=Number(existingFilm&&existingFilm.sourceOrder);
   data.sourceOrder=Number.isInteger(existingOrder)&&existingOrder>0&&existingOrder<9999?existingOrder:nextFilmSourceOrder(filmId);
@@ -2741,7 +2848,7 @@ $("#editionForm").onsubmit=async function(event){
   const form=event.currentTarget,submit=$("#editionSubmitBtn");
   if(editionImageCompressionPending){$("#editionError").textContent="Attendez la fin de la compression du visuel.";return}
   let data=Object.fromEntries(new FormData(form));
-  const filmId=data.filmId,editionId=data.editionId,editing=Boolean(data.editionId),formats=selectedEditionFormats(),filmIds=selectedEditionFilmIds();
+  const filmId=data.filmId,editionId=data.editionId,editing=Boolean(data.editionId),formats=selectedEditionFormats(),filmIds=selectedEditionFilmIds(),markReference=$("#editionIsReference").checked;
   delete data.filmId;delete data.editionId;delete data.formats;
   if(!formats.length){
     $("#editionError").textContent="Sélectionnez au moins un format présent dans cette édition.";
@@ -2752,7 +2859,7 @@ $("#editionForm").onsubmit=async function(event){
     $("#editionError").textContent="Sélectionnez au moins un autre film présent dans ce coffret.";
     $("#editionFilmSearch").focus();return;
   }
-  data.filmId=filmId;data.filmIds=filmIds;data.isBoxSet=filmIds.length>1;data.formats=formats;data.format=formats.join(" + ");data.editionImageData=pendingEditionImageData||null;data.useAsFilmVisual=$("#useEditionVisualAsFilm").checked;
+  data.filmId=filmId;data.filmIds=filmIds;data.isBoxSet=filmIds.length>1;data.formats=formats;data.format=formats.join(" + ");data.filmVersions=selectedEditionChoices("filmVersions");data.bonusFeatures=selectedEditionChoices("bonusFeatures");data.referenceFilmIds=markReference?filmIds:[];data.isReference=data.referenceFilmIds.length>0;data.editionImageData=pendingEditionImageData||null;data.useAsFilmVisual=$("#useEditionVisualAsFilm").checked;
   if(data.useAsFilmVisual&&!$("#editionVisualPreview img")){
     $("#editionError").textContent="Ajoutez d’abord un visuel avant de l’utiliser à la place de l’affiche TMDB.";
     return;
@@ -2774,7 +2881,7 @@ $("#editionForm").onsubmit=async function(event){
   try{
     data=Object.fromEntries(new FormData(form));
     delete data.editionId;delete data.formats;
-    data.filmId=filmId;data.filmIds=filmIds;data.isBoxSet=filmIds.length>1;data.formats=selectedEditionFormats();data.format=data.formats.join(" + ");data.ean=normalizedEan(data.ean);data.editionImageData=pendingEditionImageData||null;data.useAsFilmVisual=$("#useEditionVisualAsFilm").checked;
+    data.filmId=filmId;data.filmIds=filmIds;data.isBoxSet=filmIds.length>1;data.formats=selectedEditionFormats();data.format=data.formats.join(" + ");data.filmVersions=selectedEditionChoices("filmVersions");data.bonusFeatures=selectedEditionChoices("bonusFeatures");data.referenceFilmIds=markReference?filmIds:[];data.isReference=data.referenceFilmIds.length>0;data.ean=normalizedEan(data.ean);data.editionImageData=pendingEditionImageData||null;data.useAsFilmVisual=$("#useEditionVisualAsFilm").checked;
     if(data.ean&&pendingEanProduct&&pendingEanProduct.ean===data.ean){
       data.productTitle=pendingEanProduct.title||null;
       data.productImageUrl=pendingEanProduct.imageUrl||null;
@@ -2792,7 +2899,9 @@ $("#editionForm").onsubmit=async function(event){
     if(duplicate&&!allowSeparateCopy){
       data.filmIds=[...new Set(editionFilmIds(duplicate).concat(filmIds))];data.filmId=data.filmIds[0];data.isBoxSet=data.filmIds.length>1;
       data.formats=[...new Set(editionFormats(duplicate).concat(data.formats))];data.format=data.formats.join(" + ");
-      ["country","publisher","edition","notes"].forEach(function(field){if(!String(data[field]||"").trim()&&duplicate[field])data[field]=duplicate[field]});
+      data.filmVersions=[...new Set(editionVersions(duplicate).concat(data.filmVersions))];data.bonusFeatures=[...new Set(editionBonuses(duplicate).concat(data.bonusFeatures))];
+      data.referenceFilmIds=[...new Set(editionReferenceFilmIds(duplicate).concat(markReference?data.filmIds:[]))];data.isReference=data.referenceFilmIds.length>0;
+      ["country","publisher","edition","bonusNotes","notes"].forEach(function(field){if(!String(data[field]||"").trim()&&duplicate[field])data[field]=duplicate[field]});
       if(!data.editionImageData&&duplicate.editionImageData)data.editionImageData=duplicate.editionImageData;
       if(!pendingEditionImageData&&duplicate.useAsFilmVisual===true)data.useAsFilmVisual=true;
       await setDoc(doc(db,"users",user.uid,"collection",duplicate.id),data,{merge:true});savedEditionId=duplicate.id;
@@ -2804,6 +2913,14 @@ $("#editionForm").onsubmit=async function(event){
       if(otherPrimaryEditions.length){
         const batch=writeBatch(db);
         otherPrimaryEditions.forEach(function(edition){batch.set(doc(db,"users",user.uid,"collection",edition.id),{useAsFilmVisual:false,updatedAt:serverTimestamp()},{merge:true})});
+        await batch.commit();
+      }
+    }
+    if(markReference){
+      const otherReferences=editions.filter(function(edition){return edition.id!==savedEditionId&&editionReferenceFilmIds(edition).some(function(id){return data.filmIds.includes(id)})});
+      if(otherReferences.length){
+        const batch=writeBatch(db);
+        otherReferences.forEach(function(edition){const remaining=editionReferenceFilmIds(edition).filter(function(id){return !data.filmIds.includes(id)});batch.set(doc(db,"users",user.uid,"collection",edition.id),{referenceFilmIds:remaining,isReference:remaining.length>0,updatedAt:serverTimestamp()},{merge:true})});
         await batch.commit();
       }
     }
